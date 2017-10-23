@@ -15,7 +15,7 @@ const CONFIG = {};
 // PATHS
 CONFIG.root = path.resolve(__dirname);// absolute path to project directory
 CONFIG.publicDir = 'public';
-CONFIG.sourceDir = 'source';
+CONFIG.sourceDir = 'src';
 CONFIG.templateDir = `${CONFIG.sourceDir}/_templates`;
 
 // Component Explorer configuration

@@ -6,5 +6,5 @@ debug.log
 # Generated Directories
 public/
 
-# Pirvate credentials/config
+# Private credentials/config
 _config.private.js
