@@ -57,10 +57,7 @@ const icons = {
 };
 
 const template = document.createElement('template');
-template.innerHTML = `
-    <style>${require('./DsIcon.less')}</style>
-    <slot></slot>
-`;
+template.innerHTML = `<style>${require('./DsIcon.less')}</style><slot></slot>`;
 
 class DsIcon extends HTMLElement {
     // CLASS PROPERTIES

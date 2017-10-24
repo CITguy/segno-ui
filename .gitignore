@@ -2,6 +2,7 @@
 node_modules
 *.swp
 debug.log
+yarn-error.log
 
 # Generated Directories
 public/
