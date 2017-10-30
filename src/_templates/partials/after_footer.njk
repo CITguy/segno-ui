@@ -1,0 +1,29 @@
+<span id="ce-es5-adapter">
+  <script>
+    if (!window.customElements) {
+      var elAdapter = document.querySelector('#ce-es5-adapter');
+      elAdapter.parentElement.removeChild(elAdapter);
+    }
+  </script>
+  <!--
+    The adapter should only be loaded for browsers that
+    natively support custom elements.
+  -->
+  <script src="vendor/custom-elements-es5-adapter.js"></script>
+</span>
+
+<span id="bottom">
+  <!-- polyfills inserted after loader (if needed) -->
+  <script src="vendor/webcomponents-loader.js"></script>
+</span>
+
+<!-- SegnoUI Custom Elements -->
+<script src="segno-ui.js"></script>
+
+<!-- Documentation from here on -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/vue@2.4.4/dist/vue.js"></script>
+<script src="docs.js"></script>

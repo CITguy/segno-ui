@@ -1,0 +1,43 @@
+@gray-05: hsl(0, 0%, 95%);
+@gray-10: hsl(0, 0%, 90%);
+@gray-15: hsl(0, 0%, 85%);
+@gray-20: hsl(0, 0%, 80%);
+
+@gray-30: hsl(0, 0%, 70%);
+@gray-40: hsl(0, 0%, 60%);
+@gray-50: hsl(0, 0%, 50%);
+@gray-60: hsl(0, 0%, 40%);
+@gray-70: hsl(0, 0%, 30%);
+
+@gray-80: hsl(0, 0%, 20%);
+@gray-85: hsl(0, 0%, 15%);
+@gray-90: hsl(0, 0%, 10%);
+@gray-95: hsl(0, 0%,  5%);
+
+@animation-fn: cubic-bezier(0, 0.9, 0.5, 1);
+
+// ===== GRID =====
+// Number of columns in the grid.
+@grid-column-count: 12;
+// Padding between columns.
+@grid-gutter-size: 1rem;
+@grid-column-unit: (100% / @grid-column-count);
+
+// Breakpoints
+/*
+  - 1em is calculated on browser-defined font size
+    - No CSS property can affect this calculation.
+  - As font size increases/decreases (zoom %), more/less room is available,
+    so breakpoints behave more like larger/smaller screens
+*/
+@grid-break-wrist: 0em;
+@grid-break-palm: 40em; // ~640px
+@grid-break-lap: 64em; // ~1024px
+@grid-break-desk: 75em; // ~1200px
+@grid-break-wall: 90em; // ~1440px
+
+// System Font Stacks
+@systemMonospace: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace;
+@systemSansSerif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+@systemSerif: "Apple Garamond", "Baskerville", "Times New Roman", "Droid Serif", "Times","Source Serif Pro", serif;
+

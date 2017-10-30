@@ -1,60 +1,32 @@
-html {
-  box-sizing: border-box;
-  font-size: 100%; /* 1rem = ~16px */
-  margin: 0;
-  padding: 0;
+// CONFIG
+@import 'vars';
+
+// MIXINS
+@import 'grid/grid-mixins';
+
+// RESETS
+@import 'resets/box-sizing';
+@import 'form/form-reset';
+@import 'typography/typography-reset';
+
+// correct display in IE
+template {
+  display: none;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
+// BASE
+@import 'code/code';
+@import 'typography/typography-base';
 
-body {
-  line-height: 1.25; /* ~20px */
-  margin: 0;
-  padding: 0;
-}
+// COMPONENTS
+@import 'grid/grid';
+@import 'icon/icon';
+@import 'reveal/reveal';
+@import 'spinner/spinner';
+@import 'typography/typography';
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-bottom: 0.25em;
-}
+// HELPERS
+@import 'typography/typography-helpers';
 
-h1 {
-  font-size: 2.00rem; /* ~32px */
-}
-
-h2 {
-  font-size: 1.80rem; /* ~29px */
-}
-
-h3 {
-  font-size: 1.64rem; /* ~26px */
-}
-
-h4 {
-  font-size: 1.48rem; /* ~24px */
-}
-
-h5 {
-  font-size: 1.32rem; /* ~21px */
-}
-
-h6 {
-  font-size: 1.16rem; /* ~19px */
-}
-
-section + section {
-  margin-top: 1.25em;
-}
-
-p {
-  margin: 0.5em 0 1.0em;
-  padding: 0;
-}
+// OVERRIDES
+@import 'shame';

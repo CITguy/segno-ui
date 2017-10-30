@@ -1,0 +1,54 @@
+@import 'vars';
+@import 'docs/vars';
+
+// Helpers
+// TODO: Cull those that aren't needed
+.color-gray10 { color: @gray-10; }
+.color-gray20 { color: @gray-20; }
+.color-gray30 { color: @gray-30; }
+.color-gray40 { color: @gray-40; }
+.color-gray50 { color: @gray-50; }
+.color-gray60 { color: @gray-60; }
+.color-gray70 { color: @gray-70; }
+.color-gray80 { color: @gray-80; }
+.color-gray90 { color: @gray-90; }
+
+@import 'docs/layout';
+
+// COMPONENTS
+@import 'docs/toc';
+@import 'docs/post-it';
+
+// OVERRIDES/DEMOS
+@import 'icon/icon-docs';
+
+
+///
+.demo {
+  background-color: white;
+  border: 1px solid @gray-30;
+  margin-bottom: 1rem;
+  padding: 1rem;
+
+  &, &.theme-light {
+    box-shadow: inset 0 0 6px 0 @gray-30;
+  }
+
+  &.theme-dark {
+    box-shadow: inset 0 0 6px 0 white;
+  }
+}
+
+.theme-dark {
+  background-color: @gray-90;
+  color: white;
+}
+
+.theme-light {
+  background-color: white;
+  color: @gray-90;
+}
+
+section + section {
+  margin-top: 3rem;
+}

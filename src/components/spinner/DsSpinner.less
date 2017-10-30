@@ -1,0 +1,28 @@
+:host {
+  animation: spin 0.8s linear infinite;
+  animation-play-state: running;
+  border-color: transparent transparent currentColor currentColor;
+  border-radius: 1em;
+  border-style: solid;
+  border-width: 1px;
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+
+  &([paused]) {
+    animation-play-state: paused;
+  }
+
+  &([hidden]) {
+    display: none;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
