@@ -23,7 +23,7 @@ CONFIG.templateDir = `${CONFIG.sourceDir}/_templates`;
 CONFIG.site = {
     title: 'SegnoUI',
     language: 'en',
-    baseHref: '/segno-ui/',
+    baseHref: '/',
     // Moment.js format string
     dateFormat: 'YYYY-MM-DD',
     // Moment.js format string
