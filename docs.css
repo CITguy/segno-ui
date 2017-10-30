@@ -1,0 +1,163 @@
+/*
+  - 1em is calculated on browser-defined font size
+    - No CSS property can affect this calculation.
+  - As font size increases/decreases (zoom %), more/less room is available,
+    so breakpoints behave more like larger/smaller screens
+*/
+.color-gray10 {
+  color: #e6e6e6;
+}
+.color-gray20 {
+  color: #cccccc;
+}
+.color-gray30 {
+  color: #b3b3b3;
+}
+.color-gray40 {
+  color: #999999;
+}
+.color-gray50 {
+  color: #808080;
+}
+.color-gray60 {
+  color: #666666;
+}
+.color-gray70 {
+  color: #4d4d4d;
+}
+.color-gray80 {
+  color: #333333;
+}
+.color-gray90 {
+  color: #1a1a1a;
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  background-color: #f2f2f2;
+}
+.dsApp__stage {
+  display: flex;
+  min-height: 100vh;
+}
+.dsApp__content {
+  flex-grow: 1;
+  order: 2;
+}
+.dsApp__nav {
+  background-color: #1A1006;
+  color: #999999;
+  flex-shrink: 0;
+  width: 15rem;
+  order: 1;
+}
+.dsApp__sidebar {
+  background-color: #e6e6e6;
+}
+.dsApp__nav {
+  letter-spacing: 1px;
+}
+.dsApp__nav .you-are-here {
+  visibility: hidden;
+  color: #ff9933;
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+}
+.dsApp__nav .you-are-here ds-icon {
+  transform: rotateZ(-90deg);
+}
+.dsApp__nav ds-icon {
+  vertical-align: -2px;
+}
+.dsApp__nav header {
+  color: inherit;
+  padding: 0.5rem 0.5rem 0.5rem 0;
+}
+.dsApp__nav header:hover {
+  background-color: #805020;
+  cursor: pointer;
+  color: white;
+}
+.dsApp__nav header .toggle-icon {
+  pointer-events: none;
+  float: right;
+}
+.dsApp__nav a {
+  color: inherit;
+  display: block;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  text-decoration: none;
+}
+.dsApp__nav a.current {
+  background-color: transparent;
+  color: white;
+}
+.dsApp__nav a.current .you-are-here {
+  visibility: visible;
+}
+.dsApp__nav a:hover {
+  background-color: #805020;
+  color: white;
+}
+.dsApp__nav ds-reveal[open] > #summary.ds-reveal .toggle-icon,
+.dsApp__nav ds-reveal[open] > header .toggle-icon {
+  transform: scaleY(-1);
+}
+.dsApp__nav ds-reveal header,
+.dsApp__nav ds-reveal a {
+  padding-left: 1rem;
+}
+.article-toc {
+  display: block;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1rem;
+}
+.post-it {
+  background-color: #f2f20d;
+  border: 1px solid #e5e5b4;
+  /* slightly darker yellow */
+  box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.25);
+  max-width: 23em;
+  padding: 0.5em 1em;
+}
+.post-it__icon {
+  margin-right: 0.5em;
+}
+.icon-demo {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+.icon-demo ds-icon {
+  height: 2em;
+  width: 2em;
+  margin-right: 0.5em;
+}
+.demo {
+  background-color: white;
+  border: 1px solid #b3b3b3;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+.demo,
+.demo.theme-light {
+  box-shadow: inset 0 0 6px 0 #b3b3b3;
+}
+.demo.theme-dark {
+  box-shadow: inset 0 0 6px 0 white;
+}
+.theme-dark {
+  background-color: #1a1a1a;
+  color: white;
+}
+.theme-light {
+  background-color: white;
+  color: #1a1a1a;
+}
+section + section {
+  margin-top: 3rem;
+}
