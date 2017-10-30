@@ -1,0 +1,10 @@
+/* prevent FOUC before element is upgraded */
+// Modern Browsers
+ds-reveal:not([open]) > *:not([slot="summary"]) {
+  display: none;
+}
+
+// Polyfilled Browsers
+#summary.ds-reveal {
+  display: block;
+}

@@ -1,8 +1,17 @@
+const tagName = 'ds-icon';
+
+const template = document.createElement('template');
+template.innerHTML = `<style>${require('./DsIcon.less')}</style><slot></slot>`;
+
 const icons = {
     'angle-down': require('./assets/angle-down.svg'),
     'angle-left': require('./assets/angle-left.svg'),
     'angle-right': require('./assets/angle-right.svg'),
     'angle-up': require('./assets/angle-up.svg'),
+    'arrow-down': require('./assets/arrow-down.svg'),
+    'arrow-left': require('./assets/arrow-left.svg'),
+    'arrow-right': require('./assets/arrow-right.svg'),
+    'arrow-up': require('./assets/arrow-up.svg'),
     'ban': require('./assets/ban.svg'),
     'bell': require('./assets/bell.svg'),
     'bookmark': require('./assets/bookmark.svg'),
@@ -29,6 +38,7 @@ const icons = {
     'info-circle': require('./assets/info-circle.svg'),
     'key': require('./assets/key.svg'),
     'link': require('./assets/link.svg'),
+    'map-marker': require('./assets/map-marker.svg'),
     'menu-bento': require('./assets/menu-bento.svg'),
     'menu-doner': require('./assets/menu-doner.svg'),
     'menu-hamburger': require('./assets/menu-hamburger.svg'),
@@ -56,27 +66,26 @@ const icons = {
     'user': require('./assets/user.svg'),
 };
 
-const template = document.createElement('template');
-template.innerHTML = `<style>${require('./DsIcon.less')}</style><slot></slot>`;
-
 class DsIcon extends HTMLElement {
-    // CLASS PROPERTIES
-    static get is () {
-        return 'ds-icon';
+    static get is() {
+        return tagName;
     }
 
-    static get icons () {
+    static get icons() {
         return icons;
     }
 
-    static get observedAttributes () {
+    static get observedAttributes() {
         return [ 'type' ];
     }
 
-    // LIFE CYCLE CALLBACKS
-    constructor (type) {
+    constructor(type) {
         super();
         this.attachShadow({mode: 'open'});
+        if (window.ShadyCSS) {
+            ShadyCSS.prepareTemplate(template, tagName);
+            ShadyCSS.styleElement(this);
+        }
         this.shadowRoot.appendChild(template.content.cloneNode(true));
 
         if (type) {
@@ -84,40 +93,32 @@ class DsIcon extends HTMLElement {
         }
     }
 
-    connectedCallback () {
+    connectedCallback() {
         this._render();
     }
 
-    attributeChangedCallback () {
+    attributeChangedCallback() {
         this._render();
     }
 
-    // PROPERTIES
-    get type () {
+    get type() {
         return this.getAttribute('type');
     }
 
-    set type (newVal) {
+    set type(newVal) {
         this.setAttribute('type', newVal);
     }
 
-    // "PRIVATE" functions
-    _render () {
+    _render() {
         // erase previously injected markup
         this.innerHTML = '';
-
-        if (this.type in HxIcon.icons) {
-            // create surrogate DIV to add raw SVG markup
-            const tmpDiv = document.createElement('div');
-            tmpDiv.innerHTML = DsIcon.icons[this.type];
-
-            // grab SVG from surrogate DIV
-            //const svg = tmpDiv.firstElementChild;
-
-            // inject SVG from surrogate DIV into Light DOM
-            this.appendChild(tmpDiv.firstElementChild);
+        // add new SVG markup
+        if (this.type in DsIcon.icons) {
+            const elSurrogate = document.createElement('div');
+            elSurrogate.innerHTML = DsIcon.icons[this.type];
+            this.appendChild(elSurrogate.firstElementChild);
         }
     }//_render()
-}
+}//DsIcon
 
 module.exports = DsIcon;

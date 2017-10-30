@@ -1,0 +1,38 @@
+{% macro navSection(category, items, basePath) %}
+  {% if _.isUndefined(basePath) %}
+    {% set categoryPath = category %}
+  {% else %}
+    {% set categoryPath = basePath + '/' + category %}
+  {% endif %}
+  {% set isCurrentCategory = page.path.indexOf(categoryPath) === 0 %}
+
+  <ds-reveal {% if isCurrentCategory %}open{% endif %}>
+    <header slot="summary">
+      <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
+      {{category | capitalize}}
+    </header>
+
+    {% for key,val in items %}
+      {% if _.isPlainObject(val) %}
+        {% set subpath = basePath + '/' + key %}
+        {{ navSection(key, val, subpath) }}
+      {% else %}
+        {% set linkPath = categoryPath + '/' + val %}
+        {% set isCurrentLink = page.path.indexOf(linkPath) === 0 %}
+        <a href="{{linkPath}}"
+           {% if isCurrentLink %}class="current"{% endif %}
+         >
+           <span class="you-are-here">
+             <ds-icon type="map-marker"></ds-icon>
+           </span>
+           {{key}}
+        </a>
+      {% endif %}
+    {% endfor %}
+  </ds-reveal>
+{% endmacro %}
+
+<a href="/" class="brand">SegnoUI</a>
+{% for category,items in data.nav %}
+  {{ navSection(category, items) }}
+{% endfor %}

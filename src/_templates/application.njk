@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="{{site.language}}">
+{% include 'partials/head.njk' %}
+<body class="dsApp" id="top">
+  <div class="dsApp__stage">
+    <main class="dsApp__content">
+      {% block layout %}
+        {# compiled content goes here #}
+      {% endblock %}
+    </main>
+    <nav class="dsApp__nav">
+      {% include 'partials/app_nav.njk' %}
+    </nav>
+  </div>
+
+  {% include 'partials/after_footer.njk' %}
+</body>
+</html>

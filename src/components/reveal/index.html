@@ -1,0 +1,40 @@
+---
+title: Reveal
+---
+{% extends 'component.njk' %}
+{% block content %}
+<section>
+  <h2 class="dsSectionHeading" id="demo">Demo</h2>
+
+  <div class="demo">
+    <p>Why'd the cookie cry?</p>
+    <ds-reveal>
+      <small slot="summary">Reveal answer</small>
+      Because his father was a wafer so long!
+    </ds-reveal>
+  </div>
+  {% code 'html' %}
+    <p>Why'd the cookie cry?</p>
+    <ds-reveal>
+      <small slot="summary">Reveal answer</small>
+      ...
+    </ds-reveal>
+  {% endcode %}
+</section>
+
+<section>
+  <h2 class="dsSectionHeading" id="attributes">Attributes</h2>
+  <dl>
+    <dt>open</dt>
+    <dd>Open, when present</dd>
+  </dl>
+</section>
+
+<section>
+  <h2 class="dsSectionHeading" id="properties">Properties</h2>
+  <dl>
+    <dt>open <small>(Boolean [false])</small></dt>
+    <dd>Open, when true</dd>
+  </dl>
+</section>
+{% endblock %}

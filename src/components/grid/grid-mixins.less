@@ -1,0 +1,60 @@
+.make-spans (@prefix, @n) when (@n > 0) and (@prefix = xs) {
+  @width: (@n * @grid-column-unit);
+
+  .span-@{n}-@{prefix},
+  .span-@{n} {
+    flex: 0 0 @width;
+    max-width: @width;
+  }
+  .make-spans(@prefix, (@n - 1));
+}
+.make-spans (@prefix, @n) when (@n > 0) and not (@prefix = xs) {
+  @width: (@n * @grid-column-unit);
+
+  .span-@{n}-@{prefix} {
+    flex: 0 0 @width;
+    max-width: @width;
+  }
+  .make-spans(@prefix, (@n - 1));
+}
+
+.make-offsets (@prefix, @n) when (@n >= 0) and (@prefix = xs) {
+  .offset-@{n}-@{prefix},
+  .offset-@{n} {
+    margin-left: (@n * @grid-column-unit) !important;
+  }
+  .make-offsets(@prefix, (@n - 1));
+}
+.make-offsets (@prefix, @n) when (@n >= 0) and not (@prefix = xs) {
+  .offset-@{n}-@{prefix} {
+    margin-left: (@n * @grid-column-unit) !important;
+  }
+  .make-offsets(@prefix, (@n - 1));
+}
+
+.make-orders (@prefix, @n) when (@n > 0) and (@prefix = xs) {
+  .order-@{n}-@{prefix},
+  .order-@{n} {
+    order: @n;
+  }
+  .make-orders(@prefix, (@n - 1));
+}
+.make-orders (@prefix, @n) when (@n > 0) and not (@prefix = xs) {
+  .order-@{n}-@{prefix} {
+    order: @n;
+  }
+  .make-orders(@prefix, (@n - 1));
+}
+
+.make-grid (@prefix) {
+  // 1 to N
+  .make-spans(@prefix, @grid-column-count);
+  // 0 to N
+  .make-offsets(@prefix, @grid-column-count);
+  // 1 to N
+  .make-orders(@prefix, @grid-column-count);
+
+  .hide-@{prefix} {
+    display: none;
+  }
+}

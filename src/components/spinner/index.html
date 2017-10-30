@@ -1,0 +1,47 @@
+---
+title: Spinner
+---
+{% extends 'component.njk' %}
+{% block content %}
+
+<section id="vue-spinnerDemo">
+  <h2 class="dsSectionHeading" id="demo">Demo</h2>
+
+  <p>
+    <label>
+      <input type="checkbox" v-model="paused" />
+      Pause
+    </label>
+  </p>
+  <div class="demo">
+    <ds-spinner
+      :paused="paused"
+      @pause="paused = false"
+      @start="paused = true"
+    ></ds-spinner>
+  </div>
+  {% code 'html' %}
+    <!-- Running spinner -->
+    <ds-spinner></ds-spinner>
+
+    <!-- Paused spinner -->
+    <ds-spinner paused></ds-spinner>
+  {% endcode %}
+</section>
+
+<section>
+  <h2 class="dsSectionHeading" id="attributes">Attributes</h2>
+  <dl>
+    <dt>paused</dt>
+    <dd>Pauses animation, when present.</dd>
+  </dl>
+</section>
+
+<section>
+  <h2 class="dsSectionHeading" id="properties">Properties</h2>
+  <dl>
+    <dt>paused <small>(Boolean [false])</small></dt>
+    <dd>Pauses animation, when set to true.</dd>
+  </dl>
+</section>
+{% endblock %}

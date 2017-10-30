@@ -1,0 +1,20 @@
+{% extends 'application.njk' %}
+
+{% block layout %}
+  <div class="dsRow">
+    <div class="dsCol span-12-xs span-9-md order-1-md">
+      <div class="dsContainer">
+        <h1 class="dsPageHeading">{{ page.title }}</h1>
+
+        {% block content %}
+          {# page content goes here #}
+        {% endblock %}
+      </div>
+    </div>
+    <div class="dsCol span-12-xs span-3-md order-2-md dsApp__sidebar">
+      <div class="dsContainer">
+        {% include 'partials/sidebar.njk' %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

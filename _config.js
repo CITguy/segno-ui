@@ -76,6 +76,7 @@ CONFIG.docs = {
 CONFIG.copy = {
     dirs: [
         'images',
+        'vendor',
     ]
 };
 
