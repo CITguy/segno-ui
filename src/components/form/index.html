@@ -1,0 +1,16 @@
+---
+title: Form
+---
+{% extends 'component.njk' %}
+{% block content %}
+
+<section>
+  <h2 class="dsSectionHeading" id="inline-error">Inline Error</h2>
+  <div class="demo">
+    <ds-inline-error>This is an error message.</ds-inline-error>
+  </div>
+  {% code 'html' %}
+    <ds-inline-error>This is an error message.</ds-inline-error>
+  {% endcode %}
+</section>
+{% endblock %}
