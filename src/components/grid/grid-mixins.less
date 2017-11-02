@@ -1,10 +1,30 @@
-.make-spans (@prefix, @n) when (@n > 0) and (@prefix = xs) {
-  @width: (@n * @grid-column-unit);
+#grid {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
+  .col {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .span(@n) {
+    @basis: (@n * @grid-column-unit);
+    flex: 0 0 @basis;
+    max-width: @basis;
+  }
+
+  .offset(@n) {
+    margin-left: (@n * @grid-column-unit) !important;
+  }
+}//#grid
+
+.make-spans (@prefix, @n) when (@n > 0) and (@prefix = xs) {
   .span-@{n}-@{prefix},
   .span-@{n} {
-    flex: 0 0 @width;
-    max-width: @width;
+    #grid.span(@n);
   }
   .make-spans(@prefix, (@n - 1));
 }
@@ -12,8 +32,7 @@
   @width: (@n * @grid-column-unit);
 
   .span-@{n}-@{prefix} {
-    flex: 0 0 @width;
-    max-width: @width;
+    #grid.span(@n);
   }
   .make-spans(@prefix, (@n - 1));
 }
@@ -21,13 +40,13 @@
 .make-offsets (@prefix, @n) when (@n >= 0) and (@prefix = xs) {
   .offset-@{n}-@{prefix},
   .offset-@{n} {
-    margin-left: (@n * @grid-column-unit) !important;
+    #grid.offset(@n);
   }
   .make-offsets(@prefix, (@n - 1));
 }
 .make-offsets (@prefix, @n) when (@n >= 0) and not (@prefix = xs) {
   .offset-@{n}-@{prefix} {
-    margin-left: (@n * @grid-column-unit) !important;
+    #grid.offset(@n);
   }
   .make-offsets(@prefix, (@n - 1));
 }

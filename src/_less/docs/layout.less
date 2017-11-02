@@ -1,6 +1,7 @@
 @orange: #ff9933;
 @dark-orange: #805020;
 @deep-orange: #1A1006; //#402810
+@deep-purple: hsl(270, 63%, 14%);
 
 html {
   height: 100%;
@@ -20,13 +21,14 @@ body {
     order: 2;
   }
   &__nav {
-    background-color: @deep-orange;
-    color: @gray-40;
+    background-color: @deep-purple;
+    color: @gray-30;
     flex-shrink: 0;
     width: 15rem;
     order: 1;
   }
 
+  // TODO: needed?
   &__sidebar {
     background-color: @gray-10;
   }
@@ -60,7 +62,7 @@ body {
     padding: @vpad @rpad @vpad 0; // left set below
 
     &:hover {
-      background-color: @dark-orange;
+      background-color: @gray-60;
       cursor: pointer;
       color: white;
     }
@@ -87,7 +89,7 @@ body {
     }
 
     &:hover {
-      background-color: @dark-orange;
+      background-color: @gray-60;
       color: white;
     }
   }

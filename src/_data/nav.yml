@@ -8,7 +8,7 @@ components:
   #Checkbox: checkbox
   #Code: code
   #Dropdown: dropdown
-  #Form: form
+  Form: form
   #Grid: grid
   Icon: icon
   #List: list

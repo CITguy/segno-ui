@@ -9,8 +9,7 @@
 
 // Arranges Horizontally
 .dsRow {
-  display: flex;
-  flex-wrap: wrap;
+  #grid.row;
 
   &:only-child {
     flex-grow: 1;
@@ -20,9 +19,7 @@
 
 // Arranges Vertically
 .dsCol {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+  #grid.col;
 }
 
 // applies vertical/horizontal gutters
@@ -48,28 +45,31 @@
 }
 
 @media (min-width: @grid-break-palm) {
-  .make-grid(sm);
   .hide-xs { display: unset; }
+  .make-grid(sm);
 }
 
 @media (min-width: @grid-break-lap) {
-  .make-grid(md);
   .hide-sm { display: unset; }
+  .make-grid(md);
 }
 
 @media (min-width: @grid-break-desk) {
-  .make-grid(lg);
   .hide-md { display: unset; }
+  .make-grid(lg);
 }
 
 @media (min-width: @grid-break-wall) {
-  .make-grid(xl);
   .hide-lg { display: unset; }
+  .make-grid(xl);
 }
 
 // TODO: REFACTOR
 .dsContainer {
-  padding: 1em;
-  height: 100%;
-  width: 100%;
+  padding: @grid-gutter-size;
+
+  &:only-child {
+    height: 100%;
+    width: 100%;
+  }
 }

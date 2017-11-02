@@ -32,7 +32,9 @@
   </ds-reveal>
 {% endmacro %}
 
-<a href="/" class="brand">SegnoUI</a>
+<a href="/" class="brand">
+  <img src="images/logo-with-title.svg" alt="logo" />
+</a>
 {% for category,items in data.nav %}
   {{ navSection(category, items) }}
 {% endfor %}
