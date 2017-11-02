@@ -4,21 +4,20 @@ title: Spinner
 {% extends 'component.njk' %}
 {% block content %}
 
-<section id="vue-spinnerDemo">
+<section>
   <h2 class="dsSectionHeading" id="demo">Demo</h2>
 
-  <p>
-    <label>
-      <input type="checkbox" v-model="paused" />
-      Pause
-    </label>
-  </p>
-  <div class="demo">
+  <div class="demo" id="vue-spinnerDemo">
     <ds-spinner
       :paused="paused"
       @pause="paused = false"
-      @start="paused = true"
-    ></ds-spinner>
+      @start="paused = true"></ds-spinner>
+    <p>
+      <label>
+        <input type="checkbox" v-model="paused" />
+        Pause
+      </label>
+    </p>
   </div>
   {% code 'html' %}
     <!-- Running spinner -->

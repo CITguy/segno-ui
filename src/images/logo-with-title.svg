@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 133 32">
+  <defs>
+    <path id="logo-with-title-a" d="M24.8 16l2.942 1.471v7.704L16.03 31.031 4.32 25.175v-7.704L7.262 16 4.32 14.529V6.825L16.03.969l11.712 5.856v7.704L24.799 16zm-8.77-4.384l5.073-2.536-5.072-2.536-5.072 2.536 5.072 2.536zm0 13.84l5.073-2.536-5.072-2.536-5.072 2.536 5.072 2.536zM8.579 22.92l3.194-1.597-6.388-3.194v6.388l10.647 5.323 10.646-5.323V18.13L8.578 9.08l7.453-3.725 7.452 3.726-3.194 1.597 6.388 3.194V7.483L16.031 2.16 5.384 7.483v6.388l18.1 9.05-7.453 3.725-7.453-3.726z"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <mask id="logo-with-title-b" fill="#fff">
+      <use xlink:href="#logo-with-title-a"/>
+    </mask>
+    <use fill="#FFF" fill-rule="nonzero" xlink:href="#logo-with-title-a"/>
+    <g fill="#FF9F40" mask="url(#logo-with-title-b)">
+      <path d="M0 0h32v32H0z"/>
+    </g>
+    <text fill="#FFF" font-family="HelveticaNeue-Thin, Helvetica Neue" font-size="24" font-weight="300" letter-spacing="3">
+      <tspan x="36" y="25">SEGN</tspan> <tspan x="110.616" y="25">O</tspan>
+    </text>
+  </g>
+</svg>
