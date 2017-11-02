@@ -73,11 +73,13 @@
 window.addEventListener('WebComponentsReady', function () {
     // Import Class Definition
     var DsIcon = __webpack_require__(1);
-    var DsReveal = __webpack_require__(63);
-    var DsSpinner = __webpack_require__(66);
+    var DsInlineError = __webpack_require__(63);
+    var DsReveal = __webpack_require__(65);
+    var DsSpinner = __webpack_require__(68);
 
     // Register Custom Element
     customElements.define(DsIcon.is, DsIcon);
+    customElements.define(DsInlineError.is, DsInlineError);
     customElements.define(DsReveal.is, DsReveal);
     customElements.define(DsSpinner.is, DsSpinner);
 });
@@ -622,10 +624,65 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var tagName = 'ds-inline-error';
+
+var template = document.createElement('template');
+template.innerHTML = '' + __webpack_require__(64);
+
+var DsInlineError = function (_HTMLElement) {
+    _inherits(DsInlineError, _HTMLElement);
+
+    _createClass(DsInlineError, null, [{
+        key: 'is',
+        get: function get() {
+            return tagName;
+        }
+    }]);
+
+    function DsInlineError() {
+        _classCallCheck(this, DsInlineError);
+
+        var _this = _possibleConstructorReturn(this, (DsInlineError.__proto__ || Object.getPrototypeOf(DsInlineError)).call(this));
+
+        _this.attachShadow({ mode: 'open' });
+        if (window.ShadyCSS) {
+            ShadyCSS.prepareTemplate(template, tagName);
+            ShadyCSS.styleElement(_this);
+        }
+        _this.shadowRoot.appendChild(template.content.cloneNode(true));
+        return _this;
+    }
+
+    return DsInlineError;
+}(HTMLElement);
+
+module.exports = DsInlineError;
+
+/***/ }),
+/* 64 */
+/***/ (function(module, exports) {
+
+module.exports = "<ds-icon type=\"exclamation-circle\" alt=\"Error\"></ds-icon>\n<slot></slot>\n"
+
+/***/ }),
+/* 65 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 var tagName = 'ds-reveal';
 
 var template = document.createElement('template');
-template.innerHTML = '\n  <style>' + __webpack_require__(64) + '</style>\n  ' + __webpack_require__(65) + '\n';
+template.innerHTML = '\n  <style>' + __webpack_require__(66) + '</style>\n  ' + __webpack_require__(67) + '\n';
 
 var DsReveal = function (_HTMLElement) {
     _inherits(DsReveal, _HTMLElement);
@@ -700,19 +757,19 @@ var DsReveal = function (_HTMLElement) {
 module.exports = DsReveal;
 
 /***/ }),
-/* 64 */
+/* 66 */
 /***/ (function(module, exports) {
 
 module.exports = ":host{display:block}:host([open])>#body{display:block}#summary{background-color:transparent;border:none;color:inherit;font-size:1em;margin:0;padding:0;text-align:left;width:100%}#body,#summary:empty{display:none}"
 
 /***/ }),
-/* 65 */
+/* 67 */
 /***/ (function(module, exports) {
 
 module.exports = "<button id=\"summary\" aria-expanded=\"false\">\n  <slot name=\"summary\"></slot>\n</button>\n<div id=\"body\">\n  <slot></slot>\n</div>\n\n"
 
 /***/ }),
-/* 66 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -729,7 +786,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var tagName = 'ds-spinner';
 
 var template = document.createElement('template');
-template.innerHTML = '<style>' + __webpack_require__(67) + '</style>';
+template.innerHTML = '<style>' + __webpack_require__(69) + '</style>';
 
 var DsSpinner = function (_HTMLElement) {
     _inherits(DsSpinner, _HTMLElement);
@@ -781,7 +838,7 @@ var DsSpinner = function (_HTMLElement) {
 module.exports = DsSpinner;
 
 /***/ }),
-/* 67 */
+/* 69 */
 /***/ (function(module, exports) {
 
 module.exports = ":host{animation:spin .8s linear infinite;animation-play-state:running;border-color:transparent transparent currentColor currentColor;border-radius:1em;border-style:solid;border-width:1px;display:inline-block;height:1em;width:1em}:host([paused]){animation-play-state:paused}:host([hidden]){display:none}@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}"

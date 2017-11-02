@@ -4,6 +4,15 @@
   - As font size increases/decreases (zoom %), more/less room is available,
     so breakpoints behave more like larger/smaller screens
 */
+#grid .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+#grid .col {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
 html {
   box-sizing: border-box;
 }
@@ -360,6 +369,9 @@ sup {
   }
 }
 @media (min-width: 40em) {
+  .hide-xs {
+    display: unset;
+  }
   .span-12-sm {
     flex: 0 0 100%;
     max-width: 100%;
@@ -486,11 +498,11 @@ sup {
   .hide-sm {
     display: none;
   }
-  .hide-xs {
-    display: unset;
-  }
 }
 @media (min-width: 64em) {
+  .hide-sm {
+    display: unset;
+  }
   .span-12-md {
     flex: 0 0 100%;
     max-width: 100%;
@@ -617,11 +629,11 @@ sup {
   .hide-md {
     display: none;
   }
-  .hide-sm {
-    display: unset;
-  }
 }
 @media (min-width: 75em) {
+  .hide-md {
+    display: unset;
+  }
   .span-12-lg {
     flex: 0 0 100%;
     max-width: 100%;
@@ -748,11 +760,11 @@ sup {
   .hide-lg {
     display: none;
   }
-  .hide-md {
-    display: unset;
-  }
 }
 @media (min-width: 90em) {
+  .hide-lg {
+    display: unset;
+  }
   .span-12-xl {
     flex: 0 0 100%;
     max-width: 100%;
@@ -879,12 +891,11 @@ sup {
   .hide-xl {
     display: none;
   }
-  .hide-lg {
-    display: unset;
-  }
 }
 .dsContainer {
-  padding: 1em;
+  padding: 1rem;
+}
+.dsContainer:only-child {
   height: 100%;
   width: 100%;
 }
@@ -967,4 +978,10 @@ ds-spinner {
 }
 .text-justify {
   text-align: justify;
+}
+hr {
+  margin: 0.5rem 0;
+  border-style: solid;
+  border-color: #cccccc;
+  border-width: 1px 0 0;
 }
