@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Form - SegnoUI</title>
+  <title>Inline Error - SegnoUI</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="/">
@@ -9,6 +9,7 @@
   <link rel="shortcut icon" href="images/favicon.png">
 
   <link rel="stylesheet" href="segno-ui.css">
+  <link rel="stylesheet" href="segno-ui-grid.css">
   <link rel="stylesheet" href="docs.css">
 </head>
 <body class="dsApp" id="top">
@@ -17,11 +18,11 @@
   <div class="dsRow">
     <div class="dsCol span-12-xs span-9-md order-2-xs order-1-md">
       <div class="dsContainer">
-        <h1 class="dsPageHeading">Form</h1>
+        <h1 class="dsPageHeading">Inline Error</h1>
 
 
 <section>
-  <h2 class="dsSectionHeading" id="inline-error">Inline Error</h2>
+  <h2 class="dsSectionHeading" id="demo">Demo</h2>
   <div class="demo">
     <ds-inline-error>This is an error message.</ds-inline-error>
   </div>
@@ -78,7 +79,7 @@
         <section>
           <p>
             <ds-icon type="calendar"></ds-icon>
-            <b>Last Updated:</b> 2017-11-02
+            <b>Last Updated:</b> 2017-11-05
           </p>
         </section>
       </div>
@@ -88,7 +89,7 @@
         <aside class="article-toc" role="navigation">
           
         
-            <a href="#inline-error">Inline Error</a>
+            <a href="#demo">Demo</a>
         
         <hr />
         <a class="top-link" href="#top">Back to Top</a>
@@ -100,45 +101,61 @@
     </main>
     <nav class="dsApp__nav">
 
+
 <a href="/" class="brand">
   <img src="images/logo-with-title.svg" alt="logo" />
 </a>
-  
-  <ds-reveal open>
-    <header slot="summary">
-      <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
-      Components
-    </header>
+      
+  <a href="grid" >
+    Grid
+    <span class="you-are-here">
+      <ds-icon type="arrow-right"></ds-icon>
+    </span>
+  </a>
 
-        <a href="components/form"
-class="current"         >
-           <span class="you-are-here">
-             <ds-icon type="map-marker"></ds-icon>
-           </span>
-           Form
-        </a>
-        <a href="components/icon"
-         >
-           <span class="you-are-here">
-             <ds-icon type="map-marker"></ds-icon>
-           </span>
-           Icon
-        </a>
-        <a href="components/reveal"
-         >
-           <span class="you-are-here">
-             <ds-icon type="map-marker"></ds-icon>
-           </span>
-           Reveal
-        </a>
-        <a href="components/spinner"
-         >
-           <span class="you-are-here">
-             <ds-icon type="map-marker"></ds-icon>
-           </span>
-           Spinner
-        </a>
-  </ds-reveal>
+
+  
+
+
+    <ds-reveal open>
+      <header slot="summary">
+        <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
+        Components
+      </header>
+
+          
+  <a href="components/icon" >
+    Icon
+    <span class="you-are-here">
+      <ds-icon type="arrow-right"></ds-icon>
+    </span>
+  </a>
+
+          
+  <a href="components/inline-error" class="current">
+    Inline Error
+    <span class="you-are-here">
+      <ds-icon type="arrow-right"></ds-icon>
+    </span>
+  </a>
+
+          
+  <a href="components/reveal" >
+    Reveal
+    <span class="you-are-here">
+      <ds-icon type="arrow-right"></ds-icon>
+    </span>
+  </a>
+
+          
+  <a href="components/spinner" >
+    Spinner
+    <span class="you-are-here">
+      <ds-icon type="arrow-right"></ds-icon>
+    </span>
+  </a>
+
+    </ds-reveal>
 
     </nav>
   </div>

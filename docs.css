@@ -4,32 +4,63 @@
   - As font size increases/decreases (zoom %), more/less room is available,
     so breakpoints behave more like larger/smaller screens
 */
-.color-gray10 {
-  color: #e6e6e6;
+html {
+  box-sizing: border-box;
 }
-.color-gray20 {
-  color: #cccccc;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
-.color-gray30 {
-  color: #b3b3b3;
+template {
+  display: none;
 }
-.color-gray40 {
-  color: #999999;
+svg:not(:root) {
+  overflow: hidden;
 }
-.color-gray50 {
-  color: #808080;
+textarea {
+  overflow: auto;
 }
-.color-gray60 {
-  color: #666666;
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
 }
-.color-gray70 {
-  color: #4d4d4d;
+button,
+select {
+  text-transform: none;
 }
-.color-gray80 {
-  color: #333333;
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
 }
-.color-gray90 {
-  color: #1a1a1a;
+fieldset {
+  padding: 0;
+  margin: 0;
+}
+legend {
+  color: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1;
+}
+/*
+  When programmatically focusing an element,
+  it should not recieve a visual focus outline.
+*/
+[tabindex="-1"] {
+  outline: none;
 }
 html {
   height: 100%;
@@ -37,6 +68,205 @@ html {
 body {
   height: 100%;
   background-color: #f2f2f2;
+}
+hr {
+  margin: 0.5rem 0;
+  border-style: solid;
+  border-color: #cccccc;
+  border-width: 1px 0 0;
+}
+section + section {
+  margin-top: 3rem;
+}
+/*
+  Many block-level elements should inherit background-color
+  from their parent block
+
+  - excludes self-closing elements (hr)
+*/
+address,
+article,
+aside,
+blockquote,
+canvas,
+dd,
+div,
+dl,
+dt,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+li,
+main,
+nav,
+ol,
+output,
+p,
+pre,
+section,
+table,
+tfoot,
+ul,
+video {
+  background-color: inherit;
+}
+/*
+  Many inline elements should have transparent background
+
+  - excludes form controls (input, button, textarea)
+  - excludes elements with built-in bg (kbd, mark)
+  - excludes self-closing elements (br)
+*/
+a,
+abbr,
+acronym,
+b,
+bdo,
+big,
+cite,
+code,
+dfn,
+em,
+i,
+img,
+label,
+map,
+q,
+samp,
+script,
+small,
+span,
+strong,
+sub,
+sup,
+time,
+tt,
+var {
+  background-color: transparent;
+}
+kbd {
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: 700;
+  padding: 0;
+}
+pre,
+code {
+  font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace;
+}
+code {
+  background-color: inherit;
+  border-radius: 0;
+  font-size: 0.75rem;
+  font-weight: 300;
+  padding: 0;
+}
+pre {
+  background-color: #e6e6e6;
+  border: 1px solid #1a1a1a;
+  box-shadow: inset 0.25rem 0 0 #1a1a1a;
+  color: #0d0d0d;
+  font-size: 0.75rem;
+  font-weight: 400;
+  margin: 0;
+  overflow-x: auto;
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
+pre code {
+  display: block;
+  font-weight: inherit;
+  text-shadow: 0;
+  white-space: pre;
+}
+html {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  line-height: 1.25;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 0.5rem;
+}
+* + h1,
+* + h2,
+* + h3,
+* + h4,
+* + h5,
+* + h6 {
+  margin-top: 2rem;
+}
+ol,
+ul {
+  margin: 0 0 1rem;
+  padding-left: 2rem;
+}
+ol ol,
+ul ol,
+ol ul,
+ul ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+li {
+  margin: 0 0 0.25rem;
+}
+dd {
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+}
+/* LINKS */
+a {
+  background-color: transparent;
+}
+small {
+  font-size: 0.75em;
+}
+sub,
+sup {
+  font-size: 0.5em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+.demo {
+  background-color: white;
+  border: 1px solid #b3b3b3;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  box-shadow: 0 4px 6px -2px #b3b3b3;
 }
 .dsApp__stage {
   display: flex;
@@ -47,7 +277,7 @@ body {
   order: 2;
 }
 .dsApp__nav {
-  background-color: #240d3a;
+  background-color: black;
   color: #b3b3b3;
   flex-shrink: 0;
   width: 15rem;
@@ -59,22 +289,9 @@ body {
 .dsApp__nav {
   letter-spacing: 1px;
 }
-.dsApp__nav .you-are-here {
-  visibility: hidden;
-  color: #ff9933;
-  display: inline-block;
-  height: 1em;
-  width: 1em;
-}
-.dsApp__nav .you-are-here ds-icon {
-  transform: rotateZ(-90deg);
-}
-.dsApp__nav ds-icon {
-  vertical-align: -2px;
-}
 .dsApp__nav header {
   color: inherit;
-  padding: 0.5rem 0.5rem 0.5rem 0;
+  padding: 0.5rem 0.75rem 0.5rem 0;
 }
 .dsApp__nav header:hover {
   background-color: #666666;
@@ -88,12 +305,12 @@ body {
 .dsApp__nav a {
   color: inherit;
   display: block;
-  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  padding: 0.5rem 0.75rem 0.5rem 1rem;
   text-decoration: none;
 }
 .dsApp__nav a.current {
-  background-color: transparent;
-  color: white;
+  background-color: #333333;
+  color: #ffd54f;
 }
 .dsApp__nav a.current .you-are-here {
   visibility: visible;
@@ -106,9 +323,34 @@ body {
 .dsApp__nav ds-reveal[open] > header .toggle-icon {
   transform: scaleY(-1);
 }
-.dsApp__nav ds-reveal header,
-.dsApp__nav ds-reveal a {
+.dsApp__nav ds-reveal header {
   padding-left: 1rem;
+}
+.dsApp__nav ds-reveal a {
+  padding-left: 2rem;
+}
+.dsApp__nav .brand {
+  text-align: center;
+  padding: 1em 0;
+}
+.dsApp__nav .brand img {
+  height: 2em;
+}
+.dsApp__nav .you-are-here {
+  visibility: hidden;
+  display: inline-block;
+  float: right;
+}
+.post-it {
+  background-color: #f2f20d;
+  border: 1px solid #e5e5b4;
+  /* slightly darker yellow */
+  box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.25);
+  max-width: 23em;
+  padding: 0.5em 1em;
+}
+.post-it__icon {
+  margin-right: 0.5em;
 }
 .article-toc {
   display: block;
@@ -127,16 +369,68 @@ body {
 .top-link {
   font-size: 0.875rem;
 }
-.post-it {
-  background-color: #f2f20d;
-  border: 1px solid #e5e5b4;
-  /* slightly darker yellow */
-  box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.25);
-  max-width: 23em;
-  padding: 0.5em 1em;
+.dsPageHeading {
+  /* system thin, 40/60 */
+  color: #333333;
+  font-size: 40px;
+  font-weight: 100;
+  line-height: 1.5;
+  text-shadow: 1px 1px 0 #cccccc;
 }
-.post-it__icon {
-  margin-right: 0.5em;
+.dsSectionHeading {
+  /* system thin, 36/54 */
+  color: #333333;
+  font-size: 36px;
+  font-weight: 100;
+  line-height: 1.5;
+  text-shadow: 1px 1px 0 #d9d9d9;
+}
+.dsSubSectionHeading {
+  /* system light, 32/48 */
+  color: #333333;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+.dsContainerHeading {
+  /* system regular, 28/42 */
+  color: #333333;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.dsSubContainerHeading {
+  /* system medium, 24/36 */
+  color: #333333;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.dsParagraphHeading {
+  /* system bold, 20/30 */
+  color: #333333;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.dsLabel {
+  /* system bold, 14/20 */
+  color: #666666;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.429;
+}
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-justify {
+  text-align: justify;
 }
 .icon-demo {
   display: flex;
@@ -148,13 +442,6 @@ body {
   width: 2em;
   margin-right: 0.5em;
 }
-.demo {
-  background-color: white;
-  border: 1px solid #b3b3b3;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  box-shadow: 0 4px 6px -2px #b3b3b3;
-}
 .theme-dark {
   background-color: #1a1a1a;
   color: white;
@@ -162,14 +449,4 @@ body {
 .theme-light {
   background-color: white;
   color: #1a1a1a;
-}
-section + section {
-  margin-top: 3rem;
-}
-.dsApp__nav .brand {
-  text-align: center;
-  padding: 1em 0;
-}
-.dsApp__nav .brand img {
-  height: 2em;
 }

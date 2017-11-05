@@ -247,7 +247,7 @@ module.exports = DsIcon;
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = ":host{background-color:inherit;color:inherit;display:inline-block;height:1em;vertical-align:-2px;width:1em}:host:empty{height:0;width:0}::slotted(svg){fill:currentColor;stroke:none}"
+module.exports = ":host{display:inline-block;height:1em;vertical-align:-2px;width:1em;background-color:inherit;color:inherit}::slotted(svg){fill:currentColor;stroke:none}"
 
 /***/ }),
 /* 3 */
@@ -841,7 +841,7 @@ module.exports = DsSpinner;
 /* 69 */
 /***/ (function(module, exports) {
 
-module.exports = ":host{animation:spin .8s linear infinite;animation-play-state:running;border-color:transparent transparent currentColor currentColor;border-radius:1em;border-style:solid;border-width:1px;display:inline-block;height:1em;width:1em}:host([paused]){animation-play-state:paused}:host([hidden]){display:none}@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}"
+module.exports = ":host{display:inline-block;height:1em;width:1em;animation:spin .8s linear infinite;animation-play-state:running;border-color:transparent transparent currentColor currentColor;border-radius:1em;border-style:solid;border-width:1px}:host([paused]){animation-play-state:paused}@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}"
 
 /***/ })
 /******/ ]);

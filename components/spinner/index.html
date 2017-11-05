@@ -9,6 +9,7 @@
   <link rel="shortcut icon" href="images/favicon.png">
 
   <link rel="stylesheet" href="segno-ui.css">
+  <link rel="stylesheet" href="segno-ui-grid.css">
   <link rel="stylesheet" href="docs.css">
 </head>
 <body class="dsApp" id="top">
@@ -134,45 +135,61 @@
     </main>
     <nav class="dsApp__nav">
 
+
 <a href="/" class="brand">
   <img src="images/logo-with-title.svg" alt="logo" />
 </a>
-  
-  <ds-reveal open>
-    <header slot="summary">
-      <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
-      Components
-    </header>
+      
+  <a href="grid" >
+    Grid
+    <span class="you-are-here">
+      <ds-icon type="arrow-right"></ds-icon>
+    </span>
+  </a>
 
-        <a href="components/form"
-         >
-           <span class="you-are-here">
-             <ds-icon type="map-marker"></ds-icon>
-           </span>
-           Form
-        </a>
-        <a href="components/icon"
-         >
-           <span class="you-are-here">
-             <ds-icon type="map-marker"></ds-icon>
-           </span>
-           Icon
-        </a>
-        <a href="components/reveal"
-         >
-           <span class="you-are-here">
-             <ds-icon type="map-marker"></ds-icon>
-           </span>
-           Reveal
-        </a>
-        <a href="components/spinner"
-class="current"         >
-           <span class="you-are-here">
-             <ds-icon type="map-marker"></ds-icon>
-           </span>
-           Spinner
-        </a>
-  </ds-reveal>
+
+  
+
+
+    <ds-reveal open>
+      <header slot="summary">
+        <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
+        Components
+      </header>
+
+          
+  <a href="components/icon" >
+    Icon
+    <span class="you-are-here">
+      <ds-icon type="arrow-right"></ds-icon>
+    </span>
+  </a>
+
+          
+  <a href="components/inline-error" >
+    Inline Error
+    <span class="you-are-here">
+      <ds-icon type="arrow-right"></ds-icon>
+    </span>
+  </a>
+
+          
+  <a href="components/reveal" >
+    Reveal
+    <span class="you-are-here">
+      <ds-icon type="arrow-right"></ds-icon>
+    </span>
+  </a>
+
+          
+  <a href="components/spinner" class="current">
+    Spinner
+    <span class="you-are-here">
+      <ds-icon type="arrow-right"></ds-icon>
+    </span>
+  </a>
+
+    </ds-reveal>
 
     </nav>
   </div>
