@@ -1,5 +1,8 @@
+@import (reference) 'vars';
+@import (reference) './ds-reveal';
+
 :host {
-  display: block;
+  &:extend(ds-reveal);
 
   &([open]) > #body {
     display: block;

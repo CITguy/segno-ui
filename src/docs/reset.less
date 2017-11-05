@@ -1,0 +1,21 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+@import 'reset/ie';
+@import 'reset/form';
+@import 'reset/typography';
+
+/*
+  When programmatically focusing an element,
+  it should not recieve a visual focus outline.
+*/
+[tabindex="-1"] {
+  outline: none;
+}

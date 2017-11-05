@@ -1,20 +1,17 @@
+@import (reference) './ds-spinner';
+
 :host {
+  &:extend(ds-spinner);
+
   animation: spin 0.8s linear infinite;
   animation-play-state: running;
   border-color: transparent transparent currentColor currentColor;
   border-radius: 1em;
   border-style: solid;
   border-width: 1px;
-  display: inline-block;
-  height: 1em;
-  width: 1em;
 
   &([paused]) {
     animation-play-state: paused;
-  }
-
-  &([hidden]) {
-    display: none;
   }
 }
 
