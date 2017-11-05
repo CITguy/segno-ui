@@ -9,4 +9,4 @@
     });
 })();
 
-import './components/spinner/spinner-docs.js';
+import './components/spinner/demo-spinner.js';

@@ -1,32 +1,5 @@
-// CONFIG
-@import 'vars';
+@import (reference) 'vars';
 
-// MIXINS
-@import 'grid/grid-mixins';
-
-// RESETS
-@import 'resets/box-sizing';
-@import 'form/form-reset';
-@import 'typography/typography-reset';
-
-// correct display in IE
-template {
-  display: none;
-}
-
-// BASE
-@import 'code/code';
-@import 'typography/typography-base';
-
-// COMPONENTS
-@import 'grid/grid';
-@import 'icon/icon';
-@import 'reveal/reveal';
-@import 'spinner/spinner';
-@import 'typography/typography';
-
-// HELPERS
-@import 'typography/typography-helpers';
-
-// OVERRIDES
-@import 'shame';
+@import 'icon/ds-icon';
+@import 'reveal/ds-reveal';
+@import 'spinner/ds-spinner';

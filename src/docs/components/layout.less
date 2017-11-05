@@ -3,25 +3,20 @@
 @deep-orange: #1A1006; //#402810
 @deep-purple: hsl(270, 63%, 14%);
 
-html {
-  height: 100%;
-}
-body {
-  height: 100%;
-  background-color: @gray-05;
-}
-
+// move to components
 .dsApp {
   &__stage {
     display: flex;
     min-height: 100vh;
   }
+
   &__content {
     flex-grow: 1;
     order: 2;
   }
+
   &__nav {
-    background-color: @deep-purple;
+    background-color: black;
     color: @gray-30;
     flex-shrink: 0;
     width: 15rem;
@@ -34,28 +29,12 @@ body {
   }
 }
 
+// move to components
 .dsApp__nav {
   letter-spacing: 1px;
   @vpad: 0.5rem; // TODO
-  @rpad: 0.5rem; // TODO
-
+  @rpad: 0.75rem; // TODO
   @indent-by: 1rem;
-
-  .you-are-here {
-    visibility: hidden;
-    color: @orange;
-    display: inline-block;
-    height: 1em;
-    width: 1em;
-
-    ds-icon {
-      transform: rotateZ(-90deg);
-    }
-  }
-
-  ds-icon {
-    vertical-align: -2px;
-  }
 
   header {
     color: inherit;
@@ -80,8 +59,8 @@ body {
     text-decoration: none;
 
     &.current {
-      background-color: transparent;
-      color: white;
+      background-color: @gray-80;
+      color: @amber-300;
 
       .you-are-here {
         visibility: visible;
@@ -104,10 +83,28 @@ body {
       }
     }
 
-    header,
-    a {
+    header {
       padding-left: 1rem;
     }
+
+    a {
+      padding-left: 2rem;
+    }
+  }
+
+  .brand {
+    text-align: center;
+    padding: 1em 0;
+
+    img {
+      height: 2em;
+    }
+  }
+
+  .you-are-here {
+    visibility: hidden;
+    display: inline-block;
+    float: right;
   }
 }
 

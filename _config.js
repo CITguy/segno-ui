@@ -33,12 +33,14 @@ CONFIG.site = {
 // Configuration for the LESS precompiler
 CONFIG.less = {
     paths: [
-        `${CONFIG.sourceDir}/_less`,
-        `${CONFIG.sourceDir}/components`
+        `${CONFIG.sourceDir}`,
+        `${CONFIG.sourceDir}/components`,
+        `${CONFIG.sourceDir}/docs`,
     ],
     files: [
-        `${CONFIG.sourceDir}/segno-ui.less`,
         `${CONFIG.sourceDir}/docs.less`,
+        `${CONFIG.sourceDir}/segno-ui-grid.less`,
+        `${CONFIG.sourceDir}/segno-ui.less`,
     ],
 };
 
@@ -59,7 +61,8 @@ CONFIG.docs = {
     files: [
         'index.html',
         'components/**/index.html',
-        'guides/**/index.html'
+        'guides/**/index.html',
+        'grid/**/index.html'
     ],
     // settings for deployment to github pages
     ghPages: {
@@ -74,6 +77,9 @@ CONFIG.docs = {
 // Files and directories to copy to publicDir
 // All paths are relative to {CONFIG.sourceDir}
 CONFIG.copy = {
+    files: [
+        'CNAME'
+    ],
     dirs: [
         'images',
         'vendor',
