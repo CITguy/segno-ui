@@ -16,9 +16,8 @@
   <div class="dsApp__stage">
     <main class="dsApp__content">
   <div class="dsRow">
-    <div class="dsCol span-12-xs span-9-md order-2-xs order-1-md">
-      <div class="dsContainer">
-        <h1 class="dsPageHeading">Reveal</h1>
+    <div class="dsContainer dsCol dsCol-12-xs dsCol-9-md dsOrder-2-xs dsOrder-1-md">
+      <h1 class="dsPageHeading">Reveal</h1>
 
 <section>
   <h2 class="dsSectionHeading" id="demo">Demo</h2>
@@ -41,29 +40,52 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">ds-reveal</span>&gt;</span>
 </code></pre></section>
 
-<section>
-  <h2 class="dsSectionHeading" id="attributes">Attributes</h2>
+      <section>
+        <h2 class="dsSectionHeading" id="attributes">Attributes</h2>
+        <p>
+          Attributes allow you to configure the component in a declarative manner.
+        </p>
   <dl>
-    <dt>open</dt>
-    <dd>Open, when present</dd>
+    <dt>open <small>(Boolean)</small></dt>
+    <dd>When present, contents are visible.</dd>
   </dl>
-</section>
+      </section>
 
-<section>
-  <h2 class="dsSectionHeading" id="properties">Properties</h2>
+      <section>
+        <h2 class="dsSectionHeading" id="properties">Properties</h2>
+        <p>
+          Properties allow you to configure the component in an imperative manner.
+        </p>
   <dl>
-    <dt>open <small>(Boolean [false])</small></dt>
-    <dd>Open, when true</dd>
+    <dt>
+      open <small>(Boolean [false])</small>
+    </dt>
+    <dd>
+      <ul>
+        <li>Set to <code>true</code> to open the Reveal</li>
+        <li>Set to <code>false</code> to close the Reveal</li>
+      </ul>
+    </dd>
   </dl>
-</section>
+      </section>
 
-        <!--
-        <section>
-          <h2 class="dsSectionHeading" id="compatibility">Compatibility</h2>
-<table>
+      <section>
+        <h2 class="dsSectionHeading" id="functions">Functions</h2>
+        <p>
+          Functions alllow you to trigger complex behavior in a component.
+        </p>
+          <p>
+            <ds-icon type="info-circle"></ds-icon>
+            This component does not have any exposed functions.
+          </p>
+      </section>
+
+      <section>
+        <h2 class="dsSectionHeading" id="compatibility">Compatibility</h2>
+
+<table class="dsTable table--compat">
   <thead>
     <tr>
-      <td></td>
       <th>IE11</th>
       <th>Edge</th>
       <th>Chrome</th>
@@ -73,61 +95,51 @@
   </thead>
   <tbody>
     <tr>
-      <th scope="row">Appearance</th>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">Behavior</th>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">Accessibility</th>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>
+      <ds-icon type="check"></ds-icon>
+</td>
+      <td>
+      <ds-icon type="check"></ds-icon>
+</td>
+      <td>
+      <ds-icon type="check"></ds-icon>
+</td>
+      <td>
+      <ds-icon type="check"></ds-icon>
+</td>
+      <td>
+      <ds-icon type="check"></ds-icon>
+</td>
     </tr>
   </tbody>
 </table>
-            
-        </section>
-        -->
-
-        <hr />
-
-        <section>
-          <p>
-            <ds-icon type="calendar"></ds-icon>
-            <b>Last Updated:</b> 2017-11-02
-          </p>
-        </section>
-      </div>
-    </div>
-    <div class="dsCol span-12-xs span-3-md order-1-xs order-2-md">
-      <div class="dsContainer">
-        <aside class="article-toc" role="navigation">
           
+      </section>
+
+      <hr />
+
+      <section>
+        <p>
+          <ds-icon type="calendar"></ds-icon>
+          <b>Last Updated:</b> 2017-11-07
+        </p>
+      </section>
+    </div>
+    <div class="dsContainer dsSidebar dsCol dsCol-12-xs dsCol-3-md dsOrder-1-xs dsOrder-2-md">
+      <h6 class="dsLabel">On this page:</h6>
+      <aside class="article-toc" role="navigation">
+        
         
             <a href="#demo">Demo</a>
         
-            <a href="#attributes">Attributes</a>
-        
-            <a href="#properties">Properties</a>
-        
+        <a href="#attributes">Attributes</a>
+        <a href="#properties">Properties</a>
+        <a href="#functions">Functions</a>
+        <a href="#compatibility">Compatibility</a>
         <hr />
         <a class="top-link" href="#top">Back to Top</a>
     
-        </aside>
-      </div>
+      </aside>
     </div>
   </div>
     </main>
@@ -137,15 +149,6 @@
 <a href="/" class="brand">
   <img src="images/logo-with-title.svg" alt="logo" />
 </a>
-      
-  <a href="grid" >
-    Grid
-    <span class="you-are-here">
-      <ds-icon type="arrow-right"></ds-icon>
-    </span>
-  </a>
-
-
   
 
 
@@ -154,6 +157,14 @@
         <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
         Components
       </header>
+
+          
+  <a href="components/grid" >
+    Grid
+    <span class="you-are-here">
+      <ds-icon type="arrow-right"></ds-icon>
+    </span>
+  </a>
 
           
   <a href="components/icon" >

@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Grid - SegnoUI</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/">
+
+  <link rel="shortcut icon" href="images/favicon.png">
+
+  <link rel="stylesheet" href="segno-ui.css">
+  <link rel="stylesheet" href="segno-ui-grid.css">
+  <link rel="stylesheet" href="docs.css">
+</head>
+<body class="dsApp" id="top">
+  <div class="dsApp__stage">
+    <main class="dsApp__content">
+  <div class="dsRow">
+    <div class="dsContainer dsCol dsCol-12-xs dsCol-9-md dsOrder-2-xs dsOrder-1-md">
+      <h1 class="dsPageHeading">Grid</h1>
+
+<p>
+  The Grid provides CSS classes using flexbox to arrange contents in a
+  single direction (vertically or horizontally).
+</p>
+
+<section><!-- Rows -->
+  <h2 class="dsSectionHeading" id="rows">Rows</h2>
+  <p>
+    Rows are containers that allow you to arrange contents horizontally
+    along the positive X-axis (left to right).
+  </p>
+
+  <div class="demo demo--grid">
+    <p>
+      Ranking the patterns should allow our technical debt to block the incremental
+      technical debt within the sprint review. Releasing the trends should allow
+      our retrospective to satify the extended metric behind the ScrumMaster. If we
+      pick up past the teams, we can get the many lifecycle management except the
+      XP requirement.
+    </p>
+
+    <div class="dsRow text-center">
+      <div class="dsCol"><p>Column 1 of 3</p></div>
+      <div class="dsCol"><p>Column 2 of 3</p></div>
+      <div class="dsCol"><p>Column 3 of 3</p></div>
+    </div>
+
+    <p>
+      Ranking the patterns should allow our technical debt to block the incremental
+      technical debt within the sprint review. Releasing the trends should allow
+      our retrospective to satify the extended metric behind the ScrumMaster. If we
+      pick up past the teams, we can get the many lifecycle management except the
+      XP requirement.
+    </p>
+  </div>
+<pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsRow"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Column 1 of 3<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Column 2 of 3<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Column 3 of 3<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre></section>
+
+<section><!-- Columns -->
+  <h2 class="dsSectionHeading" id="columns">Columns</h2>
+  <p>
+    Columns are containers that allow you to arrange contents vertically
+    along the positify Y-axis (top to bottom).
+  </p>
+  <ul>
+    <li>Columns share Row width equally among other Columns.</li>
+  </ul>
+
+  <div class="demo demo--grid text-center">
+    <div class="dsRow">
+      <div class="dsCol"><p>1/1</p></div>
+    </div>
+    <div class="dsRow">
+      <div class="dsCol"><p>1/2</p></div>
+      <div class="dsCol"><p>1/2</p></div>
+    </div>
+    <div class="dsRow">
+      <div class="dsCol"><p>1/3</p></div>
+      <div class="dsCol"><p>1/3</p></div>
+      <div class="dsCol"><p>1/3</p></div>
+    </div>
+  </div>
+<pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsRow"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>1/1<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsRow"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>1/2<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>1/2<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsRow"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>1/3<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>1/3<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>1/3<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></section>
+
+<section><!-- Column Spans -->
+  <h2 class="dsSectionHeading" id="column-spans">Column Spans</h2>
+  <p>
+    Column span modifiers will adjust the width of a Column container
+    to a predefined percentage of the Row width.
+  </p>
+
+  <p>
+    Start with the <code>.dsCol-{N}-xs</code> modifier (1 &le; N &le; 12)
+    to create columns that are a fraction of a 12-column row.
+  </p>
+  <p>
+    See <a href="#responsive-options">Responsive Options</a> below for more details.
+  </p>
+
+  <div class="demo demo--grid text-center">
+    <div class="dsRow">
+      <div class="dsCol dsCol-12-xs"><p>12</p></div>
+    </div>
+    <div class="dsRow">
+      <div class="dsCol dsCol-1-xs"><p>1</p></div>
+      <div class="dsCol dsCol-11-xs"><p>11</p></div>
+    </div>
+    <div class="dsRow">
+      <div class="dsCol dsCol-2-xs"><p>2</p></div>
+      <div class="dsCol dsCol-10-xs"><p>10</p></div>
+    </div>
+    <div class="dsRow">
+      <div class="dsCol dsCol-3-xs"><p>3</p></div>
+      <div class="dsCol dsCol-9-xs"><p>9</p></div>
+    </div>
+    <div class="dsRow">
+      <div class="dsCol dsCol-4-xs"><p>4</p></div>
+      <div class="dsCol dsCol-8-xs"><p>8</p></div>
+    </div>
+    <div class="dsRow">
+      <div class="dsCol dsCol-5-xs"><p>5</p></div>
+      <div class="dsCol dsCol-7-xs"><p>7</p></div>
+    </div>
+    <div class="dsRow">
+      <div class="dsCol dsCol-6-xs"><p>6</p></div>
+      <div class="dsCol dsCol-6-xs"><p>6</p></div>
+    </div>
+  </div>
+<pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsRow"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-12-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>12<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsRow"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-1-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-11-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>11<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsRow"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-2-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-10-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>10<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsRow"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-3-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-9-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>9<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsRow"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-4-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-8-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>8<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsRow"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-5-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>5<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-7-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>7<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsRow"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-6-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>6<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-6-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>6<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></section>
+
+<section><!-- Offsetting Columns -->
+  <h2 class="dsSectionHeading" id="offsetting-columns">Offsetting Columns</h2>
+  <p>
+    Start with the <code>.dsOffset-{N}-xs</code> class (1 &le; N &le; 11) to
+    offset your Column containers N columns to the right.
+  </p>
+  <p>
+    See <a href="#responsive-options">Responsive Options</a> below for more details.
+  </p>
+
+  <div class="demo demo--grid text-center">
+    <div class="dsRow">
+      <div class="dsCol dsCol-2-xs"><p>2</p></div>
+      <div class="dsCol dsCol-6-xs dsOffset-1-xs"><p>6</p></div>
+      <div class="dsCol dsCol-2-xs dsOffset-1-xs"><p>2</p></div>
+    </div>
+    <div class="dsRow">
+      <div class="dsCol dsCol-2-xs dsOffset-2-xs"><p>2</p></div>
+      <div class="dsCol dsCol-4-xs"><p>4</p></div>
+      <div class="dsCol dsCol-2-xs"><p>2</p></div>
+    </div>
+    <div class="dsRow">
+      <div class="dsCol dsCol-4-xs"><p>4</p></div>
+      <div class="dsCol dsCol-4-xs dsOffset-4-xs"><p>4</p></div>
+    </div>
+  </div>
+<pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsRow"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-2-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-6-xs dsOffset-1-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>6<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-2-xs dsOffset-1-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsRow"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-2-xs dsOffset-2-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-4-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-2-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsRow"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-4-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-4-xs dsOffset-4-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></section>
+
+<section><!-- Ordering Columns -->
+  <h2 class="dsSectionHeading" id="ordering-columns">Ordering Columns</h2>
+  <p>
+    Start with the <code>.dsOrder-{N}-xs</code> class (1 &le; N &le; 12) to reorder columns.
+  </p>
+  <p>
+    See <a href="#responsive-options">Responsive Options</a> below for more details.
+  </p>
+
+  <p>
+    The columns below are in DOM order of 2-4-1-3, but the <code>.#{N}</code>
+    classes reordered them in the correct numerical order.
+  </p>
+  <div class="demo demo--grid text-center">
+    <div class="dsRow">
+      <div class="dsCol dsOrder-2-xs"><p>#2</p></div>
+      <div class="dsCol dsOrder-4-xs"><p>#4</p></div>
+      <div class="dsCol dsOrder-1-xs"><p>#1</p></div>
+      <div class="dsCol dsOrder-3-xs"><p>#3</p></div>
+    </div>
+  </div>
+<pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsRow"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsOrder-2-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>#2<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsOrder-4-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>#4<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsOrder-1-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>#1<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsOrder-3-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>#3<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></section>
+
+<section><!-- Responsive -->
+  <h2 class="dsSectionHeading" id="responsive-options">Responsive Options</h2>
+  <p>
+    All column modifiers documented above support different breakpoint modifiers.
+  </p>
+  <p>
+    Each responsive class corresponds to the <em>minimum breakpoint</em>
+    needed to achieve the desired result. Larger breakpoints override smaller ones.
+  </p>
+
+  <table class="dsTable text-center">
+    <thead>
+      <tr>
+        <th colspan="3">CSS Class</th>
+        <th rowspan="2">Minimum Breakpoint</th>
+        <th rowspan="2">Overrides</th>
+        <th rowspan="2">Overridden By</th>
+      </tr>
+      <tr>
+        <th>Span</th>
+        <th>Offset</th>
+        <th>Order</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>.<i>dsCol</i>-{N}-<b>xs</b></code></td>
+        <td><code>.<i>dsOffset</i>-{N}-<b>xs</b></code></td>
+        <td><code>.<i>dsOrder</i>-{N}-<b>xs</b></code></td>
+        <td><code>0em (0px)</code></td>
+        <td><em>n/a</em></td>
+        <td>All below</td>
+      </tr>
+      <tr>
+        <td><code>.<i>dsCol</i>-{N}-<b>sm</b></code></td>
+        <td><code>.<i>dsOffset</i>-{N}-<b>sm</b></code></td>
+        <td><code>.<i>dsOrder</i>-{N}-<b>sm</b></code></td>
+        <td><code>40em (~640px)</code></td>
+        <td>All above</td>
+        <td>All below</td>
+      </tr>
+      <tr>
+        <td><code>.<i>dsCol</i>-{N}-<b>md</b></code></td>
+        <td><code>.<i>dsOffset</i>-{N}-<b>md</b></code></td>
+        <td><code>.<i>dsOrder</i>-{N}-<b>md</b></code></td>
+        <td><code>64em (~1024px)</code></td>
+        <td>All above</td>
+        <td>All below</td>
+      </tr>
+      <tr>
+        <td><code>.<i>dsCol</i>-{N}-<b>lg</b></code></td>
+        <td><code>.<i>dsOffset</i>-{N}-<b>lg</b></code></td>
+        <td><code>.<i>dsOrder</i>-{N}-<b>lg</b></code></td>
+        <td><code>75em (~1200px)</code></td>
+        <td>All above</td>
+        <td>All below</td>
+      </tr>
+      <tr>
+        <td><code>.<i>dsCol</i>-{N}-<b>xl</b></code></td>
+        <td><code>.<i>dsOffset</i>-{N}-<b>xl</b></code></td>
+        <td><code>.<i>dsOrder</i>-{N}-<b>xl</b></code></td>
+        <td><code>90em (~1440px)</code></td>
+        <td>All below</td>
+        <td><em>n/a</em></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="demo demo--grid text-center">
+    <div class="dsRow">
+      <div class="demoCol dsCol dsCol-12-xs dsCol-4-sm dsCol-3-md dsCol-2-lg dsCol-1-xl"><p></p></div>
+      <div class="demoCol dsCol dsCol-6-xs  dsCol-4-sm dsCol-6-md dsCol-8-lg dsCol-10-xl"><p></p></div>
+      <div class="demoCol dsCol dsCol-6-xs  dsCol-4-sm dsCol-3-md dsCol-2-lg dsCol-1-xl"><p></p></div>
+    </div>
+    <div class="dsRow">
+      <div class="demoCol dsCol dsCol-12-xs dsCol-4-sm dsCol-3-md dsCol-2-lg  dsCol-1-xl"><p></p></div>
+      <div class="demoCol dsCol dsCol-12-xs dsCol-8-sm dsCol-9-md dsCol-10-lg dsCol-11-xl"><p></p></div>
+    </div>
+    <div class="dsRow">
+      <div class="demoCol dsCol dsCol-12-xs dsCol-8-sm dsCol-6-md dsCol-4-lg dsCol-3-xl"><p></p></div>
+      <div class="demoCol dsCol dsCol-12-xs dsCol-4-sm dsCol-6-md dsCol-8-lg dsCol-9-xl"><p></p></div>
+    </div>
+  </div>
+<pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsRow"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"demoCol dsCol dsCol-12-xs dsCol-4-sm dsCol-3-md dsCol-2-lg dsCol-1-xl"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"demoCol dsCol dsCol-6-xs  dsCol-4-sm dsCol-6-md dsCol-8-lg dsCol-10-xl"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"demoCol dsCol dsCol-6-xs  dsCol-4-sm dsCol-3-md dsCol-2-lg dsCol-1-xl"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsRow"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"demoCol dsCol dsCol-12-xs dsCol-4-sm dsCol-3-md dsCol-2-lg  dsCol-1-xl"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"demoCol dsCol dsCol-12-xs dsCol-8-sm dsCol-9-md dsCol-10-lg dsCol-11-xl"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsRow"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"demoCol dsCol dsCol-12-xs dsCol-8-sm dsCol-6-md dsCol-4-lg dsCol-3-xl"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"demoCol dsCol dsCol-12-xs dsCol-4-sm dsCol-6-md dsCol-8-lg dsCol-9-xl"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></section>
+
+<section><!-- Wrapping -->
+  <h2 class="dsSectionHeading" id="column-wrapping">Column Wrapping</h2>
+  <p>
+    Column containers will wrap to a new Row if the column count exceeds 12 or
+    if there's not enough room for a column on the same row.  Both column span
+    and column offset contribute toward the total column count.
+  </p>
+
+  <p>
+    The following Columns should self-arrange into 2 columns on extra small screens,
+    3 columns on small screens, 4 columns on medium screens, and 6 columns on larger screens.
+  </p>
+
+  <div class="demo demo--grid text-center">
+    <div class="dsRow">
+      <div class="dsCol dsCol-6-xs dsCol-4-sm dsCol-3-md dsCol-2-lg"><p>01 - January</p></div>
+      <div class="dsCol dsCol-6-xs dsCol-4-sm dsCol-3-md dsCol-2-lg"><p>02 - February</p></div>
+      <div class="dsCol dsCol-6-xs dsCol-4-sm dsCol-3-md dsCol-2-lg"><p>03 - March</p></div>
+      <div class="dsCol dsCol-6-xs dsCol-4-sm dsCol-3-md dsCol-2-lg"><p>04 - April</p></div>
+      <div class="dsCol dsCol-6-xs dsCol-4-sm dsCol-3-md dsCol-2-lg"><p>05 - May</p></div>
+      <div class="dsCol dsCol-6-xs dsCol-4-sm dsCol-3-md dsCol-2-lg"><p>06 - June</p></div>
+      <div class="dsCol dsCol-6-xs dsCol-4-sm dsCol-3-md dsCol-2-lg"><p>07 - July</p></div>
+      <div class="dsCol dsCol-6-xs dsCol-4-sm dsCol-3-md dsCol-2-lg"><p>08 - August</p></div>
+      <div class="dsCol dsCol-6-xs dsCol-4-sm dsCol-3-md dsCol-2-lg"><p>09 - September</p></div>
+      <div class="dsCol dsCol-6-xs dsCol-4-sm dsCol-3-md dsCol-2-lg"><p>10 - October</p></div>
+      <div class="dsCol dsCol-6-xs dsCol-4-sm dsCol-3-md dsCol-2-lg"><p>11 - November</p></div>
+      <div class="dsCol dsCol-6-xs dsCol-4-sm dsCol-3-md dsCol-2-lg"><p>12 - December</p></div>
+    </div>
+  </div>
+<pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsRow"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-6-xs dsCol-4-sm dsCol-3-md dsCol-2-lg"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>01 - January<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-6-xs dsCol-4-sm dsCol-3-md dsCol-2-lg"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>02 - February<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-6-xs dsCol-4-sm dsCol-3-md dsCol-2-lg"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>03 - March<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-6-xs dsCol-4-sm dsCol-3-md dsCol-2-lg"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>04 - April<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-6-xs dsCol-4-sm dsCol-3-md dsCol-2-lg"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>05 - May<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-6-xs dsCol-4-sm dsCol-3-md dsCol-2-lg"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>06 - June<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-6-xs dsCol-4-sm dsCol-3-md dsCol-2-lg"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>07 - July<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-6-xs dsCol-4-sm dsCol-3-md dsCol-2-lg"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>08 - August<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-6-xs dsCol-4-sm dsCol-3-md dsCol-2-lg"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>09 - September<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-6-xs dsCol-4-sm dsCol-3-md dsCol-2-lg"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>10 - October<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-6-xs dsCol-4-sm dsCol-3-md dsCol-2-lg"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>11 - November<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-6-xs dsCol-4-sm dsCol-3-md dsCol-2-lg"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>12 - December<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></section>
+
+<section><!-- Nesting -->
+  <h2 class="dsSectionHeading" id="nesting-containers">Nesting Containers</h2>
+  <p>
+    You can alternate nesting Row and Column containers within each other.
+  </p>
+  <p>
+    <b>Warning:</b> Do not apply both Row and Column container classes to the same element.
+  </p>
+
+  <div class="demo demo--grid text-center">
+    <div class="dsRow">
+      <div class="dsCol">
+        <p>12</p>
+        <div class="dsRow">
+          <div class="dsCol dsCol-6-xs">
+            <p>6</p>
+            <div class="dsRow">
+              <div class="dsCol dsCol-4-xs"><p>4</p></div>
+              <div class="dsCol dsCol-8-xs"><p>8</p></div>
+            </div>
+          </div>
+          <div class="dsCol dsCol-6-xs">
+            <p>6</p>
+            <div class="dsRow">
+              <div class="dsCol dsCol-3-xs"><p>3</p></div>
+              <div class="dsCol dsCol-9-xs"><p>9</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsRow"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>12<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsRow"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-6-xs"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>6<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsRow"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-4-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-8-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>8<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-6-xs"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>6<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsRow"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-3-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsCol dsCol-9-xs"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>9<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></section>
+
+      <section>
+        <h2 class="dsSectionHeading" id="attributes">Attributes</h2>
+        <p>
+          Attributes allow you to configure the component in a declarative manner.
+        </p>
+          <p>
+            <ds-icon type="info-circle"></ds-icon>
+            This component does not have any configurable attributes.
+          </p>
+      </section>
+
+      <section>
+        <h2 class="dsSectionHeading" id="properties">Properties</h2>
+        <p>
+          Properties allow you to configure the component in an imperative manner.
+        </p>
+          <p>
+            <ds-icon type="info-circle"></ds-icon>
+            This component does not have any exposed properties.
+          </p>
+      </section>
+
+      <section>
+        <h2 class="dsSectionHeading" id="functions">Functions</h2>
+        <p>
+          Functions alllow you to trigger complex behavior in a component.
+        </p>
+          <p>
+            <ds-icon type="info-circle"></ds-icon>
+            This component does not have any exposed functions.
+          </p>
+      </section>
+
+      <section>
+        <h2 class="dsSectionHeading" id="compatibility">Compatibility</h2>
+
+<table class="dsTable table--compat">
+  <thead>
+    <tr>
+      <th>IE11</th>
+      <th>Edge</th>
+      <th>Chrome</th>
+      <th>Safari</th>
+      <th>Firefox</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+      <ds-icon type="check"></ds-icon>
+</td>
+      <td>
+      <ds-icon type="check"></ds-icon>
+</td>
+      <td>
+      <ds-icon type="check"></ds-icon>
+</td>
+      <td>
+      <ds-icon type="check"></ds-icon>
+</td>
+      <td>
+      <ds-icon type="check"></ds-icon>
+</td>
+    </tr>
+  </tbody>
+</table>
+          
+      </section>
+
+      <hr />
+
+      <section>
+        <p>
+          <ds-icon type="calendar"></ds-icon>
+          <b>Last Updated:</b> 2017-11-07
+        </p>
+      </section>
+    </div>
+    <div class="dsContainer dsSidebar dsCol dsCol-12-xs dsCol-3-md dsOrder-1-xs dsOrder-2-md">
+      <h6 class="dsLabel">On this page:</h6>
+      <aside class="article-toc" role="navigation">
+        
+        
+            <a href="#rows">Rows</a>
+        
+            <a href="#columns">Columns</a>
+        
+            <a href="#column-spans">Column Spans</a>
+        
+            <a href="#offsetting-columns">Offsetting Columns</a>
+        
+            <a href="#ordering-columns">Ordering Columns</a>
+        
+            <a href="#responsive-options">Responsive Options</a>
+        
+            <a href="#column-wrapping">Column Wrapping</a>
+        
+            <a href="#nesting-containers">Nesting Containers</a>
+        
+        <a href="#attributes">Attributes</a>
+        <a href="#properties">Properties</a>
+        <a href="#functions">Functions</a>
+        <a href="#compatibility">Compatibility</a>
+        <hr />
+        <a class="top-link" href="#top">Back to Top</a>
+    
+      </aside>
+    </div>
+  </div>
+    </main>
+    <nav class="dsApp__nav">
+
+
+<a href="/" class="brand">
+  <img src="images/logo-with-title.svg" alt="logo" />
+</a>
+  
+
+
+    <ds-reveal open>
+      <header slot="summary">
+        <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
+        Components
+      </header>
+
+          
+  <a href="components/grid" class="current">
+    Grid
+    <span class="you-are-here">
+      <ds-icon type="arrow-right"></ds-icon>
+    </span>
+  </a>
+
+          
+  <a href="components/icon" >
+    Icon
+    <span class="you-are-here">
+      <ds-icon type="arrow-right"></ds-icon>
+    </span>
+  </a>
+
+          
+  <a href="components/inline-error" >
+    Inline Error
+    <span class="you-are-here">
+      <ds-icon type="arrow-right"></ds-icon>
+    </span>
+  </a>
+
+          
+  <a href="components/reveal" >
+    Reveal
+    <span class="you-are-here">
+      <ds-icon type="arrow-right"></ds-icon>
+    </span>
+  </a>
+
+          
+  <a href="components/spinner" >
+    Spinner
+    <span class="you-are-here">
+      <ds-icon type="arrow-right"></ds-icon>
+    </span>
+  </a>
+
+    </ds-reveal>
+
+    </nav>
+  </div>
+
+<span id="ce-es5-adapter">
+  <script>
+    if (!window.customElements) {
+      var elAdapter = document.querySelector('#ce-es5-adapter');
+      elAdapter.parentElement.removeChild(elAdapter);
+    }
+  </script>
+  <!--
+    The adapter should only be loaded for browsers that
+    natively support custom elements.
+  -->
+  <script src="vendor/custom-elements-es5-adapter.js"></script>
+</span>
+
+<span id="bottom">
+  <!-- polyfills inserted after loader (if needed) -->
+  <script src="vendor/webcomponents-loader.js"></script>
+</span>
+
+<!-- SegnoUI Custom Elements -->
+<script src="segno-ui.js"></script>
+
+<!-- Documentation from here on -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/vue@2.4.4/dist/vue.js"></script>
+<script src="docs.js"></script>
+</body>
+</html>

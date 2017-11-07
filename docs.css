@@ -75,85 +75,6 @@ hr {
   border-color: #cccccc;
   border-width: 1px 0 0;
 }
-section + section {
-  margin-top: 3rem;
-}
-/*
-  Many block-level elements should inherit background-color
-  from their parent block
-
-  - excludes self-closing elements (hr)
-*/
-address,
-article,
-aside,
-blockquote,
-canvas,
-dd,
-div,
-dl,
-dt,
-fieldset,
-figcaption,
-figure,
-footer,
-form,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-header,
-hgroup,
-li,
-main,
-nav,
-ol,
-output,
-p,
-pre,
-section,
-table,
-tfoot,
-ul,
-video {
-  background-color: inherit;
-}
-/*
-  Many inline elements should have transparent background
-
-  - excludes form controls (input, button, textarea)
-  - excludes elements with built-in bg (kbd, mark)
-  - excludes self-closing elements (br)
-*/
-a,
-abbr,
-acronym,
-b,
-bdo,
-big,
-cite,
-code,
-dfn,
-em,
-i,
-img,
-label,
-map,
-q,
-samp,
-script,
-small,
-span,
-strong,
-sub,
-sup,
-time,
-tt,
-var {
-  background-color: transparent;
-}
 kbd {
   background: none;
   border-radius: 0;
@@ -166,7 +87,7 @@ kbd {
 }
 pre,
 code {
-  font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace;
+  font-family: "SF Mono", "Menlo", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace;
 }
 code {
   background-color: inherit;
@@ -237,10 +158,6 @@ ul ul {
 li {
   margin: 0 0 0.25rem;
 }
-dd {
-  margin-bottom: 1rem;
-  margin-left: 2rem;
-}
 /* LINKS */
 a {
   background-color: transparent;
@@ -264,9 +181,11 @@ sup {
 .demo {
   background-color: white;
   border: 1px solid #b3b3b3;
-  margin-bottom: 1rem;
   padding: 1rem;
   box-shadow: 0 4px 6px -2px #b3b3b3;
+}
+.demo + pre {
+  margin-top: 1rem;
 }
 .dsApp__stage {
   display: flex;
@@ -283,7 +202,7 @@ sup {
   width: 15rem;
   order: 1;
 }
-.dsApp__sidebar {
+.dsSidebar {
   background-color: #e6e6e6;
 }
 .dsApp__nav {
@@ -291,7 +210,7 @@ sup {
 }
 .dsApp__nav header {
   color: inherit;
-  padding: 0.5rem 0.75rem 0.5rem 0;
+  padding: 0.5rem 0.75rem;
 }
 .dsApp__nav header:hover {
   background-color: #666666;
@@ -305,7 +224,7 @@ sup {
 .dsApp__nav a {
   color: inherit;
   display: block;
-  padding: 0.5rem 0.75rem 0.5rem 1rem;
+  padding: 0.5rem 0.75rem;
   text-decoration: none;
 }
 .dsApp__nav a.current {
@@ -324,10 +243,10 @@ sup {
   transform: scaleY(-1);
 }
 .dsApp__nav ds-reveal header {
-  padding-left: 1rem;
+  padding-left: 0.75rem;
 }
 .dsApp__nav ds-reveal a {
-  padding-left: 2rem;
+  padding-left: 1.5rem;
 }
 .dsApp__nav .brand {
   text-align: center;
@@ -351,6 +270,29 @@ sup {
 }
 .post-it__icon {
   margin-right: 0.5em;
+}
+.dsTable {
+  border-collapse: separate;
+  border-color: #b3b3b3;
+  border-spacing: 0;
+  border-style: solid;
+  border-width: 1px 0 0 1px;
+  margin-bottom: 1em;
+  width: 100%;
+}
+.dsTable thead {
+  background-color: #d9d9d9;
+}
+.dsTable td,
+.dsTable th {
+  padding: 0.5rem 0.75rem;
+  border-style: solid;
+  border-color: #b3b3b3;
+  border-width: 0 1px 1px 0;
+}
+.table--compat td,
+.table--compat th {
+  text-align: center;
 }
 .article-toc {
   display: block;
@@ -376,6 +318,7 @@ sup {
   font-weight: 100;
   line-height: 1.5;
   text-shadow: 1px 1px 0 #cccccc;
+  text-transform: uppercase;
 }
 .dsSectionHeading {
   /* system thin, 36/54 */
@@ -431,6 +374,232 @@ sup {
 }
 .text-justify {
   text-align: justify;
+}
+.demo--grid > .dsContainer {
+  border: 1px dotted #999999;
+}
+.demo--grid .dsRow + .dsRow {
+  margin-top: 1rem;
+}
+.demo--grid .dsCol {
+  background-color: rgba(38, 198, 218, 0.25);
+  border: 1px solid transparent;
+  font-size: 0.75rem;
+}
+.demo--grid .dsCol:hover {
+  background-color: rgba(255, 213, 79, 0.25);
+  border-color: black;
+}
+.demo--grid .dsCol > p {
+  margin: 1em 0;
+}
+@media (min-width: 0em) {
+  #querySize::before {
+    content: 'Size: XS';
+    display: block;
+    font-variant: small-caps;
+    font-weight: bold;
+  }
+  .demoCol.dsCol-12-xs p::before {
+    content: '12-xs';
+  }
+  .demoCol.dsCol-11-xs p::before {
+    content: '11-xs';
+  }
+  .demoCol.dsCol-10-xs p::before {
+    content: '10-xs';
+  }
+  .demoCol.dsCol-9-xs p::before {
+    content: '9-xs';
+  }
+  .demoCol.dsCol-8-xs p::before {
+    content: '8-xs';
+  }
+  .demoCol.dsCol-7-xs p::before {
+    content: '7-xs';
+  }
+  .demoCol.dsCol-6-xs p::before {
+    content: '6-xs';
+  }
+  .demoCol.dsCol-5-xs p::before {
+    content: '5-xs';
+  }
+  .demoCol.dsCol-4-xs p::before {
+    content: '4-xs';
+  }
+  .demoCol.dsCol-3-xs p::before {
+    content: '3-xs';
+  }
+  .demoCol.dsCol-2-xs p::before {
+    content: '2-xs';
+  }
+  .demoCol.dsCol-1-xs p::before {
+    content: '1-xs';
+  }
+}
+@media (min-width: 40em) {
+  #querySize::before {
+    content: 'Size: SM';
+  }
+  .demoCol.dsCol-12-sm p::before {
+    content: '12-sm';
+  }
+  .demoCol.dsCol-11-sm p::before {
+    content: '11-sm';
+  }
+  .demoCol.dsCol-10-sm p::before {
+    content: '10-sm';
+  }
+  .demoCol.dsCol-9-sm p::before {
+    content: '9-sm';
+  }
+  .demoCol.dsCol-8-sm p::before {
+    content: '8-sm';
+  }
+  .demoCol.dsCol-7-sm p::before {
+    content: '7-sm';
+  }
+  .demoCol.dsCol-6-sm p::before {
+    content: '6-sm';
+  }
+  .demoCol.dsCol-5-sm p::before {
+    content: '5-sm';
+  }
+  .demoCol.dsCol-4-sm p::before {
+    content: '4-sm';
+  }
+  .demoCol.dsCol-3-sm p::before {
+    content: '3-sm';
+  }
+  .demoCol.dsCol-2-sm p::before {
+    content: '2-sm';
+  }
+  .demoCol.dsCol-1-sm p::before {
+    content: '1-sm';
+  }
+}
+@media (min-width: 64em) {
+  #querySize::before {
+    content: 'Size: MD';
+  }
+  .demoCol.dsCol-12-md p::before {
+    content: '12-md';
+  }
+  .demoCol.dsCol-11-md p::before {
+    content: '11-md';
+  }
+  .demoCol.dsCol-10-md p::before {
+    content: '10-md';
+  }
+  .demoCol.dsCol-9-md p::before {
+    content: '9-md';
+  }
+  .demoCol.dsCol-8-md p::before {
+    content: '8-md';
+  }
+  .demoCol.dsCol-7-md p::before {
+    content: '7-md';
+  }
+  .demoCol.dsCol-6-md p::before {
+    content: '6-md';
+  }
+  .demoCol.dsCol-5-md p::before {
+    content: '5-md';
+  }
+  .demoCol.dsCol-4-md p::before {
+    content: '4-md';
+  }
+  .demoCol.dsCol-3-md p::before {
+    content: '3-md';
+  }
+  .demoCol.dsCol-2-md p::before {
+    content: '2-md';
+  }
+  .demoCol.dsCol-1-md p::before {
+    content: '1-md';
+  }
+}
+@media (min-width: 75em) {
+  #querySize::before {
+    content: 'Size: LG';
+  }
+  .demoCol.dsCol-12-lg p::before {
+    content: '12-lg';
+  }
+  .demoCol.dsCol-11-lg p::before {
+    content: '11-lg';
+  }
+  .demoCol.dsCol-10-lg p::before {
+    content: '10-lg';
+  }
+  .demoCol.dsCol-9-lg p::before {
+    content: '9-lg';
+  }
+  .demoCol.dsCol-8-lg p::before {
+    content: '8-lg';
+  }
+  .demoCol.dsCol-7-lg p::before {
+    content: '7-lg';
+  }
+  .demoCol.dsCol-6-lg p::before {
+    content: '6-lg';
+  }
+  .demoCol.dsCol-5-lg p::before {
+    content: '5-lg';
+  }
+  .demoCol.dsCol-4-lg p::before {
+    content: '4-lg';
+  }
+  .demoCol.dsCol-3-lg p::before {
+    content: '3-lg';
+  }
+  .demoCol.dsCol-2-lg p::before {
+    content: '2-lg';
+  }
+  .demoCol.dsCol-1-lg p::before {
+    content: '1-lg';
+  }
+}
+@media (min-width: 90em) {
+  #querySize::before {
+    content: 'Size: XL';
+  }
+  .demoCol.dsCol-12-xl p::before {
+    content: '12-xl';
+  }
+  .demoCol.dsCol-11-xl p::before {
+    content: '11-xl';
+  }
+  .demoCol.dsCol-10-xl p::before {
+    content: '10-xl';
+  }
+  .demoCol.dsCol-9-xl p::before {
+    content: '9-xl';
+  }
+  .demoCol.dsCol-8-xl p::before {
+    content: '8-xl';
+  }
+  .demoCol.dsCol-7-xl p::before {
+    content: '7-xl';
+  }
+  .demoCol.dsCol-6-xl p::before {
+    content: '6-xl';
+  }
+  .demoCol.dsCol-5-xl p::before {
+    content: '5-xl';
+  }
+  .demoCol.dsCol-4-xl p::before {
+    content: '4-xl';
+  }
+  .demoCol.dsCol-3-xl p::before {
+    content: '3-xl';
+  }
+  .demoCol.dsCol-2-xl p::before {
+    content: '2-xl';
+  }
+  .demoCol.dsCol-1-xl p::before {
+    content: '1-xl';
+  }
 }
 .icon-demo {
   display: flex;
