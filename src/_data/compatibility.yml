@@ -1,0 +1,4 @@
+unknown: "Compatibility Unknown"
+broken: "Does not perform minimum functionality"
+degraded: "Degraded functionality"
+working: "Fully functional"

@@ -2,40 +2,74 @@
 
 {% block layout %}
   <div class="dsRow">
-    <div class="dsCol span-12-xs span-9-md order-2-xs order-1-md">
-      <div class="dsContainer">
-        <h1 class="dsPageHeading">{{ page.title }}</h1>
+    <div class="dsContainer dsCol dsCol-12-xs dsCol-9-md dsOrder-2-xs dsOrder-1-md">
+      <h1 class="dsPageHeading">{{ page.title }}</h1>
 
-        {% block content %}
-          {# page content goes here #}
-        {% endblock %}
+      {% block content %}
+        {# page content goes here #}
+      {% endblock %}
 
-        <!--
-        <section>
-          <h2 class="dsSectionHeading" id="compatibility">Compatibility</h2>
-          {% include 'partials/compat-table.njk' %}
-          {% block compatibility %}
-            {# reserve for additional compatibility notes #}
-          {% endblock %}
-        </section>
-        -->
-
-        <hr />
-
-        <section>
+      <section>
+        <h2 class="dsSectionHeading" id="attributes">Attributes</h2>
+        <p>
+          Attributes allow you to configure the component in a declarative manner.
+        </p>
+        {% block attributes %}
           <p>
-            <ds-icon type="calendar"></ds-icon>
-            <b>Last Updated:</b> {{ page.updated.format(site.dateFormat) }}
+            <ds-icon type="info-circle"></ds-icon>
+            This component does not have any configurable attributes.
           </p>
-        </section>
-      </div>
+        {% endblock %}
+      </section>
+
+      <section>
+        <h2 class="dsSectionHeading" id="properties">Properties</h2>
+        <p>
+          Properties allow you to configure the component in an imperative manner.
+        </p>
+        {% block properties %}
+          <p>
+            <ds-icon type="info-circle"></ds-icon>
+            This component does not have any exposed properties.
+          </p>
+        {% endblock %}
+      </section>
+
+      <section>
+        <h2 class="dsSectionHeading" id="functions">Functions</h2>
+        <p>
+          Functions alllow you to trigger complex behavior in a component.
+        </p>
+        {% block functions %}
+          <p>
+            <ds-icon type="info-circle"></ds-icon>
+            This component does not have any exposed functions.
+          </p>
+        {% endblock %}
+      </section>
+
+      <section>
+        <h2 class="dsSectionHeading" id="compatibility">Compatibility</h2>
+        {% include 'partials/compat-table.njk' %}
+        {% block compatibility %}
+          {# reserve for additional compatibility notes #}
+        {% endblock %}
+      </section>
+
+      <hr />
+
+      <section>
+        <p>
+          <ds-icon type="calendar"></ds-icon>
+          <b>Last Updated:</b> {{ page.updated.format(site.dateFormat) }}
+        </p>
+      </section>
     </div>
-    <div class="dsCol span-12-xs span-3-md order-1-xs order-2-md">
-      <div class="dsContainer">
-        <aside class="article-toc" role="navigation">
-          {{ page.raw | toc | safe }}
-        </aside>
-      </div>
+    <div class="dsContainer dsSidebar dsCol dsCol-12-xs dsCol-3-md dsOrder-1-xs dsOrder-2-md">
+      <h6 class="dsLabel">On this page:</h6>
+      <aside class="article-toc" role="navigation">
+        {{ page.raw | toc | safe }}
+      </aside>
     </div>
   </div>
 {% endblock %}

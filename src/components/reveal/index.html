@@ -1,5 +1,11 @@
 ---
 title: Reveal
+compatibility:
+  ie: working
+  edge: working
+  chrome: working
+  safari: working
+  firefox: working
 ---
 {% extends 'component.njk' %}
 {% block content %}
@@ -25,20 +31,25 @@ title: Reveal
     </ds-reveal>
   {% endcode %}
 </section>
+{% endblock %}
 
-<section>
-  <h2 class="dsSectionHeading" id="attributes">Attributes</h2>
+{% block attributes %}
   <dl>
-    <dt>open</dt>
-    <dd>Open, when present</dd>
+    <dt>open <small>(Boolean)</small></dt>
+    <dd>When present, contents are visible.</dd>
   </dl>
-</section>
+{% endblock %}
 
-<section>
-  <h2 class="dsSectionHeading" id="properties">Properties</h2>
+{% block properties %}
   <dl>
-    <dt>open <small>(Boolean [false])</small></dt>
-    <dd>Open, when true</dd>
+    <dt>
+      open <small>(Boolean [false])</small>
+    </dt>
+    <dd>
+      <ul>
+        <li>Set to <code>true</code> to open the Reveal</li>
+        <li>Set to <code>false</code> to close the Reveal</li>
+      </ul>
+    </dd>
   </dl>
-</section>
 {% endblock %}

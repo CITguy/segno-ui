@@ -1,6 +1,6 @@
 @orange: #ff9933;
 @dark-orange: #805020;
-@deep-orange: #1A1006; //#402810
+@deep-orange: #1a1006; //#402810
 @deep-purple: hsl(270, 63%, 14%);
 
 // move to components
@@ -22,23 +22,22 @@
     width: 15rem;
     order: 1;
   }
+}
 
-  // TODO: needed?
-  &__sidebar {
-    background-color: @gray-10;
-  }
+.dsSidebar {
+  background-color: @gray-10;
 }
 
 // move to components
 .dsApp__nav {
+  @vpad: 0.5rem;
+  @rpad: 0.75rem;
+
   letter-spacing: 1px;
-  @vpad: 0.5rem; // TODO
-  @rpad: 0.75rem; // TODO
-  @indent-by: 1rem;
 
   header {
     color: inherit;
-    padding: @vpad @rpad @vpad 0; // left set below
+    padding: @vpad @rpad;
 
     &:hover {
       background-color: @gray-60;
@@ -55,7 +54,7 @@
   a {
     color: inherit;
     display: block;
-    padding: @vpad @rpad @vpad 1rem;
+    padding: @vpad @rpad;
     text-decoration: none;
 
     &.current {
@@ -84,11 +83,11 @@
     }
 
     header {
-      padding-left: 1rem;
+      padding-left: @rpad;
     }
 
     a {
-      padding-left: 2rem;
+      padding-left: (2 * @rpad);
     }
   }
 

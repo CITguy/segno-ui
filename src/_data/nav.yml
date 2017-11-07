@@ -1,6 +1,5 @@
 #guides:
 #  Installing: install
-Grid: grid
 components:
   #Alert: alert
   #Badge: badge
@@ -9,7 +8,7 @@ components:
   #Checkbox: checkbox
   #Code: code
   #Dropdown: dropdown
-  #Grid: grid
+  Grid: grid
   Icon: icon
   Inline Error: inline-error
   #List: list

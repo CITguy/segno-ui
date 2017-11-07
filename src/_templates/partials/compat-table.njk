@@ -1,7 +1,24 @@
-<table>
+{% macro compat (key) %}
+  {% set val = page.compatibility[key] %}
+
+  {% if val %}
+    {% if  val === 'broken' %}
+      <ds-icon type="times"></ds-icon>
+    {% elif  val === 'degraded' %}
+      <ds-icon type="exclamation-triangle"></ds-icon>
+    {% elif  val === 'working' %}
+      <ds-icon type="check"></ds-icon>
+    {% else %}
+      <em>?</em>
+    {% endif %}
+  {% else %}
+    <em>?</em>
+  {% endif %}
+{% endmacro %}
+
+<table class="dsTable table--compat">
   <thead>
     <tr>
-      <td></td>
       <th>IE11</th>
       <th>Edge</th>
       <th>Chrome</th>
@@ -11,28 +28,11 @@
   </thead>
   <tbody>
     <tr>
-      <th scope="row">Appearance</th>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">Behavior</th>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">Accessibility</th>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>{{ compat('ie') }}</td>
+      <td>{{ compat('edge') }}</td>
+      <td>{{ compat('chrome') }}</td>
+      <td>{{ compat('safari') }}</td>
+      <td>{{ compat('firefox') }}</td>
     </tr>
   </tbody>
 </table>
