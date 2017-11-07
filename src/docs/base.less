@@ -14,69 +14,6 @@ hr {
   border-width: 1px 0 0;
 }
 
-section + section {
-  margin-top: 3rem;
-}
-
-/*
-  Many block-level elements should inherit background-color
-  from their parent block
-
-  - excludes self-closing elements (hr)
-*/
-address, article, aside,
-blockquote,
-canvas,
-dd, div, dl, dt,
-fieldset, figcaption, figure, footer, form,
-h1, h2, h3, h4, h5, h6, header, hgroup,
-li,
-main,
-nav,
-ol, output,
-p, pre,
-section,
-table, tfoot,
-ul,
-video {
-  background-color: inherit;
-}
-
-/*
-  Many inline elements should have transparent background
-
-  - excludes form controls (input, button, textarea)
-  - excludes elements with built-in bg (kbd, mark)
-  - excludes self-closing elements (br)
-*/
-a,
-abbr,
-acronym,
-b,
-bdo,
-big,
-cite,
-code,
-dfn,
-em,
-i,
-img,
-label,
-map,
-q,
-samp,
-script,
-small,
-span,
-strong,
-sub,
-sup,
-time,
-tt,
-var {
-  background-color: transparent;
-}
-
 @import 'base/code';
 @import 'base/typography';
 
