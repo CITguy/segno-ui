@@ -41,7 +41,7 @@
     "url": "git+https://github.com/SegnoUI/segno-ui.git"
   },
   "author": "Ryan Johnson <rhino.citguy@gmail.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "private": true,
   "bugs": {
     "url": "https://github.com/SegnoUI/segno-ui/issues"
