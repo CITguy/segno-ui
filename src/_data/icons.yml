@@ -16,13 +16,16 @@
 - caret-up
 - check
 - check-circle
+- check-circle-fill
 - clock
 - cog
 - download
 - envelope
 - exclamation
 - exclamation-circle
+- exclamation-circle-fill
 - exclamation-triangle
+- exclamation-triangle-fill
 - external-link
 - filter
 - folder
@@ -30,6 +33,7 @@
 - image
 - info
 - info-circle
+- info-circle-fill
 - key
 - link
 - map-marker
@@ -45,6 +49,9 @@
 - pencil
 - phone
 - plus
+- question
+- question-circle
+- question-circle-fill
 - redo
 - refresh
 - search
@@ -54,6 +61,7 @@
 - star
 - times
 - times-circle
+- times-circle-fill
 - trash
 - undo
 - upload
