@@ -1,3 +1,7 @@
+@import (reference) 'grid/mix-grid';
+
+@page-heading-height: 6rem;
+
 @orange: #ff9933;
 @dark-orange: #805020;
 @deep-orange: #1a1006; //#402810
@@ -25,6 +29,7 @@
 }
 
 .dsSidebar {
+  #space.container.lg;
   background-color: @gray-10;
 }
 
@@ -92,8 +97,11 @@
   }
 
   .brand {
-    text-align: center;
-    padding: 1em 0;
+    #grid.row;
+    #space.container.lg;
+    align-items: center;
+    justify-content: center;
+    min-height: @page-heading-height;
 
     img {
       height: 2em;
@@ -107,3 +115,32 @@
   }
 }
 
+.page-heading {
+    background-color: @gray-90;
+    color: white;
+    min-height: @page-heading-height;
+
+    .dsPageHeading {
+      line-height: 1;
+    }
+}
+
+.dsPage {
+  #grid.col;
+  min-height: 100vh;
+
+  &__body {
+    #space.container.lg;
+    flex-grow: 1;
+
+    &:first-child {
+      padding-top: 3rem;
+    }
+  }
+
+  &__foot {
+    #space.container.lg;
+    background-color: @gray-10;
+    flex-shrink: 0;
+  }
+}
