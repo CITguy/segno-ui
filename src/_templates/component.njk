@@ -1,71 +1,79 @@
 {% extends 'application.njk' %}
 
 {% block layout %}
-  <div class="dsRow">
-    <div class="dsContainer dsCol dsCol-12-xs dsCol-9-md dsOrder-2-xs dsOrder-1-md">
+  <div class="page-heading dsRow">
+    <div class="dsCol-12-xs dsCol-9-md dsContainer-lg">
       <h1 class="dsPageHeading">{{ page.title }}</h1>
+    </div>
+    <div class="dsCol-12-xs dsCol-3-md dsContainer-lg">
+      <!--
+      <button>View Source</button>
+      -->
+    </div>
+  </div>
+  <div class="dsRow">
+    <div class="dsPage dsCol-12-xs dsCol-9-md dsOrder-2-xs dsOrder-1-md">
+      <div class="dsPage__body">
+        {% block content %}
+          {# page content goes here #}
+        {% endblock %}
 
-      {% block content %}
-        {# page content goes here #}
-      {% endblock %}
-
-      <section>
-        <h2 class="dsSectionHeading" id="attributes">Attributes</h2>
-        <p>
-          Attributes allow you to configure the component in a declarative manner.
-        </p>
-        {% block attributes %}
+        <section>
+          <h2 class="dsSectionHeading" id="attributes">Attributes</h2>
           <p>
-            <ds-icon type="info-circle"></ds-icon>
-            This component does not have any configurable attributes.
+            Attributes allow you to configure the component in a declarative manner.
           </p>
-        {% endblock %}
-      </section>
+          {% block attributes %}
+            <p>
+              <ds-icon type="info-circle"></ds-icon>
+              This component does not have any configurable attributes.
+            </p>
+          {% endblock %}
+        </section>
 
-      <section>
-        <h2 class="dsSectionHeading" id="properties">Properties</h2>
-        <p>
-          Properties allow you to configure the component in an imperative manner.
-        </p>
-        {% block properties %}
+        <section>
+          <h2 class="dsSectionHeading" id="properties">Properties</h2>
           <p>
-            <ds-icon type="info-circle"></ds-icon>
-            This component does not have any exposed properties.
+            Properties allow you to configure the component in an imperative manner.
           </p>
-        {% endblock %}
-      </section>
+          {% block properties %}
+            <p>
+              <ds-icon type="info-circle"></ds-icon>
+              This component does not have any exposed properties.
+            </p>
+          {% endblock %}
+        </section>
 
-      <section>
-        <h2 class="dsSectionHeading" id="functions">Functions</h2>
-        <p>
-          Functions alllow you to trigger complex behavior in a component.
-        </p>
-        {% block functions %}
+        <section>
+          <h2 class="dsSectionHeading" id="functions">Functions</h2>
           <p>
-            <ds-icon type="info-circle"></ds-icon>
-            This component does not have any exposed functions.
+            Functions alllow you to trigger complex behavior in a component.
           </p>
-        {% endblock %}
-      </section>
+          {% block functions %}
+            <p>
+              <ds-icon type="info-circle"></ds-icon>
+              This component does not have any exposed functions.
+            </p>
+          {% endblock %}
+        </section>
 
-      <section>
-        <h2 class="dsSectionHeading" id="compatibility">Compatibility</h2>
-        {% include 'partials/compat-table.njk' %}
-        {% block compatibility %}
-          {# reserve for additional compatibility notes #}
-        {% endblock %}
-      </section>
+        <section>
+          <h2 class="dsSectionHeading" id="compatibility">Compatibility</h2>
+          {% include 'partials/compat-table.njk' %}
+          {% block compatibility %}
+            {# reserve for additional compatibility notes #}
+          {% endblock %}
+        </section>
+      </div>
 
-      <hr />
-
-      <section>
+      <footer class="dsPage__foot">
         <p>
           <ds-icon type="calendar"></ds-icon>
           <b>Last Updated:</b> {{ page.updated.format(site.dateFormat) }}
         </p>
-      </section>
+      </footer>
     </div>
-    <div class="dsContainer dsSidebar dsCol dsCol-12-xs dsCol-3-md dsOrder-1-xs dsOrder-2-md">
+    <div class="dsSidebar dsCol dsCol-12-xs dsCol-3-md dsOrder-1-xs dsOrder-2-md">
       <h6 class="dsLabel">On this page:</h6>
       <aside class="article-toc" role="navigation">
         {{ page.raw | toc | safe }}
