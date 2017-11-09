@@ -774,10 +774,10 @@
 .dsContainer-xl {
   padding: 2rem;
 }
-section {
-  margin: 0 0 2rem;
+section:not(:last-child) {
+  margin: 0 0 3.5rem;
 }
-p {
+p:not(:last-child) {
   margin: 0 0 1em;
 }
 dl {

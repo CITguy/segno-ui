@@ -60,18 +60,18 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 70);
+/******/ 	return __webpack_require__(__webpack_require__.s = 78);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 70:
+/***/ 78:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(71);
+__webpack_require__(79);
 
 (function () {
     var hashAnchors = document.querySelectorAll('[href^="#"]');
@@ -86,7 +86,7 @@ __webpack_require__(71);
 
 /***/ }),
 
-/***/ 71:
+/***/ 79:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
