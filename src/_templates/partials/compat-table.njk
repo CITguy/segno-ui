@@ -1,19 +1,20 @@
-{% macro compat (key) %}
-  {% set val = page.compatibility[key] %}
+{% macro compatCell (key) %}
+  {% set compat = page.compatibility[key] %}
 
-  {% if val %}
+  {% set val = compat or 'unknown' %}
+  {% set desc = data.compatibility[val] or 'unknown' %}
+
+  <td class="compat-{{val}}" title="{{ desc }}">
     {% if  val === 'broken' %}
       <ds-icon type="times"></ds-icon>
     {% elif  val === 'degraded' %}
-      <ds-icon type="exclamation-triangle"></ds-icon>
+      <ds-icon type="exclamation"></ds-icon>
     {% elif  val === 'working' %}
       <ds-icon type="check"></ds-icon>
     {% else %}
       <ds-icon type="question"></ds-icon>
     {% endif %}
-  {% else %}
-    <ds-icon type="question"></ds-icon>
-  {% endif %}
+  </td>
 {% endmacro %}
 
 <table class="dsTable table--compat">
@@ -28,11 +29,11 @@
   </thead>
   <tbody>
     <tr>
-      <td>{{ compat('ie') }}</td>
-      <td>{{ compat('edge') }}</td>
-      <td>{{ compat('chrome') }}</td>
-      <td>{{ compat('safari') }}</td>
-      <td>{{ compat('firefox') }}</td>
+      {{ compatCell('ie') }}
+      {{ compatCell('edge') }}
+      {{ compatCell('chrome') }}
+      {{ compatCell('safari') }}
+      {{ compatCell('firefox') }}
     </tr>
   </tbody>
 </table>

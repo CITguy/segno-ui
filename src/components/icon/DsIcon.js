@@ -102,6 +102,10 @@ class DsIcon extends HTMLElement {
     }
 
     connectedCallback() {
+        if (!this.hasAttribute('aria-hidden')) {
+            this.setAttribute('aria-hidden', 'true');
+        }
+
         this._render();
     }
 
