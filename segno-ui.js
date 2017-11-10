@@ -216,6 +216,10 @@ var DsIcon = function (_HTMLElement) {
     _createClass(DsIcon, [{
         key: 'connectedCallback',
         value: function connectedCallback() {
+            if (!this.hasAttribute('aria-hidden')) {
+                this.setAttribute('aria-hidden', 'true');
+            }
+
             this._render();
         }
     }, {
@@ -255,7 +259,7 @@ module.exports = DsIcon;
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = ":host{display:inline-block;height:1em;vertical-align:-2px;width:1em;background-color:inherit;color:inherit}::slotted(svg){fill:currentColor;stroke:none}"
+module.exports = ":host{display:inline-block;flex-shrink:0;height:1em;vertical-align:-2px;width:1em;background-color:inherit;color:inherit}::slotted(svg){fill:currentColor;stroke:none}"
 
 /***/ }),
 /* 3 */

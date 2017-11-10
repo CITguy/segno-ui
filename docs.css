@@ -194,6 +194,7 @@ sup {
 .dsApp__content {
   flex-grow: 1;
   order: 2;
+  min-height: 100vh;
 }
 .dsApp__nav {
   background-color: black;
@@ -291,6 +292,7 @@ sup {
   padding: 1.5rem;
   background-color: #e6e6e6;
   flex-shrink: 0;
+  color: #666666;
 }
 .post-it {
   background-color: #f2f20d;
@@ -304,6 +306,7 @@ sup {
   margin-right: 0.5em;
 }
 .dsTable {
+  background-color: white;
   border-collapse: separate;
   border-color: #b3b3b3;
   border-spacing: 0;
@@ -322,9 +325,25 @@ sup {
   border-color: #b3b3b3;
   border-width: 0 1px 1px 0;
 }
+.table--compat {
+  table-layout: fixed;
+}
 .table--compat td,
 .table--compat th {
   text-align: center;
+}
+.table--compat .compat-unknown {
+  background-color: #e6e6e6;
+}
+.table--compat .compat-broken {
+  background-color: #e64c4c;
+  color: white;
+}
+.table--compat .compat-degraded {
+  background-color: #f2f20d;
+}
+.table--compat .compat-working {
+  background-color: #63e963;
 }
 .article-toc {
   display: block;
