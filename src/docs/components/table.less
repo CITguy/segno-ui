@@ -21,7 +21,28 @@
 }
 
 .table--compat {
+  table-layout: fixed;
+
   td, th {
     text-align: center;
+  }
+
+  .compat {
+    &-unknown {
+      background-color: @gray-10;
+    }
+
+    &-broken {
+      background-color: @accent-danger;
+      color: white;
+    }
+
+    &-degraded {
+      background-color: @accent-warning;
+    }
+
+    &-working {
+      background-color: @accent-success;
+    }
   }
 }
