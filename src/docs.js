@@ -10,3 +10,4 @@
 })();
 
 import './components/spinner/demo-spinner.js';
+import './components/progress/demo-progress.js';

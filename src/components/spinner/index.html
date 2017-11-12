@@ -9,26 +9,31 @@ compatibility:
 ---
 {% extends 'component.njk' %}
 {% block content %}
+  <section>
+    <h2 class="dsSectionHeading" id="usage">Usage</h2>
+    {% code 'html' %}
+      <ds-spinner [paused]></ds-spinner>
+    {% endcode %}
+  </section>
 
-<section>
-  <h2 class="dsSectionHeading" id="demo">Demo</h2>
-
-  <div class="demo" id="vue-spinnerDemo">
-    <p>
-      <ds-spinner
-        :paused="paused"
-        @pause="paused = false"
-        @start="paused = true"></ds-spinner>
-    </p>
-    <label>
-      <input type="checkbox" v-model="paused" />
-      Pause
-    </label>
-  </div>
-  {% code 'html' %}
-    <ds-spinner></ds-spinner>
-  {% endcode %}
-</section>
+  <section>
+    <h2 class="dsSectionHeading" id="demo">Demo</h2>
+    <div class="demo" id="vue-spinnerDemo">
+      <p>
+        <ds-spinner
+          :paused="paused"
+          @pause="paused = false"
+          @start="paused = true"></ds-spinner>
+      </p>
+      <label>
+        <input type="checkbox" v-model="paused" />
+        Pause
+      </label>
+    </div>
+    {% code 'html' %}
+      <ds-spinner></ds-spinner>
+    {% endcode %}
+  </section>
 {% endblock %}
 
 {% block attributes %}

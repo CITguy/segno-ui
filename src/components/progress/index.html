@@ -1,0 +1,85 @@
+---
+title: Progress
+compatibility:
+  ie: working
+  edge: working
+  chrome: working
+  safari: working
+  firefox: working
+---
+{% extends 'component.njk' %}
+{% block content %}
+  <section>
+    <h2 class="dsSectionHeading" id="usage">Usage</h2>
+    {% code 'html' %}
+      <ds-progress
+        [value="{Number}"]
+        [indeterminate]>
+      </ds-progress>
+    {% endcode %}
+  </section>
+
+  <section>
+    <h2 class="dsSectionHeading" id="demo">Demo</h2>
+    <div class="demo dsRow" id="vue-progressDemo">
+      <div class="dsCol dsCol-12-xs dsCol-6-md dsCol-4-xl">
+        <p>
+          <ds-progress
+            :value="pctComplete"
+            :indeterminate="indeterminate"
+          ></ds-progress>
+        </p>
+        <p>
+          <input type="checkbox" id="chkIndeterminate" v-model="indeterminate" />
+          <label for="chkIndeterminate">Indeterminate</label>
+        </p>
+        <p>
+          <label for="numPctComplete">Value:</label>
+          <input
+            id="numPctComplete"
+            type="range"
+            list="pctTickmarks"
+            :disabled="indeterminate"
+            min="0" max="100" step="1"
+            v-model="pctComplete" />
+
+          <datalist id="pctTickmarks">
+            <option value="0">
+            <option value="25">
+            <option value="50">
+            <option value="75">
+            <option value="100">
+          </datalist>
+        </p>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block attributes %}
+  <dl class="list--attrs">
+    <dt>value <small>(Number)</small></dt>
+    <dd>
+      Progress percentage (0-100)
+    </dd>
+
+    <dt>indeterminate <small>(Boolean)</small></dt>
+    <dd>
+      When present, set the element to an indeterminate state.
+    </dd>
+  </dl>
+{% endblock %}
+
+{% block properties %}
+  <dl class="list--props">
+    <dt>value <small>(Number)</small></dt>
+    <dd>
+      <small>(default: 0)</small> progress percentage (0-100)
+    </dd>
+
+    <dt>indeterminate <small>(Boolean)</small></dt>
+    <dd>
+      <small>(default: false)</small> When true, set the element to an indeterminate state.
+    </dd>
+  </dl>
+{% endblock %}

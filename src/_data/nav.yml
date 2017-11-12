@@ -16,7 +16,7 @@ components:
   #Navigation: navigation
   #Pagination: pagination
   #Popover: popover
-  #"Progress Bar": progressbar
+  Progress: progress
   Reveal: reveal
   Spinner: spinner
   #Table: table
