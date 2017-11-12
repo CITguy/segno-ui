@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Reveal - SegnoUI</title>
+  <title>Progress - SegnoUI</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="/">
@@ -17,7 +17,7 @@
     <main class="dsApp__content">
   <div class="page-heading dsRow">
     <div class="dsCol-12-xs dsCol-9-md dsContainer-lg">
-      <h1 class="dsPageHeading">Reveal</h1>
+      <h1 class="dsPageHeading">Progress</h1>
     </div>
     <div class="dsCol-12-xs dsCol-3-md dsContainer-lg">
       <!--
@@ -30,42 +30,63 @@
       <div class="dsPage__body">
   <section>
     <h2 class="dsSectionHeading" id="usage">Usage</h2>
-<pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">ds-reveal</span> [<span class="hljs-attr">open</span>]&gt;</span>
-  [<span class="hljs-tag">&lt;<span class="hljs-name">ANY</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"summary"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ANY</span>&gt;</span>]
-
-  <span class="hljs-comment">&lt;!-- details go here --&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">ds-reveal</span>&gt;</span>
+<pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">ds-progress</span>
+  [<span class="hljs-attr">value</span>=<span class="hljs-string">"{Number}"</span>]
+  [<span class="hljs-attr">indeterminate</span>]&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ds-progress</span>&gt;</span>
 </code></pre>  </section>
 
   <section>
     <h2 class="dsSectionHeading" id="demo">Demo</h2>
+    <div class="demo dsRow" id="vue-progressDemo">
+      <div class="dsCol dsCol-12-xs dsCol-6-md dsCol-4-xl">
+        <p>
+          <ds-progress
+            :value="pctComplete"
+            :indeterminate="indeterminate"
+          ></ds-progress>
+        </p>
+        <p>
+          <input type="checkbox" id="chkIndeterminate" v-model="indeterminate" />
+          <label for="chkIndeterminate">Indeterminate</label>
+        </p>
+        <p>
+          <label for="numPctComplete">Value:</label>
+          <input
+            id="numPctComplete"
+            type="range"
+            list="pctTickmarks"
+            :disabled="indeterminate"
+            min="0" max="100" step="1"
+            v-model="pctComplete" />
 
-    <div class="demo">
-      <p>Why'd the cookie cry?</p>
-      <ds-reveal>
-        <div slot="summary">
-          <small>Reveal answer</small>
-        </div>
-        Because his father was a wafer so long!
-      </ds-reveal>
+          <datalist id="pctTickmarks">
+            <option value="0">
+            <option value="25">
+            <option value="50">
+            <option value="75">
+            <option value="100">
+          </datalist>
+        </p>
+      </div>
     </div>
-<pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Why'd the cookie cry?<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">ds-reveal</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"summary"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>Reveal answer<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  ...
-<span class="hljs-tag">&lt;/<span class="hljs-name">ds-reveal</span>&gt;</span>
-</code></pre>  </section>
+  </section>
 
         <section>
           <h2 class="dsSectionHeading" id="attributes">Attributes</h2>
           <p>
             Attributes allow you to configure the component in a declarative manner.
           </p>
-  <dl>
-    <dt>open <small>(Boolean)</small></dt>
-    <dd>When present, contents are visible.</dd>
+  <dl class="list--attrs">
+    <dt>value <small>(Number)</small></dt>
+    <dd>
+      Progress percentage (0-100)
+    </dd>
+
+    <dt>indeterminate <small>(Boolean)</small></dt>
+    <dd>
+      When present, set the element to an indeterminate state.
+    </dd>
   </dl>
         </section>
 
@@ -74,15 +95,15 @@
           <p>
             Properties allow you to configure the component in an imperative manner.
           </p>
-  <dl>
-    <dt>
-      open <small>(Boolean [false])</small>
-    </dt>
+  <dl class="list--props">
+    <dt>value <small>(Number)</small></dt>
     <dd>
-      <ul>
-        <li>Set to <code>true</code> to open the Reveal</li>
-        <li>Set to <code>false</code> to close the Reveal</li>
-      </ul>
+      <small>(default: 0)</small> progress percentage (0-100)
+    </dd>
+
+    <dt>indeterminate <small>(Boolean)</small></dt>
+    <dd>
+      <small>(default: false)</small> When true, set the element to an indeterminate state.
     </dd>
   </dl>
         </section>
@@ -217,7 +238,7 @@
   </a>
 
           
-  <a href="components/progress" >
+  <a href="components/progress" class="current">
     Progress
     <span class="you-are-here">
       <ds-icon type="arrow-right"></ds-icon>
@@ -225,7 +246,7 @@
   </a>
 
           
-  <a href="components/reveal" class="current">
+  <a href="components/reveal" >
     Reveal
     <span class="you-are-here">
       <ds-icon type="arrow-right"></ds-icon>

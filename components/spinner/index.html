@@ -28,24 +28,27 @@
   <div class="dsRow">
     <div class="dsPage dsCol-12-xs dsCol-9-md dsOrder-2-xs dsOrder-1-md">
       <div class="dsPage__body">
+  <section>
+    <h2 class="dsSectionHeading" id="usage">Usage</h2>
+<pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">ds-spinner</span> [<span class="hljs-attr">paused</span>]&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ds-spinner</span>&gt;</span>
+</code></pre>  </section>
 
-<section>
-  <h2 class="dsSectionHeading" id="demo">Demo</h2>
-
-  <div class="demo" id="vue-spinnerDemo">
-    <p>
-      <ds-spinner
-        :paused="paused"
-        @pause="paused = false"
-        @start="paused = true"></ds-spinner>
-    </p>
-    <label>
-      <input type="checkbox" v-model="paused" />
-      Pause
-    </label>
-  </div>
+  <section>
+    <h2 class="dsSectionHeading" id="demo">Demo</h2>
+    <div class="demo" id="vue-spinnerDemo">
+      <p>
+        <ds-spinner
+          :paused="paused"
+          @pause="paused = false"
+          @start="paused = true"></ds-spinner>
+      </p>
+      <label>
+        <input type="checkbox" v-model="paused" />
+        Pause
+      </label>
+    </div>
 <pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">ds-spinner</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ds-spinner</span>&gt;</span>
-</code></pre></section>
+</code></pre>  </section>
 
         <section>
           <h2 class="dsSectionHeading" id="attributes">Attributes</h2>
@@ -135,7 +138,7 @@
       <footer class="dsPage__foot">
         <p>
           <ds-icon type="calendar"></ds-icon>
-          <b>Last Updated:</b> 2017-11-07
+          <b>Last Updated:</b> 2017-11-12
         </p>
       </footer>
     </div>
@@ -143,6 +146,8 @@
       <h6 class="dsLabel">On this page:</h6>
       <aside class="article-toc" role="navigation">
         
+        
+            <a href="#usage">Usage</a>
         
             <a href="#demo">Demo</a>
         
@@ -191,6 +196,14 @@
           
   <a href="components/inline-error" >
     Inline Error
+    <span class="you-are-here">
+      <ds-icon type="arrow-right"></ds-icon>
+    </span>
+  </a>
+
+          
+  <a href="components/progress" >
+    Progress
     <span class="you-are-here">
       <ds-icon type="arrow-right"></ds-icon>
     </span>

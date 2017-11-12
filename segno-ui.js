@@ -71,17 +71,11 @@
 
 
 window.addEventListener('WebComponentsReady', function () {
-    // Import Class Definition
-    var DsIcon = __webpack_require__(1);
-    var DsInlineError = __webpack_require__(71);
-    var DsReveal = __webpack_require__(73);
-    var DsSpinner = __webpack_require__(76);
-
-    // Register Custom Element
-    customElements.define(DsIcon.is, DsIcon);
-    customElements.define(DsInlineError.is, DsInlineError);
-    customElements.define(DsReveal.is, DsReveal);
-    customElements.define(DsSpinner.is, DsSpinner);
+    __webpack_require__(1).define();
+    __webpack_require__(71).define();
+    __webpack_require__(73).define();
+    __webpack_require__(75).define();
+    __webpack_require__(78).define();
 });
 
 /***/ }),
@@ -99,12 +93,12 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var tagName = 'ds-icon';
+var _tagName = 'ds-icon';
 
-var template = document.createElement('template');
-template.innerHTML = '<style>' + __webpack_require__(2) + '</style><slot></slot>';
+var _template = document.createElement('template');
+_template.innerHTML = '\n    <style>' + __webpack_require__(2) + '</style>\n    <slot></slot>\n';
 
-var icons = {
+var _icons = {
     'angle-down': __webpack_require__(3),
     'angle-left': __webpack_require__(4),
     'angle-right': __webpack_require__(5),
@@ -179,14 +173,9 @@ var DsIcon = function (_HTMLElement) {
     _inherits(DsIcon, _HTMLElement);
 
     _createClass(DsIcon, null, [{
-        key: 'is',
-        get: function get() {
-            return tagName;
-        }
-    }, {
         key: 'icons',
         get: function get() {
-            return icons;
+            return _icons;
         }
     }, {
         key: 'observedAttributes',
@@ -202,10 +191,10 @@ var DsIcon = function (_HTMLElement) {
 
         _this.attachShadow({ mode: 'open' });
         if (window.ShadyCSS) {
-            ShadyCSS.prepareTemplate(template, tagName);
+            ShadyCSS.prepareTemplate(_template, _tagName);
             ShadyCSS.styleElement(_this);
         }
-        _this.shadowRoot.appendChild(template.content.cloneNode(true));
+        _this.shadowRoot.appendChild(_template.content.cloneNode(true));
 
         if (type) {
             _this.type = type;
@@ -233,9 +222,9 @@ var DsIcon = function (_HTMLElement) {
             // erase previously injected markup
             this.innerHTML = '';
             // add new SVG markup
-            if (this.type in DsIcon.icons) {
+            if (this.type in _icons) {
                 var elSurrogate = document.createElement('div');
-                elSurrogate.innerHTML = DsIcon.icons[this.type];
+                elSurrogate.innerHTML = _icons[this.type];
                 this.appendChild(elSurrogate.firstElementChild);
             }
         } //_render()
@@ -251,9 +240,16 @@ var DsIcon = function (_HTMLElement) {
     }]);
 
     return DsIcon;
-}(HTMLElement); //DsIcon
+}(HTMLElement);
 
-module.exports = DsIcon;
+module.exports = {
+    define: function define() {
+        customElements.define(_tagName, DsIcon);
+    },
+    prototype: DsIcon,
+    tagName: _tagName,
+    template: _template
+};
 
 /***/ }),
 /* 2 */
@@ -676,28 +672,19 @@ module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\
 "use strict";
 
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var tagName = 'ds-inline-error';
+var _tagName = 'ds-inline-error';
 
-var template = document.createElement('template');
-template.innerHTML = '' + __webpack_require__(72);
+var _template = document.createElement('template');
+_template.innerHTML = '' + __webpack_require__(72);
 
 var DsInlineError = function (_HTMLElement) {
     _inherits(DsInlineError, _HTMLElement);
-
-    _createClass(DsInlineError, null, [{
-        key: 'is',
-        get: function get() {
-            return tagName;
-        }
-    }]);
 
     function DsInlineError() {
         _classCallCheck(this, DsInlineError);
@@ -706,17 +693,24 @@ var DsInlineError = function (_HTMLElement) {
 
         _this.attachShadow({ mode: 'open' });
         if (window.ShadyCSS) {
-            ShadyCSS.prepareTemplate(template, tagName);
+            ShadyCSS.prepareTemplate(_template, _tagName);
             ShadyCSS.styleElement(_this);
         }
-        _this.shadowRoot.appendChild(template.content.cloneNode(true));
+        _this.shadowRoot.appendChild(_template.content.cloneNode(true));
         return _this;
     }
 
     return DsInlineError;
 }(HTMLElement);
 
-module.exports = DsInlineError;
+module.exports = {
+    define: function define() {
+        customElements.define(_tagName, DsInlineError);
+    },
+    prototype: DsInlineError,
+    tagName: _tagName,
+    template: _template
+};
 
 /***/ }),
 /* 72 */
@@ -739,20 +733,124 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var tagName = 'ds-reveal';
+var _tagName = 'ds-progress';
 
-var template = document.createElement('template');
-template.innerHTML = '\n  <style>' + __webpack_require__(74) + '</style>\n  ' + __webpack_require__(75) + '\n';
+/*
+    <!--
+        role="progressbar"
+        aria-valuenow="100"
+        aria-valuemin="0"
+        aria-valuemax="100"
+    -->
+*/
+var _template = document.createElement('template');
+_template.innerHTML = '\n    <style>' + __webpack_require__(74) + '</style>\n    <div id="fill"></div>\n';
+
+var DsProgress = function (_HTMLElement) {
+    _inherits(DsProgress, _HTMLElement);
+
+    _createClass(DsProgress, null, [{
+        key: 'observedAttributes',
+        get: function get() {
+            return ['value'];
+        }
+    }]);
+
+    function DsProgress() {
+        _classCallCheck(this, DsProgress);
+
+        var _this = _possibleConstructorReturn(this, (DsProgress.__proto__ || Object.getPrototypeOf(DsProgress)).call(this));
+
+        _this.attachShadow({ mode: 'open' });
+        if (window.ShadyCSS) {
+            ShadyCSS.prepareTemplate(_template, _tagName);
+            ShadyCSS.styleElement(_this);
+        }
+        _this.shadowRoot.appendChild(_template.content.cloneNode(true));
+        _this.$fill = _this.shadowRoot.getElementById('fill');
+        _this.value = Number(_this.getAttribute('value')) || 0;
+        return _this;
+    }
+
+    _createClass(DsProgress, [{
+        key: 'attributeChangedCallback',
+        value: function attributeChangedCallback(attrName, oldVal, newVal) {
+            this.value = Number(newVal);
+        }
+    }, {
+        key: 'value',
+        get: function get() {
+            return this._value;
+        },
+        set: function set(newVal) {
+            if (typeof newVal !== 'number') {
+                return;
+            }
+
+            var normVal = Number(newVal) || 0;
+            normVal = normVal > 100 ? 100 : normVal;
+            normVal = normVal < 0 ? 0 : normVal;
+            normVal = Math.round(normVal);
+
+            this.$fill.style.width = normVal + '%';
+            this._value = normVal;
+        }
+    }, {
+        key: 'indeterminate',
+        get: function get() {
+            return this.hasAttribute('indeterminate');
+        },
+        set: function set(newVal) {
+            if (Boolean(newVal)) {
+                this.setAttribute('indeterminate', true);
+            } else {
+                this.removeAttribute('indeterminate');
+            }
+        }
+    }]);
+
+    return DsProgress;
+}(HTMLElement); //DsProgress
+
+module.exports = {
+    define: function define() {
+        customElements.define(_tagName, DsProgress);
+    },
+    prototype: DsProgress,
+    tagName: _tagName,
+    template: _template
+};
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports) {
+
+module.exports = ":host{background-color:#e6e6e6;border:1px solid;box-sizing:border-box;color:grey;display:block;height:.5em;margin:0;padding:0}:host([indeterminate]) #fill{width:0!important}#fill{background-color:currentColor;box-sizing:border-box;height:100%}"
+
+/***/ }),
+/* 75 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _tagName = 'ds-reveal';
+
+var _template = document.createElement('template');
+_template.innerHTML = '\n    <style>' + __webpack_require__(76) + '</style>\n    ' + __webpack_require__(77) + '\n';
 
 var DsReveal = function (_HTMLElement) {
     _inherits(DsReveal, _HTMLElement);
 
     _createClass(DsReveal, null, [{
-        key: 'is',
-        get: function get() {
-            return tagName;
-        }
-    }, {
         key: 'observedAttributes',
         get: function get() {
             return ['open'];
@@ -766,10 +864,10 @@ var DsReveal = function (_HTMLElement) {
 
         _this.attachShadow({ mode: 'open' });
         if (window.ShadyCSS) {
-            ShadyCSS.prepareTemplate(template, tagName);
+            ShadyCSS.prepareTemplate(_template, _tagName);
             ShadyCSS.styleElement(_this);
         }
-        _this.shadowRoot.appendChild(template.content.cloneNode(true));
+        _this.shadowRoot.appendChild(_template.content.cloneNode(true));
         // Private reference to Shadow DOM element
         _this.$summary = _this.shadowRoot.querySelector('#summary');
         // Fix "this" in _toggle()
@@ -814,22 +912,29 @@ var DsReveal = function (_HTMLElement) {
     return DsReveal;
 }(HTMLElement);
 
-module.exports = DsReveal;
+module.exports = {
+    define: function define() {
+        customElements.define(_tagName, DsReveal);
+    },
+    prototype: DsReveal,
+    tagName: _tagName,
+    template: _template
+};
 
 /***/ }),
-/* 74 */
+/* 76 */
 /***/ (function(module, exports) {
 
 module.exports = ":host{display:block}:host([open])>#body{display:block}#summary{background-color:transparent;border:none;color:inherit;font-size:1em;margin:0;padding:0;text-align:left;width:100%}#body,#summary:empty{display:none}"
 
 /***/ }),
-/* 75 */
+/* 77 */
 /***/ (function(module, exports) {
 
 module.exports = "<button id=\"summary\" aria-expanded=\"false\">\n  <slot name=\"summary\"></slot>\n</button>\n<div id=\"body\">\n  <slot></slot>\n</div>\n\n"
 
 /***/ }),
-/* 76 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -843,20 +948,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var tagName = 'ds-spinner';
+var _tagName = 'ds-spinner';
 
-var template = document.createElement('template');
-template.innerHTML = '<style>' + __webpack_require__(77) + '</style>';
+var _template = document.createElement('template');
+_template.innerHTML = '\n    <style>' + __webpack_require__(79) + '</style>\n';
 
 var DsSpinner = function (_HTMLElement) {
     _inherits(DsSpinner, _HTMLElement);
-
-    _createClass(DsSpinner, null, [{
-        key: 'is',
-        get: function get() {
-            return tagName;
-        }
-    }]);
 
     function DsSpinner() {
         _classCallCheck(this, DsSpinner);
@@ -865,10 +963,10 @@ var DsSpinner = function (_HTMLElement) {
 
         _this.attachShadow({ mode: 'open' });
         if (window.ShadyCSS) {
-            ShadyCSS.prepareTemplate(template, tagName);
+            ShadyCSS.prepareTemplate(_template, _tagName);
             ShadyCSS.styleElement(_this);
         }
-        _this.shadowRoot.appendChild(template.content.cloneNode(true));
+        _this.shadowRoot.appendChild(_template.content.cloneNode(true));
         return _this;
     }
 
@@ -895,10 +993,17 @@ var DsSpinner = function (_HTMLElement) {
     return DsSpinner;
 }(HTMLElement);
 
-module.exports = DsSpinner;
+module.exports = {
+    define: function define() {
+        customElements.define(_tagName, DsSpinner);
+    },
+    prototype: DsSpinner,
+    tagName: _tagName,
+    template: _template
+};
 
 /***/ }),
-/* 77 */
+/* 79 */
 /***/ (function(module, exports) {
 
 module.exports = ":host{display:inline-block;height:1em;width:1em;animation:spin .8s linear infinite;animation-play-state:running;border-color:transparent transparent currentColor currentColor;border-radius:1em;border-style:solid;border-width:1px}:host([paused]){animation-play-state:paused}@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}"

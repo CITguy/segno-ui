@@ -60,18 +60,20 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 78);
+/******/ 	return __webpack_require__(__webpack_require__.s = 80);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 78:
+/***/ 80:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(79);
+__webpack_require__(81);
+
+__webpack_require__(82);
 
 (function () {
     var hashAnchors = document.querySelectorAll('[href^="#"]');
@@ -86,18 +88,38 @@ __webpack_require__(79);
 
 /***/ }),
 
-/***/ 79:
+/***/ 81:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-new Vue({
-    el: '#vue-spinnerDemo',
-    data: {
-        paused: false
-    }
-});
+if (document.getElementById('vue-spinnerDemo')) {
+    new Vue({
+        el: '#vue-spinnerDemo',
+        data: {
+            paused: false
+        }
+    });
+}
+
+/***/ }),
+
+/***/ 82:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+if (document.getElementById('vue-progressDemo')) {
+    new Vue({
+        el: '#vue-progressDemo',
+        data: {
+            pctComplete: 42,
+            indeterminate: false
+        }
+    });
+}
 
 /***/ })
 

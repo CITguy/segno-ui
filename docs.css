@@ -668,3 +668,7 @@ body {
   background-color: white;
   color: #1a1a1a;
 }
+input[type="range"] {
+  display: block;
+  width: 100%;
+}
