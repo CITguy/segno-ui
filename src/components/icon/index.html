@@ -9,55 +9,62 @@ compatibility:
 ---
 {% extends 'component.njk' %}
 {% block content %}
-<section>
-  <h2 class="dsSectionHeading" id="demo">Demo</h2>
-  <p>
-    Set the <code>type</code> attribute to any value <a href="#icon-types">listed below</a>.
-  </p>
-  <div class="demo">
-    <ds-icon type="arrow-up"></ds-icon>
-    <ds-icon type="arrow-up"></ds-icon>
-    <ds-icon type="arrow-down"></ds-icon>
-    <ds-icon type="arrow-down"></ds-icon>
-    <ds-icon type="arrow-left"></ds-icon>
-    <ds-icon type="arrow-right"></ds-icon>
-    <ds-icon type="arrow-left"></ds-icon>
-    <ds-icon type="arrow-right"></ds-icon>
-    <kbd>B</kbd>
-    <kbd>A</kbd>
-    <kbd>start</kbd>
-  </div>
-  {% code 'html' %}
-    <ds-icon type="arrow-up"></ds-icon>
-    <ds-icon type="arrow-up"></ds-icon>
-    <ds-icon type="arrow-down"></ds-icon>
-    <ds-icon type="arrow-down"></ds-icon>
-    <ds-icon type="arrow-left"></ds-icon>
-    <ds-icon type="arrow-right"></ds-icon>
-    <ds-icon type="arrow-left"></ds-icon>
-    <ds-icon type="arrow-right"></ds-icon>
-    <kbd>B</kbd>
-    <kbd>A</kbd>
-    <kbd>start</kbd>
-  {% endcode %}
-</section>
+  <section>
+    <h2 class="dsSectionHeading" id="usage">Usage</h2>
+    {% code 'html' %}
+      <ds-icon type="{String}"></ds-icon>
+    {% endcode %}
+  </section>
 
-<section>
-  <h2 class="dsSectionHeading" id="icon-types">Icon Types</h2>
-  <p>There are {{ data.icons.length }} icons available!</p>
-  <div class="dsRow">
-    {% for icon in data.icons %}
-      <div class="dsCol dsContainer-xs dsCol-12-xs dsCol-6-lg dsCol-4-xl">
-        <div class="demo icon-demo">
-          <ds-icon type="{{icon}}"></ds-icon>
-          <code>{{icon}}</code>
+  <section>
+    <h2 class="dsSectionHeading" id="demo">Demo</h2>
+    <p>
+      Set the <code>type</code> attribute to any value <a href="#icon-types">listed below</a>.
+    </p>
+    <div class="demo">
+      <ds-icon type="arrow-up"></ds-icon>
+      <ds-icon type="arrow-up"></ds-icon>
+      <ds-icon type="arrow-down"></ds-icon>
+      <ds-icon type="arrow-down"></ds-icon>
+      <ds-icon type="arrow-left"></ds-icon>
+      <ds-icon type="arrow-right"></ds-icon>
+      <ds-icon type="arrow-left"></ds-icon>
+      <ds-icon type="arrow-right"></ds-icon>
+      <kbd>B</kbd>
+      <kbd>A</kbd>
+      <kbd>start</kbd>
+    </div>
+    {% code 'html' %}
+      <ds-icon type="arrow-up"></ds-icon>
+      <ds-icon type="arrow-up"></ds-icon>
+      <ds-icon type="arrow-down"></ds-icon>
+      <ds-icon type="arrow-down"></ds-icon>
+      <ds-icon type="arrow-left"></ds-icon>
+      <ds-icon type="arrow-right"></ds-icon>
+      <ds-icon type="arrow-left"></ds-icon>
+      <ds-icon type="arrow-right"></ds-icon>
+      <kbd>B</kbd>
+      <kbd>A</kbd>
+      <kbd>start</kbd>
+    {% endcode %}
+  </section>
+
+  <section>
+    <h2 class="dsSectionHeading" id="icons">Icons</h2>
+    <p>There are {{ data.icons.length }} icons available!</p>
+    <div class="dsRow">
+      {% for icon in data.icons %}
+        <div class="dsCol dsContainer-xs dsCol-12-xs dsCol-6-lg dsCol-4-xl">
+          <div class="demo icon-demo">
+            <ds-icon type="{{icon}}"></ds-icon>
+            <code>{{icon}}</code>
+          </div>
         </div>
-      </div>
-    {% else %}
-      <p>No Icons defined</p>
-    {% endfor %}
-  </div>
-</section>
+      {% else %}
+        <p>No Icons defined</p>
+      {% endfor %}
+    </div>
+  </section>
 {% endblock %}
 
 {% block attributes %}
