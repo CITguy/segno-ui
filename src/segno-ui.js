@@ -1,13 +1,6 @@
 window.addEventListener('WebComponentsReady', function () {
-    // Import Class Definition
-    const DsIcon = require('./components/icon/DsIcon');
-    const DsInlineError = require('./components/inline-error/DsInlineError');
-    const DsReveal = require('./components/reveal/DsReveal');
-    const DsSpinner = require('./components/spinner/DsSpinner');
-
-    // Register Custom Element
-    customElements.define(DsIcon.is, DsIcon);
-    customElements.define(DsInlineError.is, DsInlineError);
-    customElements.define(DsReveal.is, DsReveal);
-    customElements.define(DsSpinner.is, DsSpinner);
+    require('./components/icon').define();
+    require('./components/inline-error').define();
+    require('./components/reveal').define();
+    require('./components/spinner').define();
 });

@@ -1,21 +1,19 @@
-const tagName = 'ds-spinner';
+const _tagName = 'ds-spinner';
 
-const template = document.createElement('template');
-template.innerHTML = `<style>${require('./DsSpinner.less')}</style>`;
+const _template = document.createElement('template');
+_template.innerHTML = `
+    <style>${require('./DsSpinner.less')}</style>
+`;
 
 class DsSpinner extends HTMLElement {
-    static get is () {
-        return tagName;
-    }
-
     constructor() {
         super();
         this.attachShadow({mode: 'open'});
         if (window.ShadyCSS) {
-            ShadyCSS.prepareTemplate(template, tagName);
+            ShadyCSS.prepareTemplate(_template, _tagName);
             ShadyCSS.styleElement(this);
         }
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
+        this.shadowRoot.appendChild(_template.content.cloneNode(true));
     }
 
     get paused () {
@@ -37,4 +35,11 @@ class DsSpinner extends HTMLElement {
     }
 }
 
-module.exports = DsSpinner;
+module.exports = {
+    define: () => {
+        customElements.define(_tagName, DsSpinner);
+    },
+    prototype: DsSpinner,
+    tagName: _tagName,
+    template: _template
+}

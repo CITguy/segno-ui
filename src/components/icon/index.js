@@ -1,9 +1,12 @@
-const tagName = 'ds-icon';
+const _tagName = 'ds-icon';
 
-const template = document.createElement('template');
-template.innerHTML = `<style>${require('./DsIcon.less')}</style><slot></slot>`;
+const _template = document.createElement('template');
+_template.innerHTML = `
+    <style>${require('./DsIcon.less')}</style>
+    <slot></slot>
+`;
 
-const icons = {
+const _icons = {
     'angle-down': require('./assets/angle-down.svg'),
     'angle-left': require('./assets/angle-left.svg'),
     'angle-right': require('./assets/angle-right.svg'),
@@ -75,12 +78,8 @@ const icons = {
 };
 
 class DsIcon extends HTMLElement {
-    static get is() {
-        return tagName;
-    }
-
     static get icons() {
-        return icons;
+        return _icons;
     }
 
     static get observedAttributes() {
@@ -91,10 +90,10 @@ class DsIcon extends HTMLElement {
         super();
         this.attachShadow({mode: 'open'});
         if (window.ShadyCSS) {
-            ShadyCSS.prepareTemplate(template, tagName);
+            ShadyCSS.prepareTemplate(_template, _tagName);
             ShadyCSS.styleElement(this);
         }
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
+        this.shadowRoot.appendChild(_template.content.cloneNode(true));
 
         if (type) {
             this.type = type;
@@ -125,12 +124,19 @@ class DsIcon extends HTMLElement {
         // erase previously injected markup
         this.innerHTML = '';
         // add new SVG markup
-        if (this.type in DsIcon.icons) {
+        if (this.type in _icons) {
             const elSurrogate = document.createElement('div');
-            elSurrogate.innerHTML = DsIcon.icons[this.type];
+            elSurrogate.innerHTML = _icons[this.type];
             this.appendChild(elSurrogate.firstElementChild);
         }
     }//_render()
-}//DsIcon
+}
 
-module.exports = DsIcon;
+module.exports = {
+    define: () => {
+        customElements.define(_tagName, DsIcon);
+    },
+    prototype: DsIcon,
+    tagName: _tagName,
+    template: _template
+};
