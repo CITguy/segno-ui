@@ -11,9 +11,8 @@ Source for SegnoUI custom elements goes in this directory.
 
 ### Component Definition
 - Structure (`DsSomething.html`)
-- Behavior (`DsSomething.js`)
-- Appearance (`DsSomething.less`)
-  - Grayscale (**no branding!**)
+- Behavior (`index.js`)
+- Appearance (`DsSomething.less` and/or `ds-something.less`)
 
 ### Documentation
 - Markup (`index.html`)

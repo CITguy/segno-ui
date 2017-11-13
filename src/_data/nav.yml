@@ -1,6 +1,6 @@
 #guides:
 #  Installing: install
-components:
+elements:
   #Alert: alert
   #Badge: badge
   #Breadcrumb: breadcrumb
@@ -10,7 +10,6 @@ components:
   #Code: code
   #Dropdown: dropdown
   Error: error
-  Grid: grid
   Icon: icon
   #List: list
   #Modal: modal
@@ -23,3 +22,5 @@ components:
   #Tabset: tabset
   #Tooltip: tooltip
   #Typography: typography
+utilities:
+  Grid: grid

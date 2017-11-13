@@ -9,5 +9,5 @@
     });
 })();
 
-import './components/busy/demo-busy.js';
-import './components/progress/demo-progress.js';
+import './elements/busy/demo-busy.js';
+import './elements/progress/demo-progress.js';

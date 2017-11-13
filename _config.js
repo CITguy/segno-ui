@@ -34,8 +34,9 @@ CONFIG.site = {
 CONFIG.less = {
     paths: [
         `${CONFIG.sourceDir}`,
-        `${CONFIG.sourceDir}/components`,
+        `${CONFIG.sourceDir}/elements`,
         `${CONFIG.sourceDir}/docs`,
+        `${CONFIG.sourceDir}/utilities`,
     ],
     files: [
         `${CONFIG.sourceDir}/docs.less`,
@@ -60,9 +61,7 @@ CONFIG.webpack = {
 CONFIG.docs = {
     files: [
         'index.html',
-        'components/**/index.html',
-        'guides/**/index.html',
-        'grid/**/index.html'
+        '*/**/index.html',
     ],
     // settings for deployment to github pages
     ghPages: {
