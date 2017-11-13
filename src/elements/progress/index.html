@@ -24,7 +24,9 @@ compatibility:
           <label for="chkIndeterminate">Indeterminate</label>
         </p>
         <p>
-          <label for="numPctComplete">Value:</label>
+          <label for="numPctComplete">
+            Value: <span v-text="pctComplete"></span>
+          </label>
           <input
             id="numPctComplete"
             type="range"
