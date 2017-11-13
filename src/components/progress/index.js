@@ -33,6 +33,10 @@ class DsProgress extends HTMLElement {
 
     attributeChangedCallback (attrName, oldVal, newVal) {
         this.value = Number(newVal);
+
+        this.setAttribute('role', 'progressbar');
+        this.setAttribute('aria-valuemin', 0);
+        this.setAttribute('aria-valuemax', 100);
     }
 
     get value() {
@@ -50,6 +54,7 @@ class DsProgress extends HTMLElement {
         normVal = Math.round(normVal);
 
         this.$fill.style.width = `${normVal}%`;
+        this.setAttribute('aria-valuenow', normVal);
         this._value = normVal;
     }
 
