@@ -10,16 +10,6 @@ compatibility:
 {% extends 'element.njk' %}
 {% block content %}
   <section>
-    <h2 class="dsSectionHeading" id="usage">Usage</h2>
-    {% code 'html' %}
-      <ds-progress
-        [value="{Number}"]
-        [indeterminate]>
-      </ds-progress>
-    {% endcode %}
-  </section>
-
-  <section>
     <h2 class="dsSectionHeading" id="demo">Demo</h2>
     <div class="demo dsRow" id="vue-progressDemo">
       <div class="dsCol dsCol-12-xs dsCol-6-md dsCol-4-xl">
@@ -53,6 +43,16 @@ compatibility:
         </p>
       </div>
     </div>
+  </section>
+
+  <section>
+    <h2 class="dsSectionHeading" id="usage">Usage</h2>
+    {% code 'html' %}
+      <ds-progress
+        [value="{Number}"]
+        [indeterminate]>
+      </ds-progress>
+    {% endcode %}
   </section>
 {% endblock %}
 

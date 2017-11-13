@@ -10,35 +10,30 @@ compatibility:
 {% extends 'element.njk' %}
 {% block content %}
   <section>
-    <h2 class="dsSectionHeading" id="usage">Usage</h2>
-    {% code 'html' %}
-      <ds-reveal [open]>
-        [<ANY slot="summary"></ANY>]
-
-        <!-- details go here -->
-      </ds-reveal>
-    {% endcode %}
-  </section>
-
-  <section>
     <h2 class="dsSectionHeading" id="demo">Demo</h2>
-
     <div class="demo">
       <p>Why'd the cookie cry?</p>
       <ds-reveal>
-        <div slot="summary">
-          <small>Reveal answer</small>
-        </div>
+        <small slot="summary">Reveal answer</small>
         Because his father was a wafer so long!
       </ds-reveal>
     </div>
     {% code 'html' %}
       <p>Why'd the cookie cry?</p>
       <ds-reveal>
-        <div slot="summary">
-          <small>Reveal answer</small>
-        </div>
+        <small slot="summary">Reveal answer</small>
         ...
+      </ds-reveal>
+    {% endcode %}
+  </section>
+
+  <section>
+    <h2 class="dsSectionHeading" id="usage">Usage</h2>
+    {% code 'html' %}
+      <ds-reveal [open]>
+        [<ANY slot="summary"></ANY>]
+
+        <!-- details go here -->
       </ds-reveal>
     {% endcode %}
   </section>

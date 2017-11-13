@@ -10,13 +10,6 @@ compatibility:
 {% extends 'element.njk' %}
 {% block content %}
   <section>
-    <h2 class="dsSectionHeading" id="usage">Usage</h2>
-    {% code 'html' %}
-      <ds-icon type="{String}"></ds-icon>
-    {% endcode %}
-  </section>
-
-  <section>
     <h2 class="dsSectionHeading" id="demo">Demo</h2>
     <p>
       Set the <code>type</code> attribute to any value <a href="#icon-types">listed below</a>.
@@ -46,6 +39,13 @@ compatibility:
       <kbd>B</kbd>
       <kbd>A</kbd>
       <kbd>start</kbd>
+    {% endcode %}
+  </section>
+
+  <section>
+    <h2 class="dsSectionHeading" id="usage">Usage</h2>
+    {% code 'html' %}
+      <ds-icon type="{String}"></ds-icon>
     {% endcode %}
   </section>
 

@@ -9,13 +9,6 @@ compatibility:
 ---
 {% extends 'element.njk' %}
 {% block content %}
-  <section>
-    <h2 class="dsSectionHeading" id="usage">Usage</h2>
-    {% code 'html' %}
-      <ds-busy [paused]></ds-busy>
-    {% endcode %}
-  </section>
-
   <section id="vue-busyDemo">
     <h2 class="dsSectionHeading" id="demo">Demo</h2>
     <div class="demo">
@@ -30,6 +23,13 @@ compatibility:
         Pause
       </label>
     </div>
+  </section>
+
+  <section>
+    <h2 class="dsSectionHeading" id="usage">Usage</h2>
+    {% code 'html' %}
+      <ds-busy [paused]></ds-busy>
+    {% endcode %}
   </section>
 {% endblock %}
 
