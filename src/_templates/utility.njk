@@ -1,0 +1,47 @@
+{% extends 'application.njk' %}
+
+{% block layout %}
+  <div class="page-heading dsRow">
+    <div class="dsCol-12-xs dsCol-9-md dsContainer-lg">
+      <h1 class="dsPageHeading">{{ page.title }}</h1>
+    </div>
+    <div class="dsCol-12-xs dsCol-3-md dsContainer-lg">
+      <!--
+      <button>View Source</button>
+      -->
+    </div>
+  </div>
+  <div class="dsRow">
+    <div class="dsPage dsCol-12-xs dsCol-9-md dsOrder-2-xs dsOrder-1-md">
+      <div class="dsPage__body">
+        {% block content %}
+          {# page content goes here #}
+        {% endblock %}
+
+        <section>
+          <h2 class="dsSectionHeading" id="compatibility">Compatibility</h2>
+          {% include 'partials/compat-table.njk' %}
+          {% block compatibility %}
+            {# reserve for additional compatibility notes #}
+          {% endblock %}
+        </section>
+      </div>
+
+      <footer class="dsPage__foot">
+        <p>
+          <ds-icon type="calendar"></ds-icon>
+          <b>Last Updated:</b> {{ page.updated.format(site.dateFormat) }}
+        </p>
+      </footer>
+    </div>
+    <div class="dsSidebar dsCol dsCol-12-xs dsCol-3-md dsOrder-1-xs dsOrder-2-md">
+      <h6 class="dsLabel">On this page:</h6>
+      <aside class="article-toc" role="navigation">
+        {{ page.raw | toc | safe }}
+        <a href="#compatibility">Compatibility</a>
+        <hr />
+        <a class="top-link" href="#top">Back to Top</a>
+      </aside>
+    </div>
+  </div>
+{% endblock %}

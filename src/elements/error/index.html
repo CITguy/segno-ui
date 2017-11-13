@@ -1,0 +1,30 @@
+---
+title: Error
+compatibility:
+  ie: working
+  edge: working
+  chrome: working
+  safari: working
+  firefox: working
+---
+{% extends 'element.njk' %}
+{% block content %}
+  <section>
+    <h2 class="dsSectionHeading" id="demo">Demo</h2>
+    <div class="demo">
+      <ds-error>This is an error message.</ds-error>
+    </div>
+    {% code 'html' %}
+      <ds-error>This is an error message.</ds-error>
+    {% endcode %}
+  </section>
+
+  <section>
+    <h2 class="dsSectionHeading" id="usage">Usage</h2>
+    {% code 'html' %}
+      <ds-error>
+        <!-- message goes here -->
+      </ds-error>
+    {% endcode %}
+  </section>
+{% endblock %}

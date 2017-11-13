@@ -1,16 +1,16 @@
 #guides:
 #  Installing: install
-components:
+elements:
   #Alert: alert
   #Badge: badge
   #Breadcrumb: breadcrumb
+  Busy: busy
   #Button: button
   #Checkbox: checkbox
   #Code: code
   #Dropdown: dropdown
-  Grid: grid
+  Error: error
   Icon: icon
-  Inline Error: inline-error
   #List: list
   #Modal: modal
   #Navigation: navigation
@@ -18,8 +18,9 @@ components:
   #Popover: popover
   Progress: progress
   Reveal: reveal
-  Spinner: spinner
   #Table: table
   #Tabset: tabset
   #Tooltip: tooltip
   #Typography: typography
+utilities:
+  Grid: grid

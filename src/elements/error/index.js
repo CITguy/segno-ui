@@ -1,9 +1,9 @@
-const _tagName = 'ds-inline-error';
+const _tagName = 'ds-error';
 
 const _template = document.createElement('template');
-_template.innerHTML = `${require('./DsInlineError.html')}`;
+_template.innerHTML = `${require('./DsError.html')}`;
 
-class DsInlineError extends HTMLElement {
+class DsError extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
@@ -17,9 +17,9 @@ class DsInlineError extends HTMLElement {
 
 module.exports = {
     define: () => {
-        customElements.define(_tagName, DsInlineError);
+        customElements.define(_tagName, DsError);
     },
-    prototype: DsInlineError,
+    prototype: DsError,
     tagName: _tagName,
     template: _template
 };

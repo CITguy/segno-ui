@@ -1,7 +1,7 @@
 window.addEventListener('WebComponentsReady', function () {
-    require('./components/icon').define();
-    require('./components/inline-error').define();
-    require('./components/progress').define();
-    require('./components/reveal').define();
-    require('./components/spinner').define();
+    require('./elements/busy').define();
+    require('./elements/error').define();
+    require('./elements/icon').define();
+    require('./elements/progress').define();
+    require('./elements/reveal').define();
 });

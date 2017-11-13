@@ -7,18 +7,8 @@ compatibility:
   safari: working
   firefox: working
 ---
-{% extends 'component.njk' %}
+{% extends 'element.njk' %}
 {% block content %}
-  <section>
-    <h2 class="dsSectionHeading" id="usage">Usage</h2>
-    {% code 'html' %}
-      <ds-progress
-        [value="{Number}"]
-        [indeterminate]>
-      </ds-progress>
-    {% endcode %}
-  </section>
-
   <section>
     <h2 class="dsSectionHeading" id="demo">Demo</h2>
     <div class="demo dsRow" id="vue-progressDemo">
@@ -34,7 +24,9 @@ compatibility:
           <label for="chkIndeterminate">Indeterminate</label>
         </p>
         <p>
-          <label for="numPctComplete">Value:</label>
+          <label for="numPctComplete">
+            Value: <span v-text="pctComplete"></span>
+          </label>
           <input
             id="numPctComplete"
             type="range"
@@ -53,6 +45,16 @@ compatibility:
         </p>
       </div>
     </div>
+  </section>
+
+  <section>
+    <h2 class="dsSectionHeading" id="usage">Usage</h2>
+    {% code 'html' %}
+      <ds-progress
+        [value="{Number}"]
+        [indeterminate]>
+      </ds-progress>
+    {% endcode %}
   </section>
 {% endblock %}
 
