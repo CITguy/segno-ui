@@ -9,9 +9,9 @@ components:
   #Checkbox: checkbox
   #Code: code
   #Dropdown: dropdown
+  Error: error
   Grid: grid
   Icon: icon
-  Inline Error: inline-error
   #List: list
   #Modal: modal
   #Navigation: navigation
