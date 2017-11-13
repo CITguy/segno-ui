@@ -94,9 +94,9 @@ __webpack_require__(82);
 "use strict";
 
 
-if (document.getElementById('vue-spinnerDemo')) {
+if (document.getElementById('vue-busyDemo')) {
     new Vue({
-        el: '#vue-spinnerDemo',
+        el: '#vue-busyDemo',
         data: {
             paused: false
         }

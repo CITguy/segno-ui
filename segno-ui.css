@@ -1,3 +1,8 @@
+ds-busy {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+}
 ds-icon {
   display: inline-block;
   flex-shrink: 0;
@@ -17,7 +22,7 @@ ds-progress {
 }
 ds-progress[indeterminate] {
   animation: progress-busy 3s linear infinite;
-  background-image: linear-gradient(45deg, #808080, #808080 25%, transparent 25%, transparent 50%, #808080 50%, #808080 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, currentColor, currentColor 25%, transparent 25%, transparent 50%, currentColor 50%, currentColor 75%, transparent 75%, transparent);
   background-size: 40px 40px;
 }
 @keyframes progress-busy {
@@ -37,9 +42,4 @@ ds-reveal:not([open]) > *:not([slot="summary"]) {
 }
 #summary.ds-reveal {
   display: block;
-}
-ds-spinner {
-  display: inline-block;
-  height: 1em;
-  width: 1em;
 }
