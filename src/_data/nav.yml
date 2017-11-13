@@ -4,6 +4,7 @@ components:
   #Alert: alert
   #Badge: badge
   #Breadcrumb: breadcrumb
+  Busy: busy
   #Button: button
   #Checkbox: checkbox
   #Code: code
@@ -18,7 +19,6 @@ components:
   #Popover: popover
   Progress: progress
   Reveal: reveal
-  Spinner: spinner
   #Table: table
   #Tabset: tabset
   #Tooltip: tooltip

@@ -1,11 +1,11 @@
-const _tagName = 'ds-spinner';
+const _tagName = 'ds-busy';
 
 const _template = document.createElement('template');
 _template.innerHTML = `
-    <style>${require('./DsSpinner.less')}</style>
+    <style>${require('./DsBusy.less')}</style>
 `;
 
-class DsSpinner extends HTMLElement {
+class DsBusy extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({mode: 'open'});
@@ -14,6 +14,10 @@ class DsSpinner extends HTMLElement {
             ShadyCSS.styleElement(this);
         }
         this.shadowRoot.appendChild(_template.content.cloneNode(true));
+    }
+
+    attachedCallback() {
+        this.setAttribute('aria-hidden', true);
     }
 
     get paused () {
@@ -37,9 +41,9 @@ class DsSpinner extends HTMLElement {
 
 module.exports = {
     define: () => {
-        customElements.define(_tagName, DsSpinner);
+        customElements.define(_tagName, DsBusy);
     },
-    prototype: DsSpinner,
+    prototype: DsBusy,
     tagName: _tagName,
     template: _template
 }

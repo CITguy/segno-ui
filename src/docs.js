@@ -9,5 +9,5 @@
     });
 })();
 
-import './components/spinner/demo-spinner.js';
+import './components/busy/demo-busy.js';
 import './components/progress/demo-progress.js';
