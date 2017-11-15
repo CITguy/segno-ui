@@ -61,6 +61,7 @@ CONFIG.webpack = {
 CONFIG.docs = {
     files: [
         'index.html',
+        '404.html',
         '*/**/index.html',
     ],
     // settings for deployment to github pages
