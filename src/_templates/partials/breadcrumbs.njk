@@ -1,0 +1,9 @@
+<nav class="dsBreadcrumbs">
+  <a href="/">Home</a>
+  {% if page.crumbs.length > 0 %}
+    {% for crumb in page.crumbs %}
+      <span class="delimiter">/</span>
+      <a href="{{ crumb.path }}">{{crumb.key | capitalize}}</a>
+    {% endfor %}
+  {% endif %}
+</nav>
