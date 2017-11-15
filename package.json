@@ -31,6 +31,7 @@
     "build": "bin/build.js",
     "build:min": "NODE_ENV=production bin/build.js",
     "clean": "rm -fr node_modules",
+    "clean:install": "yarn clean && yarn install",
     "deploy": "bin/deploy.js",
     "publish": "bin/publish.js",
     "start": "bin/start.js",
