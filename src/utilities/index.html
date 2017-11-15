@@ -1,0 +1,15 @@
+---
+title: Utilities
+---
+{% extends 'family.njk' %}
+{% block content %}
+  <section>
+    <ul>
+      {% for utility,path in data.nav.utilities %}
+        <li>
+          <a href="utilities/{{path}}">{{utility}}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endblock %}

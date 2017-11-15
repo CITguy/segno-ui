@@ -1,0 +1,15 @@
+{% extends 'application.njk' %}
+
+{% block layout %}
+  <div class="page-heading dsContainer-lg">
+    <h1 class="dsPageHeading">{{ page.title }}</h1>
+  </div>
+  {% include 'partials/breadcrumbs.njk' %}
+  <div class="dsPage">
+    <div class="dsPage__body">
+      {% block content %}
+        {# page content goes here #}
+      {% endblock %}
+    </div>
+  </div>
+{% endblock %}
