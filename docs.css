@@ -161,6 +161,7 @@ li {
 /* LINKS */
 a {
   background-color: transparent;
+  color: #0000ff;
 }
 small {
   font-size: 0.75em;
@@ -177,6 +178,28 @@ sub {
 }
 sup {
   top: -0.5em;
+}
+.dsBreadcrumbs {
+  align-items: center;
+  background-color: #e6e6e6;
+  color: #666666;
+  display: flex;
+  padding: 1rem 1.5rem;
+}
+.dsBreadcrumbs a[href] {
+  font-weight: 500;
+  text-decoration: none;
+}
+.dsBreadcrumbs a[href]:last-of-type {
+  font-weight: 300;
+  pointer-events: none;
+  color: #666666;
+}
+.dsBreadcrumbs .delimiter {
+  font-weight: 100;
+}
+.dsBreadcrumbs > * + * {
+  margin-left: 0.5em;
 }
 .demo {
   background-color: white;
@@ -212,7 +235,9 @@ sup {
 }
 .dsApp__nav header {
   color: inherit;
+  font-weight: 500;
   padding: 0.5rem 0.75rem;
+  text-transform: uppercase;
 }
 .dsApp__nav header:hover {
   background-color: #666666;
@@ -226,6 +251,7 @@ sup {
 .dsApp__nav a {
   color: inherit;
   display: block;
+  font-weight: 300;
   padding: 0.5rem 0.75rem;
   text-decoration: none;
 }
