@@ -1,5 +1,6 @@
 const DsElement = require('../DsElement');
-
+const _tagName = 'ds-icon';
+const _template = document.createElement('template');
 const _icons = {
     'angle-down': require('./assets/angle-down.svg'),
     'angle-left': require('./assets/angle-left.svg'),
@@ -71,15 +72,14 @@ const _icons = {
     'user': require('./assets/user.svg'),
 };
 
-const _template = document.createElement('template');
 _template.innerHTML = `
     <style>${require('./DsIcon.less')}</style>
     <slot></slot>
 `;
 
 module.exports = class DsIcon extends DsElement {
-    static get is () {
-        return 'ds-icon';
+    static $define () {
+        customElements.define(_tagName, this);
     }
 
     static get icons () {
@@ -91,7 +91,7 @@ module.exports = class DsIcon extends DsElement {
     }
 
     constructor (type) {
-        super(_template);
+        super(_tagName, _template);
 
         if (type) {
             this.type = type;

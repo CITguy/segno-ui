@@ -9,7 +9,6 @@ elements:
   #Checkbox: checkbox
   #Code: code
   #Dropdown: dropdown
-  Error: error
   Icon: icon
   #List: list
   #Modal: modal

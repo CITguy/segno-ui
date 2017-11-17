@@ -1,14 +1,15 @@
 const DsElement = require('../DsElement');
+const _tagName = 'ds-reveal';
+const _template = document.createElement('template');
 
-const template = document.createElement('template');
-template.innerHTML = `
+_template.innerHTML = `
     <style>${require('./DsReveal.less')}</style>
     ${require('./DsReveal.html')}
 `;
 
 module.exports = class DsReveal extends DsElement {
-    static get is () {
-        return 'ds-reveal';
+    static $define () {
+        customElements.define(_tagName, this);
     }
 
     static get observedAttributes () {
@@ -16,7 +17,7 @@ module.exports = class DsReveal extends DsElement {
     }
 
     constructor () {
-        super(template);
+        super(_tagName, _template);
         // Private reference to Shadow DOM element
         this.$summary = this.shadowRoot.querySelector('#summary');
         // Fix "this" in _toggle()

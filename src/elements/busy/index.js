@@ -1,15 +1,16 @@
 const DsElement = require('../DsElement');
-
+const _tagName = 'ds-busy';
 const _template = document.createElement('template');
+
 _template.innerHTML = `<style>${require('./DsBusy.less')}</style>`;
 
 module.exports = class DsBusy extends DsElement {
-    static get is () {
-        return 'ds-busy';
+    static $define () {
+        customElements.define(_tagName, this);
     }
 
     constructor () {
-        super(_template);
+        super(_tagName, _template);
     }
 
     connectedCallback () {
