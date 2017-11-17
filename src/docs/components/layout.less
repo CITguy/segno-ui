@@ -31,7 +31,6 @@
 
 .dsSidebar {
   #space.container.lg;
-  background-color: @gray-10;
 }
 
 // move to components
@@ -49,13 +48,13 @@
 
     &:hover {
       background-color: @gray-60;
-      cursor: pointer;
       color: white;
+      cursor: pointer;
     }
 
     .toggle-icon {
-      pointer-events: none;
       float: right;
+      pointer-events: none;
     }
   }
 
@@ -113,20 +112,21 @@
   }
 
   .you-are-here {
-    visibility: hidden;
     display: inline-block;
     float: right;
+    visibility: hidden;
   }
 }
 
 .page-heading {
-    background-color: @gray-90;
-    color: white;
-    min-height: @page-heading-height;
+  background-color: @gray-90;
+  color: white;
+  padding: 1rem 1.5rem;
 
-    .dsPageHeading {
-      line-height: 1;
-    }
+  .dsPageHeading {
+    line-height: 1;
+    margin: 0;
+  }
 }
 
 .dsPage {
@@ -144,7 +144,6 @@
 
   &__foot {
     #space.container.lg;
-    background-color: @gray-10;
     flex-shrink: 0;
     color: @gray-60;
   }

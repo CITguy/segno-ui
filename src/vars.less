@@ -12,6 +12,14 @@
 @gray-90: hsl(0, 0%, 10%);
 @gray-95: hsl(0, 0%,  5%);
 
+@primary: #009aff;
+
+@primary-lighter: lighten(@primary, 20%);
+@primary-light: lighten(@primary, 10%);
+
+@primary-dark: darken(@primary, 15%);
+@primary-darker: darken(@primary, 25%);
+
 // http://cubic-bezier.com/#0,.9,.5,1
 @animation-fn: cubic-bezier(0, 0.9, 0.5, 1);
 @animation-duration: 0.8s;
@@ -45,7 +53,7 @@
 @accent-success: hsl(120,  75%, 65%);
 @accent-warning: hsl(60, 90%, 50%);
 @accent-danger:  hsl(0, 75%, 60%);
-@link-blue: hsl(240, 100%, 50%);
+@link-blue: @primary-dark;
 
 @brown-700: #5d4037;
 @brown-500: #795548;

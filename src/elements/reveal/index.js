@@ -1,24 +1,22 @@
-const _tagName = 'ds-reveal';
+const DsElement = require('../DsElement');
 
-const _template = document.createElement('template');
-_template.innerHTML = `
+const template = document.createElement('template');
+template.innerHTML = `
     <style>${require('./DsReveal.less')}</style>
     ${require('./DsReveal.html')}
 `;
 
-class DsReveal extends HTMLElement {
+module.exports = class DsReveal extends DsElement {
+    static get is () {
+        return 'ds-reveal';
+    }
+
     static get observedAttributes () {
         return ['open'];
     }
 
     constructor () {
-        super();
-        this.attachShadow({mode: 'open'});
-        if (window.ShadyCSS) {
-            ShadyCSS.prepareTemplate(_template, _tagName);
-            ShadyCSS.styleElement(this);
-        }
-        this.shadowRoot.appendChild(_template.content.cloneNode(true));
+        super(template);
         // Private reference to Shadow DOM element
         this.$summary = this.shadowRoot.querySelector('#summary');
         // Fix "this" in _toggle()
@@ -26,6 +24,7 @@ class DsReveal extends HTMLElement {
     }
 
     connectedCallback () {
+        this.$upgradeProperty('open');
         this.$summary.addEventListener('click', this._toggle);
     }
 
@@ -52,13 +51,4 @@ class DsReveal extends HTMLElement {
     _toggle () {
         this.open = !this.open;
     }
-}
-
-module.exports = {
-    define: () => {
-        customElements.define(_tagName, DsReveal);
-    },
-    prototype: DsReveal,
-    tagName: _tagName,
-    template: _template
-}
+};
