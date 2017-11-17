@@ -1,10 +1,4 @@
-const _tagName = 'ds-icon';
-
-const _template = document.createElement('template');
-_template.innerHTML = `
-    <style>${require('./DsIcon.less')}</style>
-    <slot></slot>
-`;
+const DsElement = require('../DsElement');
 
 const _icons = {
     'angle-down': require('./assets/angle-down.svg'),
@@ -77,47 +71,52 @@ const _icons = {
     'user': require('./assets/user.svg'),
 };
 
-class DsIcon extends HTMLElement {
-    static get icons() {
+const _template = document.createElement('template');
+_template.innerHTML = `
+    <style>${require('./DsIcon.less')}</style>
+    <slot></slot>
+`;
+
+module.exports = class DsIcon extends DsElement {
+    static get is () {
+        return 'ds-icon';
+    }
+
+    static get icons () {
         return _icons;
     }
 
-    static get observedAttributes() {
+    static get observedAttributes () {
         return [ 'type' ];
     }
 
-    constructor(type) {
-        super();
-        this.attachShadow({mode: 'open'});
-        if (window.ShadyCSS) {
-            ShadyCSS.prepareTemplate(_template, _tagName);
-            ShadyCSS.styleElement(this);
-        }
-        this.shadowRoot.appendChild(_template.content.cloneNode(true));
+    constructor (type) {
+        super(_template);
 
         if (type) {
             this.type = type;
         }
     }
 
-    connectedCallback() {
-        this.setAttribute('aria-hidden', true);
+    connectedCallback () {
+        this.$upgradeProperty('type');
+        this.$setAttribute('aria-hidden', true);
         this._render();
     }
 
-    attributeChangedCallback() {
+    attributeChangedCallback () {
         this._render();
     }
 
-    get type() {
+    get type () {
         return this.getAttribute('type');
     }
 
-    set type(newVal) {
+    set type (newVal) {
         this.setAttribute('type', newVal);
     }
 
-    _render() {
+    _render () {
         // erase previously injected markup
         this.innerHTML = '';
         // add new SVG markup
@@ -126,14 +125,5 @@ class DsIcon extends HTMLElement {
             elSurrogate.innerHTML = _icons[this.type];
             this.appendChild(elSurrogate.firstElementChild);
         }
-    }//_render()
-}
-
-module.exports = {
-    define: () => {
-        customElements.define(_tagName, DsIcon);
-    },
-    prototype: DsIcon,
-    tagName: _tagName,
-    template: _template
+    }
 };

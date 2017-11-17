@@ -1,22 +1,22 @@
-const _tagName = 'ds-busy';
+const DsElement = require('../DsElement');
 
 const _template = document.createElement('template');
-_template.innerHTML = `
-    <style>${require('./DsBusy.less')}</style>
-`;
+_template.innerHTML = `<style>${require('./DsBusy.less')}</style>`;
 
-class DsBusy extends HTMLElement {
-    constructor() {
-        super();
-        this.attachShadow({mode: 'open'});
-        if (window.ShadyCSS) {
-            ShadyCSS.prepareTemplate(_template, _tagName);
-            ShadyCSS.styleElement(this);
-        }
-        this.shadowRoot.appendChild(_template.content.cloneNode(true));
+module.exports = class DsBusy extends DsElement {
+    static get is () {
+        return 'ds-busy';
     }
 
-    attachedCallback() {
+    constructor () {
+        super(_template);
+    }
+
+    connectedCallback () {
+        this.$upgradeProperty('paused');
+    }
+
+    attachedCallback () {
         this.setAttribute('aria-hidden', true);
     }
 
@@ -37,13 +37,4 @@ class DsBusy extends HTMLElement {
             }));
         }
     }
-}
-
-module.exports = {
-    define: () => {
-        customElements.define(_tagName, DsBusy);
-    },
-    prototype: DsBusy,
-    tagName: _tagName,
-    template: _template
-}
+};
