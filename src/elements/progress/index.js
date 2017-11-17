@@ -1,14 +1,15 @@
 const DsElement = require('../DsElement');
-
+const _tagName = 'ds-progress';
 const _template = document.createElement('template')
+
 _template.innerHTML = `
     <style>${require('./DsProgress.less')}</style>
     <div id="fill"></div>
 `;
 
 module.exports = class DsProgress extends DsElement {
-    static get is () {
-        return 'ds-progress';
+    static $define () {
+        customElements.define(_tagName, this);
     }
 
     static get observedAttributes () {
@@ -16,7 +17,7 @@ module.exports = class DsProgress extends DsElement {
     }
 
     constructor () {
-        super(_template);
+        super(_tagName, _template);
 
         this.$fill = this.shadowRoot.getElementById('fill');
         this.value = Number(this.getAttribute('value')) || 0;
