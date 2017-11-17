@@ -60,20 +60,20 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 81);
+/******/ 	return __webpack_require__(__webpack_require__.s = 79);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 81:
+/***/ 79:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(82);
+__webpack_require__(80);
 
-__webpack_require__(83);
+__webpack_require__(81);
 
 (function () {
     var hashAnchors = document.querySelectorAll('[href^="#"]');
@@ -88,7 +88,7 @@ __webpack_require__(83);
 
 /***/ }),
 
-/***/ 82:
+/***/ 80:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -105,7 +105,7 @@ if (document.getElementById('vue-busyDemo')) {
 
 /***/ }),
 
-/***/ 83:
+/***/ 81:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
