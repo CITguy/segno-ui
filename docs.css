@@ -161,7 +161,7 @@ li {
 /* LINKS */
 a {
   background-color: transparent;
-  color: #0000ff;
+  color: #006cb3;
 }
 small {
   font-size: 0.75em;
@@ -181,25 +181,26 @@ sup {
 }
 .dsBreadcrumbs {
   align-items: center;
-  background-color: #e6e6e6;
-  color: #666666;
+  background-color: #1a1a1a;
+  color: #cccccc;
   display: flex;
   padding: 1rem 1.5rem;
 }
 .dsBreadcrumbs a[href] {
+  color: #33aeff;
   font-weight: 500;
   text-decoration: none;
 }
 .dsBreadcrumbs a[href]:last-of-type {
+  color: #cccccc;
   font-weight: 300;
   pointer-events: none;
-  color: #666666;
 }
 .dsBreadcrumbs .delimiter {
   font-weight: 100;
 }
-.dsBreadcrumbs > * + * {
-  margin-left: 0.5em;
+.dsBreadcrumbs > * {
+  margin-right: 0.5em;
 }
 .demo {
   background-color: white;
@@ -228,7 +229,6 @@ sup {
 }
 .dsSidebar {
   padding: 1.5rem;
-  background-color: #e6e6e6;
 }
 .dsApp__nav {
   letter-spacing: 1px;
@@ -241,12 +241,12 @@ sup {
 }
 .dsApp__nav header:hover {
   background-color: #666666;
-  cursor: pointer;
   color: white;
+  cursor: pointer;
 }
 .dsApp__nav header .toggle-icon {
-  pointer-events: none;
   float: right;
+  pointer-events: none;
 }
 .dsApp__nav a {
   color: inherit;
@@ -288,17 +288,18 @@ sup {
   height: 2em;
 }
 .dsApp__nav .you-are-here {
-  visibility: hidden;
   display: inline-block;
   float: right;
+  visibility: hidden;
 }
 .page-heading {
   background-color: #1a1a1a;
   color: white;
-  min-height: 6rem;
+  padding: 1rem 1.5rem;
 }
 .page-heading .dsPageHeading {
   line-height: 1;
+  margin: 0;
 }
 .dsPage {
   display: flex;
@@ -316,7 +317,6 @@ sup {
 }
 .dsPage__foot {
   padding: 1.5rem;
-  background-color: #e6e6e6;
   flex-shrink: 0;
   color: #666666;
 }
@@ -379,14 +379,16 @@ sup {
 }
 .article-toc a {
   display: block;
+  font-weight: 500;
   margin-bottom: 0.5em;
   text-decoration: none;
 }
 .article-toc a:hover {
   text-decoration: underline;
 }
-.top-link {
+.article-toc .top-link {
   font-size: 0.875rem;
+  font-weight: 300;
 }
 body {
   color: #333333;
