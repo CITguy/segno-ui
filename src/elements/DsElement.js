@@ -1,13 +1,19 @@
+const KEYS = require('../util/keys');
+
 class DsElement extends HTMLElement {
     constructor (tagName, template) {
         super();
-        this.attachShadow({mode: 'open'});
 
-        if (window.ShadyCSS) {
-            ShadyCSS.prepareTemplate(template, tagName);
-            ShadyCSS.styleElement(this);
+        // Don't attach shadow DOM unless specified
+        if (tagName && template) {
+            this.attachShadow({mode: 'open'});
+
+            if (window.ShadyCSS) {
+                ShadyCSS.prepareTemplate(template, tagName);
+                ShadyCSS.styleElement(this);
+            }
+            this.shadowRoot.appendChild(template.content.cloneNode(true));
         }
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
     }
 
     // See: https://goo.gl/MDp6j5
@@ -23,6 +29,23 @@ class DsElement extends HTMLElement {
     $setAttribute (name, val) {
         if (!this.hasAttribute(name)) {
             this.setAttribute(name, val);
+        }
+    }
+
+    // Utility method to generate a unique ID
+    $generateId () {
+        return Math
+            .random()     // 0.7093288430261266
+            .toString(36) // "0.pjag2nwxb2o"
+            .substr(2,8); // "pjag2nwx"
+    }//$generateId()
+
+    $preventScroll (evt) {
+        switch (evt.keyCode) {
+            case KEYS.Space:
+            case KEYS.Down:
+                evt.preventDefault();
+            break;
         }
     }
 }

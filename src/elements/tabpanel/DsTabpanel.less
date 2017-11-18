@@ -1,0 +1,10 @@
+@import (reference) './ds-tabpanel';
+@import '../DsElement';
+
+:host {
+  &:extend(ds-tabpanel);
+
+  &([open]) {
+    display: block;
+  }
+}

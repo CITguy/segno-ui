@@ -1,0 +1,172 @@
+---
+title: <ds-tabset>
+compatibility:
+  ie: working
+  edge: working
+  chrome: working
+  safari: working
+  firefox: working
+---
+{% extends 'element.njk' %}
+{% block content %}
+  <section id="vue-demoTabset">
+    <h2 class="dsSectionHeading" id="demo">Demo</h2>
+    <div class="demo demo-tabset">
+      <p>
+        <label for="tab-side">Tabs On:</label>
+        <select id="tab-side" v-model="tabSide">
+          <option value="bottom">Bottom</option>
+          <option value="left">Left</option>
+          <option value="right">Right</option>
+          <option value="top">Top</option>
+        </select>
+      </p>
+      <ds-tabset :tab-side="tabSide">
+        <ds-tablist>
+          <ds-tab>First</ds-tab>
+          <ds-tab>Second</ds-tab>
+          <ds-tab>Third</ds-tab>
+        </ds-tablist>
+        <ds-tabcontent>
+          <ds-tabpanel class="dsContainer-xs">
+            <h3 class="dsSubSectionHeading dsContainer-sm">First Panel</h3>
+            <div class="dsRow">
+              <div class="dsCol-6-xs dsContainer-sm">
+                <p>
+                  A simple planning game always takes less time than a design
+                  one. If we learn without the blockers, we can get the burnup
+                  interaction on the VOC blocker. Reaching the standards
+                  should allow our kanban to groom the adaptive simplicity with
+                  the code smell.
+                </p>
+              </div>
+              <div class="dsCol-6-xs dsContainer-sm">
+                <p>
+                  If it takes you too long to learn the standup XP customer,
+                  then you are not closing enough. We must finally inspect the
+                  big XP sprint backlog! Planning the teams should allow our
+                  bottleneck to select the standup standard across the
+                  estimation.
+                </p>
+              </div>
+            </div>
+          </ds-tabpanel>
+          <ds-tabpanel class="dsContainer">
+            <h3 class="dsSubSectionHeading">Second Panel</h3>
+            <p>
+              We must eventually inspect the fibonacci PR process! We must
+              efficiently pick up the maintainable VOC emergence! Closing the
+              trends should allow our blocker to build the extended timebox
+              toward the bottleneck. It was discovered that by thoughtfully
+              spiking the VOC bottlenecks, we can block the pair VOC planning
+              poker off the cross-functional relationship. As a user, I should
+              be able to design the cross-functional release plan so that I can
+              inspect the measured PR applications along the prioritized
+              commitments. The best way to adjust steady user story is to
+              exactly test their level of effort.
+            </p>
+            <p><a href="#link-inside-panel">Link inside the panel</a></p>
+            <p>
+              It was discovered that by perfectly designing the PR development
+              practices, we can estimate the marketable XP lifecycle above the
+              predictable sprint review. As a user, I should be able to groom
+              the minimum branch so that I can rank the patch-level MVP bugs
+              toward the daily bottlenecks. Try to inspect the many sprint
+              planning meeting, maybe it will help practice the XP stories.
+              Try to decide the prioritized standup, maybe it will help adjust
+              the MVP development practices.
+            </p>
+            <p>
+              As a user, I should be able to join the vanity error so that I can
+              estimate the burnup MVP methodologies outside the agile patterns.
+              If it takes you too long to detail the fail-fast PR scrum, then
+              you are not opening enough. If we measure down the processes, we
+              can get the multiple planning game throughout the XP bug. Try to
+              document the design branching, maybe it will help document the MVP
+              story points.
+            </p>
+          </ds-tabpanel>
+          <ds-tabpanel class="dsContainer-lg">
+            <h3 class="dsSubSectionHeading">Third Panel</h3>
+            <img src="http://via.placeholder.com/200x150" />
+            <img src="http://via.placeholder.com/200x150" />
+            <img src="http://via.placeholder.com/200x150" />
+            <img src="http://via.placeholder.com/200x150" />
+            <img src="http://via.placeholder.com/200x150" />
+            <img src="http://via.placeholder.com/200x150" />
+            <img src="http://via.placeholder.com/200x150" />
+            <img src="http://via.placeholder.com/200x150" />
+            <img src="http://via.placeholder.com/200x150" />
+            <img src="http://via.placeholder.com/200x150" />
+            <img src="http://via.placeholder.com/200x150" />
+            <img src="http://via.placeholder.com/200x150" />
+          </ds-tabpanel>
+        </ds-tabcontent>
+      </ds-tabset>
+    </div>
+    {% code 'html' %}
+      <ds-tabset>
+        <ds-tablist>
+          <ds-tab>First</ds-tab>
+          <ds-tab>Second</ds-tab>
+          <ds-tab>Third</ds-tab>
+        </ds-tablist>
+        <ds-tabcontent>
+          <ds-tabpanel>...</ds-tabpanel>
+          <ds-tabpanel>...</ds-tabpanel>
+          <ds-tabpanel>...</ds-tabpanel>
+        </ds-tabcontent>
+      </ds-tabset>
+    {% endcode %}
+  </section>
+
+  <section>
+    <h2 class="dsSectionHeading" id="usage">Usage</h2>
+    <dl class="dsKeyValue">
+      <dt>Display</dt>
+      <dd>block</dd>
+
+      <dt>Parent</dt>
+      <dd><em>n/a</em></dd>
+
+      <dt>Children</dt>
+      <dd>
+        <a href="elements/tablist">&lt;ds-tablist&gt;</a>,
+        <a href="elements/tabcontent">&lt;ds-tabcontent&gt;</a>
+      </dd>
+    </dl>
+    {% code 'html' %}
+      <ds-tabset
+        [current-tab="{Number}"]
+        [tab-side="{String ([top]|right|bottom|left)}"]>
+
+        ...
+      </ds-tabset>
+    {% endcode %}
+  </section>
+{% endblock %}
+
+{% block attributes %}
+  <dl>
+    <dt>current-tab <small>(Number)</small></dt>
+    <dd>
+      <small>(default: 0)</small> Zero-based index of the currently active Tab + Tabpanel
+    </dd>
+
+    <dt>tab-side <small>(String: 'top' | 'right' | 'bottom' | 'left')</small></dt>
+    <dd>
+      <small>(default: 'top')</small>
+      Position of the tablist in relation to tab contents.
+    </dd>
+  </dl>
+{% endblock %}
+
+{% block properties %}
+  <dl class="list--props">
+    <dt>currentTab <small>(Number)</small></dt>
+    <dd>Zero-based index of the currently active Tab + Tabpanel</dd>
+
+    <dt>tabSide <small>(String)</small></dt>
+    <dd>Position of the tablist in relation to tab contents.</dd>
+  </dl>
+{% endblock %}

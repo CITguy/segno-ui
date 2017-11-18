@@ -1,0 +1,56 @@
+---
+title: <ds-tablist>
+compatibility:
+  ie: working
+  edge: working
+  chrome: working
+  safari: working
+  firefox: working
+---
+{% extends 'element.njk' %}
+{% block content %}
+  <p>
+    The <code>&lt;ds-tablist&gt;</code> element is a child container of a
+    <a href="elements/tabset">&lt;ds-tabset&gt;</a> that groups together
+    all of your <a href="elements/tab">&lt;ds-tab&gt;</a> elements.
+  </p>
+  <section>
+    <h2 class="dsSectionHeading" id="usage">Usage</h2>
+    <dl class="dsKeyValue">
+      <dt>Display</dt>
+      <dd>block</dd>
+
+      <dt>Parent</dt>
+      <dd>
+        <a href="elements/tabset">&lt;ds-tabset&gt;</a>
+      </dd>
+
+      <dt>Children</dt>
+      <dd>
+        <a href="elements/tab">&lt;ds-tab&gt;</a>
+      </dd>
+    </dl>
+    {% code 'html' %}
+      <ds-tablist
+        [role="{String}"]>
+
+        ...
+      </ds-tablist>
+    {% endcode %}
+  </section>
+{% endblock %}
+
+{% block attributes %}
+  <dl>
+    <dt>aria-orientation*</dt>
+    <dd>
+      Automatically set by <a href="elements/tabset">&lt;ds-tabset&gt;</a> when setting the
+      <code>tab-side</code> attribute or <code>tabSide</code> property.
+    </dd>
+
+    <dt>role*</dt>
+    <dd>
+      Automatically set to "tablist", if not explicitly defined in markup.
+    </dd>
+  </dl>
+{% endblock %}
