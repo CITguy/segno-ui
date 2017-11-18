@@ -1,5 +1,5 @@
 {% macro link(label, href) %}
-  {% set isCurrentLink = page.path.indexOf(href) === 0 %}
+  {% set isCurrentLink = page.path.indexOf(href + '/') === 0 %}
 
   <a href="{{href}}" {% if isCurrentLink %}class="current"{% endif %}>
     {{label}}
