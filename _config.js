@@ -53,7 +53,8 @@ CONFIG.webpack = {
         /* <name>: <source file> */
         // NOTE: source fileneeds to be full path, not relative
         'segno-ui': `${CONFIG.root}/${CONFIG.sourceDir}/segno-ui.js`,
-        'docs': `${CONFIG.root}/${CONFIG.sourceDir}/docs.js`
+        'docs': `${CONFIG.root}/${CONFIG.sourceDir}/docs.js`,
+        'polyfill-loader': `${CONFIG.root}/${CONFIG.sourceDir}/polyfill-loader.js`,
     }
 };
 
