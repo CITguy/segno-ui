@@ -211,6 +211,33 @@ sup {
 .demo + pre {
   margin-top: 1rem;
 }
+dl dt {
+  font-weight: 700;
+  padding: 0.25rem;
+}
+dl dd {
+  padding: 0.25rem;
+  margin-left: 2rem;
+}
+dl.dsKeyValue {
+  display: flex;
+  flex-wrap: wrap;
+}
+dl.dsKeyValue dt {
+  flex: 0 0 25%;
+  max-width: 25%;
+  text-align: right;
+  padding: 0.5rem;
+}
+dl.dsKeyValue dt:after {
+  content: ':';
+}
+dl.dsKeyValue dd {
+  flex: 0 0 75%;
+  max-width: 75%;
+  margin: 0;
+  padding: 0.5rem;
+}
 .dsApp__stage {
   display: flex;
   min-height: 100vh;
@@ -687,6 +714,9 @@ body {
   height: 2em;
   width: 2em;
   margin-right: 1em;
+}
+.demo-tabset ds-tabset {
+  height: 400px;
 }
 .theme-dark {
   background-color: #1a1a1a;

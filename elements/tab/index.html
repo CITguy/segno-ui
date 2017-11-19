@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>&lt;ds-progress&gt; - SegnoUI</title>
+  <title>&lt;ds-tab&gt; - SegnoUI</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="/">
@@ -16,56 +16,37 @@
   <div class="dsApp__stage">
     <main class="dsApp__content">
 <div class="page-heading">
-  <h1 class="dsPageHeading">&lt;ds-progress&gt;</h1>
+  <h1 class="dsPageHeading">&lt;ds-tab&gt;</h1>
 </div>
   
   <div class="dsRow">
     <div class="dsPage dsCol-12-xs dsCol-9-md dsOrder-2-xs dsOrder-1-md">
       <div class="dsPage__body">
-  <section>
-    <h2 class="dsSectionHeading" id="demo">Demo</h2>
-    <div class="demo dsRow" id="vue-progressDemo">
-      <div class="dsCol dsCol-12-xs dsCol-6-md dsCol-4-xl">
-        <p>
-          <ds-progress
-            :value="pctComplete"
-            :indeterminate="indeterminate"
-          ></ds-progress>
-        </p>
-        <p>
-          <input type="checkbox" id="chkIndeterminate" v-model="indeterminate" />
-          <label for="chkIndeterminate">Indeterminate</label>
-        </p>
-        <p>
-          <label for="numPctComplete">
-            Value: <span v-text="pctComplete"></span>
-          </label>
-          <input
-            id="numPctComplete"
-            type="range"
-            list="pctTickmarks"
-            :disabled="indeterminate"
-            min="0" max="100" step="1"
-            v-model="pctComplete" />
-
-          <datalist id="pctTickmarks">
-            <option value="0">
-            <option value="25">
-            <option value="50">
-            <option value="75">
-            <option value="100">
-          </datalist>
-        </p>
-      </div>
-    </div>
-  </section>
+  <p>
+    The <code>&lt;ds-tab&gt;</code> element is the interactive label to an associated
+    <a href="elements/tabpanel">&lt;ds-tabpanel&gt;</a> element.
+  </p>
 
   <section>
     <h2 class="dsSectionHeading" id="usage">Usage</h2>
-<pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">ds-progress</span>
-  [<span class="hljs-attr">value</span>=<span class="hljs-string">"{Number}"</span>]
-  [<span class="hljs-attr">indeterminate</span>]&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">ds-progress</span>&gt;</span>
+    <dl class="dsKeyValue">
+      <dt>Display</dt>
+      <dd>block</dd>
+
+      <dt>Parent</dt>
+      <dd>
+        <a href="elements/tablist">&lt;ds-tablist&gt;</a>
+      </dd>
+
+      <dt>Children</dt>
+      <dd><em>n/a</em></dd>
+    </dl>
+<pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">ds-tab</span>
+  [<span class="hljs-attr">current</span>]
+  [<span class="hljs-attr">id</span>=<span class="hljs-string">"{String}"</span>]&gt;</span>
+
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-name">ds-tab</span>&gt;</span>
 </code></pre>  </section>
 
         <section>
@@ -73,15 +54,35 @@
           <p>
             Attributes allow you to configure the element in a declarative manner.
           </p>
-  <dl class="list--attrs">
-    <dt>value <small>(Number)</small></dt>
+  <dl>
+    <dt>aria-controls*</dt>
     <dd>
-      Progress percentage (0-100)
+      Automatically set by <a href="elements/tabset">&lt;ds-tabset&gt;</a>
+      when attached to the DOM.
     </dd>
 
-    <dt>indeterminate <small>(Boolean)</small></dt>
+    <dt>aria-selected*</dt>
     <dd>
-      When present, set the element to an indeterminate state.
+      Automatically set as the <code>current</code> attribute/property changes.
+    </dd>
+
+    <dt>current*</dt>
+    <dd>
+      Automatically applied by <a href="elements/tabset">&lt;ds-tabset&gt;</a>
+      to identify the current Tab in a Tablist.
+    </dd>
+
+    <dt>id <small>(String)</small></dt>
+    <dd>
+      Used by <a href="elements/tabset">&lt;ds-tabset&gt;</a> to wire up a Tab
+      to its Tabpanel using the <code>aria-controls</code> and
+      <code>aria-labeledby</code> attributes. If you do not define an <code>id</code>
+      attribute, one will be automatically generated.
+    </dd>
+
+    <dt>role*</dt>
+    <dd>
+      Automatically set to "tab", if not explicitly defined in markup.
     </dd>
   </dl>
         </section>
@@ -92,14 +93,12 @@
             Properties allow you to configure the element in an imperative manner.
           </p>
   <dl class="list--props">
-    <dt>value <small>(Number)</small></dt>
+    <dt>current <small>(Boolean [false])</small></dt>
     <dd>
-      <small>(default: 0)</small> progress percentage (0-100)
-    </dd>
-
-    <dt>indeterminate <small>(Boolean)</small></dt>
-    <dd>
-      <small>(default: false)</small> When true, set the element to an indeterminate state.
+      <ul>
+        <li>Set to <code>true</code> to set current Tab state.</li>
+        <li>Set to <code>false</code> to remove current Tab state.</li>
+      </ul>
     </dd>
   </dl>
         </section>
@@ -163,12 +162,7 @@
     </tr>
   </tbody>
 </table>
-  <ul>
-    <li>
-      Be aware that dynamic updates to the <code>color</code> property may or may not
-      update the indeterminate stripes in older browsers.
-    </li>
-  </ul>
+            
         </section>
       </div>
 <footer class="dsPage__foot">
@@ -182,9 +176,6 @@
       <h6 class="dsLabel">On this page:</h6>
       <aside class="article-toc" role="navigation">
         
-            <a href="#demo">Demo</a>
-        
-
             <a href="#usage">Usage</a>
         
         <a href="#attributes">Attributes</a>
@@ -224,7 +215,7 @@
   </a>
 
           
-  <a href="elements/progress" class="current">
+  <a href="elements/progress" >
     &lt;ds-progress&gt;
   </a>
 
@@ -234,7 +225,7 @@
   </a>
 
           
-  <a href="elements/tab" >
+  <a href="elements/tab" class="current">
     &lt;ds-tab&gt;
   </a>
 

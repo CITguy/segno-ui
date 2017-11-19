@@ -780,19 +780,3 @@ section:not(:last-child) {
 p:not(:last-child) {
   margin: 0 0 1em;
 }
-dl {
-  display: flex;
-  flex-wrap: wrap;
-}
-dl dt {
-  flex: 0 0 100%;
-  max-width: 100%;
-  padding: 0.25rem;
-  font-weight: 700;
-}
-dl dd {
-  flex: 0 0 91.66666667%;
-  max-width: 91.66666667%;
-  margin-left: 8.33333333% !important;
-  padding: 0.25rem;
-}

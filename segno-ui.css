@@ -43,3 +43,86 @@ ds-reveal:not([open]) > *:not([slot="summary"]) {
 #summary.ds-reveal {
   display: block;
 }
+ds-tab {
+  border: 1px solid transparent;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+}
+ds-tab[current] {
+  background-color: white;
+  border-color: #b3b3b3;
+}
+ds-tabcontent {
+  border: 1px solid #b3b3b3;
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+}
+ds-tablist {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+}
+ds-tablist[aria-orientation="horizontal"] {
+  flex-direction: row;
+}
+ds-tablist[aria-orientation="vertical"] {
+  flex-direction: column;
+}
+ds-tabpanel {
+  background-color: white;
+  display: none;
+  flex-grow: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+ds-tabpanel[open] {
+  display: block;
+}
+ds-tabset {
+  display: flex;
+  flex-direction: column;
+}
+ds-tabset ds-tablist {
+  position: relative;
+}
+ds-tabset[tab-side="top"] {
+  flex-direction: column;
+}
+ds-tabset[tab-side="top"] ds-tablist {
+  bottom: -1px;
+  padding: 0 1rem;
+}
+ds-tabset[tab-side="top"] ds-tab {
+  border-bottom-color: transparent;
+}
+ds-tabset[tab-side="bottom"] {
+  flex-direction: column-reverse;
+}
+ds-tabset[tab-side="bottom"] ds-tablist {
+  top: -1px;
+  padding: 0 1rem;
+}
+ds-tabset[tab-side="bottom"] ds-tab {
+  border-top-color: transparent;
+}
+ds-tabset[tab-side="left"] {
+  flex-direction: row;
+}
+ds-tabset[tab-side="left"] ds-tablist {
+  right: -1px;
+  padding: 1rem 0;
+}
+ds-tabset[tab-side="left"] ds-tab {
+  border-right-color: transparent;
+}
+ds-tabset[tab-side="right"] {
+  flex-direction: row-reverse;
+}
+ds-tabset[tab-side="right"] ds-tablist {
+  left: -1px;
+  padding: 1rem 0;
+}
+ds-tabset[tab-side="right"] ds-tab {
+  border-left-color: transparent;
+}

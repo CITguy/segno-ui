@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>&lt;ds-tabset&gt; - SegnoUI</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/">
+
+  <link rel="shortcut icon" href="images/favicon.png">
+
+  <link rel="stylesheet" href="segno-ui.css">
+  <link rel="stylesheet" href="segno-ui-grid.css">
+  <link rel="stylesheet" href="docs.css">
+</head>
+<body class="dsApp" id="top">
+  <div class="dsApp__stage">
+    <main class="dsApp__content">
+<div class="page-heading">
+  <h1 class="dsPageHeading">&lt;ds-tabset&gt;</h1>
+</div>
+  
+  <div class="dsRow">
+    <div class="dsPage dsCol-12-xs dsCol-9-md dsOrder-2-xs dsOrder-1-md">
+      <div class="dsPage__body">
+  <section id="vue-demoTabset">
+    <h2 class="dsSectionHeading" id="demo">Demo</h2>
+    <div class="demo demo-tabset">
+      <p>
+        <label for="tab-side">Tabs On:</label>
+        <select id="tab-side" v-model="tabSide">
+          <option value="bottom">Bottom</option>
+          <option value="left">Left</option>
+          <option value="right">Right</option>
+          <option value="top">Top</option>
+        </select>
+      </p>
+      <ds-tabset :tab-side="tabSide">
+        <ds-tablist>
+          <ds-tab>First</ds-tab>
+          <ds-tab>Second</ds-tab>
+          <ds-tab>Third</ds-tab>
+        </ds-tablist>
+        <ds-tabcontent>
+          <ds-tabpanel class="dsContainer-xs">
+            <h3 class="dsSubSectionHeading dsContainer-sm">First Panel</h3>
+            <div class="dsRow">
+              <div class="dsCol-6-xs dsContainer-sm">
+                <p>
+                  A simple planning game always takes less time than a design
+                  one. If we learn without the blockers, we can get the burnup
+                  interaction on the VOC blocker. Reaching the standards
+                  should allow our kanban to groom the adaptive simplicity with
+                  the code smell.
+                </p>
+              </div>
+              <div class="dsCol-6-xs dsContainer-sm">
+                <p>
+                  If it takes you too long to learn the standup XP customer,
+                  then you are not closing enough. We must finally inspect the
+                  big XP sprint backlog! Planning the teams should allow our
+                  bottleneck to select the standup standard across the
+                  estimation.
+                </p>
+              </div>
+            </div>
+          </ds-tabpanel>
+          <ds-tabpanel class="dsContainer">
+            <h3 class="dsSubSectionHeading">Second Panel</h3>
+            <p>
+              We must eventually inspect the fibonacci PR process! We must
+              efficiently pick up the maintainable VOC emergence! Closing the
+              trends should allow our blocker to build the extended timebox
+              toward the bottleneck. It was discovered that by thoughtfully
+              spiking the VOC bottlenecks, we can block the pair VOC planning
+              poker off the cross-functional relationship. As a user, I should
+              be able to design the cross-functional release plan so that I can
+              inspect the measured PR applications along the prioritized
+              commitments. The best way to adjust steady user story is to
+              exactly test their level of effort.
+            </p>
+            <p><a href="#link-inside-panel">Link inside the panel</a></p>
+            <p>
+              It was discovered that by perfectly designing the PR development
+              practices, we can estimate the marketable XP lifecycle above the
+              predictable sprint review. As a user, I should be able to groom
+              the minimum branch so that I can rank the patch-level MVP bugs
+              toward the daily bottlenecks. Try to inspect the many sprint
+              planning meeting, maybe it will help practice the XP stories.
+              Try to decide the prioritized standup, maybe it will help adjust
+              the MVP development practices.
+            </p>
+            <p>
+              As a user, I should be able to join the vanity error so that I can
+              estimate the burnup MVP methodologies outside the agile patterns.
+              If it takes you too long to detail the fail-fast PR scrum, then
+              you are not opening enough. If we measure down the processes, we
+              can get the multiple planning game throughout the XP bug. Try to
+              document the design branching, maybe it will help document the MVP
+              story points.
+            </p>
+          </ds-tabpanel>
+          <ds-tabpanel class="dsContainer-lg">
+            <h3 class="dsSubSectionHeading">Third Panel</h3>
+            <img src="http://via.placeholder.com/200x150" />
+            <img src="http://via.placeholder.com/200x150" />
+            <img src="http://via.placeholder.com/200x150" />
+            <img src="http://via.placeholder.com/200x150" />
+            <img src="http://via.placeholder.com/200x150" />
+            <img src="http://via.placeholder.com/200x150" />
+            <img src="http://via.placeholder.com/200x150" />
+            <img src="http://via.placeholder.com/200x150" />
+            <img src="http://via.placeholder.com/200x150" />
+            <img src="http://via.placeholder.com/200x150" />
+            <img src="http://via.placeholder.com/200x150" />
+            <img src="http://via.placeholder.com/200x150" />
+          </ds-tabpanel>
+        </ds-tabcontent>
+      </ds-tabset>
+    </div>
+<pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">ds-tabset</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ds-tablist</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ds-tab</span>&gt;</span>First<span class="hljs-tag">&lt;/<span class="hljs-name">ds-tab</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ds-tab</span>&gt;</span>Second<span class="hljs-tag">&lt;/<span class="hljs-name">ds-tab</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ds-tab</span>&gt;</span>Third<span class="hljs-tag">&lt;/<span class="hljs-name">ds-tab</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ds-tablist</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ds-tabcontent</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ds-tabpanel</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">ds-tabpanel</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ds-tabpanel</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">ds-tabpanel</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ds-tabpanel</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">ds-tabpanel</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ds-tabcontent</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ds-tabset</span>&gt;</span>
+</code></pre>  </section>
+
+  <section>
+    <h2 class="dsSectionHeading" id="usage">Usage</h2>
+    <dl class="dsKeyValue">
+      <dt>Display</dt>
+      <dd>block</dd>
+
+      <dt>Parent</dt>
+      <dd><em>n/a</em></dd>
+
+      <dt>Children</dt>
+      <dd>
+        <a href="elements/tablist">&lt;ds-tablist&gt;</a>,
+        <a href="elements/tabcontent">&lt;ds-tabcontent&gt;</a>
+      </dd>
+    </dl>
+<pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">ds-tabset</span>
+  [<span class="hljs-attr">current-tab</span>=<span class="hljs-string">"{Number}"</span>]
+  [<span class="hljs-attr">tab-side</span>=<span class="hljs-string">"{String ([top]|right|bottom|left)}"</span>]&gt;</span>
+
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-name">ds-tabset</span>&gt;</span>
+</code></pre>  </section>
+
+        <section>
+          <h2 class="dsSectionHeading" id="attributes">Attributes</h2>
+          <p>
+            Attributes allow you to configure the element in a declarative manner.
+          </p>
+  <dl>
+    <dt>current-tab <small>(Number)</small></dt>
+    <dd>
+      <small>(default: 0)</small> Zero-based index of the currently active Tab + Tabpanel
+    </dd>
+
+    <dt>tab-side <small>(String: 'top' | 'right' | 'bottom' | 'left')</small></dt>
+    <dd>
+      <small>(default: 'top')</small>
+      Position of the tablist in relation to tab contents.
+    </dd>
+  </dl>
+        </section>
+
+        <section>
+          <h2 class="dsSectionHeading" id="properties">Properties</h2>
+          <p>
+            Properties allow you to configure the element in an imperative manner.
+          </p>
+  <dl class="list--props">
+    <dt>currentTab <small>(Number)</small></dt>
+    <dd>Zero-based index of the currently active Tab + Tabpanel</dd>
+
+    <dt>tabSide <small>(String)</small></dt>
+    <dd>Position of the tablist in relation to tab contents.</dd>
+  </dl>
+        </section>
+
+        <section>
+          <h2 class="dsSectionHeading" id="functions">Functions</h2>
+          <p>
+            Functions alllow you to trigger complex behavior in an element.
+          </p>
+            <p>
+              <ds-icon type="info-circle"></ds-icon>
+              This element does not have any exposed functions.
+            </p>
+        </section>
+
+        <section>
+          <h2 class="dsSectionHeading" id="compatibility">Compatibility</h2>
+
+<table class="dsTable table--compat">
+  <thead>
+    <tr>
+      <th>IE11</th>
+      <th>Edge</th>
+      <th>Chrome</th>
+      <th>Safari</th>
+      <th>Firefox</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      
+
+  <td class="compat-working" title="Fully functional">
+      <ds-icon type="check"></ds-icon>
+  </td>
+
+      
+
+  <td class="compat-working" title="Fully functional">
+      <ds-icon type="check"></ds-icon>
+  </td>
+
+      
+
+  <td class="compat-working" title="Fully functional">
+      <ds-icon type="check"></ds-icon>
+  </td>
+
+      
+
+  <td class="compat-working" title="Fully functional">
+      <ds-icon type="check"></ds-icon>
+  </td>
+
+      
+
+  <td class="compat-working" title="Fully functional">
+      <ds-icon type="check"></ds-icon>
+  </td>
+
+    </tr>
+  </tbody>
+</table>
+            
+        </section>
+      </div>
+<footer class="dsPage__foot">
+  <p>
+    <ds-icon type="calendar"></ds-icon>
+    <b>Last Updated:</b> 2017-11-19
+  </p>
+</footer>
+    </div>
+    <div class="dsSidebar dsCol dsCol-12-xs dsCol-3-md dsOrder-1-xs dsOrder-2-md">
+      <h6 class="dsLabel">On this page:</h6>
+      <aside class="article-toc" role="navigation">
+        
+            <a href="#demo">Demo</a>
+        
+
+            <a href="#usage">Usage</a>
+        
+        <a href="#attributes">Attributes</a>
+        <a href="#properties">Properties</a>
+        <a href="#functions">Function</a>
+        <a href="#compatibility">Compatibility</a>
+        <hr />
+        <a class="top-link" href="#top">Back to Top</a>
+
+      </aside>
+    </div>
+  </div>
+    </main>
+    <nav class="dsApp__nav">
+
+
+<a href="/" class="brand">
+  <img src="images/logo-with-title.svg" alt="logo" />
+</a>
+  
+
+
+    <ds-reveal open>
+      <header slot="summary">
+        <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
+        Elements
+      </header>
+
+          
+  <a href="elements/busy" >
+    &lt;ds-busy&gt;
+  </a>
+
+          
+  <a href="elements/icon" >
+    &lt;ds-icon&gt;
+  </a>
+
+          
+  <a href="elements/progress" >
+    &lt;ds-progress&gt;
+  </a>
+
+          
+  <a href="elements/reveal" >
+    &lt;ds-reveal&gt;
+  </a>
+
+          
+  <a href="elements/tab" >
+    &lt;ds-tab&gt;
+  </a>
+
+          
+  <a href="elements/tabcontent" >
+    &lt;ds-tabcontent&gt;
+  </a>
+
+          
+  <a href="elements/tablist" >
+    &lt;ds-tablist&gt;
+  </a>
+
+          
+  <a href="elements/tabpanel" >
+    &lt;ds-tabpanel&gt;
+  </a>
+
+          
+  <a href="elements/tabset" class="current">
+    &lt;ds-tabset&gt;
+  </a>
+
+    </ds-reveal>
+
+  
+
+
+    <ds-reveal >
+      <header slot="summary">
+        <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
+        Utilities
+      </header>
+
+          
+  <a href="utilities/grid" >
+    Grid
+  </a>
+
+    </ds-reveal>
+
+    </nav>
+  </div>
+
+<span id="ce-es5-adapter">
+  <script>
+    if (!window.customElements) {
+      var elAdapter = document.querySelector('#ce-es5-adapter');
+      elAdapter.parentElement.removeChild(elAdapter);
+    }
+  </script>
+  <!--
+    The adapter should only be loaded for browsers that
+    natively support custom elements.
+  -->
+  <script src="vendor/custom-elements-es5-adapter.js"></script>
+</span>
+
+<span id="bottom">
+  <script src="polyfill-loader.js"></script>
+  <!-- polyfill inserted here (if needed) -->
+</span>
+
+<!-- SegnoUI Custom Elements -->
+<script src="segno-ui.js"></script>
+
+<!-- Documentation from here on -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/vue@2.4.4/dist/vue.js"></script>
+<script src="docs.js"></script>
+</body>
+</html>

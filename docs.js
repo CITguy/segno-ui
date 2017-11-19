@@ -60,20 +60,24 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 79);
+/******/ 	return __webpack_require__(__webpack_require__.s = 86);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 79:
+/***/ 86:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(80);
+__webpack_require__(87);
 
-__webpack_require__(81);
+__webpack_require__(88);
+
+__webpack_require__(89);
+
+__webpack_require__(90);
 
 (function () {
     var hashAnchors = document.querySelectorAll('[href^="#"]');
@@ -88,7 +92,7 @@ __webpack_require__(81);
 
 /***/ }),
 
-/***/ 80:
+/***/ 87:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -105,7 +109,7 @@ if (document.getElementById('vue-busyDemo')) {
 
 /***/ }),
 
-/***/ 81:
+/***/ 88:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -117,6 +121,40 @@ if (document.getElementById('vue-progressDemo')) {
         data: {
             pctComplete: 42,
             indeterminate: false
+        }
+    });
+}
+
+/***/ }),
+
+/***/ 89:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+if (document.getElementById('vue-tabpanelDemo')) {
+    new Vue({
+        el: '#vue-tabpanelDemo',
+        data: {
+            isOpen: false
+        }
+    });
+}
+
+/***/ }),
+
+/***/ 90:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+if (document.getElementById('vue-demoTabset')) {
+    new Vue({
+        el: '#vue-demoTabset',
+        data: {
+            tabSide: 'top'
         }
     });
 }
