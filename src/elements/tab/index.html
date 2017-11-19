@@ -1,0 +1,86 @@
+---
+title: <ds-tab>
+compatibility:
+  ie: working
+  edge: working
+  chrome: working
+  safari: working
+  firefox: working
+---
+{% extends 'element.njk' %}
+{% block content %}
+  <p>
+    The <code>&lt;ds-tab&gt;</code> element is the interactive label to an associated
+    <a href="elements/tabpanel">&lt;ds-tabpanel&gt;</a> element.
+  </p>
+
+  <section>
+    <h2 class="dsSectionHeading" id="usage">Usage</h2>
+    <dl class="dsKeyValue">
+      <dt>Display</dt>
+      <dd>block</dd>
+
+      <dt>Parent</dt>
+      <dd>
+        <a href="elements/tablist">&lt;ds-tablist&gt;</a>
+      </dd>
+
+      <dt>Children</dt>
+      <dd><em>n/a</em></dd>
+    </dl>
+    {% code 'html' %}
+    <ds-tab
+      [current]
+      [id="{String}"]>
+
+      ...
+    </ds-tab>
+    {% endcode %}
+  </section>
+{% endblock %}
+
+{% block attributes %}
+  <dl>
+    <dt>aria-controls*</dt>
+    <dd>
+      Automatically set by <a href="elements/tabset">&lt;ds-tabset&gt;</a>
+      when attached to the DOM.
+    </dd>
+
+    <dt>aria-selected*</dt>
+    <dd>
+      Automatically set as the <code>current</code> attribute/property changes.
+    </dd>
+
+    <dt>current*</dt>
+    <dd>
+      Automatically applied by <a href="elements/tabset">&lt;ds-tabset&gt;</a>
+      to identify the current Tab in a Tablist.
+    </dd>
+
+    <dt>id <small>(String)</small></dt>
+    <dd>
+      Used by <a href="elements/tabset">&lt;ds-tabset&gt;</a> to wire up a Tab
+      to its Tabpanel using the <code>aria-controls</code> and
+      <code>aria-labeledby</code> attributes. If you do not define an <code>id</code>
+      attribute, one will be automatically generated.
+    </dd>
+
+    <dt>role*</dt>
+    <dd>
+      Automatically set to "tab", if not explicitly defined in markup.
+    </dd>
+  </dl>
+{% endblock %}
+
+{% block properties %}
+  <dl class="list--props">
+    <dt>current <small>(Boolean [false])</small></dt>
+    <dd>
+      <ul>
+        <li>Set to <code>true</code> to set current Tab state.</li>
+        <li>Set to <code>false</code> to remove current Tab state.</li>
+      </ul>
+    </dd>
+  </dl>
+{% endblock %}

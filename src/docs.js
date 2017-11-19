@@ -11,3 +11,5 @@
 
 import './elements/busy/demo-busy.js';
 import './elements/progress/demo-progress.js';
+import './elements/tabpanel/demo-tabpanel.js';
+import './elements/tabset/demo-tabset.js';

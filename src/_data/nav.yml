@@ -1,25 +1,32 @@
 #guides:
-#  Installing: install
+  #Installing: install
+#patterns:
+  #Forms: forms
+  #Layouts: layouts
 elements:
-  #Alert: alert
+  #<ds-alert>: alert
+  <ds-busy>: busy
+  #<ds-checkbox>: checkbox
+  <ds-icon>: icon
+  #<ds-menu>: menu
+  #<ds-modal>: modal
+  #<ds-pagination>: pagination
+  #<ds-popover>: popover
+  <ds-progress>: progress
+  <ds-reveal>: reveal
+  <ds-tab>: tab
+  <ds-tabcontent>: tabcontent
+  <ds-tablist>: tablist
+  <ds-tabpanel>: tabpanel
+  <ds-tabset>: tabset
+  #<ds-tooltip>: tooltip
+utilities:
   #Badge: badge
   #Breadcrumb: breadcrumb
-  Busy: busy
   #Button: button
-  #Checkbox: checkbox
   #Code: code
-  #Dropdown: dropdown
-  Icon: icon
-  #List: list
-  #Modal: modal
-  #Navigation: navigation
-  #Pagination: pagination
-  #Popover: popover
-  Progress: progress
-  Reveal: reveal
-  #Table: table
-  #Tabset: tabset
-  #Tooltip: tooltip
-  #Typography: typography
-utilities:
   Grid: grid
+  #List: list
+  #Navigation: navigation
+  #Table: table
+  #Typography: typography

@@ -2,7 +2,7 @@
 
 {% block layout %}
   {% include 'partials/page-heading.njk' %}
-  {% include 'partials/breadcrumbs.njk' %}
+  {# include 'partials/breadcrumbs.njk' #}
   <div class="dsRow">
     <div class="dsPage dsCol-12-xs dsCol-9-md dsOrder-2-xs dsOrder-1-md">
       <div class="dsPage__body">
@@ -13,12 +13,12 @@
         <section>
           <h2 class="dsSectionHeading" id="attributes">Attributes</h2>
           <p>
-            Attributes allow you to configure the component in a declarative manner.
+            Attributes allow you to configure the element in a declarative manner.
           </p>
           {% block attributes %}
             <p>
               <ds-icon type="info-circle"></ds-icon>
-              This component does not have any configurable attributes.
+              This element does not have any configurable attributes.
             </p>
           {% endblock %}
         </section>
@@ -26,12 +26,12 @@
         <section>
           <h2 class="dsSectionHeading" id="properties">Properties</h2>
           <p>
-            Properties allow you to configure the component in an imperative manner.
+            Properties allow you to configure the element in an imperative manner.
           </p>
           {% block properties %}
             <p>
               <ds-icon type="info-circle"></ds-icon>
-              This component does not have any exposed properties.
+              This element does not have any exposed properties.
             </p>
           {% endblock %}
         </section>
@@ -39,12 +39,12 @@
         <section>
           <h2 class="dsSectionHeading" id="functions">Functions</h2>
           <p>
-            Functions alllow you to trigger complex behavior in a component.
+            Functions alllow you to trigger complex behavior in an element.
           </p>
           {% block functions %}
             <p>
               <ds-icon type="info-circle"></ds-icon>
-              This component does not have any exposed functions.
+              This element does not have any exposed functions.
             </p>
           {% endblock %}
         </section>
