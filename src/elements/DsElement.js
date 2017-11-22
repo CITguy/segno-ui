@@ -42,8 +42,11 @@ class DsElement extends HTMLElement {
 
     $preventScroll (evt) {
         switch (evt.keyCode) {
-            case KEYS.Space:
             case KEYS.Down:
+            case KEYS.Left:
+            case KEYS.Right:
+            case KEYS.Space:
+            case KEYS.Up:
                 evt.preventDefault();
             break;
         }
