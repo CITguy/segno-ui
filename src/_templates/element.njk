@@ -56,6 +56,13 @@
             {# reserve for additional compatibility notes #}
           {% endblock %}
         </section>
+
+        <section>
+          <h2 class="dsSectionHeading" id="seealso">See Also</h2>
+          {% block seealso %}
+            <p>N/A</p>
+          {% endblock %}
+        </section>
       </div>
       {% include 'partials/page-footer.njk' %}
     </div>
@@ -67,9 +74,9 @@
         <a href="#properties">Properties</a>
         <a href="#functions">Function</a>
         <a href="#compatibility">Compatibility</a>
+        <a href="#seealso">See Also</a>
         <hr />
         <a class="top-link" href="#top">Back to Top</a>
-
       </aside>
     </div>
   </div>
