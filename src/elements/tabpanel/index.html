@@ -8,14 +8,34 @@ compatibility:
   firefox: working
 ---
 {% extends 'element.njk' %}
-{% block content %}
+{% block usage %}
   <p>
     The <b>Segno &lt;ds-tabpanel&gt; element</b> is a child container of a
     <a href="elements/tabcontent">&lt;ds-tabcontent&gt;</a> that contains
     the contents for a specific tab.
   </p>
+  <dl class="list--usage">
+    <dt>Display</dt>
+    <dd>block</dd>
+
+    <dt>Parent</dt>
+    <dd><a href="elements/tabcontent">&lt;ds-tabcontent&gt;</a></dd>
+
+    <dt>Children</dt>
+    <dd><em>n/a</em></dd>
+  </dl>
+  {% code 'html' %}
+    <ds-tabpanel
+      [id="{String}"]
+      [open]>
+
+      ...
+    </ds-tabpanel>
+  {% endcode %}
+{% endblock %}
+
+{% block examples %}
   <section id="vue-tabpanelDemo">
-    <h2 class="dsSectionHeading" id="demo">Demo</h2>
     <div class="demo">
       <label>
         <input type="checkbox" v-model="isOpen" />
@@ -32,28 +52,6 @@ compatibility:
         </div>
       </ds-tabpanel>
     </div>
-  </section>
-
-  <section>
-    <h2 class="dsSectionHeading" id="usage">Usage</h2>
-    <dl class="dsKeyValue">
-      <dt>Display</dt>
-      <dd>block</dd>
-
-      <dt>Parent</dt>
-      <dd><a href="elements/tabcontent">&lt;ds-tabcontent&gt;</a></dd>
-
-      <dt>Children</dt>
-      <dd><em>n/a</em></dd>
-    </dl>
-    {% code 'html' %}
-      <ds-tabpanel
-        [id="{String}"]
-        [open]>
-
-        ...
-      </ds-tabpanel>
-    {% endcode %}
   </section>
 {% endblock %}
 
