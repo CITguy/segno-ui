@@ -31,6 +31,9 @@
           <a href="elements/busy">&lt;ds-busy&gt;</a>
         </li>
         <li>
+          <a href="elements/disclosure">&lt;ds-disclosure&gt;</a>
+        </li>
+        <li>
           <a href="elements/icon">&lt;ds-icon&gt;</a>
         </li>
         <li>
@@ -68,15 +71,21 @@
   
 
 
-    <ds-reveal open>
-      <header slot="summary">
-        <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
-        Elements
-      </header>
+    <ds-disclosure aria-controls="nav-elements">
+      Elements
+      <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
+    </ds-disclosure>
+
+    <ds-reveal id="nav-elements" open>
 
           
   <a href="elements/busy" >
     &lt;ds-busy&gt;
+  </a>
+
+          
+  <a href="elements/disclosure" >
+    &lt;ds-disclosure&gt;
   </a>
 
           
@@ -124,11 +133,12 @@
   
 
 
-    <ds-reveal >
-      <header slot="summary">
-        <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
-        Utilities
-      </header>
+    <ds-disclosure aria-controls="nav-utilities">
+      Utilities
+      <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
+    </ds-disclosure>
+
+    <ds-reveal id="nav-utilities" >
 
           
   <a href="utilities/grid" >

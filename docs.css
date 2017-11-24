@@ -260,20 +260,23 @@ dl.dsKeyValue dd {
 .dsApp__nav {
   letter-spacing: 1px;
 }
-.dsApp__nav header {
+.dsApp__nav ds-disclosure {
   color: inherit;
   font-weight: 500;
   padding: 0.5rem 0.75rem;
   text-transform: uppercase;
 }
-.dsApp__nav header:hover {
+.dsApp__nav ds-disclosure:hover {
   background-color: #666666;
   color: white;
   cursor: pointer;
 }
-.dsApp__nav header .toggle-icon {
+.dsApp__nav ds-disclosure .toggle-icon {
   float: right;
   pointer-events: none;
+}
+.dsApp__nav ds-disclosure[aria-expanded="true"] .toggle-icon {
+  transform: scaleY(-1);
 }
 .dsApp__nav a {
   color: inherit;
@@ -293,11 +296,7 @@ dl.dsKeyValue dd {
   background-color: #666666;
   color: white;
 }
-.dsApp__nav ds-reveal[open] > #summary.ds-reveal .toggle-icon,
-.dsApp__nav ds-reveal[open] > header .toggle-icon {
-  transform: scaleY(-1);
-}
-.dsApp__nav ds-reveal header {
+.dsApp__nav ds-reveal ds-disclosure {
   padding-left: 0.75rem;
 }
 .dsApp__nav ds-reveal a {

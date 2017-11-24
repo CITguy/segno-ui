@@ -3,6 +3,12 @@ ds-busy {
   height: 1em;
   width: 1em;
 }
+ds-disclosure {
+  display: block;
+}
+ds-disclosure:hover {
+  cursor: pointer;
+}
 ds-icon {
   display: inline-block;
   flex-shrink: 0;
@@ -34,13 +40,9 @@ ds-progress[indeterminate] {
   }
 }
 ds-reveal {
-  display: block;
-}
-/* prevent FOUC before element is upgraded */
-ds-reveal:not([open]) > *:not([slot="summary"]) {
   display: none;
 }
-#summary.ds-reveal {
+ds-reveal[open] {
   display: block;
 }
 ds-tab {
@@ -51,6 +53,9 @@ ds-tab {
 ds-tab[current] {
   background-color: white;
   border-color: #b3b3b3;
+}
+ds-tab:hover {
+  cursor: pointer;
 }
 ds-tabcontent {
   border: 1px solid #b3b3b3;

@@ -495,6 +495,11 @@
 </table>
             
         </section>
+
+        <section>
+          <h2 class="dsSectionHeading" id="seealso">See Also</h2>
+            <p>N/A</p>
+        </section>
       </div>
 <footer class="dsPage__foot">
   <p>
@@ -531,6 +536,7 @@
             <a href="#nesting-containers">Nesting Containers</a>
         
         <a href="#compatibility">Compatibility</a>
+        <a href="#seealso">See Also</a>
         <hr />
         <a class="top-link" href="#top">Back to Top</a>
       </aside>
@@ -546,15 +552,21 @@
   
 
 
-    <ds-reveal >
-      <header slot="summary">
-        <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
-        Elements
-      </header>
+    <ds-disclosure aria-controls="nav-elements">
+      Elements
+      <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
+    </ds-disclosure>
+
+    <ds-reveal id="nav-elements" >
 
           
   <a href="elements/busy" >
     &lt;ds-busy&gt;
+  </a>
+
+          
+  <a href="elements/disclosure" >
+    &lt;ds-disclosure&gt;
   </a>
 
           
@@ -602,11 +614,12 @@
   
 
 
-    <ds-reveal open>
-      <header slot="summary">
-        <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
-        Utilities
-      </header>
+    <ds-disclosure aria-controls="nav-utilities">
+      Utilities
+      <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
+    </ds-disclosure>
+
+    <ds-reveal id="nav-utilities" open>
 
           
   <a href="utilities/grid" class="current">
