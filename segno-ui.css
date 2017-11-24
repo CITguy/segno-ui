@@ -39,10 +39,12 @@ ds-progress[indeterminate] {
     background-position: 80px 0;
   }
 }
-ds-reveal {
+ds-reveal,
+ds-tabpanel {
   display: none;
 }
-ds-reveal[open] {
+ds-reveal[open],
+ds-tabpanel[open] {
   display: block;
 }
 ds-tab {
@@ -76,13 +78,9 @@ ds-tablist[aria-orientation="vertical"] {
 }
 ds-tabpanel {
   background-color: white;
-  display: none;
   flex-grow: 1;
   overflow-x: hidden;
   overflow-y: auto;
-}
-ds-tabpanel[open] {
-  display: block;
 }
 ds-tabset {
   display: flex;

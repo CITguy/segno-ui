@@ -22,12 +22,34 @@
   <div class="dsRow">
     <div class="dsPage dsCol-12-xs dsCol-9-md dsOrder-2-xs dsOrder-1-md">
       <div class="dsPage__body">
+
+        <section>
+          <h2 class="dsSectionHeading" id="usage">Usage</h2>
   <p>
     The <b>Segno &lt;ds-reveal&gt; element</b> controls the visibility
     of a section of content.
   </p>
+  <dl class="list--usage">
+    <dt>Display</dt>
+    <dd>
+      block <em>(when open)</em><br />
+      none <em>(when closed)</em>
+    </dd>
+
+    <dt>Parent</dt>
+    <dd><em>n/a</em></dd>
+
+    <dt>Children</dt>
+    <dd><em>n/a</em></dd>
+  </dl>
+<pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">ds-reveal</span> [<span class="hljs-attr">open</span>]&gt;</span>
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-name">ds-reveal</span>&gt;</span>
+</code></pre>        </section>
+
+        <section>
+          <h2 class="dsSectionHeading" id="examples">Examples</h2>
   <section>
-    <h2 class="dsSectionHeading" id="demo">Demo</h2>
     <div class="demo">
       <p>Why'd the cookie cry?</p>
       <ds-disclosure aria-controls="demoReveal">
@@ -45,26 +67,7 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">ds-reveal</span>&gt;</span>
 </code></pre>  </section>
-
-  <section>
-    <h2 class="dsSectionHeading" id="usage">Usage</h2>
-    <dl class="dsKeyValue">
-      <dt>Display</dt>
-      <dd>
-        block <em>(when open)</em><br />
-        none <em>(when closed)</em>
-      </dd>
-
-      <dt>Parent</dt>
-      <dd><em>n/a</em></dd>
-
-      <dt>Children</dt>
-      <dd><em>n/a</em></dd>
-    </dl>
-<pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">ds-reveal</span> [<span class="hljs-attr">open</span>]&gt;</span>
-  ...
-<span class="hljs-tag">&lt;/<span class="hljs-name">ds-reveal</span>&gt;</span>
-</code></pre>  </section>
+        </section>
 
         <section>
           <h2 class="dsSectionHeading" id="attributes">Attributes</h2>
@@ -103,6 +106,8 @@
               This element does not have any exposed functions.
             </p>
         </section>
+
+          
 
         <section>
           <h2 class="dsSectionHeading" id="compatibility">Compatibility</h2>
@@ -172,15 +177,12 @@
     <div class="dsSidebar dsCol dsCol-12-xs dsCol-3-md dsOrder-1-xs dsOrder-2-md">
       <h6 class="dsLabel">On this page:</h6>
       <aside class="article-toc" role="navigation">
-        
-            <a href="#demo">Demo</a>
-        
-
-            <a href="#usage">Usage</a>
-        
+        <a href="#usage">Usage</a>
+        <a href="#examples">Examples</a>
         <a href="#attributes">Attributes</a>
         <a href="#properties">Properties</a>
-        <a href="#functions">Function</a>
+        <a href="#functions">Functions</a>
+        
         <a href="#compatibility">Compatibility</a>
         <a href="#seealso">See Also</a>
         <hr />

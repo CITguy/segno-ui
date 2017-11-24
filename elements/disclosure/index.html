@@ -22,13 +22,52 @@
   <div class="dsRow">
     <div class="dsPage dsCol-12-xs dsCol-9-md dsOrder-2-xs dsOrder-1-md">
       <div class="dsPage__body">
+
+        <section>
+          <h2 class="dsSectionHeading" id="usage">Usage</h2>
   <p>
     The <b>Segno &lt;ds-disclosure&gt; element</b> toggles the visibility of a
     Control Element to show/hide content.
   </p>
+  <dl class="list--usage">
+    <dt>Display</dt>
+    <dd>block</dd>
 
+    <dt>Parent</dt>
+    <dd><em>n/a</em></dd>
+
+    <dt>Childre</dt>
+    <dd><em>n/a</em></dd>
+
+    <dt>Control Element</dt>
+    <dd>
+      <p>
+        A Control Element should have a boolean, <code>open</code> property that
+        reflects to a boolean, <code>open</code> HTML attribute.
+      </p>
+      <ul>
+        <li>The <code>open</code> attribute is use to initialize the Disclosure's state.</li>
+        <li>The <code>open</code> property is inverted when the Disclosure is triggered.</li>
+      </ul>
+      <p>
+        The <a href="elements/reveal">&lt;ds-reveal&gt;</a> element meets the requirements
+        to be a Control Element for a Disclosure.
+      </p>
+    </dd>
+  </dl>
+<pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">ds-disclosure</span>
+  <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">"{String}"</span>
+  [<span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"{String (true|false)}"</span>]
+  [<span class="hljs-attr">role</span>=<span class="hljs-string">"{String}"</span>]
+  [<span class="hljs-attr">tabindex</span>=<span class="hljs-string">"{Number}"</span>]&gt;</span>
+
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-name">ds-disclosure</span>&gt;</span>
+</code></pre>        </section>
+
+        <section>
+          <h2 class="dsSectionHeading" id="examples">Examples</h2>
   <section>
-    <h2 class="dsSectionHeading">Demo</h2>
     <div class="demo">
       <ds-disclosure aria-controls="demoReveal">
         Click me to toggle.
@@ -44,44 +83,7 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Peekaboo!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">ds-reveal</span>&gt;</span>
 </code></pre>  </section>
-
-  <section>
-    <h2 class="dsSectionHeading">Usage</h2>
-    <dl class="dsKeyValue">
-      <dt>Display</dt>
-      <dd>block</dd>
-
-      <dt>Parent</dt>
-      <dd><em>n/a</em></dd>
-
-      <dt>Children</dt>
-      <dd><em>n/a</em></dd>
-
-      <dt>Control Element</dt>
-      <dd>
-        <p>
-          A Control Element should have a boolean, <code>open</code> property that
-          reflects to a boolean, <code>open</code> HTML attribute.
-        </p>
-        <ul>
-          <li>The <code>open</code> attribute is use to initialize the Disclosure's state.</li>
-          <li>The <code>open</code> property is inverted when the Disclosure is triggered.</li>
-        </ul>
-        <p>
-          The <a href="elements/reveal">&lt;ds-reveal&gt;</a> element meets the requirements
-          to be a Control Element for a Disclosure.
-        </p>
-      </dd>
-    </dl>
-<pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">ds-disclosure</span>
-  <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">"{String}"</span>
-  [<span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"{String (true|false)}"</span>]
-  [<span class="hljs-attr">role</span>=<span class="hljs-string">"{String}"</span>]
-  [<span class="hljs-attr">tabindex</span>=<span class="hljs-string">"{Number}"</span>]&gt;</span>
-
-  ...
-<span class="hljs-tag">&lt;/<span class="hljs-name">ds-disclosure</span>&gt;</span>
-</code></pre>  </section>
+        </section>
 
         <section>
           <h2 class="dsSectionHeading" id="attributes">Attributes</h2>
@@ -141,6 +143,8 @@
               This element does not have any exposed functions.
             </p>
         </section>
+
+          
 
         <section>
           <h2 class="dsSectionHeading" id="compatibility">Compatibility</h2>
@@ -210,10 +214,12 @@
     <div class="dsSidebar dsCol dsCol-12-xs dsCol-3-md dsOrder-1-xs dsOrder-2-md">
       <h6 class="dsLabel">On this page:</h6>
       <aside class="article-toc" role="navigation">
-        <p><em>Unavailable</em></p>
+        <a href="#usage">Usage</a>
+        <a href="#examples">Examples</a>
         <a href="#attributes">Attributes</a>
         <a href="#properties">Properties</a>
-        <a href="#functions">Function</a>
+        <a href="#functions">Functions</a>
+        
         <a href="#compatibility">Compatibility</a>
         <a href="#seealso">See Also</a>
         <hr />

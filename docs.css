@@ -67,7 +67,7 @@ html {
 }
 body {
   height: 100%;
-  background-color: #f2f2f2;
+  background-color: #f7f7f7;
 }
 hr {
   margin: 0.5rem 0;
@@ -219,24 +219,23 @@ dl dd {
   padding: 0.25rem;
   margin-left: 2rem;
 }
-dl.dsKeyValue {
+dl.dsKeyValue,
+dl.list--usage {
   display: flex;
   flex-wrap: wrap;
 }
-dl.dsKeyValue dt {
+dl.dsKeyValue dt,
+dl.list--usage dt {
   flex: 0 0 25%;
   max-width: 25%;
-  text-align: right;
   padding: 0.5rem;
 }
-dl.dsKeyValue dt:after {
-  content: ':';
-}
-dl.dsKeyValue dd {
+dl.dsKeyValue dd,
+dl.list--usage dd {
   flex: 0 0 75%;
   max-width: 75%;
-  margin: 0;
   padding: 0.5rem;
+  margin: 0;
 }
 .dsApp__stage {
   display: flex;
@@ -376,6 +375,7 @@ dl.dsKeyValue dd {
   border-style: solid;
   border-color: #b3b3b3;
   border-width: 0 1px 1px 0;
+  vertical-align: top;
 }
 .table--compat {
   table-layout: fixed;
@@ -477,6 +477,13 @@ body {
 }
 .text-justify {
   text-align: justify;
+}
+/* Usage/Metadata List */
+dl.list--usage {
+  background-color: #e9e9fb;
+  border: 1px solid #006cb3;
+  box-shadow: inset 0.5rem 0 0 #006cb3;
+  padding: 0.5rem 1rem;
 }
 .demo--grid > .dsContainer {
   border: 1px dotted #999999;
