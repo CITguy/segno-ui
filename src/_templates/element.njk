@@ -6,11 +6,25 @@
   <div class="dsRow">
     <div class="dsPage dsCol-12-xs dsCol-9-md dsOrder-2-xs dsOrder-1-md">
       <div class="dsPage__body">
-        {% block content %}
-          {# page content goes here #}
-        {% endblock %}
 
-        <section>
+        <section>{# Usage #}
+          <h2 class="dsSectionHeading" id="usage">Usage</h2>
+          {% block usage %}
+            <p><em>n/a</em></p>
+          {% endblock %}
+        </section>
+
+        <section>{# Examples #}
+          <h2 class="dsSectionHeading" id="examples">Examples</h2>
+          {% block examples %}
+            <p>
+              <ds-icon type="info-circle"></ds-icon>
+              This element does not have any examples to demonstrate.
+            </p>
+          {% endblock %}
+        </section>
+
+        <section>{# Attributes #}
           <h2 class="dsSectionHeading" id="attributes">Attributes</h2>
           <p>
             Attributes allow you to configure the element in a declarative manner.
@@ -23,7 +37,7 @@
           {% endblock %}
         </section>
 
-        <section>
+        <section>{# Properties #}
           <h2 class="dsSectionHeading" id="properties">Properties</h2>
           <p>
             Properties allow you to configure the element in an imperative manner.
@@ -36,7 +50,7 @@
           {% endblock %}
         </section>
 
-        <section>
+        <section>{# Functions #}
           <h2 class="dsSectionHeading" id="functions">Functions</h2>
           <p>
             Functions alllow you to trigger complex behavior in an element.
@@ -49,7 +63,11 @@
           {% endblock %}
         </section>
 
-        <section>
+        {% block content %}
+          {# additional page content goes here #}
+        {% endblock %}
+
+        <section>{# Compatibility #}
           <h2 class="dsSectionHeading" id="compatibility">Compatibility</h2>
           {% include 'partials/compat-table.njk' %}
           {% block compatibility %}
@@ -57,7 +75,7 @@
           {% endblock %}
         </section>
 
-        <section>
+        <section>{# See Also #}
           <h2 class="dsSectionHeading" id="seealso">See Also</h2>
           {% block seealso %}
             <p>N/A</p>
@@ -69,10 +87,12 @@
     <div class="dsSidebar dsCol dsCol-12-xs dsCol-3-md dsOrder-1-xs dsOrder-2-md">
       <h6 class="dsLabel">On this page:</h6>
       <aside class="article-toc" role="navigation">
-        {{ page.raw | toc | safe }}
+        <a href="#usage">Usage</a>
+        <a href="#examples">Examples</a>
         <a href="#attributes">Attributes</a>
         <a href="#properties">Properties</a>
-        <a href="#functions">Function</a>
+        <a href="#functions">Functions</a>
+        {{ page.raw | toc | safe }}
         <a href="#compatibility">Compatibility</a>
         <a href="#seealso">See Also</a>
         <hr />
