@@ -20,7 +20,7 @@ function tocFilter (str, options) {
 
     // STOP, if no TOC headings found
     if (!headings.length) {
-        return '<p><em>Unavailable</em></p>';
+        return '';
     }
 
     let items = [];

@@ -1,11 +1,10 @@
+@import (reference) '../reveal/ds-reveal';
+
 ds-tabpanel {
+  &:extend(ds-reveal all);
+
   background-color: white;
-  display: none;
   flex-grow: 1;
   overflow-x: hidden;
   overflow-y: auto;
-
-  &[open] {
-    display: block;
-  }
 }

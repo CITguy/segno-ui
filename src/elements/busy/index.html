@@ -8,13 +8,28 @@ compatibility:
   firefox: working
 ---
 {% extends 'element.njk' %}
-{% block content %}
+{% block usage %}
   <p>
     The <b>Segno &lt;ds-busy&gt; element</b> communicates that a process
     of unknown duration is taking place.
   </p>
+  <dl class="list--usage">
+    <dt>Display</dt>
+    <dd>inline-block</dd>
+
+    <dt>Parent</dt>
+    <dd><em>n/a</em></dd>
+
+    <dt>Children</dt>
+    <dd>None</dd>
+  </dl>
+  {% code 'html' %}
+    <ds-busy [paused]></ds-busy>
+  {% endcode %}
+{% endblock %}
+
+{% block examples %}
   <section id="vue-busyDemo">
-    <h2 class="dsSectionHeading" id="demo">Demo</h2>
     <div class="demo">
       <p>
         <ds-busy
@@ -27,13 +42,6 @@ compatibility:
         Pause
       </label>
     </div>
-  </section>
-
-  <section>
-    <h2 class="dsSectionHeading" id="usage">Usage</h2>
-    {% code 'html' %}
-      <ds-busy [paused]></ds-busy>
-    {% endcode %}
   </section>
 {% endblock %}
 

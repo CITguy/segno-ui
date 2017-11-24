@@ -8,15 +8,27 @@ compatibility:
   firefox: working
 ---
 {% extends 'element.njk' %}
-{% block content %}
+{% block usage %}
   <p>
     The <b>Segno &lt;ds-icon&gt; element</b> renders one of several SVG icons.
   </p>
+  <dl class="list--usage">
+    <dt>Display</dt>
+    <dd>inline-block</dd>
+
+    <dt>Parent</dt>
+    <dd><em>n/a</em></dd>
+
+    <dt>Children</dt>
+    <dd>None - Children will be replaced when the element upgrades.</dd>
+  </dl>
+  {% code 'html' %}
+    <ds-icon type="{String}"></ds-icon>
+  {% endcode %}
+{% endblock %}
+
+{% block examples %}
   <section>
-    <h2 class="dsSectionHeading" id="demo">Demo</h2>
-    <p>
-      Set the <code>type</code> attribute to any value <a href="#icon-types">listed below</a>.
-    </p>
     <div class="demo">
       <ds-icon type="arrow-up"></ds-icon>
       <ds-icon type="arrow-up"></ds-icon>
@@ -44,16 +56,28 @@ compatibility:
       <kbd>start</kbd>
     {% endcode %}
   </section>
+{% endblock %}
 
-  <section>
-    <h2 class="dsSectionHeading" id="usage">Usage</h2>
-    {% code 'html' %}
-      <ds-icon type="{String}"></ds-icon>
-    {% endcode %}
-  </section>
+{% block attributes %}
+  <dl>
+    <dt>type</dt>
+    <dd>Set the value to one of the values documented above.</dd>
+  </dl>
+{% endblock %}
 
+{% block properties %}
+  <dl>
+    <dt>type <small>(String)</small></dt>
+    <dd>
+      Modifies the displayed image.
+      Valid values are documented above.
+    </dd>
+  </dl>
+{% endblock %}
+
+{% block content %}
   <section>
-    <h2 class="dsSectionHeading" id="icons">Icons</h2>
+    <h2 class="dsSectionHeading" id="all-icons">All Icons</h2>
     <p>There are {{ data.icons.length }} icons available!</p>
     <div class="dsRow">
       {% for icon in data.icons %}
@@ -68,21 +92,4 @@ compatibility:
       {% endfor %}
     </div>
   </section>
-{% endblock %}
-
-{% block attributes %}
-  <dl>
-    <dt>type</dt>
-    <dd>Set the value to one of the values documented above.</dd>
-  </dl>
-{% endblock %}
-
-{% block properties %}
-<dl>
-  <dt>type <small>(String)</small></dt>
-  <dd>
-    Modifies the displayed image.
-    Valid values are documented above.
-  </dd>
-</dl>
 {% endblock %}

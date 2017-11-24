@@ -8,14 +8,51 @@ compatibility:
   firefox: working
 ---
 {% extends 'element.njk' %}
-{% block content %}
+{% block usage %}
   <p>
     The <b>Segno &lt;ds-disclosure&gt; element</b> toggles the visibility of a
     Control Element to show/hide content.
   </p>
+  <dl class="list--usage">
+    <dt>Display</dt>
+    <dd>block</dd>
 
+    <dt>Parent</dt>
+    <dd><em>n/a</em></dd>
+
+    <dt>Childre</dt>
+    <dd><em>n/a</em></dd>
+
+    <dt>Control Element</dt>
+    <dd>
+      <p>
+        A Control Element should have a boolean, <code>open</code> property that
+        reflects to a boolean, <code>open</code> HTML attribute.
+      </p>
+      <ul>
+        <li>The <code>open</code> attribute is use to initialize the Disclosure's state.</li>
+        <li>The <code>open</code> property is inverted when the Disclosure is triggered.</li>
+      </ul>
+      <p>
+        The <a href="elements/reveal">&lt;ds-reveal&gt;</a> element meets the requirements
+        to be a Control Element for a Disclosure.
+      </p>
+    </dd>
+  </dl>
+  {% code 'html' %}
+    <ds-disclosure
+      aria-controls="{String}"
+      [aria-expanded="{String (true|false)}"]
+      [role="{String}"]
+      [tabindex="{Number}"]>
+
+      ...
+    </ds-disclosure>
+  {% endcode %}
+{% endblock %}
+
+{% block examples %}
   <section>
-    <h2 class="dsSectionHeading">Demo</h2>
     <div class="demo">
       <ds-disclosure aria-controls="demoReveal">
         Click me to toggle.
@@ -31,46 +68,6 @@ compatibility:
       <ds-reveal id="demoReveal">
         <p>Peekaboo!</p>
       </ds-reveal>
-    {% endcode %}
-  </section>
-
-  <section>
-    <h2 class="dsSectionHeading">Usage</h2>
-    <dl class="dsKeyValue">
-      <dt>Display</dt>
-      <dd>block</dd>
-
-      <dt>Parent</dt>
-      <dd><em>n/a</em></dd>
-
-      <dt>Children</dt>
-      <dd><em>n/a</em></dd>
-
-      <dt>Control Element</dt>
-      <dd>
-        <p>
-          A Control Element should have a boolean, <code>open</code> property that
-          reflects to a boolean, <code>open</code> HTML attribute.
-        </p>
-        <ul>
-          <li>The <code>open</code> attribute is use to initialize the Disclosure's state.</li>
-          <li>The <code>open</code> property is inverted when the Disclosure is triggered.</li>
-        </ul>
-        <p>
-          The <a href="elements/reveal">&lt;ds-reveal&gt;</a> element meets the requirements
-          to be a Control Element for a Disclosure.
-        </p>
-      </dd>
-    </dl>
-    {% code 'html' %}
-      <ds-disclosure
-        aria-controls="{String}"
-        [aria-expanded="{String (true|false)}"]
-        [role="{String}"]
-        [tabindex="{Number}"]>
-
-        ...
-      </ds-disclosure>
     {% endcode %}
   </section>
 {% endblock %}
@@ -114,7 +111,6 @@ compatibility:
     </dd>
   </dl>
 {% endblock %}
-
 
 {% block seealso %}
   <ul>
