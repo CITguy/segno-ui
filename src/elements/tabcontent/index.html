@@ -10,7 +10,7 @@ compatibility:
 {% extends 'element.njk' %}
 {% block content %}
   <p>
-    The <code>&lt;ds-tabcontent&gt;</code> element is a child container of
+    The <b>Segno &lt;ds-tabcontent&gt; element</b> is a child container of
     <a href="elements/tabset">&lt;ds-tabset&gt;</a> that groups together
     all of your <a href="elements/tabpanel">&lt;ds-tabpanel&gt;</a> elements.
   </p>
@@ -40,4 +40,13 @@ compatibility:
       Automatically set to "presentation", if not explicitly defined in markup.
     </dd>
   </dl>
+{% endblock %}
+
+{% block seealso %}
+  <ul>
+    <li><a href="elements/tab">&lt;ds-tab&gt;</a></li>
+    <li><a href="elements/tablist">&lt;ds-tablist&gt;</a></li>
+    <li><a href="elements/tabpanel">&lt;ds-tabpanel&gt;</a></li>
+    <li><a href="elements/tabset">&lt;ds-tabset&gt;</a></li>
+  </ul>
 {% endblock %}

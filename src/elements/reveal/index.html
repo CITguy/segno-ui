@@ -9,19 +9,27 @@ compatibility:
 ---
 {% extends 'element.njk' %}
 {% block content %}
+  <p>
+    The <b>Segno &lt;ds-reveal&gt; element</b> controls the visibility
+    of a section of content.
+  </p>
   <section>
     <h2 class="dsSectionHeading" id="demo">Demo</h2>
     <div class="demo">
       <p>Why'd the cookie cry?</p>
-      <ds-reveal>
-        <small slot="summary">Reveal answer</small>
+      <ds-disclosure aria-controls="demoReveal">
+        <small>Toggle Answer</small>
+      </ds-disclosure>
+      <ds-reveal id="demoReveal">
         <p>Because his father was a wafer so long!</p>
       </ds-reveal>
     </div>
     {% code 'html' %}
       <p>Why'd the cookie cry?</p>
-      <ds-reveal>
-        <small slot="summary">Reveal answer</small>
+      <ds-disclosure aria-controls="demoReveal">
+        <small>Toggle Answer</small>
+      </ds-disclosure>
+      <ds-reveal id="demoReveal">
         <p>...</p>
       </ds-reveal>
     {% endcode %}
@@ -29,11 +37,22 @@ compatibility:
 
   <section>
     <h2 class="dsSectionHeading" id="usage">Usage</h2>
+    <dl class="dsKeyValue">
+      <dt>Display</dt>
+      <dd>
+        block <em>(when open)</em><br />
+        none <em>(when closed)</em>
+      </dd>
+
+      <dt>Parent</dt>
+      <dd><em>n/a</em></dd>
+
+      <dt>Children</dt>
+      <dd><em>n/a</em></dd>
+    </dl>
     {% code 'html' %}
       <ds-reveal [open]>
-        [<ANY slot="summary"></ANY>]
-
-        <!-- details go here -->
+        ...
       </ds-reveal>
     {% endcode %}
   </section>
@@ -41,21 +60,25 @@ compatibility:
 
 {% block attributes %}
   <dl>
-    <dt>open <small>(Boolean)</small></dt>
+    <dt>open</dt>
     <dd>When present, contents are visible.</dd>
   </dl>
 {% endblock %}
 
 {% block properties %}
   <dl>
-    <dt>
-      open <small>(Boolean [false])</small>
-    </dt>
+    <dt>open <small>(Boolean [false])</small></dt>
     <dd>
       <ul>
-        <li>Set to <code>true</code> to open the Reveal</li>
-        <li>Set to <code>false</code> to close the Reveal</li>
+        <li>Set to <code>true</code> to expand the Reveal</li>
+        <li>Set to <code>false</code> to collapse the Reveal</li>
       </ul>
     </dd>
   </dl>
+{% endblock %}
+
+{% block seealso %}
+  <ul>
+    <li><a href="elements/disclosure">&lt;ds-disclosure&gt;</a></li>
+  </ul>
 {% endblock %}

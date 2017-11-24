@@ -40,7 +40,7 @@
 
   letter-spacing: 1px;
 
-  header {
+  ds-disclosure {
     color: inherit;
     font-weight: 500;
     padding: @vpad @rpad;
@@ -55,6 +55,12 @@
     .toggle-icon {
       float: right;
       pointer-events: none;
+    }
+
+    &[aria-expanded="true"] {
+      .toggle-icon {
+        transform: scaleY(-1);
+      }
     }
   }
 
@@ -81,16 +87,7 @@
   }
 
   ds-reveal {
-    &[open] {
-      & > #summary.ds-reveal, //polyfilled browsers
-      & > header { //modern browsers
-        .toggle-icon {
-          transform: scaleY(-1);
-        }
-      }
-    }
-
-    header {
+    ds-disclosure {
       padding-left: @rpad;
     }
 

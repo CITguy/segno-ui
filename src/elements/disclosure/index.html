@@ -1,0 +1,123 @@
+---
+title: <ds-disclosure>
+compatibility:
+  ie: working
+  edge: working
+  chrome: working
+  safari: working
+  firefox: working
+---
+{% extends 'element.njk' %}
+{% block content %}
+  <p>
+    The <b>Segno &lt;ds-disclosure&gt; element</b> toggles the visibility of a
+    Control Element to show/hide content.
+  </p>
+
+  <section>
+    <h2 class="dsSectionHeading">Demo</h2>
+    <div class="demo">
+      <ds-disclosure aria-controls="demoReveal">
+        Click me to toggle.
+      </ds-disclosure>
+      <ds-reveal id="demoReveal">
+        <p>Peekaboo!</p>
+      </ds-reveal>
+    </div>
+    {% code 'html' %}
+      <ds-disclosure aria-controls="demoReveal">
+        Click me to toggle.
+      </ds-disclosure>
+      <ds-reveal id="demoReveal">
+        <p>Peekaboo!</p>
+      </ds-reveal>
+    {% endcode %}
+  </section>
+
+  <section>
+    <h2 class="dsSectionHeading">Usage</h2>
+    <dl class="dsKeyValue">
+      <dt>Display</dt>
+      <dd>block</dd>
+
+      <dt>Parent</dt>
+      <dd><em>n/a</em></dd>
+
+      <dt>Children</dt>
+      <dd><em>n/a</em></dd>
+
+      <dt>Control Element</dt>
+      <dd>
+        <p>
+          A Control Element should have a boolean, <code>open</code> property that
+          reflects to a boolean, <code>open</code> HTML attribute.
+        </p>
+        <ul>
+          <li>The <code>open</code> attribute is use to initialize the Disclosure's state.</li>
+          <li>The <code>open</code> property is inverted when the Disclosure is triggered.</li>
+        </ul>
+        <p>
+          The <a href="elements/reveal">&lt;ds-reveal&gt;</a> element meets the requirements
+          to be a Control Element for a Disclosure.
+        </p>
+      </dd>
+    </dl>
+    {% code 'html' %}
+      <ds-disclosure
+        aria-controls="{String}"
+        [aria-expanded="{String (true|false)}"]
+        [role="{String}"]
+        [tabindex="{Number}"]>
+
+        ...
+      </ds-disclosure>
+    {% endcode %}
+  </section>
+{% endblock %}
+
+{% block attributes %}
+  <dl>
+    <dt>aria-controls <small>(String)</small></dt>
+    <dd>
+      ID of an HTML element (Control Element) to associate behavior.
+      This is required to wire up display functionality between elements.
+    </dd>
+
+    <dt>aria-expanded</dt>
+    <dd>
+      Automatically initialized to the same value as its Control Element.
+      When this attribute is updated, the Control Element is also updated.
+    </dd>
+
+    <dt>role*</dt>
+    <dd>
+      Automatically set to "button", if not explicitly defined in markup.
+    </dd>
+
+    <dt>tabindex*</dt>
+    <dd>
+      Automatically set to 0 (placing it in the tab order), if not explicitly
+      defined in markup.
+    </dd>
+  </dl>
+{% endblock %}
+
+{% block properties %}
+  <dl>
+    <dt>expanded <small>(Boolean)</small></dt>
+    <dd>
+      Mirrors the <code>aria-expanded</code> attribute.
+      <ul>
+        <li>Set to <code>true</code> to expand its Control Element.</li>
+        <li>Set to <code>false</code> to collapse its Control Element.</li>
+      </ul>
+    </dd>
+  </dl>
+{% endblock %}
+
+
+{% block seealso %}
+  <ul>
+    <li><a href="elements/reveal">&lt;ds-reveal&gt;</a></li>
+  </ul>
+{% endblock %}

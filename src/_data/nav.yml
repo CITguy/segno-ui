@@ -7,6 +7,7 @@ elements:
   #<ds-alert>: alert
   <ds-busy>: busy
   #<ds-checkbox>: checkbox
+  <ds-disclosure>: disclosure
   <ds-icon>: icon
   #<ds-menu>: menu
   #<ds-modal>: modal

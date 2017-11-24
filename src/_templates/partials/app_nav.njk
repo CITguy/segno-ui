@@ -18,12 +18,14 @@
     {% endif %}
 
     {% set isCurrentCategory = page.path.indexOf(categoryPath) === 0 %}
+    {% set revealId = 'nav-' + category %}
 
-    <ds-reveal {% if isCurrentCategory %}open{% endif %}>
-      <header slot="summary">
-        <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
-        {{category | capitalize}}
-      </header>
+    <ds-disclosure aria-controls="{{ revealId }}">
+      {{category | capitalize}}
+      <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
+    </ds-disclosure>
+
+    <ds-reveal id="{{revealId}}" {% if isCurrentCategory %}open{% endif %}>
 
       {% for key,val in items %}
         {% if _.isPlainObject(val) %}
