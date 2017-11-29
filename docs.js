@@ -60,24 +60,24 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 84);
+/******/ 	return __webpack_require__(__webpack_require__.s = 86);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 84:
+/***/ 86:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(85);
-
-__webpack_require__(86);
-
 __webpack_require__(87);
 
 __webpack_require__(88);
+
+__webpack_require__(89);
+
+__webpack_require__(90);
 
 (function () {
     var hashAnchors = document.querySelectorAll('[href^="#"]');
@@ -92,7 +92,7 @@ __webpack_require__(88);
 
 /***/ }),
 
-/***/ 85:
+/***/ 87:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -109,7 +109,7 @@ if (document.getElementById('vue-busyDemo')) {
 
 /***/ }),
 
-/***/ 86:
+/***/ 88:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -127,7 +127,7 @@ if (document.getElementById('vue-progressDemo')) {
 
 /***/ }),
 
-/***/ 87:
+/***/ 89:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -144,7 +144,7 @@ if (document.getElementById('vue-tabpanelDemo')) {
 
 /***/ }),
 
-/***/ 88:
+/***/ 90:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

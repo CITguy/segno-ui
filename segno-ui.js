@@ -274,13 +274,13 @@ window.addEventListener('WebComponentsReady', function () {
     __webpack_require__(4).$define();
     __webpack_require__(6).$define();
     __webpack_require__(7).$define();
-    __webpack_require__(77).$define();
-    __webpack_require__(2).$define();
     __webpack_require__(79).$define();
-    __webpack_require__(80).$define();
+    __webpack_require__(2).$define();
     __webpack_require__(81).$define();
     __webpack_require__(82).$define();
     __webpack_require__(83).$define();
+    __webpack_require__(84).$define();
+    __webpack_require__(85).$define();
 });
 
 /***/ }),
@@ -522,51 +522,53 @@ var _icons = {
     'exclamation': __webpack_require__(31),
     'exclamation-circle': __webpack_require__(32),
     'exclamation-circle-fill': __webpack_require__(33),
-    'exclamation-triangle': __webpack_require__(34),
-    'exclamation-triangle-fill': __webpack_require__(35),
-    'external-link': __webpack_require__(36),
-    'filter': __webpack_require__(37),
-    'folder': __webpack_require__(38),
-    'heart': __webpack_require__(39),
-    'image': __webpack_require__(40),
-    'info': __webpack_require__(41),
-    'info-circle': __webpack_require__(42),
-    'info-circle-fill': __webpack_require__(43),
-    'key': __webpack_require__(44),
-    'link': __webpack_require__(45),
-    'map-marker': __webpack_require__(46),
-    'menu-bento': __webpack_require__(47),
-    'menu-doner': __webpack_require__(48),
-    'menu-hamburger': __webpack_require__(49),
-    'menu-kebab': __webpack_require__(50),
-    'menu-meatball': __webpack_require__(51),
-    'minus': __webpack_require__(52),
-    'padlock-locked': __webpack_require__(53),
-    'padlock-unlocked': __webpack_require__(54),
-    'paperclip': __webpack_require__(55),
-    'pencil': __webpack_require__(56),
-    'phone': __webpack_require__(57),
-    'plus': __webpack_require__(58),
-    'question': __webpack_require__(59),
-    'question-circle': __webpack_require__(60),
-    'question-circle-fill': __webpack_require__(61),
-    'redo': __webpack_require__(62),
-    'refresh': __webpack_require__(63),
-    'search': __webpack_require__(64),
-    'sortable': __webpack_require__(65),
-    'sorted-down': __webpack_require__(66),
-    'sorted-up': __webpack_require__(67),
-    'star': __webpack_require__(68),
-    'times': __webpack_require__(69),
-    'times-circle': __webpack_require__(70),
-    'times-circle-fill': __webpack_require__(71),
-    'trash': __webpack_require__(72),
-    'undo': __webpack_require__(73),
-    'upload': __webpack_require__(74),
-    'user': __webpack_require__(75)
+    'exclamation-diamond': __webpack_require__(34),
+    'exclamation-diamond-fill': __webpack_require__(35),
+    'exclamation-triangle': __webpack_require__(36),
+    'exclamation-triangle-fill': __webpack_require__(37),
+    'external-link': __webpack_require__(38),
+    'filter': __webpack_require__(39),
+    'folder': __webpack_require__(40),
+    'heart': __webpack_require__(41),
+    'image': __webpack_require__(42),
+    'info': __webpack_require__(43),
+    'info-circle': __webpack_require__(44),
+    'info-circle-fill': __webpack_require__(45),
+    'key': __webpack_require__(46),
+    'link': __webpack_require__(47),
+    'map-marker': __webpack_require__(48),
+    'menu-bento': __webpack_require__(49),
+    'menu-doner': __webpack_require__(50),
+    'menu-hamburger': __webpack_require__(51),
+    'menu-kebab': __webpack_require__(52),
+    'menu-meatball': __webpack_require__(53),
+    'minus': __webpack_require__(54),
+    'padlock-locked': __webpack_require__(55),
+    'padlock-unlocked': __webpack_require__(56),
+    'paperclip': __webpack_require__(57),
+    'pencil': __webpack_require__(58),
+    'phone': __webpack_require__(59),
+    'plus': __webpack_require__(60),
+    'question': __webpack_require__(61),
+    'question-circle': __webpack_require__(62),
+    'question-circle-fill': __webpack_require__(63),
+    'redo': __webpack_require__(64),
+    'refresh': __webpack_require__(65),
+    'search': __webpack_require__(66),
+    'sortable': __webpack_require__(67),
+    'sorted-down': __webpack_require__(68),
+    'sorted-up': __webpack_require__(69),
+    'star': __webpack_require__(70),
+    'times': __webpack_require__(71),
+    'times-circle': __webpack_require__(72),
+    'times-circle-fill': __webpack_require__(73),
+    'trash': __webpack_require__(74),
+    'undo': __webpack_require__(75),
+    'upload': __webpack_require__(76),
+    'user': __webpack_require__(77)
 };
 
-_template.innerHTML = '\n    <style>' + __webpack_require__(76) + '</style>\n    <slot></slot>\n';
+_template.innerHTML = '\n    <style>' + __webpack_require__(78) + '</style>\n    <slot></slot>\n';
 
 module.exports = function (_DsElement) {
     _inherits(DsIcon, _DsElement);
@@ -796,262 +798,274 @@ module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\
 /* 34 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path d=\"M8 1l7 14H1L8 1zm0 2.236L2.618 14h10.764L8 3.236zm-.75 8.769h1.5v1.25h-1.5v-1.25zM7 6.25h2L8.75 11h-1.5L7 6.25z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path d=\"M8 .929L15.071 8 8 15.071.929 8 8 .929zm0 1.515L2.444 8 8 13.556 13.556 8 8 2.444zM7.125 9.75h1.75v1.75h-1.75V9.75zM6.687 4.5h2.625l-.437 4.375h-1.75L6.687 4.5z\"/>\n</svg>\n"
 
 /***/ }),
 /* 35 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path d=\"M8 1l7 14H1L8 1zm-.95 11.458v1.582h1.9v-1.582h-1.9zm-.27-7.36l.304 5.8h1.832l.305-5.8H6.779z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path d=\"M8 .929L15.071 8 8 15.071.929 8 8 .929zm-1.094 9.259v2.187h2.188v-2.188H6.906zM6.36 3.625l.547 5.469h2.188l.547-5.469H6.359z\"/>\n</svg>\n"
 
 /***/ }),
 /* 36 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M7.884 13.5H13.5V9H15v6H1V1h6v1.5H2.5v11h5.384zm0-3.616L6.116 8.116l5-5L9 1h6v6l-2.116-2.116-5 5z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path d=\"M8 1l7 14H1L8 1zm0 2.236L2.618 14h10.764L8 3.236zm-.75 8.769h1.5v1.25h-1.5v-1.25zM7 6.25h2L8.75 11h-1.5L7 6.25z\"/>\n</svg>\n"
 
 /***/ }),
 /* 37 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M9.65 8.285L14 3.5H2l4.35 4.785V14.5l3.3-1.1V8.285z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path d=\"M8 1l7 14H1L8 1zm-.95 11.458v1.582h1.9v-1.582h-1.9zm-.27-7.36l.304 5.8h1.832l.305-5.8H6.779z\"/>\n</svg>\n"
 
 /***/ }),
 /* 38 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M8 4.571h6v8.572H2V2.857h5.012z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M7.884 13.5H13.5V9H15v6H1V1h6v1.5H2.5v11h5.384zm0-3.616L6.116 8.116l5-5L9 1h6v6l-2.116-2.116-5 5z\"/>\n</svg>\n"
 
 /***/ }),
 /* 39 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M8 4.246a3.515 3.515 0 1 1 4.97 4.97L8 14.188l-4.97-4.97A3.515 3.515 0 0 1 8 4.247z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M9.65 8.285L14 3.5H2l4.35 4.785V14.5l3.3-1.1V8.285z\"/>\n</svg>\n"
 
 /***/ }),
 /* 40 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M15 11v4H1V1h14v10zm-1.5-3.25V2.5h-11v10.75l11-5.5zM6 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M8 4.571h6v8.572H2V2.857h5.012z\"/>\n</svg>\n"
 
 /***/ }),
 /* 41 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M6.5 12h-2v1.5h7V12h-2V6.5h-5V8h2v4zM8 5.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M8 4.246a3.515 3.515 0 1 1 4.97 4.97L8 14.188l-4.97-4.97A3.515 3.515 0 0 1 8 4.247z\"/>\n</svg>\n"
 
 /***/ }),
 /* 42 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M7.045 10.5V8.045H5.773v-1h3.182V10.5h1.272v1H5.773v-1h1.272zM8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0-1.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-7.59A.955.955 0 1 1 8 4a.955.955 0 0 1 0 1.91z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M15 11v4H1V1h14v10zm-1.5-3.25V2.5h-11v10.75l11-5.5zM6 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4z\"/>\n</svg>\n"
 
 /***/ }),
 /* 43 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm-1.145-3.95H5.327v1.2h5.346v-1.2H9.145V6.905H5.327v1.2h1.528v2.945zM8 5.54a1.145 1.145 0 1 0 0-2.29 1.145 1.145 0 0 0 0 2.29z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M6.5 12h-2v1.5h7V12h-2V6.5h-5V8h2v4zM8 5.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z\"/>\n</svg>\n"
 
 /***/ }),
 /* 44 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M8.907 6.555l4.053 4.053v2.342h-2.342V11.39h-1.56V9.828H7.495l-.931-.931a3.513 3.513 0 1 1 2.342-2.342zm-4.143-.63a1.17 1.17 0 1 0 0-2.342 1.17 1.17 0 0 0 0 2.342z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M7.045 10.5V8.045H5.773v-1h3.182V10.5h1.272v1H5.773v-1h1.272zM8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0-1.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-7.59A.955.955 0 1 1 8 4a.955.955 0 0 1 0 1.91z\"/>\n</svg>\n"
 
 /***/ }),
 /* 45 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path d=\"M10.64 6.573l-1.217.95a1.5 1.5 0 0 0-2.346-.705l-3.94 3.078a1.5 1.5 0 0 0 1.846 2.364l.596-.465c.5.319 1.053.531 1.625.634l-1.297 1.013a3 3 0 1 1-3.694-4.728l3.94-3.078a3 3 0 0 1 4.486.937zM5.36 9.427l1.217-.95a1.5 1.5 0 0 0 2.346.705l3.94-3.078a1.5 1.5 0 0 0-1.846-2.364l-.596.465a4.497 4.497 0 0 0-1.625-.634l1.297-1.013a3 3 0 0 1 3.694 4.728l-3.94 3.078a3 3 0 0 1-4.486-.937z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm-1.145-3.95H5.327v1.2h5.346v-1.2H9.145V6.905H5.327v1.2h1.528v2.945zM8 5.54a1.145 1.145 0 1 0 0-2.29 1.145 1.145 0 0 0 0 2.29z\"/>\n</svg>\n"
 
 /***/ }),
 /* 46 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path d=\"M3.77 9.395a5.5 5.5 0 1 1 8.457.003l.016.016-3.41 5.116a1 1 0 0 1-1.665 0l-3.41-5.116.013-.019zM5.88 8a3 3 0 1 0 4.242-4.243A3 3 0 0 0 5.88 8z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M8.907 6.555l4.053 4.053v2.342h-2.342V11.39h-1.56V9.828H7.495l-.931-.931a3.513 3.513 0 1 1 2.342-2.342zm-4.143-.63a1.17 1.17 0 1 0 0-2.342 1.17 1.17 0 0 0 0 2.342z\"/>\n</svg>\n"
 
 /***/ }),
 /* 47 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M15.044 6.5v3h-3v-3h3zm-11.088 0v3h-3v-3h3zm5.588 0v3h-3v-3h3zM15.087 1v3h-3V1h3zM4 1v3H1V1h3zm5.587 0v3h-3V1h3zm5.5 11v3h-3v-3h3zM4 12v3H1v-3h3zm5.587 0v3h-3v-3h3z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path d=\"M10.64 6.573l-1.217.95a1.5 1.5 0 0 0-2.346-.705l-3.94 3.078a1.5 1.5 0 0 0 1.846 2.364l.596-.465c.5.319 1.053.531 1.625.634l-1.297 1.013a3 3 0 1 1-3.694-4.728l3.94-3.078a3 3 0 0 1 4.486.937zM5.36 9.427l1.217-.95a1.5 1.5 0 0 0 2.346.705l3.94-3.078a1.5 1.5 0 0 0-1.846-2.364l-.596.465a4.497 4.497 0 0 0-1.625-.634l1.297-1.013a3 3 0 0 1 3.694 4.728l-3.94 3.078a3 3 0 0 1-4.486-.937z\"/>\n</svg>\n"
 
 /***/ }),
 /* 48 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M5 12.044h6v3H5v-3zM3 6.456h10v3H3v-3zm-2-5.5h14v3H1v-3z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path d=\"M3.77 9.395a5.5 5.5 0 1 1 8.457.003l.016.016-3.41 5.116a1 1 0 0 1-1.665 0l-3.41-5.116.013-.019zM5.88 8a3 3 0 1 0 4.242-4.243A3 3 0 0 0 5.88 8z\"/>\n</svg>\n"
 
 /***/ }),
 /* 49 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M1 1h14v3H1V1zm0 11.087h14v3H1v-3zM1 6.5h14v3H1v-3z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M15.044 6.5v3h-3v-3h3zm-11.088 0v3h-3v-3h3zm5.588 0v3h-3v-3h3zM15.087 1v3h-3V1h3zM4 1v3H1V1h3zm5.587 0v3h-3V1h3zm5.5 11v3h-3v-3h3zM4 12v3H1v-3h3zm5.587 0v3h-3v-3h3z\"/>\n</svg>\n"
 
 /***/ }),
 /* 50 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M6.5.956h3v3h-3v-3zm0 11.088h3v3h-3v-3zm0-5.588h3v3h-3v-3z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M5 12.044h6v3H5v-3zM3 6.456h10v3H3v-3zm-2-5.5h14v3H1v-3z\"/>\n</svg>\n"
 
 /***/ }),
 /* 51 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M15.044 6.5v3h-3v-3h3zm-11.088 0v3h-3v-3h3zm5.588 0v3h-3v-3h3z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M1 1h14v3H1V1zm0 11.087h14v3H1v-3zM1 6.5h14v3H1v-3z\"/>\n</svg>\n"
 
 /***/ }),
 /* 52 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M2 6.5h12v3H2z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M6.5.956h3v3h-3v-3zm0 11.088h3v3h-3v-3zm0-5.588h3v3h-3v-3z\"/>\n</svg>\n"
 
 /***/ }),
 /* 53 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M8.316 9.949a1 1 0 1 0-.632 0L7 12h2l-.684-2.051zM4 6a4 4 0 1 1 8 0h-1.5a2.5 2.5 0 0 0-5 0H4zm0 0h8a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M15.044 6.5v3h-3v-3h3zm-11.088 0v3h-3v-3h3zm5.588 0v3h-3v-3h3z\"/>\n</svg>\n"
 
 /***/ }),
 /* 54 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M8.316 9.949a1 1 0 1 0-.632 0L7 12h2l-.684-2.051zM4 6a4 4 0 0 1 6.828-2.828l-1.06 1.06A2.5 2.5 0 0 0 5.5 6H12a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M2 6.5h12v3H2z\"/>\n</svg>\n"
 
 /***/ }),
 /* 55 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path d=\"M10.475 7.146L6.232 11.39a.5.5 0 0 1-.707-.707l4.243-4.243.177.177-.177-.177a.5.5 0 1 0-.707-.707l-.177-.177.177.177-4.243 4.243-.707-.707 4.243-4.243a1.5 1.5 0 1 1 2.12 2.121zM7.646 2.904a3.5 3.5 0 0 1 4.95 4.95l-.707-.708a2.5 2.5 0 0 0-3.535-3.535l-.708-.707zM4.111 9.268l.707.707a1.5 1.5 0 0 0 2.121 2.121l.707.707a2.5 2.5 0 0 1-3.535-3.535zm3.535-6.364l.708.707-4.95 4.95a.5.5 0 1 1-.707-.707l4.95-4.95zm4.243 4.242l.707.708-4.95 4.95-.707-.708 4.95-4.95z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M8.316 9.949a1 1 0 1 0-.632 0L7 12h2l-.684-2.051zM4 6a4 4 0 1 1 8 0h-1.5a2.5 2.5 0 0 0-5 0H4zm0 0h8a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1z\"/>\n</svg>\n"
 
 /***/ }),
 /* 56 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M11.5 1.938a1.5 1.5 0 0 1 .549 2.049l-.25.433-2.598-1.5.25-.433a1.5 1.5 0 0 1 2.049-.55zM8.701 3.786l2.598 1.5-4 6.928-2.598-1.5 4-6.928zm-4.5 7.794l2.598 1.5-2.299.982-.299-2.482z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M8.316 9.949a1 1 0 1 0-.632 0L7 12h2l-.684-2.051zM4 6a4 4 0 0 1 6.828-2.828l-1.06 1.06A2.5 2.5 0 0 0 5.5 6H12a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1z\"/>\n</svg>\n"
 
 /***/ }),
 /* 57 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M11.686 13.545c-2.19 1.264-5.4-.198-7.171-3.266-1.771-3.067-1.432-6.58.757-7.843l.596-.344a.687.687 0 0 1 .938.252l1.49 2.579a.687.687 0 0 1-.252.938l-.397.23a1.146 1.146 0 0 1-1.253-.07l-.083.047.002.003a1.123 1.123 0 0 0-.08.043c-.834.48-.893 1.936-.134 3.251s2.05 1.99 2.882 1.51c.027-.015.052-.032.077-.049l.002.003.083-.047c-.05-.439.159-.886.566-1.12l.396-.23a.687.687 0 0 1 .94.252l1.488 2.579a.687.687 0 0 1-.251.939l-.596.343z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path d=\"M10.475 7.146L6.232 11.39a.5.5 0 0 1-.707-.707l4.243-4.243.177.177-.177-.177a.5.5 0 1 0-.707-.707l-.177-.177.177.177-4.243 4.243-.707-.707 4.243-4.243a1.5 1.5 0 1 1 2.12 2.121zM7.646 2.904a3.5 3.5 0 0 1 4.95 4.95l-.707-.708a2.5 2.5 0 0 0-3.535-3.535l-.708-.707zM4.111 9.268l.707.707a1.5 1.5 0 0 0 2.121 2.121l.707.707a2.5 2.5 0 0 1-3.535-3.535zm3.535-6.364l.708.707-4.95 4.95a.5.5 0 1 1-.707-.707l4.95-4.95zm4.243 4.242l.707.708-4.95 4.95-.707-.708 4.95-4.95z\"/>\n</svg>\n"
 
 /***/ }),
 /* 58 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M6.5 6.5H2v3h4.5V14h3V9.5H14v-3H9.5V2h-3v4.5z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M11.5 1.938a1.5 1.5 0 0 1 .549 2.049l-.25.433-2.598-1.5.25-.433a1.5 1.5 0 0 1 2.049-.55zM8.701 3.786l2.598 1.5-4 6.928-2.598-1.5 4-6.928zm-4.5 7.794l2.598 1.5-2.299.982-.299-2.482z\"/>\n</svg>\n"
 
 /***/ }),
 /* 59 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path d=\"M7 13h2v2H7v-2zm1-5.25A2.25 2.25 0 1 0 5.75 5.5l-2.244-.231A4.5 4.5 0 1 1 9 9.889v1.361H7l.197-3.5H8z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M11.686 13.545c-2.19 1.264-5.4-.198-7.171-3.266-1.771-3.067-1.432-6.58.757-7.843l.596-.344a.687.687 0 0 1 .938.252l1.49 2.579a.687.687 0 0 1-.252.938l-.397.23a1.146 1.146 0 0 1-1.253-.07l-.083.047.002.003a1.123 1.123 0 0 0-.08.043c-.834.48-.893 1.936-.134 3.251s2.05 1.99 2.882 1.51c.027-.015.052-.032.077-.049l.002.003.083-.047c-.05-.439.159-.886.566-1.12l.396-.23a.687.687 0 0 1 .94.252l1.488 2.579a.687.687 0 0 1-.251.939l-.596.343z\"/>\n</svg>\n"
 
 /***/ }),
 /* 60 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0-1.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm-.8-2.1h1.6V13H7.2v-1.6zm.042-3.579h.759a1.607 1.607 0 1 0-1.607-1.607L4.79 6.05a3.214 3.214 0 0 1 6.424.165c0 1.488-1.047 2.763-2.42 3.13l-.016.977H7.242v-2.5z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M6.5 6.5H2v3h4.5V14h3V9.5H14v-3H9.5V2h-3v4.5z\"/>\n</svg>\n"
 
 /***/ }),
 /* 61 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm-.872-3.295v1.743h1.743v-1.743H7.128zm.046-3.9v2.724H8.85l.018-1.066c1.495-.398 2.636-1.787 2.636-3.409a3.502 3.502 0 0 0-7-.18l1.747.18A1.751 1.751 0 1 1 8 7.805h-.826z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path d=\"M7 13h2v2H7v-2zm1-5.25A2.25 2.25 0 1 0 5.75 5.5l-2.244-.231A4.5 4.5 0 1 1 9 9.889v1.361H7l.197-3.5H8z\"/>\n</svg>\n"
 
 /***/ }),
 /* 62 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M12.95 3.05l-1.06 1.06A5.5 5.5 0 1 0 13.41 9h1.52A7.002 7.002 0 0 1 1 8a7 7 0 0 1 11.95-4.95zM15 1v5.833H9.167L15 1z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0-1.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm-.8-2.1h1.6V13H7.2v-1.6zm.042-3.579h.759a1.607 1.607 0 1 0-1.607-1.607L4.79 6.05a3.214 3.214 0 0 1 6.424.165c0 1.488-1.047 2.763-2.42 3.13l-.016.977H7.242v-2.5z\"/>\n</svg>\n"
 
 /***/ }),
 /* 63 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M1.07 7a7.002 7.002 0 0 1 11.88-3.95l-1.06 1.06A5.502 5.502 0 0 0 2.591 7H1.07zm1.98 5.95l1.06-1.06A5.502 5.502 0 0 0 13.409 9h1.521A7.002 7.002 0 0 1 3.05 12.95zM15 1v5.833H9.167L15 1zM1 15V9.167h5.833L1 15z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm-.872-3.295v1.743h1.743v-1.743H7.128zm.046-3.9v2.724H8.85l.018-1.066c1.495-.398 2.636-1.787 2.636-3.409a3.502 3.502 0 0 0-7-.18l1.747.18A1.751 1.751 0 1 1 8 7.805h-.826z\"/>\n</svg>\n"
 
 /***/ }),
 /* 64 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M11.04 9.606l3.867 3.868-1.433 1.433-3.868-3.867a5.5 5.5 0 1 1 1.433-1.433zM6.5 10.5a4 4 0 1 0 0-8 4 4 0 0 0 0 8z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M12.95 3.05l-1.06 1.06A5.5 5.5 0 1 0 13.41 9h1.52A7.002 7.002 0 0 1 1 8a7 7 0 0 1 11.95-4.95zM15 1v5.833H9.167L15 1z\"/>\n</svg>\n"
 
 /***/ }),
 /* 65 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M12.5 10.5L8 15l-4.5-4.5h9zm0-5h-9L8 1l4.5 4.5zm-6 0h3v5h-3v-5z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M1.07 7a7.002 7.002 0 0 1 11.88-3.95l-1.06 1.06A5.502 5.502 0 0 0 2.591 7H1.07zm1.98 5.95l1.06-1.06A5.502 5.502 0 0 0 13.409 9h1.521A7.002 7.002 0 0 1 3.05 12.95zM15 1v5.833H9.167L15 1zM1 15V9.167h5.833L1 15z\"/>\n</svg>\n"
 
 /***/ }),
 /* 66 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M12.5 10.5L8 15l-4.5-4.5h9zm-6-5h3v5h-3v-5z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M11.04 9.606l3.867 3.868-1.433 1.433-3.868-3.867a5.5 5.5 0 1 1 1.433-1.433zM6.5 10.5a4 4 0 1 0 0-8 4 4 0 0 0 0 8z\"/>\n</svg>\n"
 
 /***/ }),
 /* 67 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M12.5 5.5h-9L8 1l4.5 4.5zm-6 0h3v5h-3v-5z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M12.5 10.5L8 15l-4.5-4.5h9zm0-5h-9L8 1l4.5 4.5zm-6 0h3v5h-3v-5z\"/>\n</svg>\n"
 
 /***/ }),
 /* 68 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M8 11.06l-4.017 2.453 1.092-4.578L1.5 5.872l4.692-.376L8 1.15l1.808 4.346 4.692.376-3.575 3.063 1.092 4.578z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M12.5 10.5L8 15l-4.5-4.5h9zm-6-5h3v5h-3v-5z\"/>\n</svg>\n"
 
 /***/ }),
 /* 69 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M8 5.879L4.818 2.697 2.697 4.818 5.879 8l-3.182 3.182 2.121 2.121L8 10.121l3.182 3.182 2.121-2.121L10.121 8l3.182-3.182-2.121-2.121z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M12.5 5.5h-9L8 1l4.5 4.5zm-6 0h3v5h-3v-5z\"/>\n</svg>\n"
 
 /***/ }),
 /* 70 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0-1.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-6.9l2.1-2.1 1.4 1.4L9.4 8l2.1 2.1-1.4 1.4L8 9.4l-2.1 2.1-1.4-1.4L6.6 8 4.5 5.9l1.4-1.4L8 6.6z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M8 11.06l-4.017 2.453 1.092-4.578L1.5 5.872l4.692-.376L8 1.15l1.808 4.346 4.692.376-3.575 3.063 1.092 4.578z\"/>\n</svg>\n"
 
 /***/ }),
 /* 71 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0-8.6L5.6 4 4 5.6 6.4 8 4 10.4 5.6 12 8 9.6l2.4 2.4 1.6-1.6L9.6 8 12 5.6 10.4 4 8 6.4z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M8 5.879L4.818 2.697 2.697 4.818 5.879 8l-3.182 3.182 2.121 2.121L8 10.121l3.182 3.182 2.121-2.121L10.121 8l3.182-3.182-2.121-2.121z\"/>\n</svg>\n"
 
 /***/ }),
 /* 72 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M4.126 4a4.002 4.002 0 0 1 7.748 0H13a1 1 0 0 1 0 2v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 1 1 0-2h1.126zm1.582 0h4.584a2.5 2.5 0 0 0-4.584 0zM7.28 6v7.58H8.7V6H7.28zm2.88 0v7.58h1.42V6h-1.42zM4.4 6v7.58h1.42V6H4.4z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0-1.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0-6.9l2.1-2.1 1.4 1.4L9.4 8l2.1 2.1-1.4 1.4L8 9.4l-2.1 2.1-1.4-1.4L6.6 8 4.5 5.9l1.4-1.4L8 6.6z\"/>\n</svg>\n"
 
 /***/ }),
 /* 73 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M1.07 9h1.52A5.502 5.502 0 0 0 13.5 8a5.5 5.5 0 0 0-9.39-3.89L3.05 3.05A7 7 0 1 1 1.07 9zM1 1l5.833 5.833H1V1z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0-8.6L5.6 4 4 5.6 6.4 8 4 10.4 5.6 12 8 9.6l2.4 2.4 1.6-1.6L9.6 8 12 5.6 10.4 4 8 6.4z\"/>\n</svg>\n"
 
 /***/ }),
 /* 74 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M12.5 5.5L8 1 3.5 5.5h9zm-6 6v-6h3v6h-3zM2 13h12v2H2v-2z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M4.126 4a4.002 4.002 0 0 1 7.748 0H13a1 1 0 0 1 0 2v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 1 1 0-2h1.126zm1.582 0h4.584a2.5 2.5 0 0 0-4.584 0zM7.28 6v7.58H8.7V6H7.28zm2.88 0v7.58h1.42V6h-1.42zM4.4 6v7.58h1.42V6H4.4z\"/>\n</svg>\n"
 
 /***/ }),
 /* 75 */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M6.022 9.929C4.244 10.427 3 11.576 3 12.915c0 .2.028.395.08.585h9.84c.052-.19.08-.386.08-.585 0-1.339-1.244-2.488-3.022-2.986A4.984 4.984 0 0 1 8 10.335a4.984 4.984 0 0 1-1.978-.406zM8 8.335a3 3 0 1 1 0-6 3 3 0 0 1 0 6z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M1.07 9h1.52A5.502 5.502 0 0 0 13.5 8a5.5 5.5 0 0 0-9.39-3.89L3.05 3.05A7 7 0 1 1 1.07 9zM1 1l5.833 5.833H1V1z\"/>\n</svg>\n"
 
 /***/ }),
 /* 76 */
 /***/ (function(module, exports) {
 
-module.exports = ":host{display:inline-block;flex-shrink:0;height:1em;vertical-align:-2px;width:1em;background-color:inherit;color:inherit}*{box-sizing:border-box;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit}::slotted(svg){fill:currentColor;stroke:none}"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M12.5 5.5L8 1 3.5 5.5h9zm-6 6v-6h3v6h-3zM2 13h12v2H2v-2z\"/>\n</svg>\n"
 
 /***/ }),
 /* 77 */
+/***/ (function(module, exports) {
+
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\">\n  <path fill-rule=\"evenodd\" d=\"M6.022 9.929C4.244 10.427 3 11.576 3 12.915c0 .2.028.395.08.585h9.84c.052-.19.08-.386.08-.585 0-1.339-1.244-2.488-3.022-2.986A4.984 4.984 0 0 1 8 10.335a4.984 4.984 0 0 1-1.978-.406zM8 8.335a3 3 0 1 1 0-6 3 3 0 0 1 0 6z\"/>\n</svg>\n"
+
+/***/ }),
+/* 78 */
+/***/ (function(module, exports) {
+
+module.exports = ":host{display:inline-block;flex-shrink:0;height:1em;vertical-align:-2px;width:1em;background-color:inherit;color:inherit}*{box-sizing:border-box;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit}::slotted(svg){fill:currentColor;stroke:none}"
+
+/***/ }),
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1069,7 +1083,7 @@ var DsElement = __webpack_require__(0);
 var _tagName = 'ds-progress';
 var _template = document.createElement('template');
 
-_template.innerHTML = '\n    <style>' + __webpack_require__(78) + '</style>\n    <div id="fill"></div>\n';
+_template.innerHTML = '\n    <style>' + __webpack_require__(80) + '</style>\n    <div id="fill"></div>\n';
 
 module.exports = function (_DsElement) {
     _inherits(DsProgress, _DsElement);
@@ -1148,13 +1162,13 @@ module.exports = function (_DsElement) {
 }(DsElement);
 
 /***/ }),
-/* 78 */
+/* 80 */
 /***/ (function(module, exports) {
 
 module.exports = "#fill,*{box-sizing:border-box}:host{background-color:#e6e6e6;border:1px solid;box-sizing:border-box;color:grey;display:block;height:.5em;margin:0;padding:0}*{font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit}:host([indeterminate]) #fill{width:0!important}#fill{background-color:currentColor;height:100%}"
 
 /***/ }),
-/* 79 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1225,7 +1239,7 @@ module.exports = function (_DsElement) {
 }(DsElement);
 
 /***/ }),
-/* 80 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1271,7 +1285,7 @@ module.exports = function (_DsElement) {
 }(DsElement);
 
 /***/ }),
-/* 81 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1317,7 +1331,7 @@ module.exports = function (_DsElement) {
 }(DsElement);
 
 /***/ }),
-/* 82 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1373,7 +1387,7 @@ module.exports = function (_DsReveal) {
 }(DsReveal);
 
 /***/ }),
-/* 83 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
