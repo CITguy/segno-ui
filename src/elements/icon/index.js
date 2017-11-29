@@ -28,6 +28,8 @@ const _icons = {
     'exclamation': require('./assets/exclamation.svg'),
     'exclamation-circle': require('./assets/exclamation-circle.svg'),
     'exclamation-circle-fill': require('./assets/exclamation-circle-fill.svg'),
+    'exclamation-diamond': require('./assets/exclamation-diamond.svg'),
+    'exclamation-diamond-fill': require('./assets/exclamation-diamond-fill.svg'),
     'exclamation-triangle': require('./assets/exclamation-triangle.svg'),
     'exclamation-triangle-fill': require('./assets/exclamation-triangle-fill.svg'),
     'external-link': require('./assets/external-link.svg'),
