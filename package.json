@@ -56,21 +56,5 @@
   "bugs": {
     "url": "https://github.com/SegnoUI/segno-ui/issues"
   },
-  "homepage": "https://github.com/SegnoUI/segno-ui#readme",
-  "babel": {
-    "presets": [
-      [
-        "env",
-        {
-          "targets": {
-            "browsers": [
-              "last 2 versions",
-              "IE 11"
-            ]
-          },
-          "modules": false
-        }
-      ]
-    ]
-  }
+  "homepage": "https://github.com/SegnoUI/segno-ui#readme"
 }
