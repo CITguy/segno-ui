@@ -43,6 +43,7 @@ compatibility:
     <ds-disclosure
       aria-controls="{String}"
       [aria-expanded="{String (true|false)}"]
+      [disabled]
       [role="{String}"]
       [tabindex="{Number}"]>
 
@@ -52,14 +53,24 @@ compatibility:
 {% endblock %}
 
 {% block examples %}
-  <section>
-    <div class="demo">
-      <ds-disclosure aria-controls="demoReveal">
-        Click me to toggle.
-      </ds-disclosure>
-      <ds-reveal id="demoReveal">
-        <p>Peekaboo!</p>
-      </ds-reveal>
+  <section id="vue-disclosureDemo">
+    <div class="dsRow">
+      <div class="dsCol dsCol-12-xs dsCol-8-md">
+        <div class="demo">
+          <ds-disclosure :disabled="isDisabled" aria-controls="demoReveal">
+            Click me to toggle.
+          </ds-disclosure>
+          <ds-reveal id="demoReveal">
+            <p>Peekaboo!</p>
+          </ds-reveal>
+        </div>
+      </div>
+      <div class="dsCol dsContainer dsCol-12-xs dsCol-4-md">
+        <label>
+          <input type="checkbox" v-model="isDisabled" />
+          Disable
+        </label>
+      </div>
     </div>
     {% code 'html' %}
       <ds-disclosure aria-controls="demoReveal">
@@ -74,7 +85,7 @@ compatibility:
 
 {% block attributes %}
   <dl>
-    <dt>aria-controls <small>(String)</small></dt>
+    <dt>aria-controls</dt>
     <dd>
       ID of an HTML element (Control Element) to associate behavior.
       This is required to wire up display functionality between elements.
@@ -86,6 +97,9 @@ compatibility:
       When this attribute is updated, the Control Element is also updated.
     </dd>
 
+    <dt>disabled</dt>
+    <dd>When present, prevents toggle functionality.</dd>
+
     <dt>role*</dt>
     <dd>
       Automatically set to "button", if not explicitly defined in markup.
@@ -93,14 +107,21 @@ compatibility:
 
     <dt>tabindex*</dt>
     <dd>
-      Automatically set to 0 (placing it in the tab order), if not explicitly
-      defined in markup.
+      Automatically set to 0 (placing it in the tab order).
     </dd>
   </dl>
 {% endblock %}
 
 {% block properties %}
   <dl>
+    <dt>disabled <small>(Boolean)</small></dt>
+    <dd>
+      <ul>
+        <li>Set to <code>true</code> to prevent toggle behavior.</li>
+        <li>Set to <code>false</code> to allow toggle behavior.</li>
+      </ul>
+    </dd>
+
     <dt>expanded <small>(Boolean)</small></dt>
     <dd>
       Mirrors the <code>aria-expanded</code> attribute.

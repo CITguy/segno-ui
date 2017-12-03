@@ -1,7 +1,8 @@
 ds-disclosure {
-  display: block;
+  cursor: pointer;
+  display: inline-block;
 
-  &:hover {
-    cursor: pointer;
+  &[disabled] {
+    cursor: not-allowed;
   }
 }

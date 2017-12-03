@@ -7,12 +7,15 @@ module.exports = class extends DsElement {
     }
 
     static get observedAttributes () {
-        return [ 'aria-expanded' ];
+        return [ 
+            'aria-expanded',
+            'disabled',
+        ];
     }
 
     connectedCallback () {
         this.$setAttribute('role', 'button');
-        this.$setAttribute('tabindex', 0);
+        this.setAttribute('tabindex', 0);
 
         if (this.target) {
             this.expanded = this.target.hasAttribute('open');
@@ -32,8 +35,20 @@ module.exports = class extends DsElement {
     }
 
     attributeChangedCallback (attr, oldVal, newVal) {
-        if (this.target) {
-            this.target.open = (newVal === 'true');
+        switch(attr) {
+            case 'aria-expanded':
+                if (this.target) {
+                    this.target.open = (newVal === 'true');
+                }
+            break;
+
+            case 'disabled':
+                if (newVal !== null) {
+                    this.setAttribute('tabindex', -1);
+                } else {
+                    this.setAttribute('tabindex', 0);
+                }
+            break;
         }
     }
 
@@ -54,6 +69,18 @@ module.exports = class extends DsElement {
         return this._target;
     }//target
 
+    get disabled () {
+        return this.hasAttribute('disabled');
+    }
+
+    set disabled (newVal) {
+        if (!!newVal) {
+            this.setAttribute('disabled', true);
+        } else {
+            this.removeAttribute('disabled');
+        }
+    }
+
     _keyUp (evt) {
         switch (evt.keyCode) {
             case KEYS.Space:
@@ -66,6 +93,8 @@ module.exports = class extends DsElement {
     }//_keyUp()
 
     _toggle () {
-        this.expanded = !this.expanded;
+        if (!this.disabled) {
+            this.expanded = !this.expanded;
+        }
     }//_toggle();
 };

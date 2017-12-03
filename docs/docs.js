@@ -10,6 +10,7 @@
 })();
 
 import './scripts/vue-busy.js';
+import './scripts/vue-disclosure.js';
 import './scripts/vue-progress.js';
 import './scripts/vue-tabpanel.js';
 import './scripts/vue-tabset.js';
