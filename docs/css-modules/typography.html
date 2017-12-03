@@ -1,0 +1,76 @@
+---
+title: Typography
+compatibility:
+  ie: working
+  edge: working
+  chrome: working
+  safari: working
+  firefox: working
+---
+{% extends 'css-module.njk' %}
+{% block content %}
+  <section>
+    <h2 id="headings">Headings</h2>
+    <p>
+      Heading styles are implemented via H1-H6 styling, but can be overridden
+      with the CSS classes documented below, if needed.
+    </p>
+    <div class="demo" role="presentation">
+      <h1>H1. Page Heading</h1>
+      <h2>H2. Section Heading</h2>
+      <h3>H3. Sub-Section Heading</h3>
+      <h4>H4. Container Heading</h4>
+      <h5>H5. Sub-Container Heading</h5>
+      <h6>H6. Paragraph Heading</h6>
+    </div>
+    <table class="dsTable text-left">
+      <thead>
+        <tr>
+          <th>Heading Style</th>
+          <th>Element</th>
+          <th>CSS Class</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Page Heading</th>
+          <td><code>&lt;h1&gt;</code></td>
+          <td><code>.dsPageHeading</code></td>
+        </tr>
+        <tr>
+          <th scope="row">Section Heading</th>
+          <td><code>&lt;h2&gt;</code></td>
+          <td><code>.dsSectionHeading</code></td>
+        </tr>
+        <tr>
+          <th scope="row">Sub-Section Heading</th>
+          <td><code>&lt;h3&gt;</code></td>
+          <td><code>.dsSubSectionHeading</code></td>
+        </tr>
+        <tr>
+          <th scope="row">Container Heading</th>
+          <td><code>&lt;h4&gt;</code></td>
+          <td><code>.dsContainerHeading</code></td>
+        </tr>
+        <tr>
+          <th scope="row">Sub-Container Heading</th>
+          <td><code>&lt;h5&gt;</code></td>
+          <td><code>.dsSubContainerHeading</code></td>
+        </tr>
+        <tr>
+          <th scope="row">Paragraph Heading</th>
+          <td><code>&lt;h6&gt;</code></td>
+          <td><code>.dsParagraphHeading</code></td>
+        </tr>
+      </tbody>
+    </table>
+    {% code 'html' %}
+      <h1 class="dsPageHeading">H1. Page Heading</h1>
+      <h2 class="dsSectionHeading">H2. Section Heading</h2>
+      <h3 class="dsSubSectionHeading">H3. Sub-Section Heading</h3>
+      <h4 class="dsContainerHeading">H4. Container Heading</h4>
+      <h5 class="dsSubContainerHeading">H5. Sub-Container Heading</h5>
+      <h6 class="dsParagraphHeading">H6. Paragraph Heading</h6>
+    {% endcode %}
+  </section>
+{% endblock %}

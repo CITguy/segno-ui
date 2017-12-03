@@ -1,0 +1,6 @@
+{
+    broken: 'Does not perform minimum functionality',
+    degraded: 'Degraded functionality',
+    unknown: 'Compatibility Unknown',
+    working: 'Fully functional',
+}

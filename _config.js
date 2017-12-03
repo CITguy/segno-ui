@@ -16,7 +16,8 @@ const CONFIG = {};
 CONFIG.root = path.resolve(__dirname);// absolute path to project directory
 CONFIG.publicDir = 'public';
 CONFIG.sourceDir = 'src';
-CONFIG.templateDir = `${CONFIG.sourceDir}/_templates`;
+CONFIG.docsDir = 'docs';
+CONFIG.templateDir = `${CONFIG.docsDir}/_templates`;
 
 // Component Explorer configuration
 // Used directly for "site" rendering context
@@ -33,15 +34,14 @@ CONFIG.site = {
 // Configuration for the LESS precompiler
 CONFIG.less = {
     paths: [
-        `${CONFIG.sourceDir}`,
-        `${CONFIG.sourceDir}/elements`,
-        `${CONFIG.sourceDir}/docs`,
-        `${CONFIG.sourceDir}/utilities`,
+        `${CONFIG.sourceDir}/styles`,
+        `${CONFIG.docsDir}/styles`, 
     ],
     files: [
-        `${CONFIG.sourceDir}/docs.less`,
-        `${CONFIG.sourceDir}/segno-ui-grid.less`,
-        `${CONFIG.sourceDir}/segno-ui.less`,
+        `${CONFIG.docsDir}/docs.less`,
+        `${CONFIG.sourceDir}/segno-ui.less`, // CORE styles of custom elements
+        `${CONFIG.sourceDir}/segno-ui-grid.less`, // Flexbox Grid (opt-in)
+        `${CONFIG.sourceDir}/segno-ui-fanfare.less`, // Fanfare Theme (opt-in)
     ],
 };
 
@@ -53,17 +53,15 @@ CONFIG.webpack = {
         /* <name>: <source file> */
         // NOTE: source fileneeds to be full path, not relative
         'segno-ui': `${CONFIG.root}/${CONFIG.sourceDir}/segno-ui.js`,
-        'docs': `${CONFIG.root}/${CONFIG.sourceDir}/docs.js`,
-        'polyfill-loader': `${CONFIG.root}/${CONFIG.sourceDir}/polyfill-loader.js`,
+        'docs': `${CONFIG.root}/${CONFIG.docsDir}/docs.js`,
     }
 };
 
 // Configuration for generating static documentation
 CONFIG.docs = {
     files: [
-        'index.html',
-        '404.html',
-        '*/**/index.html',
+        '*.html',
+        '*/**.html',
     ],
     // settings for deployment to github pages
     ghPages: {
@@ -76,10 +74,11 @@ CONFIG.docs = {
 };
 
 // Files and directories to copy to publicDir
-// All paths are relative to {CONFIG.sourceDir}
+// All paths are relative to {CONFIG.docsDir}
 CONFIG.copy = {
     files: [
-        'CNAME'
+        'CNAME',
+        'polyfill-loader.js'
     ],
     dirs: [
         'images',

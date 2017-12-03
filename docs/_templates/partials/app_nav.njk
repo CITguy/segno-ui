@@ -1,0 +1,47 @@
+{% macro renderItem(item, path) %}
+  {% if path %}
+    {% set normpath = path + '/' + item.path %}
+  {% else %}
+    {% set normpath = item.path %}
+  {% endif %}
+
+  {% if item.children %}
+    {{ section(item) }}
+  {% else %}
+    {{ link(item.label, normpath) }}
+  {% endif %}
+{% endmacro %}
+
+{% macro link(label, href) %}
+  {% set isCurrentLink = page.path.indexOf(href) == 0 %}
+  <a href="{{href}}" {% if isCurrentLink %}class="current"{% endif %}>
+    {{label}}
+  </a>
+{% endmacro %}
+
+{% macro section(section) %}
+  {% set isCurrentCategory = page.path.indexOf(section.path) === 0 %}
+  {% set revealId = 'nav-' + section.label %}
+
+  <ds-disclosure 
+    aria-controls="{{ revealId }}"
+    {% if isCurrentCategory %}class="current"{% endif %}>
+
+    {{section.label | capitalize}}
+
+    <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
+  </ds-disclosure>
+  <ds-reveal id="{{revealId}}" {% if isCurrentCategory %}open{% endif %}>
+    {% for child in section.children %}
+      {{renderItem(child, section.path)}}
+    {% endfor %}
+  </ds-reveal>
+{% endmacro %}
+
+<a href="/" class="brand">
+  <img src="images/logo-with-title.svg" alt="logo" />
+</a>
+
+{% for item in data.nav %}
+  {{renderItem(item)}}
+{% endfor %}

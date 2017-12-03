@@ -1,0 +1,57 @@
+[
+    /*
+    {
+        label: 'Guides', 
+        path: 'guides',
+        children: [
+            { label: 'Installing', path: 'install' },
+        ],
+    },
+    {
+        label: 'Patterns',
+        path: 'patterns',
+        children: [
+            { label: 'Forms', path: 'forms' },
+            { label: 'Layouts', path: 'layouts' },
+        ],
+    },
+    */
+    {
+        label: 'Custom Elements',
+        path: 'custom-elements',
+        children: [
+            //{ label: '<ds-alert>', path: 'alert.html' },
+            { label: '<ds-busy>', path: 'busy.html' },
+            //{ label: '<ds-checkbox>', path: 'checkbox.html' },
+            { label: '<ds-disclosure>', path: 'disclosure.html' },
+            { label: '<ds-icon>', path: 'icon.html' },
+            //{ label: '<ds-menu>', path: 'menu.html' },
+            //{ label: '<ds-modal>', path: 'modal.html' },
+            //{ label: '<ds-pagination>', path: 'pagination.html' },
+            //{ label: '<ds-popover>', path: 'popover.html' },
+            { label: '<ds-progress>', path: 'progress.html' },
+            { label: '<ds-reveal>', path: 'reveal.html' },
+            { label: '<ds-tab>', path: 'tab.html' },
+            { label: '<ds-tabcontent>', path: 'tabcontent.html' },
+            { label: '<ds-tablist>', path: 'tablist.html' },
+            { label: '<ds-tabpanel>', path: 'tabpanel.html' },
+            { label: '<ds-tabset>', path: 'tabset.html' },
+            //{ label: '<ds-tooltip>', path: 'tooltip.html' },
+        ],
+    },
+    {
+        label: 'CSS Modules',
+        path: 'css-modules',
+        children: [
+            //{ label: 'Badge', path: 'badge.html' },
+            //{ label: 'Breadcrumb', path: 'breadcrumb.html' },
+            //{ label: 'Button', path: 'button.html' },
+            //{ label: 'Code', path: 'code.html' },
+            { label: 'Grid', path: 'grid.html' },
+            //{ label: 'List', path: 'list.html' },
+            //{ label: 'Navigation', path: 'navigation.html' },
+            //{ label: 'Table', path: 'table.html' },
+            { label: 'Typography', path: 'typography.html' },
+        ]
+    }
+]

@@ -1,0 +1,19 @@
+// ===== GRID =====
+// Number of columns in the grid.
+@grid-column-count: 12;
+// Padding between columns.
+@grid-gutter-size: 1rem;
+@grid-column-unit: (100% / @grid-column-count);
+
+// Breakpoints
+/*
+  - 1em is calculated on browser-defined font size
+    - No CSS property can affect this calculation.
+  - As font size increases/decreases (zoom %), more/less room is available,
+    so breakpoints behave more like larger/smaller screens
+*/
+@grid-break-wrist: 0em;
+@grid-break-palm: 40em; // ~640px
+@grid-break-lap: 64em; // ~1024px
+@grid-break-desk: 75em; // ~1200px
+@grid-break-wall: 90em; // ~1440px

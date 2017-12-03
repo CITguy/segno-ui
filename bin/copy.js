@@ -6,13 +6,13 @@ const fsx = require('fs-extra');
 
 function copySync () {
     CONFIG.copy.files.forEach(srcFile => {
-        let sourcePath = `${CONFIG.sourceDir}/${srcFile}`;
+        let sourcePath = `${CONFIG.docsDir}/${srcFile}`;
         let destPath = `${CONFIG.publicDir}/${srcFile}`;
         fsx.copySync(sourcePath, destPath);
     });
 
     CONFIG.copy.dirs.forEach(srcDir => {
-        let sourcePath = `${CONFIG.sourceDir}/${srcDir}`;
+        let sourcePath = `${CONFIG.docsDir}/${srcDir}`;
         let destPath = `${CONFIG.publicDir}/${srcDir}`;
         // TODO: only copy if sourcePath exists
         fsx.copySync(sourcePath, destPath);

@@ -1,0 +1,22 @@
+{
+    deprecated: {
+      desc: 'Will be removed in future release. Stop using.',
+      risk: 10,
+    },
+    planned: {
+      desc: 'Not Available',
+      risk: 0,
+    },
+    prototype: {
+      desc: 'API may change as it is developed. Use at own risk.',
+      risk: 5,
+    },
+    stable: {
+      desc: 'API is unlikely to change. Production Ready',
+      risk: 3,
+    },
+    locked: {
+      desc: 'API will not change. Production Ready',
+      risk: 1,
+    },
+}

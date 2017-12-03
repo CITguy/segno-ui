@@ -1,0 +1,60 @@
+---
+title: <ds-busy>
+compatibility:
+  ie: working
+  edge: working
+  chrome: working
+  safari: working
+  firefox: working
+---
+{% extends 'element.njk' %}
+{% block usage %}
+  <p>
+    The <b>Segno &lt;ds-busy&gt; element</b> communicates that a process
+    of unknown duration is taking place.
+  </p>
+  <dl class="list--usage">
+    <dt>Display</dt>
+    <dd>inline-block</dd>
+
+    <dt>Parent</dt>
+    <dd><em>Any</em></dd>
+
+    <dt>Children</dt>
+    <dd>None</dd>
+  </dl>
+  {% code 'html' %}
+    <ds-busy [paused]></ds-busy>
+  {% endcode %}
+{% endblock %}
+
+{% block examples %}
+  <section id="vue-busyDemo">
+    <div class="demo">
+      <p>
+        <ds-busy
+          :paused="paused"
+          @pause="paused = false"
+          @start="paused = true"></ds-busy>
+      </p>
+      <label>
+        <input type="checkbox" v-model="paused" />
+        Pause
+      </label>
+    </div>
+  </section>
+{% endblock %}
+
+{% block attributes %}
+  <dl>
+    <dt>paused</dt>
+    <dd>Pauses animation, when present.</dd>
+  </dl>
+{% endblock %}
+
+{% block properties %}
+  <dl>
+    <dt>paused <small>(Boolean [false])</small></dt>
+    <dd>Pauses animation, when set to true.</dd>
+  </dl>
+{% endblock %}

@@ -23,6 +23,7 @@ browserSync.init({
         // Rebuild if anything changes in source directory
         {
             match: [
+                `${CONFIG.docsDir}/**/*`,
                 `${CONFIG.sourceDir}/**/*`
             ],
             fn: (evt, file) => {

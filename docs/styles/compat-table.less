@@ -1,0 +1,25 @@
+.table--compat {
+  table-layout: fixed;
+
+  td, th {
+    text-align: center;
+  }
+
+  .compat {
+    &-unknown {
+      background-color: @gray-05;
+    }
+
+    &-broken {
+      background-color: @danger;
+    }
+
+    &-degraded {
+      background-color: @warning;
+    }
+
+    &-working {
+      background-color: @success;
+    }
+  }
+}
