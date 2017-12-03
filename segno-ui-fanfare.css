@@ -264,6 +264,7 @@ dl.list--usage dd {
 }
 .dsApp__nav ds-disclosure {
   color: inherit;
+  display: block;
   font-weight: 500;
   padding: 0.5rem 0.75rem;
   text-transform: uppercase;
