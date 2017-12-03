@@ -11,7 +11,7 @@ compatibility:
 {% block usage %}
   <p>
     The <b>Segno &lt;ds-tab&gt; element</b> is an interactive label to an associated
-    <a href="elements/tabpanel">&lt;ds-tabpanel&gt;</a> element.
+    <a href="custom-elements/tabpanel">&lt;ds-tabpanel&gt;</a> element.
   </p>
   <dl class="list--usage">
     <dt>Display</dt>
@@ -19,7 +19,7 @@ compatibility:
 
     <dt>Parent</dt>
     <dd>
-      <a href="elements/tablist">&lt;ds-tablist&gt;</a>
+      <a href="custom-elements/tablist">&lt;ds-tablist&gt;</a>
     </dd>
 
     <dt>Children</dt>
@@ -39,7 +39,7 @@ compatibility:
   <dl>
     <dt>aria-controls*</dt>
     <dd>
-      Automatically set by <a href="elements/tabset">&lt;ds-tabset&gt;</a>
+      Automatically set by <a href="custom-elements/tabset">&lt;ds-tabset&gt;</a>
       when attached to the DOM.
     </dd>
 
@@ -50,13 +50,13 @@ compatibility:
 
     <dt>current*</dt>
     <dd>
-      Automatically applied by <a href="elements/tabset">&lt;ds-tabset&gt;</a>
+      Automatically applied by <a href="custom-elements/tabset">&lt;ds-tabset&gt;</a>
       to identify the current Tab in a Tablist.
     </dd>
 
     <dt>id <small>(String)</small></dt>
     <dd>
-      Used by <a href="elements/tabset">&lt;ds-tabset&gt;</a> to wire up a Tab
+      Used by <a href="custom-elements/tabset">&lt;ds-tabset&gt;</a> to wire up a Tab
       to its Tabpanel using the <code>aria-controls</code> and
       <code>aria-labeledby</code> attributes. If you do not define an <code>id</code>
       attribute, one will be automatically generated.
@@ -83,9 +83,9 @@ compatibility:
 
 {% block seealso %}
   <ul>
-    <li><a href="elements/tabcontent">&lt;ds-tabcontent&gt;</a></li>
-    <li><a href="elements/tablist">&lt;ds-tablist&gt;</a></li>
-    <li><a href="elements/tabpanel">&lt;ds-tabpanel&gt;</a></li>
-    <li><a href="elements/tabset">&lt;ds-tabset&gt;</a></li>
+    <li><a href="custom-elements/tabcontent">&lt;ds-tabcontent&gt;</a></li>
+    <li><a href="custom-elements/tablist">&lt;ds-tablist&gt;</a></li>
+    <li><a href="custom-elements/tabpanel">&lt;ds-tabpanel&gt;</a></li>
+    <li><a href="custom-elements/tabset">&lt;ds-tabset&gt;</a></li>
   </ul>
 {% endblock %}
