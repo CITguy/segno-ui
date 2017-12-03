@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>&lt;ds-disclosure&gt; - SegnoUI</title>
+  <title>&lt;ds-tabpanel&gt; - SegnoUI</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="/">
@@ -10,13 +10,14 @@
 
   <link rel="stylesheet" href="segno-ui.css">
   <link rel="stylesheet" href="segno-ui-grid.css">
+  <link rel="stylesheet" href="segno-ui-fanfare.css">
   <link rel="stylesheet" href="docs.css">
 </head>
 <body class="dsApp" id="top">
   <div class="dsApp__stage">
     <main class="dsApp__content">
 <div class="page-heading">
-  <h1 class="dsPageHeading">&lt;ds-disclosure&gt;</h1>
+  <h1 class="dsPageHeading">&lt;ds-tabpanel&gt;</h1>
 </div>
   
   <div class="dsRow">
@@ -26,63 +27,48 @@
         <section>
           <h2 class="dsSectionHeading" id="usage">Usage</h2>
   <p>
-    The <b>Segno &lt;ds-disclosure&gt; element</b> toggles the visibility of a
-    Control Element to show/hide content.
+    The <b>Segno &lt;ds-tabpanel&gt; element</b> is a child container of a
+    <a href="elements/tabcontent">&lt;ds-tabcontent&gt;</a> that contains
+    the contents for a specific tab.
   </p>
   <dl class="list--usage">
     <dt>Display</dt>
     <dd>block</dd>
 
     <dt>Parent</dt>
-    <dd><em>n/a</em></dd>
+    <dd><a href="elements/tabcontent">&lt;ds-tabcontent&gt;</a></dd>
 
     <dt>Children</dt>
     <dd><em>n/a</em></dd>
-
-    <dt>Control Element</dt>
-    <dd>
-      <p>
-        A Control Element should have a boolean, <code>open</code> property that
-        reflects to a boolean, <code>open</code> HTML attribute.
-      </p>
-      <ul>
-        <li>The <code>open</code> attribute is use to initialize the Disclosure's state.</li>
-        <li>The <code>open</code> property is inverted when the Disclosure is triggered.</li>
-      </ul>
-      <p>
-        The <a href="elements/reveal">&lt;ds-reveal&gt;</a> element meets the requirements
-        to be a Control Element for a Disclosure.
-      </p>
-    </dd>
   </dl>
-<pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">ds-disclosure</span>
-  <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">"{String}"</span>
-  [<span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"{String (true|false)}"</span>]
-  [<span class="hljs-attr">role</span>=<span class="hljs-string">"{String}"</span>]
-  [<span class="hljs-attr">tabindex</span>=<span class="hljs-string">"{Number}"</span>]&gt;</span>
+<pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">ds-tabpanel</span>
+  [<span class="hljs-attr">id</span>=<span class="hljs-string">"{String}"</span>]
+  [<span class="hljs-attr">open</span>]&gt;</span>
 
   ...
-<span class="hljs-tag">&lt;/<span class="hljs-name">ds-disclosure</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ds-tabpanel</span>&gt;</span>
 </code></pre>        </section>
 
         <section>
           <h2 class="dsSectionHeading" id="examples">Examples</h2>
-  <section>
+  <section id="vue-tabpanelDemo">
     <div class="demo">
-      <ds-disclosure aria-controls="demoReveal">
-        Click me to toggle.
-      </ds-disclosure>
-      <ds-reveal id="demoReveal">
-        <p>Peekaboo!</p>
-      </ds-reveal>
+      <label>
+        <input type="checkbox" v-model="isOpen" />
+        Open
+      </label>
+      <ds-tabpanel :open="isOpen">
+        <div class="dsRow">
+          <div class="dsCol-6-xs">
+            <p>Made you look...</p>
+          </div>
+          <div class="dsCol-6-xs text-right">
+            <p>...here too!</p>
+          </div>
+        </div>
+      </ds-tabpanel>
     </div>
-<pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">ds-disclosure</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">"demoReveal"</span>&gt;</span>
-  Click me to toggle.
-<span class="hljs-tag">&lt;/<span class="hljs-name">ds-disclosure</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">ds-reveal</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"demoReveal"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Peekaboo!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">ds-reveal</span>&gt;</span>
-</code></pre>  </section>
+  </section>
         </section>
 
         <section>
@@ -91,27 +77,25 @@
             Attributes allow you to configure the element in a declarative manner.
           </p>
   <dl>
-    <dt>aria-controls <small>(String)</small></dt>
+    <dt>area-expanded*</dt>
     <dd>
-      ID of an HTML element (Control Element) to associate behavior.
-      This is required to wire up display functionality between elements.
+      Automatically set as the <code>open</code> attribute/property changes.
     </dd>
 
-    <dt>aria-expanded</dt>
+    <dt>id <small>(String)</small></dt>
     <dd>
-      Automatically initialized to the same value as its Control Element.
-      When this attribute is updated, the Control Element is also updated.
+      Used by <a href="elements/tabset">&lt;ds-tabset&gt;</a> to wire up a Tab
+      to its Tabpanel using the <code>aria-controls</code> and
+      <code>aria-labeledby</code> attributes. If you do not define an id
+      attribute, one will be automatically generated.
     </dd>
+
+    <dt>open <small>(Boolean)</small></dt>
+    <dd>When present, contents are visible.</dd>
 
     <dt>role*</dt>
     <dd>
-      Automatically set to "button", if not explicitly defined in markup.
-    </dd>
-
-    <dt>tabindex*</dt>
-    <dd>
-      Automatically set to 0 (placing it in the tab order), if not explicitly
-      defined in markup.
+      Automatically set to "tabpanel", if not explicitly defined in markup.
     </dd>
   </dl>
         </section>
@@ -121,13 +105,12 @@
           <p>
             Properties allow you to configure the element in an imperative manner.
           </p>
-  <dl>
-    <dt>expanded <small>(Boolean)</small></dt>
+  <dl class="list--props">
+    <dt>open <small>(Boolean [false])</small></dt>
     <dd>
-      Mirrors the <code>aria-expanded</code> attribute.
       <ul>
-        <li>Set to <code>true</code> to expand its Control Element.</li>
-        <li>Set to <code>false</code> to collapse its Control Element.</li>
+        <li>Set to <code>true</code> to open the Tabpanel</li>
+        <li>Set to <code>false</code> to close the Tabpanel</li>
       </ul>
     </dd>
   </dl>
@@ -200,14 +183,17 @@
         <section>
           <h2 class="dsSectionHeading" id="seealso">See Also</h2>
   <ul>
-    <li><a href="elements/reveal">&lt;ds-reveal&gt;</a></li>
+    <li><a href="elements/tab">&lt;ds-tab&gt;</a></li>
+    <li><a href="elements/tabcontent">&lt;ds-tabcontent&gt;</a></li>
+    <li><a href="elements/tablist">&lt;ds-tablist&gt;</a></li>
+    <li><a href="elements/tabset">&lt;ds-tabset&gt;</a></li>
   </ul>
         </section>
       </div>
 <footer class="dsPage__foot">
   <p>
     <ds-icon type="calendar"></ds-icon>
-    <b>Last Updated:</b> 2017-11-27
+    <b>Last Updated:</b> 2017-11-23
   </p>
 </footer>
     </div>
@@ -231,87 +217,110 @@
     <nav class="dsApp__nav">
 
 
+
 <a href="/" class="brand">
   <img src="images/logo-with-title.svg" alt="logo" />
 </a>
+
   
+    
+  <ds-disclosure 
+    aria-controls="nav-Custom Elements"
+class="current">
 
+    Custom elements
 
-    <ds-disclosure aria-controls="nav-elements">
-      Elements
-      <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
-    </ds-disclosure>
-
-    <ds-reveal id="nav-elements" open>
-
-          
-  <a href="elements/busy" >
+    <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
+  </ds-disclosure>
+  <ds-reveal id="nav-Custom Elements" open>
+      
+      <a href="custom-elements/busy.html" >
     &lt;ds-busy&gt;
   </a>
 
-          
-  <a href="elements/disclosure" class="current">
+
+      
+      <a href="custom-elements/disclosure.html" >
     &lt;ds-disclosure&gt;
   </a>
 
-          
-  <a href="elements/icon" >
+
+      
+      <a href="custom-elements/icon.html" >
     &lt;ds-icon&gt;
   </a>
 
-          
-  <a href="elements/progress" >
+
+      
+      <a href="custom-elements/progress.html" >
     &lt;ds-progress&gt;
   </a>
 
-          
-  <a href="elements/reveal" >
+
+      
+      <a href="custom-elements/reveal.html" >
     &lt;ds-reveal&gt;
   </a>
 
-          
-  <a href="elements/tab" >
+
+      
+      <a href="custom-elements/tab.html" >
     &lt;ds-tab&gt;
   </a>
 
-          
-  <a href="elements/tabcontent" >
+
+      
+      <a href="custom-elements/tabcontent.html" >
     &lt;ds-tabcontent&gt;
   </a>
 
-          
-  <a href="elements/tablist" >
+
+      
+      <a href="custom-elements/tablist.html" >
     &lt;ds-tablist&gt;
   </a>
 
-          
-  <a href="elements/tabpanel" >
+
+      
+      <a href="custom-elements/tabpanel.html" class="current">
     &lt;ds-tabpanel&gt;
   </a>
 
-          
-  <a href="elements/tabset" >
+
+      
+      <a href="custom-elements/tabset.html" >
     &lt;ds-tabset&gt;
   </a>
 
-    </ds-reveal>
+
+  </ds-reveal>
+
 
   
+    
+  <ds-disclosure 
+    aria-controls="nav-CSS Modules"
+>
 
+    Css modules
 
-    <ds-disclosure aria-controls="nav-utilities">
-      Utilities
-      <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
-    </ds-disclosure>
-
-    <ds-reveal id="nav-utilities" >
-
-          
-  <a href="utilities/grid" >
+    <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
+  </ds-disclosure>
+  <ds-reveal id="nav-CSS Modules" >
+      
+      <a href="css-modules/grid.html" >
     Grid
   </a>
 
-    </ds-reveal>
+
+      
+      <a href="css-modules/typography.html" >
+    Typography
+  </a>
+
+
+  </ds-reveal>
+
 
     </nav>
   </div>

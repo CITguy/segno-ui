@@ -10,6 +10,7 @@
 
   <link rel="stylesheet" href="segno-ui.css">
   <link rel="stylesheet" href="segno-ui-grid.css">
+  <link rel="stylesheet" href="segno-ui-fanfare.css">
   <link rel="stylesheet" href="docs.css">
 </head>
 <body class="dsApp" id="top">
@@ -188,19 +189,21 @@
   </p>
 
   <div class="demo demo--grid text-center">
-    <div class="dsRow">
-      <div class="dsCol dsCol-2-xs"><p>2</p></div>
-      <div class="dsCol dsCol-6-xs dsOffset-1-xs"><p>6</p></div>
-      <div class="dsCol dsCol-2-xs dsOffset-1-xs"><p>2</p></div>
-    </div>
-    <div class="dsRow">
-      <div class="dsCol dsCol-2-xs dsOffset-2-xs"><p>2</p></div>
-      <div class="dsCol dsCol-4-xs"><p>4</p></div>
-      <div class="dsCol dsCol-2-xs"><p>2</p></div>
-    </div>
-    <div class="dsRow">
-      <div class="dsCol dsCol-4-xs"><p>4</p></div>
-      <div class="dsCol dsCol-4-xs dsOffset-4-xs"><p>4</p></div>
+    <div class="demo__container">
+      <div class="dsRow">
+        <div class="dsCol dsCol-2-xs"><p>2</p></div>
+        <div class="dsCol dsCol-6-xs dsOffset-1-xs"><p>6</p></div>
+        <div class="dsCol dsCol-2-xs dsOffset-1-xs"><p>2</p></div>
+      </div>
+      <div class="dsRow">
+        <div class="dsCol dsCol-2-xs dsOffset-2-xs"><p>2</p></div>
+        <div class="dsCol dsCol-4-xs"><p>4</p></div>
+        <div class="dsCol dsCol-2-xs"><p>2</p></div>
+      </div>
+      <div class="dsRow">
+        <div class="dsCol dsCol-4-xs"><p>4</p></div>
+        <div class="dsCol dsCol-4-xs dsOffset-4-xs"><p>4</p></div>
+      </div>
     </div>
   </div>
 <pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dsRow"</span>&gt;</span>
@@ -445,8 +448,8 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></section>
 
-        <section>
-          <h2 class="dsSectionHeading" id="compatibility">Compatibility</h2>
+<section>
+  <h2 id="compatibility">Compatibility</h2>
 
 <table class="dsTable table--compat">
   <thead>
@@ -493,18 +496,12 @@
     </tr>
   </tbody>
 </table>
-            
-        </section>
-
-        <section>
-          <h2 class="dsSectionHeading" id="seealso">See Also</h2>
-            <p>N/A</p>
-        </section>
+</section>
       </div>
 <footer class="dsPage__foot">
   <p>
     <ds-icon type="calendar"></ds-icon>
-    <b>Last Updated:</b> 2017-11-15
+    <b>Last Updated:</b> 2017-12-02
   </p>
 </footer>
     </div>
@@ -535,8 +532,9 @@
 
             <a href="#nesting-containers">Nesting Containers</a>
         
-        <a href="#compatibility">Compatibility</a>
-        <a href="#seealso">See Also</a>
+
+            <a href="#compatibility">Compatibility</a>
+        
         <hr />
         <a class="top-link" href="#top">Back to Top</a>
       </aside>
@@ -546,87 +544,110 @@
     <nav class="dsApp__nav">
 
 
+
 <a href="/" class="brand">
   <img src="images/logo-with-title.svg" alt="logo" />
 </a>
+
   
+    
+  <ds-disclosure 
+    aria-controls="nav-Custom Elements"
+>
 
+    Custom elements
 
-    <ds-disclosure aria-controls="nav-elements">
-      Elements
-      <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
-    </ds-disclosure>
-
-    <ds-reveal id="nav-elements" >
-
-          
-  <a href="elements/busy" >
+    <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
+  </ds-disclosure>
+  <ds-reveal id="nav-Custom Elements" >
+      
+      <a href="custom-elements/busy.html" >
     &lt;ds-busy&gt;
   </a>
 
-          
-  <a href="elements/disclosure" >
+
+      
+      <a href="custom-elements/disclosure.html" >
     &lt;ds-disclosure&gt;
   </a>
 
-          
-  <a href="elements/icon" >
+
+      
+      <a href="custom-elements/icon.html" >
     &lt;ds-icon&gt;
   </a>
 
-          
-  <a href="elements/progress" >
+
+      
+      <a href="custom-elements/progress.html" >
     &lt;ds-progress&gt;
   </a>
 
-          
-  <a href="elements/reveal" >
+
+      
+      <a href="custom-elements/reveal.html" >
     &lt;ds-reveal&gt;
   </a>
 
-          
-  <a href="elements/tab" >
+
+      
+      <a href="custom-elements/tab.html" >
     &lt;ds-tab&gt;
   </a>
 
-          
-  <a href="elements/tabcontent" >
+
+      
+      <a href="custom-elements/tabcontent.html" >
     &lt;ds-tabcontent&gt;
   </a>
 
-          
-  <a href="elements/tablist" >
+
+      
+      <a href="custom-elements/tablist.html" >
     &lt;ds-tablist&gt;
   </a>
 
-          
-  <a href="elements/tabpanel" >
+
+      
+      <a href="custom-elements/tabpanel.html" >
     &lt;ds-tabpanel&gt;
   </a>
 
-          
-  <a href="elements/tabset" >
+
+      
+      <a href="custom-elements/tabset.html" >
     &lt;ds-tabset&gt;
   </a>
 
-    </ds-reveal>
+
+  </ds-reveal>
+
 
   
+    
+  <ds-disclosure 
+    aria-controls="nav-CSS Modules"
+class="current">
 
+    Css modules
 
-    <ds-disclosure aria-controls="nav-utilities">
-      Utilities
-      <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
-    </ds-disclosure>
-
-    <ds-reveal id="nav-utilities" open>
-
-          
-  <a href="utilities/grid" class="current">
+    <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
+  </ds-disclosure>
+  <ds-reveal id="nav-CSS Modules" open>
+      
+      <a href="css-modules/grid.html" class="current">
     Grid
   </a>
 
-    </ds-reveal>
+
+      
+      <a href="css-modules/typography.html" >
+    Typography
+  </a>
+
+
+  </ds-reveal>
+
 
     </nav>
   </div>

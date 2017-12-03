@@ -10,6 +10,7 @@
 
   <link rel="stylesheet" href="segno-ui.css">
   <link rel="stylesheet" href="segno-ui-grid.css">
+  <link rel="stylesheet" href="segno-ui-fanfare.css">
   <link rel="stylesheet" href="docs.css">
 </head>
 <body class="dsApp" id="top">
@@ -170,7 +171,7 @@
 <footer class="dsPage__foot">
   <p>
     <ds-icon type="calendar"></ds-icon>
-    <b>Last Updated:</b> 2017-11-23
+    <b>Last Updated:</b> 2017-12-02
   </p>
 </footer>
     </div>
@@ -194,87 +195,110 @@
     <nav class="dsApp__nav">
 
 
+
 <a href="/" class="brand">
   <img src="images/logo-with-title.svg" alt="logo" />
 </a>
+
   
+    
+  <ds-disclosure 
+    aria-controls="nav-Custom Elements"
+class="current">
 
+    Custom elements
 
-    <ds-disclosure aria-controls="nav-elements">
-      Elements
-      <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
-    </ds-disclosure>
-
-    <ds-reveal id="nav-elements" open>
-
-          
-  <a href="elements/busy" >
+    <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
+  </ds-disclosure>
+  <ds-reveal id="nav-Custom Elements" open>
+      
+      <a href="custom-elements/busy.html" >
     &lt;ds-busy&gt;
   </a>
 
-          
-  <a href="elements/disclosure" >
+
+      
+      <a href="custom-elements/disclosure.html" >
     &lt;ds-disclosure&gt;
   </a>
 
-          
-  <a href="elements/icon" >
+
+      
+      <a href="custom-elements/icon.html" >
     &lt;ds-icon&gt;
   </a>
 
-          
-  <a href="elements/progress" >
+
+      
+      <a href="custom-elements/progress.html" >
     &lt;ds-progress&gt;
   </a>
 
-          
-  <a href="elements/reveal" class="current">
+
+      
+      <a href="custom-elements/reveal.html" class="current">
     &lt;ds-reveal&gt;
   </a>
 
-          
-  <a href="elements/tab" >
+
+      
+      <a href="custom-elements/tab.html" >
     &lt;ds-tab&gt;
   </a>
 
-          
-  <a href="elements/tabcontent" >
+
+      
+      <a href="custom-elements/tabcontent.html" >
     &lt;ds-tabcontent&gt;
   </a>
 
-          
-  <a href="elements/tablist" >
+
+      
+      <a href="custom-elements/tablist.html" >
     &lt;ds-tablist&gt;
   </a>
 
-          
-  <a href="elements/tabpanel" >
+
+      
+      <a href="custom-elements/tabpanel.html" >
     &lt;ds-tabpanel&gt;
   </a>
 
-          
-  <a href="elements/tabset" >
+
+      
+      <a href="custom-elements/tabset.html" >
     &lt;ds-tabset&gt;
   </a>
 
-    </ds-reveal>
+
+  </ds-reveal>
+
 
   
+    
+  <ds-disclosure 
+    aria-controls="nav-CSS Modules"
+>
 
+    Css modules
 
-    <ds-disclosure aria-controls="nav-utilities">
-      Utilities
-      <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
-    </ds-disclosure>
-
-    <ds-reveal id="nav-utilities" >
-
-          
-  <a href="utilities/grid" >
+    <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
+  </ds-disclosure>
+  <ds-reveal id="nav-CSS Modules" >
+      
+      <a href="css-modules/grid.html" >
     Grid
   </a>
 
-    </ds-reveal>
+
+      
+      <a href="css-modules/typography.html" >
+    Typography
+  </a>
+
+
+  </ds-reveal>
+
 
     </nav>
   </div>

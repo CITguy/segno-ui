@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Utilities - SegnoUI</title>
+  <title>Elements - SegnoUI</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="/">
@@ -10,26 +10,24 @@
 
   <link rel="stylesheet" href="segno-ui.css">
   <link rel="stylesheet" href="segno-ui-grid.css">
+  <link rel="stylesheet" href="segno-ui-fanfare.css">
   <link rel="stylesheet" href="docs.css">
 </head>
 <body class="dsApp" id="top">
   <div class="dsApp__stage">
     <main class="dsApp__content">
   <div class="page-heading dsContainer-lg">
-    <h1 class="dsPageHeading">Utilities</h1>
+    <h1 class="dsPageHeading">Elements</h1>
   </div>
 <nav class="dsBreadcrumbs">
   <a href="/">Home</a>
       <span class="delimiter">/</span>
-      <a href="utilities">Utilities</a>
+      <a href="custom-elements">Custom-elements</a>
 </nav>
   <div class="dsPage">
     <div class="dsPage__body">
   <section>
     <ul>
-        <li>
-          <a href="utilities/grid">Grid</a>
-        </li>
     </ul>
   </section>
     </div>
@@ -38,87 +36,110 @@
     <nav class="dsApp__nav">
 
 
+
 <a href="/" class="brand">
   <img src="images/logo-with-title.svg" alt="logo" />
 </a>
+
   
+    
+  <ds-disclosure 
+    aria-controls="nav-Custom Elements"
+class="current">
 
+    Custom elements
 
-    <ds-disclosure aria-controls="nav-elements">
-      Elements
-      <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
-    </ds-disclosure>
-
-    <ds-reveal id="nav-elements" >
-
-          
-  <a href="elements/busy" >
+    <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
+  </ds-disclosure>
+  <ds-reveal id="nav-Custom Elements" open>
+      
+      <a href="custom-elements/busy.html" >
     &lt;ds-busy&gt;
   </a>
 
-          
-  <a href="elements/disclosure" >
+
+      
+      <a href="custom-elements/disclosure.html" >
     &lt;ds-disclosure&gt;
   </a>
 
-          
-  <a href="elements/icon" >
+
+      
+      <a href="custom-elements/icon.html" >
     &lt;ds-icon&gt;
   </a>
 
-          
-  <a href="elements/progress" >
+
+      
+      <a href="custom-elements/progress.html" >
     &lt;ds-progress&gt;
   </a>
 
-          
-  <a href="elements/reveal" >
+
+      
+      <a href="custom-elements/reveal.html" >
     &lt;ds-reveal&gt;
   </a>
 
-          
-  <a href="elements/tab" >
+
+      
+      <a href="custom-elements/tab.html" >
     &lt;ds-tab&gt;
   </a>
 
-          
-  <a href="elements/tabcontent" >
+
+      
+      <a href="custom-elements/tabcontent.html" >
     &lt;ds-tabcontent&gt;
   </a>
 
-          
-  <a href="elements/tablist" >
+
+      
+      <a href="custom-elements/tablist.html" >
     &lt;ds-tablist&gt;
   </a>
 
-          
-  <a href="elements/tabpanel" >
+
+      
+      <a href="custom-elements/tabpanel.html" >
     &lt;ds-tabpanel&gt;
   </a>
 
-          
-  <a href="elements/tabset" >
+
+      
+      <a href="custom-elements/tabset.html" >
     &lt;ds-tabset&gt;
   </a>
 
-    </ds-reveal>
+
+  </ds-reveal>
+
 
   
+    
+  <ds-disclosure 
+    aria-controls="nav-CSS Modules"
+>
 
+    Css modules
 
-    <ds-disclosure aria-controls="nav-utilities">
-      Utilities
-      <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
-    </ds-disclosure>
-
-    <ds-reveal id="nav-utilities" open>
-
-          
-  <a href="utilities/grid" >
+    <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
+  </ds-disclosure>
+  <ds-reveal id="nav-CSS Modules" >
+      
+      <a href="css-modules/grid.html" >
     Grid
   </a>
 
-    </ds-reveal>
+
+      
+      <a href="css-modules/typography.html" >
+    Typography
+  </a>
+
+
+  </ds-reveal>
+
 
     </nav>
   </div>

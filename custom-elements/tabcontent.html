@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>&lt;ds-progress&gt; - SegnoUI</title>
+  <title>&lt;ds-tabcontent&gt; - SegnoUI</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="/">
@@ -10,13 +10,14 @@
 
   <link rel="stylesheet" href="segno-ui.css">
   <link rel="stylesheet" href="segno-ui-grid.css">
+  <link rel="stylesheet" href="segno-ui-fanfare.css">
   <link rel="stylesheet" href="docs.css">
 </head>
 <body class="dsApp" id="top">
   <div class="dsApp__stage">
     <main class="dsApp__content">
 <div class="page-heading">
-  <h1 class="dsPageHeading">&lt;ds-progress&gt;</h1>
+  <h1 class="dsPageHeading">&lt;ds-tabcontent&gt;</h1>
 </div>
   
   <div class="dsRow">
@@ -26,63 +27,29 @@
         <section>
           <h2 class="dsSectionHeading" id="usage">Usage</h2>
   <p>
-    The <b>Segno &lt;ds-progress&gt; element</b> communicates completion
-    progress for a task.
+    The <b>Segno &lt;ds-tabcontent&gt; element</b> is a child container of
+    <a href="elements/tabset">&lt;ds-tabset&gt;</a> that groups together
+    all of your <a href="elements/tabpanel">&lt;ds-tabpanel&gt;</a> elements.
   </p>
   <dl class="list--usage">
     <dt>Display</dt>
     <dd>block</dd>
 
     <dt>Parent</dt>
-    <dd><em>n/a</em></dd>
+    <dd><a href="elements/tabset">&lt;ds-tabset&gt;</a></dd>
 
     <dt>Children</dt>
-    <dd>None</dd>
+    <dd><a href="elements/tabpanel">&lt;ds-tabpanel&gt;</a></dd>
   </dl>
-<pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">ds-progress</span>
-  [<span class="hljs-attr">value</span>=<span class="hljs-string">"{Number}"</span>]
-  [<span class="hljs-attr">indeterminate</span>]&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">ds-progress</span>&gt;</span>
+<pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">ds-tabcontent</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ds-tabcontent</span>&gt;</span>
 </code></pre>        </section>
 
         <section>
           <h2 class="dsSectionHeading" id="examples">Examples</h2>
-  <section>
-    <div class="demo dsRow" id="vue-progressDemo">
-      <div class="dsCol dsCol-12-xs dsCol-6-md dsCol-4-xl">
-        <p>
-          <ds-progress
-            :value="pctComplete"
-            :indeterminate="indeterminate"
-          ></ds-progress>
-        </p>
-        <p>
-          <input type="checkbox" id="chkIndeterminate" v-model="indeterminate" />
-          <label for="chkIndeterminate">Indeterminate</label>
-        </p>
-        <p>
-          <label for="numPctComplete">
-            Value: <span v-text="pctComplete"></span>
-          </label>
-          <input
-            id="numPctComplete"
-            type="range"
-            list="pctTickmarks"
-            :disabled="indeterminate"
-            min="0" max="100" step="1"
-            v-model="pctComplete" />
-
-          <datalist id="pctTickmarks">
-            <option value="0">
-            <option value="25">
-            <option value="50">
-            <option value="75">
-            <option value="100">
-          </datalist>
-        </p>
-      </div>
-    </div>
-  </section>
+            <p>
+              <ds-icon type="info-circle"></ds-icon>
+              This element does not have any examples to demonstrate.
+            </p>
         </section>
 
         <section>
@@ -90,15 +57,10 @@
           <p>
             Attributes allow you to configure the element in a declarative manner.
           </p>
-  <dl class="list--attrs">
-    <dt>value <small>(Number)</small></dt>
+  <dl>
+    <dt>role*</dt>
     <dd>
-      Progress percentage (0-100)
-    </dd>
-
-    <dt>indeterminate <small>(Boolean)</small></dt>
-    <dd>
-      When present, set the element to an indeterminate state.
+      Automatically set to "presentation", if not explicitly defined in markup.
     </dd>
   </dl>
         </section>
@@ -108,17 +70,10 @@
           <p>
             Properties allow you to configure the element in an imperative manner.
           </p>
-  <dl class="list--props">
-    <dt>value <small>(Number)</small></dt>
-    <dd>
-      <small>(default: 0)</small> progress percentage (0-100)
-    </dd>
-
-    <dt>indeterminate <small>(Boolean)</small></dt>
-    <dd>
-      <small>(default: false)</small> When true, set the element to an indeterminate state.
-    </dd>
-  </dl>
+            <p>
+              <ds-icon type="info-circle"></ds-icon>
+              This element does not have any exposed properties.
+            </p>
         </section>
 
         <section>
@@ -182,17 +137,17 @@
     </tr>
   </tbody>
 </table>
-  <ul>
-    <li>
-      Be aware that dynamic updates to the <code>color</code> property may or may not
-      update the indeterminate stripes in older browsers.
-    </li>
-  </ul>
+            
         </section>
 
         <section>
           <h2 class="dsSectionHeading" id="seealso">See Also</h2>
-            <p>N/A</p>
+  <ul>
+    <li><a href="elements/tab">&lt;ds-tab&gt;</a></li>
+    <li><a href="elements/tablist">&lt;ds-tablist&gt;</a></li>
+    <li><a href="elements/tabpanel">&lt;ds-tabpanel&gt;</a></li>
+    <li><a href="elements/tabset">&lt;ds-tabset&gt;</a></li>
+  </ul>
         </section>
       </div>
 <footer class="dsPage__foot">
@@ -222,87 +177,110 @@
     <nav class="dsApp__nav">
 
 
+
 <a href="/" class="brand">
   <img src="images/logo-with-title.svg" alt="logo" />
 </a>
+
   
+    
+  <ds-disclosure 
+    aria-controls="nav-Custom Elements"
+class="current">
 
+    Custom elements
 
-    <ds-disclosure aria-controls="nav-elements">
-      Elements
-      <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
-    </ds-disclosure>
-
-    <ds-reveal id="nav-elements" open>
-
-          
-  <a href="elements/busy" >
+    <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
+  </ds-disclosure>
+  <ds-reveal id="nav-Custom Elements" open>
+      
+      <a href="custom-elements/busy.html" >
     &lt;ds-busy&gt;
   </a>
 
-          
-  <a href="elements/disclosure" >
+
+      
+      <a href="custom-elements/disclosure.html" >
     &lt;ds-disclosure&gt;
   </a>
 
-          
-  <a href="elements/icon" >
+
+      
+      <a href="custom-elements/icon.html" >
     &lt;ds-icon&gt;
   </a>
 
-          
-  <a href="elements/progress" class="current">
+
+      
+      <a href="custom-elements/progress.html" >
     &lt;ds-progress&gt;
   </a>
 
-          
-  <a href="elements/reveal" >
+
+      
+      <a href="custom-elements/reveal.html" >
     &lt;ds-reveal&gt;
   </a>
 
-          
-  <a href="elements/tab" >
+
+      
+      <a href="custom-elements/tab.html" >
     &lt;ds-tab&gt;
   </a>
 
-          
-  <a href="elements/tabcontent" >
+
+      
+      <a href="custom-elements/tabcontent.html" class="current">
     &lt;ds-tabcontent&gt;
   </a>
 
-          
-  <a href="elements/tablist" >
+
+      
+      <a href="custom-elements/tablist.html" >
     &lt;ds-tablist&gt;
   </a>
 
-          
-  <a href="elements/tabpanel" >
+
+      
+      <a href="custom-elements/tabpanel.html" >
     &lt;ds-tabpanel&gt;
   </a>
 
-          
-  <a href="elements/tabset" >
+
+      
+      <a href="custom-elements/tabset.html" >
     &lt;ds-tabset&gt;
   </a>
 
-    </ds-reveal>
+
+  </ds-reveal>
+
 
   
+    
+  <ds-disclosure 
+    aria-controls="nav-CSS Modules"
+>
 
+    Css modules
 
-    <ds-disclosure aria-controls="nav-utilities">
-      Utilities
-      <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
-    </ds-disclosure>
-
-    <ds-reveal id="nav-utilities" >
-
-          
-  <a href="utilities/grid" >
+    <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
+  </ds-disclosure>
+  <ds-reveal id="nav-CSS Modules" >
+      
+      <a href="css-modules/grid.html" >
     Grid
   </a>
 
-    </ds-reveal>
+
+      
+      <a href="css-modules/typography.html" >
+    Typography
+  </a>
+
+
+  </ds-reveal>
+
 
     </nav>
   </div>
