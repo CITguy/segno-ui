@@ -21,10 +21,11 @@ ds-busy[paused] {
   }
 }
 ds-disclosure {
-  display: block;
-}
-ds-disclosure:hover {
   cursor: pointer;
+  display: inline-block;
+}
+ds-disclosure[disabled] {
+  cursor: not-allowed;
 }
 ds-icon {
   background-color: inherit;

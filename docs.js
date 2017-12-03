@@ -72,12 +72,14 @@
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__scripts_vue_busy_js__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__scripts_vue_busy_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__scripts_vue_busy_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__scripts_vue_progress_js__ = __webpack_require__(85);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__scripts_vue_progress_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__scripts_vue_progress_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__scripts_vue_tabpanel_js__ = __webpack_require__(86);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__scripts_vue_tabpanel_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__scripts_vue_tabpanel_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__scripts_vue_tabset_js__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__scripts_vue_tabset_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__scripts_vue_tabset_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__scripts_vue_disclosure_js__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__scripts_vue_disclosure_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__scripts_vue_disclosure_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__scripts_vue_progress_js__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__scripts_vue_progress_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__scripts_vue_progress_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__scripts_vue_tabpanel_js__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__scripts_vue_tabpanel_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__scripts_vue_tabpanel_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__scripts_vue_tabset_js__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__scripts_vue_tabset_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__scripts_vue_tabset_js__);
 (function () {
     var hashAnchors = document.querySelectorAll('[href^="#"]');
 
@@ -88,6 +90,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         });
     });
 })();
+
 
 
 
@@ -113,6 +116,20 @@ if (document.getElementById('vue-busyDemo')) {
 /***/ 85:
 /***/ (function(module, exports) {
 
+if (document.getElementById('vue-disclosureDemo')) {
+    new Vue({
+        el: '#vue-disclosureDemo',
+        data: {
+            isDisabled: false
+        }
+    });
+}
+
+/***/ }),
+
+/***/ 86:
+/***/ (function(module, exports) {
+
 if (document.getElementById('vue-progressDemo')) {
     new Vue({
         el: '#vue-progressDemo',
@@ -125,7 +142,7 @@ if (document.getElementById('vue-progressDemo')) {
 
 /***/ }),
 
-/***/ 86:
+/***/ 87:
 /***/ (function(module, exports) {
 
 if (document.getElementById('vue-tabpanelDemo')) {
@@ -139,7 +156,7 @@ if (document.getElementById('vue-tabpanelDemo')) {
 
 /***/ }),
 
-/***/ 87:
+/***/ 88:
 /***/ (function(module, exports) {
 
 if (document.getElementById('vue-demoTabset')) {

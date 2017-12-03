@@ -383,7 +383,7 @@ module.exports = function (_DsElement) {
         key: 'connectedCallback',
         value: function connectedCallback() {
             this.$setAttribute('role', 'button');
-            this.$setAttribute('tabindex', 0);
+            this.setAttribute('tabindex', 0);
 
             if (this.target) {
                 this.expanded = this.target.hasAttribute('open');
@@ -405,14 +405,24 @@ module.exports = function (_DsElement) {
     }, {
         key: 'attributeChangedCallback',
         value: function attributeChangedCallback(attr, oldVal, newVal) {
-            if (this.target) {
-                this.target.open = newVal === 'true';
+            switch (attr) {
+                case 'aria-expanded':
+                    if (this.target) {
+                        this.target.open = newVal === 'true';
+                    }
+                    break;
+
+                case 'disabled':
+                    if (newVal !== null) {
+                        this.setAttribute('tabindex', -1);
+                    } else {
+                        this.setAttribute('tabindex', 0);
+                    }
+                    break;
             }
         }
     }, {
         key: '_keyUp',
-        //target
-
         value: function _keyUp(evt) {
             switch (evt.keyCode) {
                 case KEYS.Space:
@@ -428,7 +438,9 @@ module.exports = function (_DsElement) {
     }, {
         key: '_toggle',
         value: function _toggle() {
-            this.expanded = !this.expanded;
+            if (!this.disabled) {
+                this.expanded = !this.expanded;
+            }
         } //_toggle();
 
     }, {
@@ -449,6 +461,19 @@ module.exports = function (_DsElement) {
             }
 
             return this._target;
+        } //target
+
+    }, {
+        key: 'disabled',
+        get: function get() {
+            return this.hasAttribute('disabled');
+        },
+        set: function set(newVal) {
+            if (!!newVal) {
+                this.setAttribute('disabled', true);
+            } else {
+                this.removeAttribute('disabled');
+            }
         }
     }], [{
         key: 'is',
@@ -458,7 +483,7 @@ module.exports = function (_DsElement) {
     }, {
         key: 'observedAttributes',
         get: function get() {
-            return ['aria-expanded'];
+            return ['aria-expanded', 'disabled'];
         }
     }]);
 
