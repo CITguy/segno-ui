@@ -8,9 +8,9 @@
 
   <link rel="shortcut icon" href="images/favicon.png">
 
-  <link rel="stylesheet" href="segno-ui.css">
-  <link rel="stylesheet" href="segno-ui-grid.css">
-  <link rel="stylesheet" href="segno-ui-fanfare.css">
+  <link rel="stylesheet" href="vendor/segno-ui.css">
+  <link rel="stylesheet" href="vendor/segno-ui-grid.css">
+  <link rel="stylesheet" href="vendor/segno-ui-fanfare.css">
   <link rel="stylesheet" href="docs.css">
 </head>
 <body class="dsApp" id="top">
@@ -28,18 +28,18 @@
           <h2 class="dsSectionHeading" id="usage">Usage</h2>
   <p>
     The <b>Segno &lt;ds-tabcontent&gt; element</b> is a child container of
-    <a href="elements/tabset">&lt;ds-tabset&gt;</a> that groups together
-    all of your <a href="elements/tabpanel">&lt;ds-tabpanel&gt;</a> elements.
+    <a href="custom-elements/tabset.html">&lt;ds-tabset&gt;</a> that groups together
+    all of your <a href="custom-elements/tabpanel.html">&lt;ds-tabpanel&gt;</a> elements.
   </p>
   <dl class="list--usage">
     <dt>Display</dt>
     <dd>block</dd>
 
     <dt>Parent</dt>
-    <dd><a href="elements/tabset">&lt;ds-tabset&gt;</a></dd>
+    <dd><a href="custom-elements/tabset.html">&lt;ds-tabset&gt;</a></dd>
 
     <dt>Children</dt>
-    <dd><a href="elements/tabpanel">&lt;ds-tabpanel&gt;</a></dd>
+    <dd><a href="custom-elements/tabpanel.html">&lt;ds-tabpanel&gt;</a></dd>
   </dl>
 <pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">ds-tabcontent</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ds-tabcontent</span>&gt;</span>
 </code></pre>        </section>
@@ -143,17 +143,17 @@
         <section>
           <h2 class="dsSectionHeading" id="seealso">See Also</h2>
   <ul>
-    <li><a href="elements/tab">&lt;ds-tab&gt;</a></li>
-    <li><a href="elements/tablist">&lt;ds-tablist&gt;</a></li>
-    <li><a href="elements/tabpanel">&lt;ds-tabpanel&gt;</a></li>
-    <li><a href="elements/tabset">&lt;ds-tabset&gt;</a></li>
+    <li><a href="custom-elements/tab.html">&lt;ds-tab&gt;</a></li>
+    <li><a href="custom-elements/tablist.html">&lt;ds-tablist&gt;</a></li>
+    <li><a href="custom-elements/tabpanel.html">&lt;ds-tabpanel&gt;</a></li>
+    <li><a href="custom-elements/tabset.html">&lt;ds-tabset&gt;</a></li>
   </ul>
         </section>
       </div>
 <footer class="dsPage__foot">
   <p>
     <ds-icon type="calendar"></ds-icon>
-    <b>Last Updated:</b> 2017-11-23
+    <b>Last Updated:</b> 2017-12-03
   </p>
 </footer>
     </div>
@@ -305,7 +305,7 @@ class="current">
 </span>
 
 <!-- SegnoUI Custom Elements -->
-<script src="segno-ui.js"></script>
+<script src="dist/segno-ui.browser.js"></script>
 
 <!-- Documentation from here on -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"

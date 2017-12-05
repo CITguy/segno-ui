@@ -8,9 +8,9 @@
 
   <link rel="shortcut icon" href="images/favicon.png">
 
-  <link rel="stylesheet" href="segno-ui.css">
-  <link rel="stylesheet" href="segno-ui-grid.css">
-  <link rel="stylesheet" href="segno-ui-fanfare.css">
+  <link rel="stylesheet" href="vendor/segno-ui.css">
+  <link rel="stylesheet" href="vendor/segno-ui-grid.css">
+  <link rel="stylesheet" href="vendor/segno-ui-fanfare.css">
   <link rel="stylesheet" href="docs.css">
 </head>
 <body class="dsApp" id="top">
@@ -38,8 +38,8 @@
 
     <dt>Children</dt>
     <dd>
-      <a href="elements/tablist">&lt;ds-tablist&gt;</a>,
-      <a href="elements/tabcontent">&lt;ds-tabcontent&gt;</a>
+      <a href="custom-elements/tablist.html">&lt;ds-tablist&gt;</a>,
+      <a href="custom-elements/tabcontent.html">&lt;ds-tabcontent&gt;</a>
     </dd>
   </dl>
 <pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">ds-tabset</span>
@@ -107,7 +107,7 @@
               commitments. The best way to adjust steady user story is to
               exactly test their level of effort.
             </p>
-            <p><a href="#link-inside-panel">Link inside the panel</a></p>
+            <p><a href="#">Link inside the panel</a></p>
             <p>
               It was discovered that by perfectly designing the PR development
               practices, we can estimate the marketable XP lifecycle above the
@@ -261,17 +261,17 @@
         <section>
           <h2 class="dsSectionHeading" id="seealso">See Also</h2>
   <ul>
-    <li><a href="elements/tab">&lt;ds-tab&gt;</a></li>
-    <li><a href="elements/tabcontent">&lt;ds-tabcontent&gt;</a></li>
-    <li><a href="elements/tablist">&lt;ds-tablist&gt;</a></li>
-    <li><a href="elements/tabpanel">&lt;ds-tabpanel&gt;</a></li>
+    <li><a href="custom-elements/tab.html">&lt;ds-tab&gt;</a></li>
+    <li><a href="custom-elements/tabcontent.html">&lt;ds-tabcontent&gt;</a></li>
+    <li><a href="custom-elements/tablist.html">&lt;ds-tablist&gt;</a></li>
+    <li><a href="custom-elements/tabpanel.html">&lt;ds-tabpanel&gt;</a></li>
   </ul>
         </section>
       </div>
 <footer class="dsPage__foot">
   <p>
     <ds-icon type="calendar"></ds-icon>
-    <b>Last Updated:</b> 2017-11-23
+    <b>Last Updated:</b> 2017-12-03
   </p>
 </footer>
     </div>
@@ -423,7 +423,7 @@ class="current">
 </span>
 
 <!-- SegnoUI Custom Elements -->
-<script src="segno-ui.js"></script>
+<script src="dist/segno-ui.browser.js"></script>
 
 <!-- Documentation from here on -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"

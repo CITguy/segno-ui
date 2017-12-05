@@ -8,9 +8,9 @@
 
   <link rel="shortcut icon" href="images/favicon.png">
 
-  <link rel="stylesheet" href="segno-ui.css">
-  <link rel="stylesheet" href="segno-ui-grid.css">
-  <link rel="stylesheet" href="segno-ui-fanfare.css">
+  <link rel="stylesheet" href="vendor/segno-ui.css">
+  <link rel="stylesheet" href="vendor/segno-ui-grid.css">
+  <link rel="stylesheet" href="vendor/segno-ui-fanfare.css">
   <link rel="stylesheet" href="docs.css">
 </head>
 <body class="dsApp" id="top">
@@ -28,7 +28,7 @@
           <h2 class="dsSectionHeading" id="usage">Usage</h2>
   <p>
     The <b>Segno &lt;ds-tab&gt; element</b> is an interactive label to an associated
-    <a href="elements/tabpanel">&lt;ds-tabpanel&gt;</a> element.
+    <a href="custom-elements/tabpanel.html">&lt;ds-tabpanel&gt;</a> element.
   </p>
   <dl class="list--usage">
     <dt>Display</dt>
@@ -36,7 +36,7 @@
 
     <dt>Parent</dt>
     <dd>
-      <a href="elements/tablist">&lt;ds-tablist&gt;</a>
+      <a href="custom-elements/tablist.html">&lt;ds-tablist&gt;</a>
     </dd>
 
     <dt>Children</dt>
@@ -66,7 +66,7 @@
   <dl>
     <dt>aria-controls*</dt>
     <dd>
-      Automatically set by <a href="elements/tabset">&lt;ds-tabset&gt;</a>
+      Automatically set by <a href="custom-elements/tabset.html">&lt;ds-tabset&gt;</a>
       when attached to the DOM.
     </dd>
 
@@ -77,13 +77,13 @@
 
     <dt>current*</dt>
     <dd>
-      Automatically applied by <a href="elements/tabset">&lt;ds-tabset&gt;</a>
+      Automatically applied by <a href="custom-elements/tabset.html">&lt;ds-tabset&gt;</a>
       to identify the current Tab in a Tablist.
     </dd>
 
     <dt>id <small>(String)</small></dt>
     <dd>
-      Used by <a href="elements/tabset">&lt;ds-tabset&gt;</a> to wire up a Tab
+      Used by <a href="custom-elements/tabset.html">&lt;ds-tabset&gt;</a> to wire up a Tab
       to its Tabpanel using the <code>aria-controls</code> and
       <code>aria-labeledby</code> attributes. If you do not define an <code>id</code>
       attribute, one will be automatically generated.
@@ -179,17 +179,17 @@
         <section>
           <h2 class="dsSectionHeading" id="seealso">See Also</h2>
   <ul>
-    <li><a href="elements/tabcontent">&lt;ds-tabcontent&gt;</a></li>
-    <li><a href="elements/tablist">&lt;ds-tablist&gt;</a></li>
-    <li><a href="elements/tabpanel">&lt;ds-tabpanel&gt;</a></li>
-    <li><a href="elements/tabset">&lt;ds-tabset&gt;</a></li>
+    <li><a href="custom-elements/tabcontent.html">&lt;ds-tabcontent&gt;</a></li>
+    <li><a href="custom-elements/tablist.html">&lt;ds-tablist&gt;</a></li>
+    <li><a href="custom-elements/tabpanel.html">&lt;ds-tabpanel&gt;</a></li>
+    <li><a href="custom-elements/tabset.html">&lt;ds-tabset&gt;</a></li>
   </ul>
         </section>
       </div>
 <footer class="dsPage__foot">
   <p>
     <ds-icon type="calendar"></ds-icon>
-    <b>Last Updated:</b> 2017-11-23
+    <b>Last Updated:</b> 2017-12-03
   </p>
 </footer>
     </div>
@@ -341,7 +341,7 @@ class="current">
 </span>
 
 <!-- SegnoUI Custom Elements -->
-<script src="segno-ui.js"></script>
+<script src="dist/segno-ui.browser.js"></script>
 
 <!-- Documentation from here on -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"

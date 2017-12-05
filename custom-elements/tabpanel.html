@@ -8,9 +8,9 @@
 
   <link rel="shortcut icon" href="images/favicon.png">
 
-  <link rel="stylesheet" href="segno-ui.css">
-  <link rel="stylesheet" href="segno-ui-grid.css">
-  <link rel="stylesheet" href="segno-ui-fanfare.css">
+  <link rel="stylesheet" href="vendor/segno-ui.css">
+  <link rel="stylesheet" href="vendor/segno-ui-grid.css">
+  <link rel="stylesheet" href="vendor/segno-ui-fanfare.css">
   <link rel="stylesheet" href="docs.css">
 </head>
 <body class="dsApp" id="top">
@@ -28,7 +28,7 @@
           <h2 class="dsSectionHeading" id="usage">Usage</h2>
   <p>
     The <b>Segno &lt;ds-tabpanel&gt; element</b> is a child container of a
-    <a href="elements/tabcontent">&lt;ds-tabcontent&gt;</a> that contains
+    <a href="custom-elements/tabcontent.html">&lt;ds-tabcontent&gt;</a> that contains
     the contents for a specific tab.
   </p>
   <dl class="list--usage">
@@ -36,7 +36,7 @@
     <dd>block</dd>
 
     <dt>Parent</dt>
-    <dd><a href="elements/tabcontent">&lt;ds-tabcontent&gt;</a></dd>
+    <dd><a href="custom-elements/tabcontent.html">&lt;ds-tabcontent&gt;</a></dd>
 
     <dt>Children</dt>
     <dd><em>n/a</em></dd>
@@ -84,7 +84,7 @@
 
     <dt>id <small>(String)</small></dt>
     <dd>
-      Used by <a href="elements/tabset">&lt;ds-tabset&gt;</a> to wire up a Tab
+      Used by <a href="custom-elements/tabset.html">&lt;ds-tabset&gt;</a> to wire up a Tab
       to its Tabpanel using the <code>aria-controls</code> and
       <code>aria-labeledby</code> attributes. If you do not define an id
       attribute, one will be automatically generated.
@@ -183,17 +183,17 @@
         <section>
           <h2 class="dsSectionHeading" id="seealso">See Also</h2>
   <ul>
-    <li><a href="elements/tab">&lt;ds-tab&gt;</a></li>
-    <li><a href="elements/tabcontent">&lt;ds-tabcontent&gt;</a></li>
-    <li><a href="elements/tablist">&lt;ds-tablist&gt;</a></li>
-    <li><a href="elements/tabset">&lt;ds-tabset&gt;</a></li>
+    <li><a href="custom-elements/tab.html">&lt;ds-tab&gt;</a></li>
+    <li><a href="custom-elements/tabcontent.html">&lt;ds-tabcontent&gt;</a></li>
+    <li><a href="custom-elements/tablist.html">&lt;ds-tablist&gt;</a></li>
+    <li><a href="custom-elements/tabset.html">&lt;ds-tabset&gt;</a></li>
   </ul>
         </section>
       </div>
 <footer class="dsPage__foot">
   <p>
     <ds-icon type="calendar"></ds-icon>
-    <b>Last Updated:</b> 2017-11-23
+    <b>Last Updated:</b> 2017-12-03
   </p>
 </footer>
     </div>
@@ -345,7 +345,7 @@ class="current">
 </span>
 
 <!-- SegnoUI Custom Elements -->
-<script src="segno-ui.js"></script>
+<script src="dist/segno-ui.browser.js"></script>
 
 <!-- Documentation from here on -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
