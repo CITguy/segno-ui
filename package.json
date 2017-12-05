@@ -2,7 +2,15 @@
   "name": "segno-ui",
   "description": "Web Component library for modern browsers",
   "version": "0.0.1",
-  "main": "src/segno-ui.js",
+  "main": "dist/segno-ui.js",
+  "module": "dist/segno-ui.es.js",
+  "files": [
+    "dist/segno-ui.browser.js",
+    "dist/segno-ui.browser.min.js",
+    "dist/segno-ui.browser.min.js.map",
+    "dist/segno-ui.es.js",
+    "dist/segno-ui.js"
+  ],
   "keywords": [
     "web components",
     "custom elements",
@@ -13,6 +21,7 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.18.13",
     "cheerio": "^1.0.0-rc.2",
@@ -32,7 +41,13 @@
     "nunjucks": "^3.0.1",
     "pkgcloud": "^1.5.0",
     "raw-loader": "^0.5.1",
+    "rollup": "^0.52.0",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-html": "^0.2.1",
+    "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-uglify": "^2.0.1",
     "run-sequence": "^1.2.2",
+    "uglify-es": "^3.2.1",
     "uglifyjs-webpack-plugin": "^1.1.1",
     "webpack": "^3.8.1"
   },
@@ -43,6 +58,8 @@
     "clean:install": "yarn clean && yarn install",
     "deploy": "bin/deploy.js",
     "publish": "bin/publish.js",
+    "rollup": "rollup -c rollup.config.js",
+    "rollup:watch": "rollup -c rollup.config.js --watch",
     "start": "bin/start.js",
     "start:min": "NODE_ENV=production bin/start.js",
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -4,6 +4,7 @@
 const Build = require('./build');
 const CONFIG = require('../_config');
 const Clean = require('./clean');
+const _ = require('lodash');
 const browserSync = require('browser-sync').create();
 
 // Clean out old assets
@@ -23,12 +24,13 @@ browserSync.init({
         // Rebuild if anything changes in source directory
         {
             match: [
+                `${CONFIG.root}/dist/**/*`,
                 `${CONFIG.docsDir}/**/*`,
                 `${CONFIG.sourceDir}/**/*`
             ],
-            fn: (evt, file) => {
+            fn: _.debounce((evt, file) => {
                 Build.buildSync();
-            }
+            }, 1500)
         },
     ],
     logLevel: 'debug',

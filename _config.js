@@ -48,12 +48,10 @@ CONFIG.less = {
 // Configuration for the webpack build tool
 CONFIG.webpack = {
     // entrypoints for compilation
-    entry: {
-        // TODO: see if key/value object is still needed, given we have proper names
-        /* <name>: <source file> */
-        // NOTE: source fileneeds to be full path, not relative
-        'segno-ui': `${CONFIG.root}/${CONFIG.sourceDir}/segno-ui.js`,
-        'docs': `${CONFIG.root}/${CONFIG.docsDir}/docs.js`,
+    entry: './docs/docs.js',
+    output: {
+        path: path.resolve(__dirname, 'public'),
+        filename: 'docs.js',
     }
 };
 
