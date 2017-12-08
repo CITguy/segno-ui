@@ -1,0 +1,37 @@
+---
+title: DSTabElement
+inheritance:
+  - HTMLElement
+  - DSElement
+  - DSTabElement
+---
+{% extends 'api-page.njk' %}
+{% block inheritance %}
+  <ul>
+    <li>HTMLElement
+      <ul>
+        <li><a href="API/DSElement.html">DSElement</a>
+          <ul>
+            <li><b>{{page.title}}</b>
+              <ul>
+                <li><a href="Elements/ds-tab.html">&lt;ds-tab&gt;</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block properties %}
+  <dl class="props">
+    <dt>current <small>{Boolean=false} [RW]</small></dt>
+    <dd>
+      <ul>
+        <li>Set to <code>true</code> to set current Tab state.</li>
+        <li>Set to <code>false</code> to remove current Tab state.</li>
+      </ul>
+    </dd>
+  </dl>
+{% endblock %}

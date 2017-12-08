@@ -1,0 +1,57 @@
+{% extends 'application.njk' %}
+
+{% block layout %}
+  {% include 'partials/page-heading.njk' %}
+  <div class="dsRow">
+    <div class="dsPage dsCol-12-xs dsCol-9-md dsOrder-2-xs dsOrder-1-md">
+      <div class="dsPage__body">
+
+        <section>{# Usage #}
+          <h2 class="dsSectionHeading" id="usage">Usage</h2>
+          {% block usage %}
+            <p><em>n/a</em></p>
+          {% endblock %}
+        </section>
+
+        <section>{# Examples #}
+          <h2 class="dsSectionHeading" id="examples">Examples</h2>
+          {% block examples %}
+            <p>
+              <ds-icon type="info-circle"></ds-icon>
+              This element does not have any examples to demonstrate.
+            </p>
+          {% endblock %}
+        </section>
+
+        <section>{# Attributes #}
+          <h2 class="dsSectionHeading" id="attributes">Attributes</h2>
+          <p>
+            Attributes allow you to configure the element in a declarative manner.
+          </p>
+          {% block attributes %}
+            <p>
+              <ds-icon type="info-circle"></ds-icon>
+              This element does not have any configurable attributes.
+            </p>
+          {% endblock %}
+        </section>
+
+        {% block content %}
+          {# additional page content goes here #}
+        {% endblock %}
+      </div>
+      {% include 'partials/page-footer.njk' %}
+    </div>
+    <div class="dsSidebar dsCol dsCol-12-xs dsCol-3-md dsOrder-1-xs dsOrder-2-md">
+      <h6 class="dsLabel">On this page:</h6>
+      <aside class="article-toc" role="navigation">
+        <a href="#usage">Usage</a>
+        <a href="#examples">Examples</a>
+        <a href="#attributes">Attributes</a>
+        {{ page.raw | toc | safe }}
+        <hr />
+        <a class="top-link" href="#top">Back to Top</a>
+      </aside>
+    </div>
+  </div>
+{% endblock %}

@@ -1,6 +1,6 @@
-import { DsElement } from './DsElement';
+import { DSElement } from './DSElement';
 
-export class DsBusy extends DsElement {
+export class DSBusyElement extends DSElement {
     static get is () {
         return 'ds-busy';
     }

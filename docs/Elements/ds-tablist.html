@@ -1,0 +1,69 @@
+---
+title: <ds-tablist>
+---
+{% extends 'element-page.njk' %}
+{% block usage %}
+  <p>
+    The <b>Segno &lt;ds-tablist&gt; element</b> is a child container of a
+    <a href="Elements/ds-tabset.html">&lt;ds-tabset&gt;</a> that groups together
+    all of your <a href="Elements/ds-tab.html">&lt;ds-tab&gt;</a> elements.
+  </p>
+  <dl class="list--usage">
+    <dt>DOM API</dt>
+    <dd><a href="API/DSTablistElement.html">DSTablistElement</a></dd>
+
+    <dt>Display</dt>
+    <dd>block</dd>
+
+    <dt>Parent</dt>
+    <dd>
+      <a href="Elements/ds-tabset.html">&lt;ds-tabset&gt;</a>
+    </dd>
+
+    <dt>Children</dt>
+    <dd>
+      <a href="Elements/ds-tab.html">&lt;ds-tab&gt;</a>
+    </dd>
+  </dl>
+  {% code 'html' %}
+    <ds-tablist
+      [role="{String}"]>
+
+      ...
+    </ds-tablist>
+  {% endcode %}
+{% endblock %}
+
+{% block attributes %}
+  <dl class="attrs">
+    <dt>
+      <small>auto</small>
+      aria-orientation 
+    </dt>
+    <dd>
+      Automatically set by <a href="Elements/ds-tabset.html">&lt;ds-tabset&gt;</a> when setting the
+      <code>tab-side</code> attribute or <code>tabSide</code> property.
+    </dd>
+
+    <dt>
+      <small>auto</small>
+      role 
+      <small>{String="tablist"}</small>
+    </dt>
+    <dd>
+      Automatically set to "tablist", if not explicitly defined in markup.
+    </dd>
+  </dl>
+{% endblock %}
+
+{% block content %}
+  <section>
+    <h2 id="seealso">See Also</h2>
+    <ul>
+      <li><a href="Elements/ds-tab.html">&lt;ds-tab&gt;</a></li>
+      <li><a href="Elements/ds-tabcontent.html">&lt;ds-tabcontent&gt;</a></li>
+      <li><a href="Elements/ds-tabpanel.html">&lt;ds-tabpanel&gt;</a></li>
+      <li><a href="Elements/ds-tabset.html">&lt;ds-tabset&gt;</a></li>
+    </ul>
+  </section>
+{% endblock %}

@@ -1,13 +1,13 @@
-import { DsReveal } from './DsReveal';
+import { DSRevealElement } from './DSRevealElement';
 
-export class DsTabpanel extends DsReveal {
+export class DSTabpanelElement extends DSRevealElement {
     static get is () {
         return 'ds-tabpanel';
     }
 
     connectedCallback () {
         this.$upgradeProperty('open');
-        this.$setAttribute('role', 'tabpanel');
+        this.$defaultAttribute('role', 'tabpanel');
         // initialize
         this.setAttribute('aria-expanded', this.open);
     }

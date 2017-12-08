@@ -1,0 +1,47 @@
+---
+title: DSDisclosureElement
+inheritance:
+  - HTMLElement
+  - DSElement
+  - DSDisclosureElement
+---
+{% extends 'api-page.njk' %}
+{% block inheritance %}
+  <ul>
+    <li>HTMLElement
+      <ul>
+        <li><a href="API/DSElement.html">DSElement</a>
+          <ul>
+            <li><b>{{page.title}}</b>
+              <ul>
+                <li><a href="Elements/ds-disclosure.html">&lt;ds-disclosure&gt;</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block properties %}
+  <dl class="props">
+    <dt>disabled <small>{Boolean=false} [RW]</small></dt>
+    <dd>Prevents toggle when set to true.</dd>
+
+    <dt>expanded <small>{Boolean} [RW]</small></dt>
+    <dd>
+      Reflected in the <code>aria-expanded</code> attribute.
+      <ul>
+        <li>Set to <code>true</code> to expand its Control Element.</li>
+        <li>Set to <code>false</code> to collapse its Control Element.</li>
+      </ul>
+    </dd>
+  </dl>
+{% endblock %}
+
+{% block seealso %}
+<ul>
+  <li><a href="API/DSReveal.html">DSReveal</a></li>
+</ul>
+{% endblock %}

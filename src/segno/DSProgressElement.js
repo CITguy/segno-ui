@@ -1,4 +1,4 @@
-import { DsElement } from './DsElement';
+import { DSElement } from './DSElement';
 
 const _tagName = 'ds-progress';
 const _template = document.createElement('template')
@@ -18,7 +18,7 @@ _template.innerHTML = `
     <div id="fill"></div>
 `;
 
-export class DsProgress extends DsElement {
+export class DSProgressElement extends DSElement {
     static get is () {
         return _tagName;
     }
@@ -42,9 +42,9 @@ export class DsProgress extends DsElement {
     attributeChangedCallback (attrName, oldVal, newVal) {
         this.value = Number(newVal);
 
-        this.$setAttribute('role', 'progressbar');
-        this.$setAttribute('aria-valuemin', 0);
-        this.$setAttribute('aria-valuemax', 100);
+        this.$defaultAttribute('role', 'progressbar');
+        this.$defaultAttribute('aria-valuemin', 0);
+        this.$defaultAttribute('aria-valuemax', 100);
     }
 
     get value () {

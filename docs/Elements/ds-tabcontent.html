@@ -1,0 +1,52 @@
+---
+title: <ds-tabcontent>
+---
+{% extends 'element-page.njk' %}
+{% block usage %}
+  <p>
+    The <b>Segno &lt;ds-tabcontent&gt; element</b> is a child container of
+    <a href="Elements/ds-tabset.html">&lt;ds-tabset&gt;</a> that groups together
+    all of your <a href="Elements/ds-tabpanel.html">&lt;ds-tabpanel&gt;</a> elements.
+  </p>
+  <dl class="list--usage">
+    <dt>DOM API</dt>
+    <dd><a href="API/DSTabcontentElement.html">DSTabcontentElement</a></dd>
+
+    <dt>Display</dt>
+    <dd>block</dd>
+
+    <dt>Parent</dt>
+    <dd><a href="Elements/ds-tabset.html">&lt;ds-tabset&gt;</a></dd>
+
+    <dt>Children</dt>
+    <dd><a href="Elements/ds-tabpanel.html">&lt;ds-tabpanel&gt;</a></dd>
+  </dl>
+  {% code 'html' %}
+    <ds-tabcontent></ds-tabcontent>
+  {% endcode %}
+{% endblock %}
+
+{% block attributes %}
+  <dl class="attrs">
+    <dt>
+      <small>auto</small>
+      role 
+      <small>{String="presentation"}</small>
+    </dt>
+    <dd>
+      Automatically set to "presentation", if not explicitly defined in markup.
+    </dd>
+  </dl>
+{% endblock %}
+
+{% block content %}
+  <section>
+    <h2 id="seealso">See Also</h2>
+    <ul>
+      <li><a href="Elements/ds-tab.html">&lt;ds-tab&gt;</a></li>
+      <li><a href="Elements/ds-tablist.html">&lt;ds-tablist&gt;</a></li>
+      <li><a href="Elements/ds-tabpanel.html">&lt;ds-tabpanel&gt;</a></li>
+      <li><a href="Elements/ds-tabset.html">&lt;ds-tabset&gt;</a></li>
+    </ul>
+  </section>
+{% endblock %}

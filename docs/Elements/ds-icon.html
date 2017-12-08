@@ -1,18 +1,15 @@
 ---
 title: <ds-icon>
-compatibility:
-  ie: working
-  edge: working
-  chrome: working
-  safari: working
-  firefox: working
 ---
-{% extends 'element.njk' %}
+{% extends 'element-page.njk' %}
 {% block usage %}
   <p>
     The <b>Segno &lt;ds-icon&gt; element</b> renders one of several SVG icons.
   </p>
   <dl class="list--usage">
+    <dt>DOM API</dt>
+    <dd><a href="API/DSIconElement.html">DSIconElement</a></dd>
+
     <dt>Display</dt>
     <dd>inline-block</dd>
 
@@ -59,19 +56,9 @@ compatibility:
 {% endblock %}
 
 {% block attributes %}
-  <dl>
+  <dl class="attrs">
     <dt>type</dt>
     <dd>Set the value to one of the values documented above.</dd>
-  </dl>
-{% endblock %}
-
-{% block properties %}
-  <dl>
-    <dt>type <small>(String)</small></dt>
-    <dd>
-      Modifies the displayed image.
-      Valid values are documented above.
-    </dd>
   </dl>
 {% endblock %}
 

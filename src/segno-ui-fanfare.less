@@ -42,13 +42,15 @@ section {
 @import 'fanfare/_component/toc';
 @import 'fanfare/_component/typography';
 
-dl.list--usage {
-  &:extend(dl.dsKeyValue all);
-
+.list--usage {
   background-color: @info;
   border: 1px solid @primary-shadow;
   box-shadow: inset 0.5rem 0 0 @primary-shadow;
   padding: 0.5rem 1rem;
+
+  dl& {
+    &:extend(dl.dsKeyValue all);
+  }
 }
 
 // ========== HELPERS ==========

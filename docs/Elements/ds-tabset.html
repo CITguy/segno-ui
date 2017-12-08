@@ -1,18 +1,15 @@
 ---
 title: <ds-tabset>
-compatibility:
-  ie: working
-  edge: working
-  chrome: working
-  safari: working
-  firefox: working
 ---
-{% extends 'element.njk' %}
+{% extends 'element-page.njk' %}
 {% block usage %}
   <p>
     The <b>Segno &lt;ds-tabset&gt; element</b> organizes content into a tabbed layout.
   </p>
   <dl class="list--usage">
+    <dt>DOM API</dt>
+    <dd><a href="API/DSTabsetElement.html">DSTabsetElement</a></dd>
+
     <dt>Display</dt>
     <dd>block</dd>
 
@@ -21,8 +18,8 @@ compatibility:
 
     <dt>Children</dt>
     <dd>
-      <a href="custom-elements/tablist.html">&lt;ds-tablist&gt;</a>,
-      <a href="custom-elements/tabcontent.html">&lt;ds-tabcontent&gt;</a>
+      <a href="Elements/ds-tablist.html">&lt;ds-tablist&gt;</a>,
+      <a href="Elements/ds-tabcontent.html">&lt;ds-tabcontent&gt;</a>
     </dd>
   </dl>
   {% code 'html' %}
@@ -148,35 +145,27 @@ compatibility:
 {% endblock %}
 
 {% block attributes %}
-  <dl>
-    <dt>current-tab <small>(Number)</small></dt>
+  <dl class="attrs">
+    <dt>current-tab <small>{Number=0}</small></dt>
     <dd>
-      <small>(default: 0)</small> Zero-based index of the currently active Tab + Tabpanel
+      Zero-based index of the currently active Tab + Tabpanel
     </dd>
 
-    <dt>tab-side <small>(String: 'top' | 'right' | 'bottom' | 'left')</small></dt>
+    <dt>tab-side <small>{String="top"}</small></dt>
     <dd>
-      <small>(default: 'top')</small>
       Position of the tablist in relation to tab contents.
     </dd>
   </dl>
 {% endblock %}
 
-{% block properties %}
-  <dl class="list--props">
-    <dt>currentTab <small>(Number)</small></dt>
-    <dd>Zero-based index of the currently active Tab + Tabpanel</dd>
-
-    <dt>tabSide <small>(String)</small></dt>
-    <dd>Position of the tablist in relation to tab contents.</dd>
-  </dl>
-{% endblock %}
-
-{% block seealso %}
-  <ul>
-    <li><a href="custom-elements/tab.html">&lt;ds-tab&gt;</a></li>
-    <li><a href="custom-elements/tabcontent.html">&lt;ds-tabcontent&gt;</a></li>
-    <li><a href="custom-elements/tablist.html">&lt;ds-tablist&gt;</a></li>
-    <li><a href="custom-elements/tabpanel.html">&lt;ds-tabpanel&gt;</a></li>
-  </ul>
+{% block content %}
+  <section>
+    <h2 id="seealso">See Also</h2>
+    <ul>
+      <li><a href="Elements/ds-tab.html">&lt;ds-tab&gt;</a></li>
+      <li><a href="Elements/ds-tabcontent.html">&lt;ds-tabcontent&gt;</a></li>
+      <li><a href="Elements/ds-tablist.html">&lt;ds-tablist&gt;</a></li>
+      <li><a href="Elements/ds-tabpanel.html">&lt;ds-tabpanel&gt;</a></li>
+    </ul>
+  </section>
 {% endblock %}

@@ -1,0 +1,25 @@
+---
+title: DSTabcontentElement
+inheritance:
+  - HTMLElement
+  - DSElement
+  - DSTabcontentElement
+---
+{% extends 'api-page.njk' %}
+{% block inheritance %}
+  <ul>
+    <li>HTMLElement
+      <ul>
+        <li><a href="API/DSElement.html">DSElement</a>
+          <ul>
+            <li><b>{{page.title}}</b>
+              <ul>
+                <li><a href="Elements/ds-tabcontent.html">&lt;ds-tabcontent&gt;</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+{% endblock %}

@@ -1,0 +1,32 @@
+---
+title: DSBusyElement
+inheritance:
+  - HTMLElement
+  - DSElement
+  - DSBusyElement
+---
+{% extends 'api-page.njk' %}
+{% block inheritance %}
+  <ul>
+    <li>HTMLElement
+      <ul>
+        <li><a href="API/DSElement.html">DSElement</a>
+          <ul>
+            <li><b>{{page.title}}</b>
+              <ul>
+                <li><a href="Elements/ds-busy.html">&lt;ds-busy&gt;</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block properties %}
+  <dl class="props">
+    <dt>paused <small>{Boolean=false} [RW]</small></dt>
+    <dd>Pauses animation, when set to true.</dd>
+  </dl>
+{% endblock %}
