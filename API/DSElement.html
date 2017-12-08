@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Ooops! - SegnoUI</title>
+  <title>DSElement - SegnoUI</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="/">
@@ -16,14 +16,106 @@
 <body class="dsApp" id="top">
   <div class="dsApp__stage">
     <main class="dsApp__content">
-  <div class="page-heading dsContainer-lg">
-    <h1 class="dsPageHeading">Ooops!</h1>
-  </div>
-  <div class="dsPage">
-    <div class="dsPage__body">
+<div class="page-heading">
+  <h1 class="dsPageHeading">DSElement</h1>
+</div>
+  
+  <div class="dsRow">
+    <div class="dsPage dsCol-12-xs dsCol-9-md dsOrder-2-xs dsOrder-1-md">
+      <div class="dsPage__body">
+
+        <section>
+  <ul>
+    <li>HTMLElement
+      <ul>
+        <li><b>DSElement</b></li>
+      </ul>
+    </li>
+  </ul>
+        </section>
+
+        <section>
+          <h2 id="properties">Properties</h2>
+            <p>
+              <i>None specified; inherits properties from its parent.</i>
+            </p>
+        </section>
+
+        <section>
+          <h2 id="methods">Methods</h2>
+  <dl class="methods">
+    <dt id="fn_define"><small>static</small> $define()</dt>
+    <dd>
       <p>
-        Try one of the links in the navigation to the left.
+        Makes use of the <code><i>SubClass</i>.is</code> property to register
+        an element with the custom element registry.
       </p>
+    </dd>
+
+    <dt id="fn_defaultAttribute">$defaultAttribute(<small>attrName, attrValue</small>)</dt>
+    <dd>
+      <p>Safely default an attribute, if not explicitly set in the DOM.</p>
+    </dd>
+
+    <dt id="fn_generateId">$generateId() <small>&rarr; {String}</small></dt>
+    <dd>
+      <p>
+        <small>
+          <ds-icon type="exclamation-triangle-fill"></ds-icon>
+          The string generated from this method is not guaranteed to be 100% 
+          unique. However, it seems to be good enough for use within element IDs.
+        </small>
+      </p> 
+      <p>
+        Uses a pseudo-random number generator to generate a "unique" 8-character 
+        string for use as all or part of a unique identifier in an HTML document.
+      </p>
+    </dd>
+
+    <dt id="fn_preventScroll">$preventScroll(<small>event</small>)</dt>
+    <dd>
+      <p>
+        Attach to <code>keydown</code> events to prevent scrolling when certain 
+        keys are pressed. Useful when adding keyboard functionality to an element.
+      </p>
+    </dd>
+
+    <dt id="fn_upgradeProperty">$upgradeProperty(<small>propertyName</small>)</dt>
+    <dd>
+      <p>
+        Ensures that properties set on an element <i>before</i> it's upgraded 
+        do not overrule the custom element's property setter <i>after</i> 
+        it's upgraded.
+      </p>
+      <p>
+        <small>
+          <ds-icon type="info-circle-fill"></ds-icon>
+          Best used in the <code>connectedCallback()</code> lifecycle method
+          (when the element is attached to the DOM).
+        </small>
+      </p>
+    </dd>
+  </dl>
+        </section>
+
+          
+      </div>
+<footer class="dsPage__foot">
+  <p>
+    <ds-icon type="calendar"></ds-icon>
+    <b>Last Updated:</b> 2017-12-08
+  </p>
+</footer>
+    </div>
+    <div class="dsSidebar dsCol dsCol-12-xs dsCol-3-md dsOrder-1-xs dsOrder-2-md">
+      <h6 class="dsLabel">On this page:</h6>
+      <aside class="article-toc" role="navigation">
+        <a href="#properties">Properties</a>
+        <a href="#methods">Methods</a>
+        
+        <hr />
+        <a class="top-link" href="#top">Back to Top</a>
+      </aside>
     </div>
   </div>
     </main>
@@ -39,13 +131,13 @@
     
   <ds-disclosure 
     aria-controls="nav-DOM APIs"
->
+class="current">
 
     Dom apis
 
     <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
   </ds-disclosure>
-  <ds-reveal id="nav-DOM APIs" >
+  <ds-reveal id="nav-DOM APIs" open>
       
       <a href="API/DSBusyElement.html" >
     DSBusyElement
@@ -59,7 +151,7 @@
 
 
       
-      <a href="API/DSElement.html" >
+      <a href="API/DSElement.html" class="current">
     DSElement
   </a>
 

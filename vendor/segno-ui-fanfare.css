@@ -215,12 +215,29 @@ section:last-child {
   padding: 1rem;
 }
 dl dt {
-  font-weight: 700;
   padding: 0.25rem;
 }
 dl dd {
   padding: 0.25rem;
   margin-left: 2rem;
+  max-width: 35rem;
+}
+dl.attrs dt,
+dl.methods dt,
+dl.props dt {
+  font-family: "SF Mono", "Menlo", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace;
+  font-weight: 700;
+}
+dl.attrs dt small,
+dl.methods dt small,
+dl.props dt small {
+  font-weight: 100;
+  font-style: italic;
+}
+dl.attrs dd + dt,
+dl.methods dd + dt,
+dl.props dd + dt {
+  margin-top: 1rem;
 }
 dl.dsKeyValue,
 dl.list--usage {
@@ -287,6 +304,7 @@ dl.list--usage dd {
 .dsApp__nav a {
   color: inherit;
   display: block;
+  font-size: 0.875rem;
   font-weight: 300;
   padding: 0.5rem 0.75rem;
   text-decoration: none;
@@ -410,7 +428,6 @@ h1,
   letter-spacing: 2px;
   line-height: 1.5;
   text-shadow: 1px 1px 0 #dbdbdb;
-  text-transform: uppercase;
 }
 h2,
 .dsSectionHeading {
@@ -460,7 +477,7 @@ h6,
   font-weight: 700;
   line-height: 20px;
 }
-dl.list--usage {
+.list--usage {
   background-color: #d9ecff;
   border: 1px solid #04406b;
   box-shadow: inset 0.5rem 0 0 #04406b;

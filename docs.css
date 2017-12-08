@@ -23,6 +23,9 @@
 .table--compat .compat-working {
   background-color: #9bf18a;
 }
+.section--inheritance ul {
+  list-style-type: square;
+}
 .demo--grid > .demo__container {
   border: 1px dotted #a8a8a8;
 }

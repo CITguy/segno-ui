@@ -19,7 +19,6 @@
 <div class="page-heading">
   <h1 class="dsPageHeading">&lt;ds-tabset&gt;</h1>
 </div>
-  
   <div class="dsRow">
     <div class="dsPage dsCol-12-xs dsCol-9-md dsOrder-2-xs dsOrder-1-md">
       <div class="dsPage__body">
@@ -30,6 +29,9 @@
     The <b>Segno &lt;ds-tabset&gt; element</b> organizes content into a tabbed layout.
   </p>
   <dl class="list--usage">
+    <dt>DOM API</dt>
+    <dd><a href="API/DSTabsetElement.html">DSTabsetElement</a></dd>
+
     <dt>Display</dt>
     <dd>block</dd>
 
@@ -38,8 +40,8 @@
 
     <dt>Children</dt>
     <dd>
-      <a href="custom-elements/tablist.html">&lt;ds-tablist&gt;</a>,
-      <a href="custom-elements/tabcontent.html">&lt;ds-tabcontent&gt;</a>
+      <a href="Elements/ds-tablist.html">&lt;ds-tablist&gt;</a>,
+      <a href="Elements/ds-tabcontent.html">&lt;ds-tabcontent&gt;</a>
     </dd>
   </dl>
 <pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">ds-tabset</span>
@@ -166,112 +168,33 @@
           <p>
             Attributes allow you to configure the element in a declarative manner.
           </p>
-  <dl>
-    <dt>current-tab <small>(Number)</small></dt>
+  <dl class="attrs">
+    <dt>current-tab <small>{Number=0}</small></dt>
     <dd>
-      <small>(default: 0)</small> Zero-based index of the currently active Tab + Tabpanel
+      Zero-based index of the currently active Tab + Tabpanel
     </dd>
 
-    <dt>tab-side <small>(String: 'top' | 'right' | 'bottom' | 'left')</small></dt>
+    <dt>tab-side <small>{String="top"}</small></dt>
     <dd>
-      <small>(default: 'top')</small>
       Position of the tablist in relation to tab contents.
     </dd>
   </dl>
         </section>
 
-        <section>
-          <h2 class="dsSectionHeading" id="properties">Properties</h2>
-          <p>
-            Properties allow you to configure the element in an imperative manner.
-          </p>
-  <dl class="list--props">
-    <dt>currentTab <small>(Number)</small></dt>
-    <dd>Zero-based index of the currently active Tab + Tabpanel</dd>
-
-    <dt>tabSide <small>(String)</small></dt>
-    <dd>Position of the tablist in relation to tab contents.</dd>
-  </dl>
-        </section>
-
-        <section>
-          <h2 class="dsSectionHeading" id="functions">Functions</h2>
-          <p>
-            Functions alllow you to trigger complex behavior in an element.
-          </p>
-            <p>
-              <ds-icon type="info-circle"></ds-icon>
-              This element does not have any exposed functions.
-            </p>
-        </section>
-
-          
-
-        <section>
-          <h2 class="dsSectionHeading" id="compatibility">Compatibility</h2>
-
-<table class="dsTable table--compat">
-  <thead>
-    <tr>
-      <th>IE11</th>
-      <th>Edge</th>
-      <th>Chrome</th>
-      <th>Safari</th>
-      <th>Firefox</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      
-
-  <td class="compat-working" title="Fully functional">
-      <ds-icon type="check"></ds-icon>
-  </td>
-
-      
-
-  <td class="compat-working" title="Fully functional">
-      <ds-icon type="check"></ds-icon>
-  </td>
-
-      
-
-  <td class="compat-working" title="Fully functional">
-      <ds-icon type="check"></ds-icon>
-  </td>
-
-      
-
-  <td class="compat-working" title="Fully functional">
-      <ds-icon type="check"></ds-icon>
-  </td>
-
-      
-
-  <td class="compat-working" title="Fully functional">
-      <ds-icon type="check"></ds-icon>
-  </td>
-
-    </tr>
-  </tbody>
-</table>
-            
-        </section>
-
-        <section>
-          <h2 class="dsSectionHeading" id="seealso">See Also</h2>
-  <ul>
-    <li><a href="custom-elements/tab.html">&lt;ds-tab&gt;</a></li>
-    <li><a href="custom-elements/tabcontent.html">&lt;ds-tabcontent&gt;</a></li>
-    <li><a href="custom-elements/tablist.html">&lt;ds-tablist&gt;</a></li>
-    <li><a href="custom-elements/tabpanel.html">&lt;ds-tabpanel&gt;</a></li>
-  </ul>
-        </section>
+  <section>
+    <h2 id="seealso">See Also</h2>
+    <ul>
+      <li><a href="Elements/ds-tab.html">&lt;ds-tab&gt;</a></li>
+      <li><a href="Elements/ds-tabcontent.html">&lt;ds-tabcontent&gt;</a></li>
+      <li><a href="Elements/ds-tablist.html">&lt;ds-tablist&gt;</a></li>
+      <li><a href="Elements/ds-tabpanel.html">&lt;ds-tabpanel&gt;</a></li>
+    </ul>
+  </section>
       </div>
 <footer class="dsPage__foot">
   <p>
     <ds-icon type="calendar"></ds-icon>
-    <b>Last Updated:</b> 2017-12-03
+    <b>Last Updated:</b> 2017-12-08
   </p>
 </footer>
     </div>
@@ -281,11 +204,9 @@
         <a href="#usage">Usage</a>
         <a href="#examples">Examples</a>
         <a href="#attributes">Attributes</a>
-        <a href="#properties">Properties</a>
-        <a href="#functions">Functions</a>
         
-        <a href="#compatibility">Compatibility</a>
-        <a href="#seealso">See Also</a>
+            <a href="#seealso">See Also</a>
+        
         <hr />
         <a class="top-link" href="#top">Back to Top</a>
       </aside>
@@ -303,71 +224,77 @@
   
     
   <ds-disclosure 
-    aria-controls="nav-Custom Elements"
-class="current">
+    aria-controls="nav-DOM APIs"
+>
 
-    Custom elements
+    Dom apis
 
     <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
   </ds-disclosure>
-  <ds-reveal id="nav-Custom Elements" open>
+  <ds-reveal id="nav-DOM APIs" >
       
-      <a href="custom-elements/busy.html" >
-    &lt;ds-busy&gt;
+      <a href="API/DSBusyElement.html" >
+    DSBusyElement
   </a>
 
 
       
-      <a href="custom-elements/disclosure.html" >
-    &lt;ds-disclosure&gt;
+      <a href="API/DSDisclosureElement.html" >
+    DSDisclosureElement
   </a>
 
 
       
-      <a href="custom-elements/icon.html" >
-    &lt;ds-icon&gt;
+      <a href="API/DSElement.html" >
+    DSElement
   </a>
 
 
       
-      <a href="custom-elements/progress.html" >
-    &lt;ds-progress&gt;
+      <a href="API/DSIconElement.html" >
+    DSIconElement
   </a>
 
 
       
-      <a href="custom-elements/reveal.html" >
-    &lt;ds-reveal&gt;
+      <a href="API/DSProgressElement.html" >
+    DSProgressElement
   </a>
 
 
       
-      <a href="custom-elements/tab.html" >
-    &lt;ds-tab&gt;
+      <a href="API/DSRevealElement.html" >
+    DSRevealElement
   </a>
 
 
       
-      <a href="custom-elements/tabcontent.html" >
-    &lt;ds-tabcontent&gt;
+      <a href="API/DSTabElement.html" >
+    DSTabElement
   </a>
 
 
       
-      <a href="custom-elements/tablist.html" >
-    &lt;ds-tablist&gt;
+      <a href="API/DSTabcontentElement.html" >
+    DSTabcontentElement
   </a>
 
 
       
-      <a href="custom-elements/tabpanel.html" >
-    &lt;ds-tabpanel&gt;
+      <a href="API/DSTablistElement.html" >
+    DSTablistElement
   </a>
 
 
       
-      <a href="custom-elements/tabset.html" class="current">
-    &lt;ds-tabset&gt;
+      <a href="API/DSTabpanelElement.html" >
+    DSTabpanelElement
+  </a>
+
+
+      
+      <a href="API/DSTabsetElement.html" >
+    DSTabsetElement
   </a>
 
 
@@ -386,14 +313,88 @@ class="current">
   </ds-disclosure>
   <ds-reveal id="nav-CSS Modules" >
       
-      <a href="css-modules/grid.html" >
+      <a href="CSS/grid.html" >
     Grid
   </a>
 
 
       
-      <a href="css-modules/typography.html" >
+      <a href="CSS/typography.html" >
     Typography
+  </a>
+
+
+  </ds-reveal>
+
+
+  
+    
+  <ds-disclosure 
+    aria-controls="nav-Custom Elements"
+class="current">
+
+    Custom elements
+
+    <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
+  </ds-disclosure>
+  <ds-reveal id="nav-Custom Elements" open>
+      
+      <a href="Elements/ds-busy.html" >
+    &lt;ds-busy&gt;
+  </a>
+
+
+      
+      <a href="Elements/ds-disclosure.html" >
+    &lt;ds-disclosure&gt;
+  </a>
+
+
+      
+      <a href="Elements/ds-icon.html" >
+    &lt;ds-icon&gt;
+  </a>
+
+
+      
+      <a href="Elements/ds-progress.html" >
+    &lt;ds-progress&gt;
+  </a>
+
+
+      
+      <a href="Elements/ds-reveal.html" >
+    &lt;ds-reveal&gt;
+  </a>
+
+
+      
+      <a href="Elements/ds-tab.html" >
+    &lt;ds-tab&gt;
+  </a>
+
+
+      
+      <a href="Elements/ds-tabcontent.html" >
+    &lt;ds-tabcontent&gt;
+  </a>
+
+
+      
+      <a href="Elements/ds-tablist.html" >
+    &lt;ds-tablist&gt;
+  </a>
+
+
+      
+      <a href="Elements/ds-tabpanel.html" >
+    &lt;ds-tabpanel&gt;
+  </a>
+
+
+      
+      <a href="Elements/ds-tabset.html" class="current">
+    &lt;ds-tabset&gt;
   </a>
 
 
