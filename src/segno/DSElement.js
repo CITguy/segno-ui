@@ -1,6 +1,6 @@
 import KEYS from './keys';
 
-export class DsElement extends HTMLElement {
+export class DSElement extends HTMLElement {
     static $define () {
         customElements.define(this.is, this);
     }
@@ -30,7 +30,7 @@ export class DsElement extends HTMLElement {
     }
 
     // See: https://goo.gl/MUFHD8
-    $setAttribute (name, val) {
+    $defaultAttribute (name, val) {
         if (!this.hasAttribute(name)) {
             this.setAttribute(name, val);
         }

@@ -1,19 +1,16 @@
 ---
 title: <ds-progress>
-compatibility:
-  ie: working
-  edge: working
-  chrome: working
-  safari: working
-  firefox: working
 ---
-{% extends 'element.njk' %}
+{% extends 'element-page.njk' %}
 {% block usage %}
   <p>
     The <b>Segno &lt;ds-progress&gt; element</b> communicates completion
     progress for a task.
   </p>
   <dl class="list--usage">
+    <dt>DOM API</dt>
+    <dd><a href="API/DSProgressElement.html">DSProgressElement</a></dd>
+
     <dt>Display</dt>
     <dd>block</dd>
 
@@ -71,38 +68,11 @@ compatibility:
 {% endblock %}
 
 {% block attributes %}
-  <dl class="list--attrs">
-    <dt>value <small>(Number)</small></dt>
-    <dd>
-      Progress percentage (0-100)
-    </dd>
+  <dl class="attrs">
+    <dt>value <small>{Number=0}</small></small></dt>
+    <dd>Progress percentage (0-100)</dd>
 
-    <dt>indeterminate <small>(Boolean)</small></dt>
-    <dd>
-      When present, set the element to an indeterminate state.
-    </dd>
+    <dt>indeterminate <small>{Boolean=false}</small></dt>
+    <dd>When present, set the element to an indeterminate state.</dd>
   </dl>
-{% endblock %}
-
-{% block properties %}
-  <dl class="list--props">
-    <dt>value <small>(Number)</small></dt>
-    <dd>
-      <small>(default: 0)</small> progress percentage (0-100)
-    </dd>
-
-    <dt>indeterminate <small>(Boolean)</small></dt>
-    <dd>
-      <small>(default: false)</small> When true, set the element to an indeterminate state.
-    </dd>
-  </dl>
-{% endblock %}
-
-{% block compatibility %}
-  <ul>
-    <li>
-      Be aware that dynamic updates to the <code>color</code> property may or may not
-      update the indeterminate stripes in older browsers.
-    </li>
-  </ul>
 {% endblock %}

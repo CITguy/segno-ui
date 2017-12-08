@@ -1,0 +1,37 @@
+---
+title: DSTabpanelElement
+inheritance:
+  - HTMLElement
+  - DSElement
+  - DSTabpanelElement
+---
+{% extends 'api-page.njk' %}
+{% block inheritance %}
+  <ul>
+    <li>HTMLElement
+      <ul>
+        <li><a href="API/DSElement.html">DSElement</a>
+          <ul>
+            <li><b>{{page.title}}</b>
+              <ul>
+                <li><a href="Elements/ds-tabpanel.html">&lt;ds-tabpanel&gt;</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block properties %}
+  <dl class="props">
+    <dt>open <small>{Boolean=false} [RW]</small></dt>
+    <dd>
+      <ul>
+        <li>Set to <code>true</code> to open the Tabpanel</li>
+        <li>Set to <code>false</code> to close the Tabpanel</li>
+      </ul>
+    </dd>
+  </dl>
+{% endblock %}

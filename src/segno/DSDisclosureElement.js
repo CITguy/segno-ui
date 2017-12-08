@@ -1,7 +1,7 @@
 import KEYS from './keys';
-import { DsElement } from './DsElement';
+import { DSElement } from './DSElement';
 
-export class DsDisclosure extends DsElement {
+export class DSDisclosureElement extends DSElement {
     static get is () {
         return 'ds-disclosure';
     }
@@ -14,7 +14,7 @@ export class DsDisclosure extends DsElement {
     }
 
     connectedCallback () {
-        this.$setAttribute('role', 'button');
+        this.$defaultAttribute('role', 'button');
         this.setAttribute('tabindex', 0);
 
         if (this.target) {

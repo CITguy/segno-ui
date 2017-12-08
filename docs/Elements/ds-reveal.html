@@ -1,19 +1,16 @@
 ---
 title: <ds-reveal>
-compatibility:
-  ie: working
-  edge: working
-  chrome: working
-  safari: working
-  firefox: working
 ---
-{% extends 'element.njk' %}
+{% extends 'element-page.njk' %}
 {% block usage %}
   <p>
     The <b>Segno &lt;ds-reveal&gt; element</b> controls the visibility
     of a section of content.
   </p>
   <dl class="list--usage">
+    <dt>DOM API</dt>
+    <dd><a href="API/DSRevealElement.html">DSRevealElement</a></dd>
+
     <dt>Display</dt>
     <dd>
       block <em>(when open)</em><br />
@@ -57,26 +54,17 @@ compatibility:
 {% endblock %}
 
 {% block attributes %}
-  <dl>
+  <dl class="attrs">
     <dt>open</dt>
     <dd>When present, contents are visible.</dd>
   </dl>
 {% endblock %}
 
-{% block properties %}
-  <dl>
-    <dt>open <small>(Boolean [false])</small></dt>
-    <dd>
-      <ul>
-        <li>Set to <code>true</code> to expand the Reveal</li>
-        <li>Set to <code>false</code> to collapse the Reveal</li>
-      </ul>
-    </dd>
-  </dl>
-{% endblock %}
-
-{% block seealso %}
-  <ul>
-    <li><a href="custom-elements/disclosure.html">&lt;ds-disclosure&gt;</a></li>
-  </ul>
+{% block content %}
+  <section>
+    <h2 id="seealso">See Also</h2>
+    <ul>
+      <li><a href="custom-elements/disclosure.html">&lt;ds-disclosure&gt;</a></li>
+    </ul>
+  </section>
 {% endblock %}

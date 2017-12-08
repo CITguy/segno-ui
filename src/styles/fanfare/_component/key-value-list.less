@@ -1,12 +1,30 @@
 dl {
   dt {
-    font-weight: 700;
     #space.container.xs;
   }
 
   dd {
     #space.container.xs;
     margin-left: 2rem;
+    max-width: 35rem;
+  }
+
+  &.attrs,
+  &.methods,
+  &.props {
+    dt {
+      font-family: @systemMonospace;
+      font-weight: 700;
+
+      small {
+        font-weight: 100;
+        //font-size: 1em;
+        font-style: italic;
+      }
+    }
+    dd + dt {
+      margin-top: 1rem;
+    }
   }
 }
 

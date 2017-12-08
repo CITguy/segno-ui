@@ -1,0 +1,39 @@
+---
+title: DSIconElement
+inheritance:
+  - HTMLElement
+  - DSElement
+  - DSIconElement
+---
+{% extends 'api-page.njk' %}
+{% block inheritance %}
+  <ul>
+    <li>HTMLElement
+      <ul>
+        <li><a href="API/DSElement.html">DSElement</a>
+          <ul>
+            <li><b>{{page.title}}</b>
+              <ul>
+                <li><a href="Elements/ds-icon.html">&lt;ds-icon&gt;</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block properties %}
+  <dl class="props">
+    <dt>
+      <small>static</small>
+      icons 
+      <small>{Object} [RO]</small>
+    </dt>
+    <dd>List of all supported icons</dd>
+
+    <dt>type <small>{String} [RW]</small></dt>
+    <dd>Modifies the injected SVG image.</dd>
+  </dl>
+{% endblock %}

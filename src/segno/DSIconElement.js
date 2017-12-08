@@ -1,7 +1,7 @@
-import { DsElement } from './DsElement';
+import { DSElement } from './DSElement';
 import Icons from './icons';
 
-export class DsIcon extends DsElement {
+export class DSIconElement extends DSElement {
     static get is () {
         return 'ds-icon';
     }
@@ -24,7 +24,7 @@ export class DsIcon extends DsElement {
 
     connectedCallback () {
         this.$upgradeProperty('type');
-        this.$setAttribute('aria-hidden', true);
+        this.$defaultAttribute('aria-hidden', true);
         this._render();
     }
 

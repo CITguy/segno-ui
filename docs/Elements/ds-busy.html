@@ -1,19 +1,16 @@
 ---
 title: <ds-busy>
-compatibility:
-  ie: working
-  edge: working
-  chrome: working
-  safari: working
-  firefox: working
 ---
-{% extends 'element.njk' %}
+{% extends 'element-page.njk' %}
 {% block usage %}
   <p>
     The <b>Segno &lt;ds-busy&gt; element</b> communicates that a process
     of unknown duration is taking place.
   </p>
   <dl class="list--usage">
+    <dt>DOM API</dt>
+    <dd><a href="API/DSBusyElement.html">DSBusyElement</a></dd>
+
     <dt>Display</dt>
     <dd>inline-block</dd>
 
@@ -46,15 +43,8 @@ compatibility:
 {% endblock %}
 
 {% block attributes %}
-  <dl>
+  <dl class="attrs">
     <dt>paused</dt>
     <dd>Pauses animation, when present.</dd>
-  </dl>
-{% endblock %}
-
-{% block properties %}
-  <dl>
-    <dt>paused <small>(Boolean [false])</small></dt>
-    <dd>Pauses animation, when set to true.</dd>
   </dl>
 {% endblock %}

@@ -1,0 +1,37 @@
+---
+title: DSProgressElement
+inheritance:
+  - HTMLElement
+  - DSElement
+  - DSProgressElement
+---
+{% extends 'api-page.njk' %}
+{% block inheritance %}
+  <ul>
+    <li>HTMLElement
+      <ul>
+        <li><a href="API/DSElement.html">DSElement</a>
+          <ul>
+            <li><b>{{page.title}}</b>
+              <ul>
+                <li><a href="Elements/ds-progress.html">&lt;ds-progress&gt;</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block properties %}
+  <dl class="props">
+    <dt>value <small>{Number=0} [RW]</small></dt>
+    <dd>progress percentage (0-100)</dd>
+
+    <dt>indeterminate <small>{Boolean=false} [RW]</small></dt>
+    <dd>
+      When true, set the element to an indeterminate state.
+    </dd>
+  </dl>
+{% endblock %}

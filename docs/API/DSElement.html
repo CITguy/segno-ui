@@ -1,0 +1,72 @@
+---
+title: DSElement
+inheritance:
+  - HTMLElement
+  - DSElement
+---
+{% extends 'api-page.njk' %}
+{% block inheritance %}
+  <ul>
+    <li>HTMLElement
+      <ul>
+        <li><b>{{page.title}}</b></li>
+      </ul>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block methods %}
+  <dl class="methods">
+    <dt id="fn_define"><small>static</small> $define()</dt>
+    <dd>
+      <p>
+        Makes use of the <code><i>SubClass</i>.is</code> property to register
+        an element with the custom element registry.
+      </p>
+    </dd>
+
+    <dt id="fn_defaultAttribute">$defaultAttribute(<small>attrName, attrValue</small>)</dt>
+    <dd>
+      <p>Safely default an attribute, if not explicitly set in the DOM.</p>
+    </dd>
+
+    <dt id="fn_generateId">$generateId() <small>&rarr; {String}</small></dt>
+    <dd>
+      <p>
+        <small>
+          <ds-icon type="exclamation-triangle-fill"></ds-icon>
+          The string generated from this method is not guaranteed to be 100% 
+          unique. However, it seems to be good enough for use within element IDs.
+        </small>
+      </p> 
+      <p>
+        Uses a pseudo-random number generator to generate a "unique" 8-character 
+        string for use as all or part of a unique identifier in an HTML document.
+      </p>
+    </dd>
+
+    <dt id="fn_preventScroll">$preventScroll(<small>event</small>)</dt>
+    <dd>
+      <p>
+        Attach to <code>keydown</code> events to prevent scrolling when certain 
+        keys are pressed. Useful when adding keyboard functionality to an element.
+      </p>
+    </dd>
+
+    <dt id="fn_upgradeProperty">$upgradeProperty(<small>propertyName</small>)</dt>
+    <dd>
+      <p>
+        Ensures that properties set on an element <i>before</i> it's upgraded 
+        do not overrule the custom element's property setter <i>after</i> 
+        it's upgraded.
+      </p>
+      <p>
+        <small>
+          <ds-icon type="info-circle-fill"></ds-icon>
+          Best used in the <code>connectedCallback()</code> lifecycle method
+          (when the element is attached to the DOM).
+        </small>
+      </p>
+    </dd>
+  </dl>
+{% endblock %}

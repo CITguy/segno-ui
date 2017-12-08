@@ -1,0 +1,96 @@
+---
+title: <ds-tab>
+---
+{% extends 'element-page.njk' %}
+{% block usage %}
+  <p>
+    The <b>Segno &lt;ds-tab&gt; element</b> is an interactive label to an associated
+    <a href="Elements/ds-tabpanel.html">&lt;ds-tabpanel&gt;</a> element.
+  </p>
+  <dl class="list--usage">
+    <dt>DOM API</dt>
+    <dd><a href="API/DSTabElement.html">DSTabElement</a></dd>
+
+    <dt>Display</dt>
+    <dd>block</dd>
+
+    <dt>Parent</dt>
+    <dd>
+      <a href="Elements/ds-tablist.html">&lt;ds-tablist&gt;</a>
+    </dd>
+
+    <dt>Children</dt>
+    <dd><em>n/a</em></dd>
+  </dl>
+  {% code 'html' %}
+  <ds-tab
+    [current]
+    [id="{String}"]>
+
+    ...
+  </ds-tab>
+  {% endcode %}
+{% endblock %}
+
+{% block attributes %}
+  <dl class="attrs">
+    <dt>
+      <small>auto</small>
+      aria-controls 
+    </dt>
+    <dd>
+      Automatically set by <a href="Elements/ds-tabset.html">&lt;ds-tabset&gt;</a>
+      when attached to the DOM.
+    </dd>
+
+    <dt>
+      <small>auto</small>
+      aria-selected 
+    </dt>
+    <dd>
+      Automatically set as the <code>current</code> attribute/property changes.
+    </dd>
+
+    <dt>
+      <small>auto</small>
+      current 
+    </dt>
+    <dd>
+      Automatically applied by <a href="Elements/ds-tabset.html">&lt;ds-tabset&gt;</a>
+      to identify the current Tab in a Tablist.
+    </dd>
+
+    <dt>
+      <small>auto</small>
+      id 
+      <small>{String}</small>
+    </dt>
+    <dd>
+      Used by <a href="Elements/ds-tabset.html">&lt;ds-tabset&gt;</a> to wire up a Tab
+      to its Tabpanel using the <code>aria-controls</code> and
+      <code>aria-labeledby</code> attributes. If you do not define an <code>id</code>
+      attribute, one will be automatically generated.
+    </dd>
+
+    <dt>
+      <small>auto</small>
+      role 
+      <small>{String="tab"}</small>
+    </dt>
+    <dd>
+      Automatically set, if not explicitly defined in markup.
+    </dd>
+  </dl>
+{% endblock %}
+
+{% block content %}
+  <section>
+    <h2 id="seealso">See Also</h2>
+    <ul>
+      <li><a href="Elements/ds-tabcontent.html">&lt;ds-tabcontent&gt;</a></li>
+      <li><a href="Elements/ds-tablist.html">&lt;ds-tablist&gt;</a></li>
+      <li><a href="Elements/ds-tabpanel.html">&lt;ds-tabpanel&gt;</a></li>
+      <li><a href="Elements/ds-tabset.html">&lt;ds-tabset&gt;</a></li>
+    </ul>
+  </section>
+{% endblock %}

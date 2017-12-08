@@ -1,25 +1,22 @@
 ---
 title: <ds-tabpanel>
-compatibility:
-  ie: working
-  edge: working
-  chrome: working
-  safari: working
-  firefox: working
 ---
-{% extends 'element.njk' %}
+{% extends 'element-page.njk' %}
 {% block usage %}
   <p>
     The <b>Segno &lt;ds-tabpanel&gt; element</b> is a child container of a
-    <a href="custom-elements/tabcontent.html">&lt;ds-tabcontent&gt;</a> that contains
+    <a href="Elements/ds-tabcontent.html">&lt;ds-tabcontent&gt;</a> that contains
     the contents for a specific tab.
   </p>
   <dl class="list--usage">
+    <dt>DOM API</dt>
+    <dd><a href="API/DSTabpanelElement.html">DSTabpanelElement</a></dd>
+
     <dt>Display</dt>
     <dd>block</dd>
 
     <dt>Parent</dt>
-    <dd><a href="custom-elements/tabcontent.html">&lt;ds-tabcontent&gt;</a></dd>
+    <dd><a href="Elements/ds-tabcontent.html">&lt;ds-tabcontent&gt;</a></dd>
 
     <dt>Children</dt>
     <dd><em>n/a</em></dd>
@@ -56,47 +53,46 @@ compatibility:
 {% endblock %}
 
 {% block attributes %}
-  <dl>
-    <dt>area-expanded*</dt>
+  <dl class="attrs">
+    <dt>
+      <small>auto</small>
+      area-expanded 
+      <small>{String}</small>
+    </dt>
     <dd>
       Automatically set as the <code>open</code> attribute/property changes.
     </dd>
 
-    <dt>id <small>(String)</small></dt>
+    <dt>id <small>{String}</small></dt>
     <dd>
-      Used by <a href="custom-elements/tabset.html">&lt;ds-tabset&gt;</a> to wire up a Tab
+      Used by <a href="Elements/ds-tabset.html">&lt;ds-tabset&gt;</a> to wire up a Tab
       to its Tabpanel using the <code>aria-controls</code> and
       <code>aria-labeledby</code> attributes. If you do not define an id
       attribute, one will be automatically generated.
     </dd>
 
-    <dt>open <small>(Boolean)</small></dt>
+    <dt>open <small>{Boolean=false}</small></dt>
     <dd>When present, contents are visible.</dd>
 
-    <dt>role*</dt>
+    <dt>
+      <small>auto</small>
+      role 
+      <small>{String="tabpanel"}</small>
+    </dt>
     <dd>
       Automatically set to "tabpanel", if not explicitly defined in markup.
     </dd>
   </dl>
 {% endblock %}
 
-{% block properties %}
-  <dl class="list--props">
-    <dt>open <small>(Boolean [false])</small></dt>
-    <dd>
-      <ul>
-        <li>Set to <code>true</code> to open the Tabpanel</li>
-        <li>Set to <code>false</code> to close the Tabpanel</li>
-      </ul>
-    </dd>
-  </dl>
-{% endblock %}
-
-{% block seealso %}
-  <ul>
-    <li><a href="custom-elements/tab.html">&lt;ds-tab&gt;</a></li>
-    <li><a href="custom-elements/tabcontent.html">&lt;ds-tabcontent&gt;</a></li>
-    <li><a href="custom-elements/tablist.html">&lt;ds-tablist&gt;</a></li>
-    <li><a href="custom-elements/tabset.html">&lt;ds-tabset&gt;</a></li>
-  </ul>
+{% block content %}
+  <section>
+    <h2 id="seealso">See Also</h2>
+    <ul>
+      <li><a href="Elements/ds-tab.html">&lt;ds-tab&gt;</a></li>
+      <li><a href="Elements/ds-tabcontent.html">&lt;ds-tabcontent&gt;</a></li>
+      <li><a href="Elements/ds-tablist.html">&lt;ds-tablist&gt;</a></li>
+      <li><a href="Elements/ds-tabset.html">&lt;ds-tabset&gt;</a></li>
+    </ul>
+  </section>
 {% endblock %}

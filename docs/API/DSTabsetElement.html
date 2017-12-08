@@ -1,0 +1,45 @@
+---
+title: DSTabsetElement
+inheritance:
+  - HTMLElement
+  - DSElement
+  - DSTabsetElement
+---
+{% extends 'api-page.njk' %}
+{% block inheritance %}
+  <ul>
+    <li>HTMLElement
+      <ul>
+        <li><a href="API/DSElement.html">DSElement</a>
+          <ul>
+            <li><b>{{page.title}}</b>
+              <ul>
+                <li><a href="Elements/ds-tabset.html">&lt;ds-tabset&gt;</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block properties %}
+  <dl class="props">
+    <dt>currentTab <small>{Number=0} [RW]</small></dt>
+    <dd>Zero-based index of the currently active Tab + Tabpanel</dd>
+
+    <dt>tabs <small>{Array} [RO]</small></dt>
+    <dd>
+      Array of all <code>&lt;ds-tab&gt;</code> elements in the tabset.
+    </dd>
+
+    <dt>tabpanels <small>{Array} [RO]</small></dt>
+    <dd>
+      Array of all <code>&lt;ds-tabpanels&gt;</code> elements in the tabset.
+    </dd>
+
+    <dt>tabSide <small>{String="top"} [RW]</small></dt>
+    <dd>Position of the tablist in relation to tab contents.</dd>
+  </dl>
+{% endblock %}

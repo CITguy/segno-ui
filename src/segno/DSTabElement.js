@@ -1,14 +1,13 @@
-import { DsElement } from './DsElement';
+import { DSElement } from './DSElement';
 
-export class DsTab extends DsElement {
+export class DSTabElement extends DSElement {
     static get is () {
         return 'ds-tab';
     }
 
     connectedCallback () {
         this.$upgradeProperty('current');
-        this.$setAttribute('role', 'tab');
-        // use vanilla setAttribute here
+        this.$defaultAttribute('role', 'tab');
         this.setAttribute('aria-selected', this.current);
     }
 

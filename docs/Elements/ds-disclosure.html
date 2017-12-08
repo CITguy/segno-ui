@@ -1,19 +1,16 @@
 ---
 title: <ds-disclosure>
-compatibility:
-  ie: working
-  edge: working
-  chrome: working
-  safari: working
-  firefox: working
 ---
-{% extends 'element.njk' %}
+{% extends 'element-page.njk' %}
 {% block usage %}
   <p>
     The <b>Segno &lt;ds-disclosure&gt; element</b> toggles the visibility of a
     Control Element to show/hide content.
   </p>
   <dl class="list--usage">
+    <dt>DOM API</dt>
+    <dd><a href="API/DSDisclosureElement.html">DSDisclosureElement</a></dd>
+
     <dt>Display</dt>
     <dd>block</dd>
 
@@ -84,7 +81,7 @@ compatibility:
 {% endblock %}
 
 {% block attributes %}
-  <dl>
+  <dl class="attrs">
     <dt>aria-controls</dt>
     <dd>
       ID of an HTML element (Control Element) to associate behavior.
@@ -100,41 +97,31 @@ compatibility:
     <dt>disabled</dt>
     <dd>When present, prevents toggle functionality.</dd>
 
-    <dt>role*</dt>
+    <dt>
+      <small>auto</small>
+      role 
+      <small>{String="button"}</small>
+    </dt>
     <dd>
-      Automatically set to "button", if not explicitly defined in markup.
+      Automatically set, if not explicitly defined in markup.
     </dd>
 
-    <dt>tabindex*</dt>
+    <dt>
+      <small>auto</small>
+      tabindex 
+      <small>{Number=0}</small>
+    </dt>
     <dd>
       Automatically set to 0 (placing it in the tab order).
     </dd>
   </dl>
 {% endblock %}
 
-{% block properties %}
-  <dl>
-    <dt>disabled <small>(Boolean)</small></dt>
-    <dd>
-      <ul>
-        <li>Set to <code>true</code> to prevent toggle behavior.</li>
-        <li>Set to <code>false</code> to allow toggle behavior.</li>
-      </ul>
-    </dd>
-
-    <dt>expanded <small>(Boolean)</small></dt>
-    <dd>
-      Mirrors the <code>aria-expanded</code> attribute.
-      <ul>
-        <li>Set to <code>true</code> to expand its Control Element.</li>
-        <li>Set to <code>false</code> to collapse its Control Element.</li>
-      </ul>
-    </dd>
-  </dl>
-{% endblock %}
-
-{% block seealso %}
-  <ul>
-    <li><a href="custom-elements/reveal.html">&lt;ds-reveal&gt;</a></li>
-  </ul>
+{% block content %}
+  <section>
+    <h2 id="seealso">See Also</h2>
+    <ul>
+      <li><a href="Elements/ds-reveal.html">&lt;ds-reveal&gt;</a></li>
+    </ul>
+  </section>
 {% endblock %}

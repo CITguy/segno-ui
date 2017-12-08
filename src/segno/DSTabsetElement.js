@@ -1,7 +1,7 @@
-import { DsElement } from './DsElement';
+import { DSElement } from './DSElement';
 import KEYS from './keys';
 
-export class DsTabset extends DsElement {
+export class DSTabsetElement extends DSElement {
     static get is () {
         return 'ds-tabset';
     }
@@ -23,7 +23,7 @@ export class DsTabset extends DsElement {
 
     connectedCallback () {
         this.$upgradeProperty('current-tab');
-        this.$setAttribute('tab-side', 'top');
+        this.$defaultAttribute('tab-side', 'top');
 
         this._setupIds();
         this.currentTab = Number(this.getAttribute('current-tab')) || 0;
@@ -177,7 +177,7 @@ export class DsTabset extends DsElement {
     _setupIds () {
         this.tabs.forEach( (tab, idx) => {
             let tabpanel = this.tabpanels[idx];
-            // Default IDs
+            // Default tab and panel ID
             let tabId = `dsTab-${this.$generateId()}`;
             let tabpanelId = `dsTabPanel-${this.$generateId()}`;
 
