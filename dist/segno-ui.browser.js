@@ -1146,7 +1146,7 @@ var Segno = {
     initialize: initialize
 };
 
-var version = "0.0.2";
+var version = "0.0.5";
 
 Segno.VERSION = version;
 
