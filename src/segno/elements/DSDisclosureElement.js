@@ -1,4 +1,4 @@
-import KEYS from './keys';
+import { KEYS } from '../util';
 import { DSElement } from './DSElement';
 
 export class DSDisclosureElement extends DSElement {

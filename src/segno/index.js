@@ -1,4 +1,4 @@
-import { DSElement } from './DSElement';
+import { DSElement } from './elements/DSElement';
 
 import * as elements from './elements';
 

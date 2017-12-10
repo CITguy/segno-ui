@@ -1,5 +1,5 @@
 import { DSElement } from './DSElement';
-import KEYS from './keys';
+import { KEYS } from '../util';
 
 export class DSTabsetElement extends DSElement {
     static get is () {

@@ -1,7 +1,58 @@
-@import 'fanfare/vars';
-@import 'grid/vars';
+// ========== CONFIG ==========
+@import 'segno-ui-grid';
+@import 'vars';
 
-@import 'compat-table';
+// ========== MIXINS ==========
+// TBD
+
+// ========== RESETS ==========
+// TODO: add Normalize.css
+@import '_reset/box-sizing';
+@import '_reset/ie';
+@import '_reset/form';
+@import '_reset/typography';
+@import '_reset/a11y';
+
+// ========== BASE ==========
+@import '_base/document';
+@import '_base/code';
+@import '_base/range-input';
+@import '_base/typography';
+hr {
+  margin: 0.5rem 0;
+  border-style: solid;
+  border-color: @gray-20;
+  border-width: 1px 0 0;
+}
+section {
+  margin: 0 0 3.5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// ========== COMPONENTS ==========
+@import '_component/breadcrumbs';
+@import '_component/demo';
+@import '_component/key-value-list';
+@import '_component/layout';
+@import '_component/post-it';
+@import '_component/table';
+@import '_component/toc';
+@import '_component/typography';
+@import '_component/compat-table';
+
+.list--usage {
+  background-color: @info;
+  border: 1px solid @primary-shadow;
+  box-shadow: inset 0.5rem 0 0 @primary-shadow;
+  padding: 0.5rem 1rem;
+
+  dl& {
+    &:extend(dl.dsKeyValue all);
+  }
+}
 .section {
   &--inheritance {
     ul {
@@ -9,6 +60,17 @@
     }
   }
 }
+
+// ========== HELPERS ==========
+.text {
+  &-left { text-align: left; }
+  &-center { text-align: center; }
+  &-right { text-align: right; }
+  &-justify { text-align: justify; }
+}
+
+// ========== OVERRIDES ==========
+// TBD
 
 @import 'demo-grid';
 @import 'demo-icon';

@@ -1,12 +1,206 @@
-@import 'core/vars';
+// ========== VARIABLES ==========
+// light grays
+@gray-05: #f5f5f5;
+@gray-10: #ededed; //
+@gray-20: #dbdbdb;
+@gray-30: #cacaca; //
+@gray-40: #b9b9b9;
+@gray-50: #a8a8a8; //
 
-@import 'core/ds-busy';
-@import 'core/ds-disclosure';
-@import 'core/ds-icon';
-@import 'core/ds-progress';
-@import 'core/ds-reveal';
-@import 'core/ds-tab';
-@import 'core/ds-tabcontent';
-@import 'core/ds-tablist';
-@import 'core/ds-tabpanel';
-@import 'core/ds-tabset';
+// dark grays
+@gray-60: #525252;
+@gray-70: #3d3d3d;
+@gray-80: #2a2a2a;
+@gray-90: #181818;
+
+// ========== MIXINS ==========
+@keyframes ds-spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes ds-progress-busy {
+  from { background-position: 0 0; }
+  to   { background-position: 80px 0; }
+}
+
+
+// ========== ELEMENTS ==========
+ds-busy {
+  animation-play-state: running;
+  animation: ds-spin 0.8s linear infinite;
+  border-color: transparent transparent currentColor currentColor;
+  border-radius: 1em;
+  border-style: solid;
+  border-width: 1px;
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+
+  &[paused] {
+    animation-play-state: paused;
+  }
+}//ds-busy
+
+ds-disclosure {
+  cursor: pointer;
+  display: inline-block;
+
+  &[disabled] {
+    cursor: not-allowed;
+  }
+}//ds-disclosure
+
+ds-icon {
+  background-color: inherit;
+  color: inherit;
+  display: inline-block;
+  flex-shrink: 0;
+  height: 1em;
+  vertical-align: -2px;
+  width: 1em;
+
+  svg {
+    fill: currentColor;
+    stroke: none;
+  }
+}//ds-icon
+
+ds-progress {
+  background-color: @gray-10;
+  border: 1px solid;
+  box-sizing: border-box;
+  color: @gray-50;
+  display: block;
+  height: 0.5em;
+  margin: 0;
+  padding: 0;
+
+  &[indeterminate] {
+    animation: ds-progress-busy 3s linear infinite;
+    background-image: linear-gradient(45deg,
+      currentColor,
+      currentColor 25%,
+      transparent 25%,
+      transparent 50%,
+      currentColor 50%,
+      currentColor 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: 40px 40px;
+  }
+}//ds-progress
+
+ds-reveal {
+  display: none;
+
+  &[open] {
+    display: block;
+  }
+}//ds-reveal
+
+ds-tab {
+  border: 1px solid transparent;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+
+  &[current] {
+    background-color: white;
+    border-color: @gray-30;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}//ds-tab
+
+ds-tabcontent {
+  border: 1px solid @gray-30;
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+}//ds-tabcontent
+
+ds-tablist {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+
+  &[aria-orientation="horizontal"] {
+    flex-direction: row;
+  }
+
+  &[aria-orientation="vertical"] {
+    flex-direction: column;
+  }
+}//ds-tablist
+
+ds-tabpanel {
+  &:extend(ds-reveal all);
+  background-color: white;
+  flex-grow: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+}//ds-tabpanel
+
+ds-tabset {
+  display: flex;
+  flex-direction: column;
+
+  ds-tablist {
+    position: relative;
+  }
+
+  &[tab-side="top"] {
+    flex-direction: column;
+
+    ds-tablist {
+      bottom: -1px;
+      padding: 0 1rem;
+    }
+
+    ds-tab {
+      border-bottom-color: transparent;
+    }
+  }
+
+  &[tab-side="bottom"] {
+    flex-direction: column-reverse;
+
+    ds-tablist {
+      top: -1px;
+      padding: 0 1rem;
+    }
+
+    ds-tab {
+      border-top-color: transparent;
+    }
+  }
+
+  &[tab-side="left"] {
+    flex-direction: row;
+
+    ds-tablist {
+      right: -1px;
+      padding: 1rem 0;
+    }
+
+    ds-tab {
+      border-right-color: transparent;
+    }
+  }
+
+  &[tab-side="right"] {
+    flex-direction: row-reverse;
+
+    ds-tablist {
+      left: -1px;
+      padding: 1rem 0;
+    }
+
+    ds-tab {
+      border-left-color: transparent;
+    }
+  }
+}//ds-tabset
