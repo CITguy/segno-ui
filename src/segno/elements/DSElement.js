@@ -1,4 +1,4 @@
-import KEYS from './keys';
+import { KEYS } from '../util';
 
 export class DSElement extends HTMLElement {
     static $define () {

@@ -34,14 +34,13 @@ CONFIG.site = {
 // Configuration for the LESS precompiler
 CONFIG.less = {
     paths: [
-        `${CONFIG.sourceDir}/styles`,
+        `${CONFIG.sourceDir}`,
         `${CONFIG.docsDir}/styles`, 
     ],
     files: [
         `${CONFIG.docsDir}/docs.less`,
-        `${CONFIG.sourceDir}/segno-ui.less`, // CORE styles of custom elements
-        `${CONFIG.sourceDir}/segno-ui-grid.less`, // Flexbox Grid (opt-in)
-        `${CONFIG.sourceDir}/segno-ui-fanfare.less`, // Fanfare Theme (opt-in)
+        `${CONFIG.sourceDir}/segno-ui.less`,
+        `${CONFIG.sourceDir}/segno-ui-grid.less`,
     ],
 };
 

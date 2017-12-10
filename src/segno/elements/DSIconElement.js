@@ -1,5 +1,5 @@
 import { DSElement } from './DSElement';
-import Icons from './icons';
+import Icons from '../icons';
 
 export class DSIconElement extends DSElement {
     static get is () {
