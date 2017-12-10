@@ -84,7 +84,6 @@ export default [
         plugins: [
             json(),
             htmlPlugin,
-            babelPlugin,
         ],
     },
 ];
