@@ -1,6 +1,6 @@
 'use strict';
 
-var KEYS = {
+const KEYS = {
     Alt: 18,
     Backspace: 8,
     Control: 17,
@@ -18,7 +18,7 @@ var KEYS = {
     Shift: 16,
     Space: 32,
     Tab: 9,
-    Up: 38
+    Up: 38,
 };
 
 // ALIASES
@@ -31,327 +31,192 @@ KEYS['PgDown'] = KEYS['PageDown'];
 KEYS['PgUp'] = KEYS['PageUp'];
 KEYS['Return'] = KEYS['Enter'];
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
-  return typeof obj;
-} : function (obj) {
-  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-};
-
-
-
-
-
-
-
-
-
-
-
-var classCallCheck = function (instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-};
-
-var createClass = function () {
-  function defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
+class DSElement extends HTMLElement {
+    static $define () {
+        customElements.define(this.is, this);
     }
-  }
 
-  return function (Constructor, protoProps, staticProps) {
-    if (protoProps) defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) defineProperties(Constructor, staticProps);
-    return Constructor;
-  };
-}();
-
-
-
-
-
-
-
-
-
-var inherits = function (subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-  }
-
-  subClass.prototype = Object.create(superClass && superClass.prototype, {
-    constructor: {
-      value: subClass,
-      enumerable: false,
-      writable: true,
-      configurable: true
-    }
-  });
-  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-};
-
-
-
-
-
-
-
-
-
-
-
-var possibleConstructorReturn = function (self, call) {
-  if (!self) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-
-  return call && (typeof call === "object" || typeof call === "function") ? call : self;
-};
-
-var DSElement = function (_HTMLElement) {
-    inherits(DSElement, _HTMLElement);
-    createClass(DSElement, null, [{
-        key: '$define',
-        value: function $define() {
-            customElements.define(this.is, this);
-        }
-    }]);
-
-    function DSElement(tagName, template) {
-        classCallCheck(this, DSElement);
+    constructor (tagName, template) {
+        super();
 
         // Don't attach shadow DOM unless specified
-        var _this = possibleConstructorReturn(this, (DSElement.__proto__ || Object.getPrototypeOf(DSElement)).call(this));
-
         if (tagName && template) {
-            _this.attachShadow({ mode: 'open' });
+            this.attachShadow({mode: 'open'});
 
             if (window.ShadyCSS) {
                 ShadyCSS.prepareTemplate(template, tagName);
-                ShadyCSS.styleElement(_this);
+                ShadyCSS.styleElement(this);
             }
-            _this.shadowRoot.appendChild(template.content.cloneNode(true));
+            this.shadowRoot.appendChild(template.content.cloneNode(true));
         }
-        return _this;
     }
 
     // See: https://goo.gl/MDp6j5
-
-
-    createClass(DSElement, [{
-        key: '$upgradeProperty',
-        value: function $upgradeProperty(prop) {
-            if (this.hasOwnProperty(prop)) {
-                var value = this[prop];
-                delete this[prop];
-                this[prop] = value;
-            }
+    $upgradeProperty (prop) {
+        if (this.hasOwnProperty(prop)) {
+            let value = this[prop];
+            delete this[prop];
+            this[prop] = value;
         }
+    }
 
-        // See: https://goo.gl/MUFHD8
-
-    }, {
-        key: '$defaultAttribute',
-        value: function $defaultAttribute(name, val) {
-            if (!this.hasAttribute(name)) {
-                this.setAttribute(name, val);
-            }
+    // See: https://goo.gl/MUFHD8
+    $defaultAttribute (name, val) {
+        if (!this.hasAttribute(name)) {
+            this.setAttribute(name, val);
         }
+    }
 
-        // Utility method to generate a unique ID
-
-    }, {
-        key: '$generateId',
-        value: function $generateId() {
-            return Math.random() // 0.7093288430261266
+    // Utility method to generate a unique ID
+    $generateId () {
+        return Math
+            .random()     // 0.7093288430261266
             .toString(36) // "0.pjag2nwxb2o"
-            .substr(2, 8); // "pjag2nwx"
-        } //$generateId()
+            .substr(2,8); // "pjag2nwx"
+    }//$generateId()
 
-    }, {
-        key: '$preventScroll',
-        value: function $preventScroll(evt) {
-            switch (evt.keyCode) {
-                case KEYS.Down:
-                case KEYS.Left:
-                case KEYS.Right:
-                case KEYS.Space:
-                case KEYS.Up:
-                    evt.preventDefault();
-                    break;
-            }
+    $preventScroll (evt) {
+        switch (evt.keyCode) {
+            case KEYS.Down:
+            case KEYS.Left:
+            case KEYS.Right:
+            case KEYS.Space:
+            case KEYS.Up:
+                evt.preventDefault();
+            break;
         }
-    }]);
-    return DSElement;
-}(HTMLElement);
+    }
+}
 
-var DSBusyElement = function (_DSElement) {
-    inherits(DSBusyElement, _DSElement);
-
-    function DSBusyElement() {
-        classCallCheck(this, DSBusyElement);
-        return possibleConstructorReturn(this, (DSBusyElement.__proto__ || Object.getPrototypeOf(DSBusyElement)).apply(this, arguments));
+class DSBusyElement extends DSElement {
+    static get is () {
+        return 'ds-busy';
     }
 
-    createClass(DSBusyElement, [{
-        key: 'connectedCallback',
-        value: function connectedCallback() {
-            this.$upgradeProperty('paused');
-        }
-    }, {
-        key: 'attachedCallback',
-        value: function attachedCallback() {
-            this.setAttribute('aria-hidden', true);
-        }
-    }, {
-        key: 'paused',
-        get: function get$$1() {
-            return this.hasAttribute('paused');
-        },
-        set: function set$$1(val) {
-            if (Boolean(val)) {
-                this.setAttribute('paused', '');
-                this.dispatchEvent(new CustomEvent('pause', {
-                    bubbles: true
-                }));
-            } else {
-                this.removeAttribute('paused');
-                this.dispatchEvent(new CustomEvent('start', {
-                    bubbles: true
-                }));
-            }
-        }
-    }], [{
-        key: 'is',
-        get: function get$$1() {
-            return 'ds-busy';
-        }
-    }]);
-    return DSBusyElement;
-}(DSElement);
-
-var DSDisclosureElement = function (_DSElement) {
-    inherits(DSDisclosureElement, _DSElement);
-
-    function DSDisclosureElement() {
-        classCallCheck(this, DSDisclosureElement);
-        return possibleConstructorReturn(this, (DSDisclosureElement.__proto__ || Object.getPrototypeOf(DSDisclosureElement)).apply(this, arguments));
+    connectedCallback () {
+        this.$upgradeProperty('paused');
     }
 
-    createClass(DSDisclosureElement, [{
-        key: 'connectedCallback',
-        value: function connectedCallback() {
-            this.$defaultAttribute('role', 'button');
-            this.setAttribute('tabindex', 0);
+    attachedCallback () {
+        this.setAttribute('aria-hidden', true);
+    }
 
-            if (this.target) {
-                this.expanded = this.target.hasAttribute('open');
-            } else {
-                this.expanded = false;
-            }
+    get paused () {
+        return this.hasAttribute('paused');
+    }
 
-            this.addEventListener('click', this._toggle);
-            this.addEventListener('keydown', this.$preventScroll);
-            this.addEventListener('keyup', this._keyUp);
+    set paused (val) {
+        if (Boolean(val)) {
+            this.setAttribute('paused', '');
+            this.dispatchEvent(new CustomEvent('pause', {
+                bubbles: true
+            }));
+        } else {
+            this.removeAttribute('paused');
+            this.dispatchEvent(new CustomEvent('start', {
+                bubbles: true
+            }));
         }
-    }, {
-        key: 'disconnectedCallback',
-        value: function disconnectedCallback() {
-            this.removeEventListener('click', this._toggle);
-            this.removeEventListener('keydown', this.$preventScroll);
-            this.removeEventListener('keyup', this._keyUp);
-        }
-    }, {
-        key: 'attributeChangedCallback',
-        value: function attributeChangedCallback(attr, oldVal, newVal) {
-            switch (attr) {
-                case 'aria-expanded':
-                    if (this.target) {
-                        this.target.open = newVal === 'true';
-                    }
-                    break;
+    }
+}
 
-                case 'disabled':
-                    if (newVal !== null) {
-                        this.setAttribute('tabindex', -1);
-                    } else {
-                        this.setAttribute('tabindex', 0);
-                    }
-                    break;
-            }
-        }
-    }, {
-        key: '_keyUp',
-        value: function _keyUp(evt) {
-            switch (evt.keyCode) {
-                case KEYS.Space:
-                case KEYS.Enter:
-                    this._toggle();
-                    break;
+class DSDisclosureElement extends DSElement {
+    static get is () {
+        return 'ds-disclosure';
+    }
 
-                default:
-                    /* do nothing */break;
-            }
-        } //_keyUp()
+    static get observedAttributes () {
+        return [ 
+            'aria-expanded',
+            'disabled',
+        ];
+    }
 
-    }, {
-        key: '_toggle',
-        value: function _toggle() {
-            if (!this.disabled) {
-                this.expanded = !this.expanded;
-            }
-        } //_toggle();
+    connectedCallback () {
+        this.$defaultAttribute('role', 'button');
+        this.setAttribute('tabindex', 0);
 
-    }, {
-        key: 'expanded',
-        get: function get$$1() {
-            return this.getAttribute('aria-expanded') === 'true';
-        },
-        set: function set$$1(newVal) {
-            this.setAttribute('aria-expanded', !!newVal);
+        if (this.target) {
+            this.expanded = this.target.hasAttribute('open');
+        } else {
+            this.expanded = false;
         }
-    }, {
-        key: 'target',
-        get: function get$$1() {
-            if (!this._target) {
-                // memoize target
-                var targetId = this.getAttribute('aria-controls');
-                this._target = document.getElementById(targetId);
-            }
 
-            return this._target;
-        } //target
+        this.addEventListener('click', this._toggle);
+        this.addEventListener('keydown', this.$preventScroll);
+        this.addEventListener('keyup', this._keyUp);
+    }
 
-    }, {
-        key: 'disabled',
-        get: function get$$1() {
-            return this.hasAttribute('disabled');
-        },
-        set: function set$$1(newVal) {
-            if (!!newVal) {
-                this.setAttribute('disabled', true);
-            } else {
-                this.removeAttribute('disabled');
-            }
+    disconnectedCallback () {
+        this.removeEventListener('click', this._toggle);
+        this.removeEventListener('keydown', this.$preventScroll);
+        this.removeEventListener('keyup', this._keyUp);
+    }
+
+    attributeChangedCallback (attr, oldVal, newVal) {
+        switch(attr) {
+            case 'aria-expanded':
+                if (this.target) {
+                    this.target.open = (newVal === 'true');
+                }
+            break;
+
+            case 'disabled':
+                if (newVal !== null) {
+                    this.setAttribute('tabindex', -1);
+                } else {
+                    this.setAttribute('tabindex', 0);
+                }
+            break;
         }
-    }], [{
-        key: 'is',
-        get: function get$$1() {
-            return 'ds-disclosure';
+    }
+
+    get expanded () {
+        return this.getAttribute('aria-expanded') === 'true';
+    }
+
+    set expanded (newVal) {
+        this.setAttribute('aria-expanded', !!newVal);
+    }
+
+    get target () {
+        if (!this._target) { // memoize target
+            let targetId = this.getAttribute('aria-controls');
+            this._target = document.getElementById(targetId);
         }
-    }, {
-        key: 'observedAttributes',
-        get: function get$$1() {
-            return ['aria-expanded', 'disabled'];
+
+        return this._target;
+    }//target
+
+    get disabled () {
+        return this.hasAttribute('disabled');
+    }
+
+    set disabled (newVal) {
+        if (!!newVal) {
+            this.setAttribute('disabled', true);
+        } else {
+            this.removeAttribute('disabled');
         }
-    }]);
-    return DSDisclosureElement;
-}(DSElement);
+    }
+
+    _keyUp (evt) {
+        switch (evt.keyCode) {
+            case KEYS.Space:
+            case KEYS.Enter:
+                this._toggle();
+            break;
+
+            default: /* do nothing */ break;
+        }
+    }//_keyUp()
+
+    _toggle () {
+        if (!this.disabled) {
+            this.expanded = !this.expanded;
+        }
+    }//_toggle();
+}
 
 var angleDown = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M8 8.325l-4.55-4.55-1.95 1.95 6.5 6.5 6.5-6.5-1.95-1.95z'/></svg>";
 
@@ -502,22 +367,22 @@ var Icons = {
     'arrow-left': arrowLeft,
     'arrow-right': arrowRight,
     'arrow-up': arrowUp,
-    ban: ban,
-    bell: bell,
-    bookmark: bookmark,
-    calendar: calendar,
+    ban,
+    bell,
+    bookmark,
+    calendar,
     'caret-down': caretDown,
     'caret-left': caretLeft,
     'caret-right': caretRight,
     'caret-up': caretUp,
-    check: check,
+    check,
     'check-circle': checkCircle,
     'check-circle-fill': checkCircleFill,
-    clock: clock,
-    cog: cog,
-    download: download,
-    envelope: envelope,
-    exclamation: exclamation,
+    clock,
+    cog,
+    download,
+    envelope,
+    exclamation,
     'exclamation-circle': exclamationCircle,
     'exclamation-circle-fill': exclamationCircleFill,
     'exclamation-diamond': exclamationDiamond,
@@ -525,595 +390,478 @@ var Icons = {
     'exclamation-triangle': exclamationTriangle,
     'exclamation-triangle-fill': exclamationTriangleFill,
     'external-link': externalLink,
-    filter: filter,
-    folder: folder,
-    heart: heart,
-    image: image,
-    info: info,
+    filter,
+    folder,
+    heart,
+    image,
+    info,
     'info-circle': infoCircle,
     'info-circle-fill': infoCircleFill,
-    key: key,
-    link: link,
+    key,
+    link,
     'map-marker': mapMarker,
     'menu-bento': menuBento,
     'menu-doner': menuDoner,
     'menu-hamburger': menuHamburger,
     'menu-kebab': menuKebab,
     'menu-meatball': menuMeatball,
-    minus: minus,
+    minus,
     'padlock-locked': padlockLocked,
     'padlock-unlocked': padlockUnlocked,
-    paperclip: paperclip,
-    pencil: pencil,
-    phone: phone,
-    plus: plus,
-    question: question,
+    paperclip,
+    pencil,
+    phone,
+    plus,
+    question,
     'question-circle': questionCircle,
     'question-circle-fill': questionCircleFill,
-    redo: redo,
-    refresh: refresh,
-    search: search,
-    sortable: sortable,
+    redo,
+    refresh,
+    search,
+    sortable,
     'sorted-down': sortedDown,
     'sorted-up': sortedUp,
-    star: star,
-    times: times,
+    star,
+    times,
     'times-circle': timesCircle,
     'times-circle-fill': timesCircleFill,
-    trash: trash,
-    undo: undo,
-    upload: upload,
-    user: user
+    trash,
+    undo,
+    upload,
+    user,
 };
 
-var DSIconElement = function (_DSElement) {
-    inherits(DSIconElement, _DSElement);
-    createClass(DSIconElement, null, [{
-        key: 'is',
-        get: function get$$1() {
-            return 'ds-icon';
-        }
-    }, {
-        key: 'icons',
-        get: function get$$1() {
-            return Icons;
-        }
-    }, {
-        key: 'observedAttributes',
-        get: function get$$1() {
-            return ['type'];
-        }
-    }]);
+class DSIconElement extends DSElement {
+    static get is () {
+        return 'ds-icon';
+    }
 
-    function DSIconElement(type) {
-        classCallCheck(this, DSIconElement);
+    static get icons () {
+        return Icons;
+    }
 
-        var _this = possibleConstructorReturn(this, (DSIconElement.__proto__ || Object.getPrototypeOf(DSIconElement)).call(this));
+    static get observedAttributes () {
+        return [ 'type' ];
+    }
+
+    constructor (type) {
+        super();
 
         if (type) {
-            _this.type = type;
+            this.type = type;
         }
-        return _this;
     }
 
-    createClass(DSIconElement, [{
-        key: 'connectedCallback',
-        value: function connectedCallback() {
-            this.$upgradeProperty('type');
-            this.$defaultAttribute('aria-hidden', true);
-            this._render();
-        }
-    }, {
-        key: 'attributeChangedCallback',
-        value: function attributeChangedCallback() {
-            this._render();
-        }
-    }, {
-        key: '_render',
-        value: function _render() {
-            // erase previously injected markup
-            this.innerHTML = '';
-            // add new SVG markup
-            if (this.type in Icons) {
-                var elSurrogate = document.createElement('div');
-                elSurrogate.innerHTML = Icons[this.type];
-                this.appendChild(elSurrogate.firstElementChild);
-            }
-        }
-    }, {
-        key: 'type',
-        get: function get$$1() {
-            return this.getAttribute('type');
-        },
-        set: function set$$1(newVal) {
-            this.setAttribute('type', newVal);
-        }
-    }]);
-    return DSIconElement;
-}(DSElement);
-
-var _tagName = 'ds-progress';
-var _template = document.createElement('template');
-
-_template.innerHTML = '\n    <style>\n        :host([indeterminate]) #fill {\n            width: 0 !important;\n        }\n\n        #fill {\n            background-color: currentColor;\n            box-sizing: border-box;\n            height: 100%;\n        }\n    </style>\n    <div id="fill"></div>\n';
-
-var DSProgressElement = function (_DSElement) {
-    inherits(DSProgressElement, _DSElement);
-    createClass(DSProgressElement, null, [{
-        key: 'is',
-        get: function get$$1() {
-            return _tagName;
-        }
-    }, {
-        key: 'observedAttributes',
-        get: function get$$1() {
-            return ['value'];
-        }
-    }]);
-
-    function DSProgressElement() {
-        classCallCheck(this, DSProgressElement);
-
-        var _this = possibleConstructorReturn(this, (DSProgressElement.__proto__ || Object.getPrototypeOf(DSProgressElement)).call(this, _tagName, _template));
-
-        _this.$fill = _this.shadowRoot.getElementById('fill');
-        _this.value = Number(_this.getAttribute('value')) || 0;
-        return _this;
+    connectedCallback () {
+        this.$upgradeProperty('type');
+        this.$defaultAttribute('aria-hidden', true);
+        this._render();
     }
 
-    createClass(DSProgressElement, [{
-        key: 'connectedCallback',
-        value: function connectedCallback() {
-            this.$upgradeProperty('indeterminate');
-            this.$upgradeProperty('value');
-        }
-    }, {
-        key: 'attributeChangedCallback',
-        value: function attributeChangedCallback(attrName, oldVal, newVal) {
-            this.value = Number(newVal);
-
-            this.$defaultAttribute('role', 'progressbar');
-            this.$defaultAttribute('aria-valuemin', 0);
-            this.$defaultAttribute('aria-valuemax', 100);
-        }
-    }, {
-        key: 'value',
-        get: function get$$1() {
-            return this._value;
-        },
-        set: function set$$1(newVal) {
-            if (typeof newVal !== 'number') {
-                return;
-            }
-
-            var normVal = Number(newVal) || 0;
-            normVal = normVal > 100 ? 100 : normVal;
-            normVal = normVal < 0 ? 0 : normVal;
-            normVal = Math.round(normVal);
-
-            this.$fill.style.width = normVal + '%';
-            this.setAttribute('aria-valuenow', normVal);
-            this._value = normVal;
-        }
-    }, {
-        key: 'indeterminate',
-        get: function get$$1() {
-            return this.hasAttribute('indeterminate');
-        },
-        set: function set$$1(newVal) {
-            if (Boolean(newVal)) {
-                this.setAttribute('indeterminate', true);
-            } else {
-                this.removeAttribute('indeterminate');
-            }
-        }
-    }]);
-    return DSProgressElement;
-}(DSElement);
-
-var DSRevealElement = function (_DSElement) {
-    inherits(DSRevealElement, _DSElement);
-
-    function DSRevealElement() {
-        classCallCheck(this, DSRevealElement);
-        return possibleConstructorReturn(this, (DSRevealElement.__proto__ || Object.getPrototypeOf(DSRevealElement)).apply(this, arguments));
+    attributeChangedCallback () {
+        this._render();
     }
 
-    createClass(DSRevealElement, [{
-        key: 'connectedCallback',
-        value: function connectedCallback() {
-            this.$upgradeProperty('open');
-            this.setAttribute('aria-expanded', this.open);
-        }
-    }, {
-        key: 'attributeChangedCallback',
-        value: function attributeChangedCallback(attr, oldVal, newVal) {
-            this.setAttribute('aria-expanded', newVal === '');
-        }
-    }, {
-        key: 'open',
-        set: function set$$1(value) {
-            if (!!value) {
-                this.setAttribute('open', '');
-            } else {
-                this.removeAttribute('open');
-            }
-        },
-        get: function get$$1() {
-            return this.hasAttribute('open');
-        }
-    }], [{
-        key: 'is',
-        get: function get$$1() {
-            return 'ds-reveal';
-        }
-    }, {
-        key: 'observedAttributes',
-        get: function get$$1() {
-            return ['open'];
-        }
-    }]);
-    return DSRevealElement;
-}(DSElement);
-
-var DSTabElement = function (_DSElement) {
-    inherits(DSTabElement, _DSElement);
-
-    function DSTabElement() {
-        classCallCheck(this, DSTabElement);
-        return possibleConstructorReturn(this, (DSTabElement.__proto__ || Object.getPrototypeOf(DSTabElement)).apply(this, arguments));
+    get type () {
+        return this.getAttribute('type');
     }
 
-    createClass(DSTabElement, [{
-        key: 'connectedCallback',
-        value: function connectedCallback() {
-            this.$upgradeProperty('current');
-            this.$defaultAttribute('role', 'tab');
-            this.setAttribute('aria-selected', this.current);
-        }
-    }, {
-        key: 'attributeChangedCallback',
-        value: function attributeChangedCallback(attr, oldVal, newVal) {
-            this.setAttribute('aria-selected', newVal !== null);
-        }
-    }, {
-        key: 'current',
-        get: function get$$1() {
-            return this.hasAttribute('current');
-        },
-        set: function set$$1(newVal) {
-            if (newVal) {
-                this.setAttribute('current', true);
-            } else {
-                this.removeAttribute('current');
-            }
-        }
-    }], [{
-        key: 'is',
-        get: function get$$1() {
-            return 'ds-tab';
-        }
-    }, {
-        key: 'observedAttributes',
-        get: function get$$1() {
-            return ['current'];
-        }
-    }]);
-    return DSTabElement;
-}(DSElement);
-
-var DSTabcontentElement = function (_DSElement) {
-    inherits(DSTabcontentElement, _DSElement);
-
-    function DSTabcontentElement() {
-        classCallCheck(this, DSTabcontentElement);
-        return possibleConstructorReturn(this, (DSTabcontentElement.__proto__ || Object.getPrototypeOf(DSTabcontentElement)).apply(this, arguments));
+    set type (newVal) {
+        this.setAttribute('type', newVal);
     }
 
-    createClass(DSTabcontentElement, [{
-        key: 'connectedCallback',
-        value: function connectedCallback() {
-            this.$defaultAttribute('role', 'presentation');
+    _render () {
+        // erase previously injected markup
+        this.innerHTML = '';
+        // add new SVG markup
+        if (this.type in Icons) {
+            const elSurrogate = document.createElement('div');
+            elSurrogate.innerHTML = Icons[this.type];
+            this.appendChild(elSurrogate.firstElementChild);
         }
-    }], [{
-        key: 'is',
-        get: function get$$1() {
-            return 'ds-tabcontent';
+    }
+}
+
+const _tagName = 'ds-progress';
+const _template = document.createElement('template');
+
+_template.innerHTML = `
+    <style>
+        :host([indeterminate]) #fill {
+            width: 0 !important;
         }
-    }]);
-    return DSTabcontentElement;
-}(DSElement);
 
-var DSTablistElement = function (_DSElement) {
-    inherits(DSTablistElement, _DSElement);
+        #fill {
+            background-color: currentColor;
+            box-sizing: border-box;
+            height: 100%;
+        }
+    </style>
+    <div id="fill"></div>
+`;
 
-    function DSTablistElement() {
-        classCallCheck(this, DSTablistElement);
-        return possibleConstructorReturn(this, (DSTablistElement.__proto__ || Object.getPrototypeOf(DSTablistElement)).apply(this, arguments));
+class DSProgressElement extends DSElement {
+    static get is () {
+        return _tagName;
     }
 
-    createClass(DSTablistElement, [{
-        key: 'connectedCallback',
-        value: function connectedCallback() {
-            this.$defaultAttribute('role', 'tablist');
-        }
-    }], [{
-        key: 'is',
-        get: function get$$1() {
-            return 'ds-tablist';
-        }
-    }]);
-    return DSTablistElement;
-}(DSElement);
-
-var DSTabpanelElement = function (_DSRevealElement) {
-    inherits(DSTabpanelElement, _DSRevealElement);
-
-    function DSTabpanelElement() {
-        classCallCheck(this, DSTabpanelElement);
-        return possibleConstructorReturn(this, (DSTabpanelElement.__proto__ || Object.getPrototypeOf(DSTabpanelElement)).apply(this, arguments));
+    static get observedAttributes () {
+        return ['value'];
     }
 
-    createClass(DSTabpanelElement, [{
-        key: 'connectedCallback',
-        value: function connectedCallback() {
-            this.$upgradeProperty('open');
-            this.$defaultAttribute('role', 'tabpanel');
-            // initialize
-            this.setAttribute('aria-expanded', this.open);
+    constructor () {
+        super(_tagName, _template);
+
+        this.$fill = this.shadowRoot.getElementById('fill');
+        this.value = Number(this.getAttribute('value')) || 0;
+    }
+
+    connectedCallback () {
+        this.$upgradeProperty('indeterminate');
+        this.$upgradeProperty('value');
+    }
+
+    attributeChangedCallback (attrName, oldVal, newVal) {
+        this.value = Number(newVal);
+
+        this.$defaultAttribute('role', 'progressbar');
+        this.$defaultAttribute('aria-valuemin', 0);
+        this.$defaultAttribute('aria-valuemax', 100);
+    }
+
+    get value () {
+        return this._value;
+    }
+
+    set value (newVal) {
+        if (typeof newVal !== 'number') {
+            return;
         }
-    }, {
-        key: 'attributeChangedCallback',
-        value: function attributeChangedCallback(attr, oldVal, newVal) {
-            var hasValue = newVal !== null;
-            this.setAttribute('aria-expanded', hasValue);
-            this.setAttribute('tabindex', hasValue ? 0 : -1);
+
+        let normVal = Number(newVal) || 0;
+        normVal = normVal > 100 ? 100 : normVal;
+        normVal = normVal < 0 ? 0 : normVal;
+        normVal = Math.round(normVal);
+
+        this.$fill.style.width = `${normVal}%`;
+        this.setAttribute('aria-valuenow', normVal);
+        this._value = normVal;
+    }
+
+    get indeterminate () {
+        return this.hasAttribute('indeterminate');
+    }
+
+    set indeterminate (newVal) {
+        if (Boolean(newVal)) {
+            this.setAttribute('indeterminate', true);
+        } else {
+            this.removeAttribute('indeterminate');
         }
-    }], [{
-        key: 'is',
-        get: function get$$1() {
-            return 'ds-tabpanel';
+    }
+}
+
+class DSRevealElement extends DSElement {
+    static get is () {
+        return 'ds-reveal';
+    }
+
+    static get observedAttributes () {
+        return ['open'];
+    }
+
+    connectedCallback () {
+        this.$upgradeProperty('open');
+        this.setAttribute('aria-expanded', this.open);
+    }
+
+    attributeChangedCallback (attr, oldVal, newVal) {
+        this.setAttribute('aria-expanded', newVal === '');
+    }
+
+    set open (value) {
+        if (!!value) {
+            this.setAttribute('open', '');
+        } else {
+            this.removeAttribute('open');
         }
-    }]);
-    return DSTabpanelElement;
-}(DSRevealElement);
+    }
 
-var DSTabsetElement = function (_DSElement) {
-    inherits(DSTabsetElement, _DSElement);
-    createClass(DSTabsetElement, null, [{
-        key: 'is',
-        get: function get$$1() {
-            return 'ds-tabset';
+    get open () {
+        return this.hasAttribute('open');
+    }
+}
+
+class DSTabElement extends DSElement {
+    static get is () {
+        return 'ds-tab';
+    }
+
+    connectedCallback () {
+        this.$upgradeProperty('current');
+        this.$defaultAttribute('role', 'tab');
+        this.setAttribute('aria-selected', this.current);
+    }
+
+    static get observedAttributes () {
+        return ['current'];
+    }
+
+    attributeChangedCallback (attr, oldVal, newVal) {
+        this.setAttribute('aria-selected', newVal !== null);
+    }
+
+    get current () {
+        return this.hasAttribute('current');
+    }
+
+    set current (newVal) {
+        if (newVal) {
+            this.setAttribute('current', true);
+        } else {
+            this.removeAttribute('current');
         }
-    }, {
-        key: 'observedAttributes',
-        get: function get$$1() {
-            return ['current-tab', 'tab-side'];
-        }
-    }]);
+    }
+}
 
-    function DSTabsetElement() {
-        classCallCheck(this, DSTabsetElement);
+class DSTabcontentElement extends DSElement {
+    static get is () {
+        return 'ds-tabcontent';
+    }
 
-        var _this = possibleConstructorReturn(this, (DSTabsetElement.__proto__ || Object.getPrototypeOf(DSTabsetElement)).call(this));
+    connectedCallback () {
+        this.$defaultAttribute('role', 'presentation');
+    }
+}
 
-        _this.$tablist = _this.querySelector('ds-tablist');
+class DSTablistElement extends DSElement {
+    static get is () {
+        return 'ds-tablist';
+    }
 
-        _this._onKeyUp = _this._onKeyUp.bind(_this);
-        _this._onTabClick = _this._onTabClick.bind(_this);
-        return _this;
-    } //constructor()
+    connectedCallback () {
+        this.$defaultAttribute('role', 'tablist');
+    }
+}
 
-    createClass(DSTabsetElement, [{
-        key: 'connectedCallback',
-        value: function connectedCallback() {
-            var _this2 = this;
+class DSTabpanelElement extends DSRevealElement {
+    static get is () {
+        return 'ds-tabpanel';
+    }
 
-            this.$upgradeProperty('current-tab');
-            this.$defaultAttribute('tab-side', 'top');
+    connectedCallback () {
+        this.$upgradeProperty('open');
+        this.$defaultAttribute('role', 'tabpanel');
+        // initialize
+        this.setAttribute('aria-expanded', this.open);
+    }
 
-            this._setupIds();
-            this.currentTab = Number(this.getAttribute('current-tab')) || 0;
-            this.$tablist.addEventListener('keyup', this._onKeyUp);
-            this.$tablist.addEventListener('keydown', this.$preventScroll);
-            this.tabs.forEach(function (tab) {
-                tab.addEventListener('click', _this2._onTabClick);
-            });
-        } //connectedCallback()
+    attributeChangedCallback (attr, oldVal, newVal) {
+        let hasValue = (newVal !== null);
+        this.setAttribute('aria-expanded', hasValue);
+        this.setAttribute('tabindex', hasValue ? 0 : -1);
+    }
+}
 
-    }, {
-        key: 'disconnectedCallback',
-        value: function disconnectedCallback() {
-            var _this3 = this;
+class DSTabsetElement extends DSElement {
+    static get is () {
+        return 'ds-tabset';
+    }
 
-            this.$tablist.removeEventListener('keyup', this._onKeyUp);
-            this.$tablist.removeEventListener('keydown', this.$preventScroll);
-            this.tabs.forEach(function (tab) {
-                tab.removeEventListener('click', _this3._onTabClick);
-            });
-        } //disconnectedCallback()
+    static get observedAttributes () {
+        return [
+            'current-tab',
+            'tab-side',
+        ];
+    }
 
-    }, {
-        key: 'attributeChangedCallback',
-        value: function attributeChangedCallback(attr, oldVal, newVal) {
-            switch (attr) {
-                case 'current-tab':
-                    if (!isNaN(newVal)) {
-                        this.currentTab = Number(newVal);
-                    }
+    constructor () {
+        super();
+        this.$tablist = this.querySelector('ds-tablist');
+
+        this._onKeyUp = this._onKeyUp.bind(this);
+        this._onTabClick = this._onTabClick.bind(this);
+    }//constructor()
+
+    connectedCallback () {
+        this.$upgradeProperty('current-tab');
+        this.$defaultAttribute('tab-side', 'top');
+
+        this._setupIds();
+        this.currentTab = Number(this.getAttribute('current-tab')) || 0;
+        this.$tablist.addEventListener('keyup', this._onKeyUp);
+        this.$tablist.addEventListener('keydown', this.$preventScroll);
+        this.tabs.forEach( (tab) => {
+            tab.addEventListener('click', this._onTabClick);
+        });
+    }//connectedCallback()
+
+    disconnectedCallback () {
+        this.$tablist.removeEventListener('keyup', this._onKeyUp);
+        this.$tablist.removeEventListener('keydown', this.$preventScroll);
+        this.tabs.forEach( (tab) => {
+            tab.removeEventListener('click', this._onTabClick);
+        });
+    }//disconnectedCallback()
+
+    attributeChangedCallback (attr, oldVal, newVal) {
+        switch (attr) {
+            case 'current-tab':
+                if (!isNaN(newVal)) {
+                    this.currentTab = Number(newVal);
+                }
+            break;
+
+            case 'tab-side':
+                switch (newVal) {
+                    case 'top':
+                    case 'bottom':
+                        this.$tablist.setAttribute('aria-orientation', 'horizontal');
                     break;
 
-                case 'tab-side':
-                    switch (newVal) {
-                        case 'top':
-                        case 'bottom':
-                            this.$tablist.setAttribute('aria-orientation', 'horizontal');
-                            break;
-
-                        case 'left':
-                        case 'right':
-                            this.$tablist.setAttribute('aria-orientation', 'vertical');
-                            break;
-
-                        default:
-                            /* do nothing */break;
-                    }
-                    break; //tab-side
-
-                default:
-                    /* do nothing */break;
-            } //switch
-        } //attributeChangedCallback()
-
-    }, {
-        key: '_selectNext',
-        value: function _selectNext() {
-            // if current tab is the last tab
-            if (this.currentTab === this.tabs.length - 1) {
-                // select first
-                this.currentTab = 0;
-            } else {
-                // select next
-                this.currentTab += 1;
-            }
-            this.tabs[this.currentTab].focus();
-        } //_selectNext()
-
-    }, {
-        key: '_selectPrevious',
-        value: function _selectPrevious() {
-            // if current tab is the first tab
-            if (this.currentTab === 0) {
-                // select last
-                this.currentTab = this.tabs.length - 1;
-            } else {
-                // select previous
-                this.currentTab -= 1;
-            }
-            this.tabs[this.currentTab].focus();
-        } //_selectPrevious()
-
-        // Handle navigating the tabs via arrow keys
-
-    }, {
-        key: '_onKeyUp',
-        value: function _onKeyUp(evt) {
-            switch (this.tabSide) {
-                case 'top':
-                case 'bottom':
-                    if (evt.keyCode === KEYS.Right) {
-                        this._selectNext();
-                    }
-
-                    if (evt.keyCode === KEYS.Left) {
-                        this._selectPrevious();
-                    }
+                    case 'left':
+                    case 'right':
+                        this.$tablist.setAttribute('aria-orientation', 'vertical');
                     break;
 
-                case 'left':
-                case 'right':
-                    if (evt.keyCode === KEYS.Down) {
-                        this._selectNext();
-                    }
+                    default: /* do nothing */ break;
+                }
+            break;//tab-side
 
-                    if (evt.keyCode === KEYS.Up) {
-                        this._selectPrevious();
-                    }
-                    break;
+            default: /* do nothing */ break;
+        }//switch
+    }//attributeChangedCallback()
 
-                default:
-                    /* do nothing */break;
-            } //tabSide
-        } //_onKeyUp()
+    get currentTab () {
+        return this._currentTab || 0;
+    }
 
-    }, {
-        key: '_onTabClick',
-        value: function _onTabClick(evt) {
-            this.currentTab = this.tabs.indexOf(evt.target);
+    set currentTab (idx) {
+        if (isNaN(idx)) {
+            throw new TypeError(`'currentTab' expects an numeric index. Got ${typeof idx} instead.`);
         }
-    }, {
-        key: '_setupIds',
-        value: function _setupIds() {
-            var _this4 = this;
 
-            this.tabs.forEach(function (tab, idx) {
-                var tabpanel = _this4.tabpanels[idx];
-                // Default tab and panel ID
-                var tabId = 'dsTab-' + _this4.$generateId();
-                var tabpanelId = 'dsTabPanel-' + _this4.$generateId();
+        if (idx < 0 || idx >= this.tabs.length) {
+            throw new RangeError(`'currentTab' index is out of bounds`);
+        }
 
-                // Set or keep Tab ID
-                if (tab.hasAttribute('id')) {
-                    tabId = tab.getAttribute('id');
-                } else {
-                    tab.setAttribute('id', tabId);
+        this._currentTab = idx;
+
+        this.tabs.forEach( (tab, tabIdx) => {
+            if (idx === tabIdx) {
+                tab.current = true;
+                tab.setAttribute('tabindex', 0);
+            } else {
+                tab.current = false;
+                tab.setAttribute('tabindex', -1);
+                tab.blur();
+            }
+        });
+
+        this.tabpanels.forEach( (tabpanel, panelIdx) => {
+            tabpanel.open = (idx === panelIdx);
+        });
+    }//SET:currentTab
+
+    get tabSide () {
+        return this.getAttribute('tab-side');
+    }
+
+    set tabSide (newVal) {
+        this.setAttribute('tab-side', newVal);
+    }
+
+    get tabs () {
+        return Array.from(this.querySelectorAll('ds-tablist > ds-tab'));
+    }
+
+    get tabpanels () {
+        return Array.from(this.querySelectorAll('ds-tabpanel'));
+    }
+
+    _selectNext () {
+        // if current tab is the last tab
+        if (this.currentTab === (this.tabs.length - 1)) {
+            // select first
+            this.currentTab = 0;
+        } else {
+            // select next
+            this.currentTab += 1;
+        }
+        this.tabs[this.currentTab].focus();
+    }//_selectNext()
+
+    _selectPrevious () {
+        // if current tab is the first tab
+        if (this.currentTab === 0) {
+            // select last
+            this.currentTab = (this.tabs.length - 1);
+        } else {
+            // select previous
+            this.currentTab -= 1;
+        }
+        this.tabs[this.currentTab].focus();
+    }//_selectPrevious()
+
+    // Handle navigating the tabs via arrow keys
+    _onKeyUp (evt) {
+        switch (this.tabSide) {
+            case 'top':
+            case 'bottom':
+                if (evt.keyCode === KEYS.Right) {
+                    this._selectNext();
                 }
 
-                // Set or keep Panel ID
-                if (tabpanel.hasAttribute('id')) {
-                    tabpanelId = tabpanel.getAttribute('id');
-                } else {
-                    tabpanel.setAttribute('id', tabpanelId);
+                if (evt.keyCode === KEYS.Left) {
+                    this._selectPrevious();
+                }
+            break;
+
+            case 'left':
+            case 'right':
+                if (evt.keyCode === KEYS.Down) {
+                    this._selectNext();
                 }
 
-                tab.setAttribute('aria-controls', tabpanelId);
-                tabpanel.setAttribute('aria-labeledby', tabId);
-            });
-        } //_setupIds
+                if (evt.keyCode === KEYS.Up) {
+                    this._selectPrevious();
+                }
+            break;
 
-    }, {
-        key: 'currentTab',
-        get: function get$$1() {
-            return this._currentTab || 0;
-        },
-        set: function set$$1(idx) {
-            if (isNaN(idx)) {
-                throw new TypeError('\'currentTab\' expects an numeric index. Got ' + (typeof idx === 'undefined' ? 'undefined' : _typeof(idx)) + ' instead.');
+            default: /* do nothing */ break;
+        }//tabSide
+    }//_onKeyUp()
+
+    _onTabClick (evt) {
+        this.currentTab = this.tabs.indexOf(evt.target);
+    }
+
+    _setupIds () {
+        this.tabs.forEach( (tab, idx) => {
+            let tabpanel = this.tabpanels[idx];
+            // Default tab and panel ID
+            let tabId = `dsTab-${this.$generateId()}`;
+            let tabpanelId = `dsTabPanel-${this.$generateId()}`;
+
+            // Set or keep Tab ID
+            if (tab.hasAttribute('id')) {
+                tabId = tab.getAttribute('id');
+            } else {
+                tab.setAttribute('id', tabId);
             }
 
-            if (idx < 0 || idx >= this.tabs.length) {
-                throw new RangeError('\'currentTab\' index is out of bounds');
+            // Set or keep Panel ID
+            if (tabpanel.hasAttribute('id')) {
+                tabpanelId = tabpanel.getAttribute('id');
+            } else {
+                tabpanel.setAttribute('id', tabpanelId);
             }
 
-            this._currentTab = idx;
-
-            this.tabs.forEach(function (tab, tabIdx) {
-                if (idx === tabIdx) {
-                    tab.current = true;
-                    tab.setAttribute('tabindex', 0);
-                } else {
-                    tab.current = false;
-                    tab.setAttribute('tabindex', -1);
-                    tab.blur();
-                }
-            });
-
-            this.tabpanels.forEach(function (tabpanel, panelIdx) {
-                tabpanel.open = idx === panelIdx;
-            });
-        } //SET:currentTab
-
-    }, {
-        key: 'tabSide',
-        get: function get$$1() {
-            return this.getAttribute('tab-side');
-        },
-        set: function set$$1(newVal) {
-            this.setAttribute('tab-side', newVal);
-        }
-    }, {
-        key: 'tabs',
-        get: function get$$1() {
-            return Array.from(this.querySelectorAll('ds-tablist > ds-tab'));
-        }
-    }, {
-        key: 'tabpanels',
-        get: function get$$1() {
-            return Array.from(this.querySelectorAll('ds-tabpanel'));
-        }
-    }]);
-    return DSTabsetElement;
-}(DSElement);
+            tab.setAttribute('aria-controls', tabpanelId);
+            tabpanel.setAttribute('aria-labeledby', tabId);
+        });
+    }//_setupIds
+}
 
 
 
@@ -1130,23 +878,23 @@ var elements = Object.freeze({
 	DSTabsetElement: DSTabsetElement
 });
 
-function initialize() {
-    for (var attr in elements) {
+function initialize () {
+    for (let attr in elements) {
         elements[attr].$define();
     }
 }
 
 var Segno = {
-    DSElement: DSElement,
-    elements: elements,
-    initialize: initialize
+    DSElement,
+    elements,
+    initialize,
 };
 
-var version = "0.0.2";
+var version = "0.0.6";
 
 var nodeEntry = {
-    Segno: Segno,
-    VERSION: version
+    Segno,
+    VERSION: version,
 };
 
 module.exports = nodeEntry;

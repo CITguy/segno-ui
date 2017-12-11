@@ -1,3 +1,9 @@
+/*
+  - 1em is calculated on browser-defined font size
+    - No CSS property can affect this calculation.
+  - As font size increases/decreases (zoom %), more/less room is available,
+    so breakpoints behave more like larger/smaller screens
+*/
 #grid .row {
   display: flex;
   flex-wrap: wrap;
