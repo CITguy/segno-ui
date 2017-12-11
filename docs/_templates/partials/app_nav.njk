@@ -14,7 +14,9 @@
 
 {% macro link(label, href) %}
   {% set isCurrentLink = page.path.indexOf(href) == 0 %}
-  <a href="{{href}}" {% if isCurrentLink %}class="current"{% endif %}>
+  <a href="{{href}}" 
+    class="dsTree__item {% if isCurrentLink %}current{% endif %}">
+    <ds-icon type="none"></ds-icon>
     {{label}}
   </a>
 {% endmacro %}
@@ -25,13 +27,11 @@
 
   <ds-disclosure 
     aria-controls="{{ revealId }}"
-    {% if isCurrentCategory %}class="current"{% endif %}>
-
+    class="dsTree__item {% if isCurrentCategory %}current{% endif %}">
+    <ds-icon class="icon" type="caret-right"></ds-icon>
     {{section.label | capitalize}}
-
-    <ds-icon class="toggle-icon" type="caret-down"></ds-icon>
   </ds-disclosure>
-  <ds-reveal id="{{revealId}}" {% if isCurrentCategory %}open{% endif %}>
+  <ds-reveal id="{{revealId}}" class="dsTree_branch" {% if isCurrentCategory %}open{% endif %}>
     {% for child in section.children %}
       {{renderItem(child, section.path)}}
     {% endfor %}
@@ -42,6 +42,8 @@
   <img src="images/logo-with-title.svg" alt="logo" />
 </a>
 
-{% for item in data.nav %}
-  {{renderItem(item)}}
-{% endfor %}
+<div class="dsTree">
+  {% for item in data.nav %}
+    {{renderItem(item)}}
+  {% endfor %}
+</div>

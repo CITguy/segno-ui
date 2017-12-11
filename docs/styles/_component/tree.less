@@ -1,0 +1,22 @@
+.dsTree {
+  display: block;
+
+  &__branch {
+    padding-left: 1rem;
+  }
+
+  &__item {
+    display: block;
+    text-decoration: none;
+    padding: 4px;
+
+    &:focus {
+      outline: none;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    &[aria-expanded="true"] .icon {
+      transform: rotate(90deg);
+    }
+  }
+}
