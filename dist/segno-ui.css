@@ -1,0 +1,155 @@
+@keyframes ds-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes ds-progress-busy {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 80px 0;
+  }
+}
+ds-busy {
+  animation-play-state: running;
+  animation: ds-spin 0.8s linear infinite;
+  border-color: transparent transparent currentColor currentColor;
+  border-radius: 1em;
+  border-style: solid;
+  border-width: 1px;
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+}
+ds-busy[paused] {
+  animation-play-state: paused;
+}
+ds-disclosure {
+  cursor: pointer;
+  display: inline-block;
+}
+ds-disclosure[disabled] {
+  cursor: not-allowed;
+}
+ds-icon {
+  background-color: transparent;
+  color: inherit;
+  display: inline-block;
+  flex-shrink: 0;
+  height: 1em;
+  vertical-align: -2px;
+  width: 1em;
+}
+ds-icon svg {
+  fill: currentColor;
+  stroke: none;
+}
+ds-progress {
+  background-color: #ededed;
+  border: 1px solid;
+  box-sizing: border-box;
+  color: #a8a8a8;
+  display: block;
+  height: 0.5em;
+  margin: 0;
+  padding: 0;
+}
+ds-progress[indeterminate] {
+  animation: ds-progress-busy 3s linear infinite;
+  background-image: linear-gradient(45deg, currentColor, currentColor 25%, transparent 25%, transparent 50%, currentColor 50%, currentColor 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+ds-reveal,
+ds-tabpanel {
+  display: none;
+}
+ds-reveal[open],
+ds-tabpanel[open] {
+  display: block;
+}
+ds-tab {
+  border: 1px solid transparent;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+}
+ds-tab[current] {
+  background-color: white;
+  border-color: #cacaca;
+}
+ds-tab:hover {
+  cursor: pointer;
+}
+ds-tabcontent {
+  border: 1px solid #cacaca;
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+}
+ds-tablist {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+}
+ds-tablist[aria-orientation="horizontal"] {
+  flex-direction: row;
+}
+ds-tablist[aria-orientation="vertical"] {
+  flex-direction: column;
+}
+ds-tabpanel {
+  background-color: white;
+  flex-grow: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+ds-tabset {
+  display: flex;
+  flex-direction: column;
+}
+ds-tabset ds-tablist {
+  position: relative;
+}
+ds-tabset[tab-side="top"] {
+  flex-direction: column;
+}
+ds-tabset[tab-side="top"] ds-tablist {
+  bottom: -1px;
+  padding: 0 1rem;
+}
+ds-tabset[tab-side="top"] ds-tab {
+  border-bottom-color: transparent;
+}
+ds-tabset[tab-side="bottom"] {
+  flex-direction: column-reverse;
+}
+ds-tabset[tab-side="bottom"] ds-tablist {
+  top: -1px;
+  padding: 0 1rem;
+}
+ds-tabset[tab-side="bottom"] ds-tab {
+  border-top-color: transparent;
+}
+ds-tabset[tab-side="left"] {
+  flex-direction: row;
+}
+ds-tabset[tab-side="left"] ds-tablist {
+  right: -1px;
+  padding: 1rem 0;
+}
+ds-tabset[tab-side="left"] ds-tab {
+  border-right-color: transparent;
+}
+ds-tabset[tab-side="right"] {
+  flex-direction: row-reverse;
+}
+ds-tabset[tab-side="right"] ds-tablist {
+  left: -1px;
+  padding: 1rem 0;
+}
+ds-tabset[tab-side="right"] ds-tab {
+  border-left-color: transparent;
+}
