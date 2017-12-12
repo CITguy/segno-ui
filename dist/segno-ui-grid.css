@@ -1,0 +1,782 @@
+/*
+  - 1em is calculated on browser-defined font size
+    - No CSS property can affect this calculation.
+  - As font size increases/decreases (zoom %), more/less room is available,
+    so breakpoints behave more like larger/smaller screens
+*/
+#grid .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+#grid .col {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 0;
+}
+#space .container .xs {
+  padding: 0.25rem;
+}
+#space .container .sm {
+  padding: 0.5rem;
+}
+#space .container .md {
+  padding: 1rem;
+}
+#space .container .lg {
+  padding: 1.5rem;
+}
+#space .container .xl {
+  padding: 2rem;
+}
+/* Cross-Browser Compatible:
+   - IE11+
+   - Chrome 43+
+   - Opera 30+
+   - Firefox 41+
+   - Safari 9+
+   - Edge
+*/
+.dsRow {
+  display: flex;
+  flex-wrap: wrap;
+}
+.dsRow:only-child {
+  flex-grow: 1;
+  height: 100%;
+}
+.dsCol {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 0;
+}
+@media (min-width: 0em) {
+  .dsCol-12,
+  .dsCol-12-xs {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .dsCol-11,
+  .dsCol-11-xs {
+    flex: 0 0 91.66666667%;
+    max-width: 91.66666667%;
+  }
+  .dsCol-10,
+  .dsCol-10-xs {
+    flex: 0 0 83.33333333%;
+    max-width: 83.33333333%;
+  }
+  .dsCol-9,
+  .dsCol-9-xs {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  .dsCol-8,
+  .dsCol-8-xs {
+    flex: 0 0 66.66666667%;
+    max-width: 66.66666667%;
+  }
+  .dsCol-7,
+  .dsCol-7-xs {
+    flex: 0 0 58.33333333%;
+    max-width: 58.33333333%;
+  }
+  .dsCol-6,
+  .dsCol-6-xs {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .dsCol-5,
+  .dsCol-5-xs {
+    flex: 0 0 41.66666667%;
+    max-width: 41.66666667%;
+  }
+  .dsCol-4,
+  .dsCol-4-xs {
+    flex: 0 0 33.33333333%;
+    max-width: 33.33333333%;
+  }
+  .dsCol-3,
+  .dsCol-3-xs {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .dsCol-2,
+  .dsCol-2-xs {
+    flex: 0 0 16.66666667%;
+    max-width: 16.66666667%;
+  }
+  .dsCol-1,
+  .dsCol-1-xs {
+    flex: 0 0 8.33333333%;
+    max-width: 8.33333333%;
+  }
+  .dsOffset-12,
+  .dsOffset-12-xs {
+    margin-left: 100% !important;
+  }
+  .dsOffset-11,
+  .dsOffset-11-xs {
+    margin-left: 91.66666667% !important;
+  }
+  .dsOffset-10,
+  .dsOffset-10-xs {
+    margin-left: 83.33333333% !important;
+  }
+  .dsOffset-9,
+  .dsOffset-9-xs {
+    margin-left: 75% !important;
+  }
+  .dsOffset-8,
+  .dsOffset-8-xs {
+    margin-left: 66.66666667% !important;
+  }
+  .dsOffset-7,
+  .dsOffset-7-xs {
+    margin-left: 58.33333333% !important;
+  }
+  .dsOffset-6,
+  .dsOffset-6-xs {
+    margin-left: 50% !important;
+  }
+  .dsOffset-5,
+  .dsOffset-5-xs {
+    margin-left: 41.66666667% !important;
+  }
+  .dsOffset-4,
+  .dsOffset-4-xs {
+    margin-left: 33.33333333% !important;
+  }
+  .dsOffset-3,
+  .dsOffset-3-xs {
+    margin-left: 25% !important;
+  }
+  .dsOffset-2,
+  .dsOffset-2-xs {
+    margin-left: 16.66666667% !important;
+  }
+  .dsOffset-1,
+  .dsOffset-1-xs {
+    margin-left: 8.33333333% !important;
+  }
+  .dsOffset-0,
+  .dsOffset-0-xs {
+    margin-left: 0% !important;
+  }
+  .dsOrder-12,
+  .dsOrder-12-xs {
+    order: 12;
+  }
+  .dsOrder-11,
+  .dsOrder-11-xs {
+    order: 11;
+  }
+  .dsOrder-10,
+  .dsOrder-10-xs {
+    order: 10;
+  }
+  .dsOrder-9,
+  .dsOrder-9-xs {
+    order: 9;
+  }
+  .dsOrder-8,
+  .dsOrder-8-xs {
+    order: 8;
+  }
+  .dsOrder-7,
+  .dsOrder-7-xs {
+    order: 7;
+  }
+  .dsOrder-6,
+  .dsOrder-6-xs {
+    order: 6;
+  }
+  .dsOrder-5,
+  .dsOrder-5-xs {
+    order: 5;
+  }
+  .dsOrder-4,
+  .dsOrder-4-xs {
+    order: 4;
+  }
+  .dsOrder-3,
+  .dsOrder-3-xs {
+    order: 3;
+  }
+  .dsOrder-2,
+  .dsOrder-2-xs {
+    order: 2;
+  }
+  .dsOrder-1,
+  .dsOrder-1-xs {
+    order: 1;
+  }
+  .dsHide-xs {
+    display: none;
+  }
+}
+@media (min-width: 40em) {
+  .dsHide-xs {
+    display: unset;
+  }
+  .dsCol-12-sm {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .dsCol-11-sm {
+    flex: 0 0 91.66666667%;
+    max-width: 91.66666667%;
+  }
+  .dsCol-10-sm {
+    flex: 0 0 83.33333333%;
+    max-width: 83.33333333%;
+  }
+  .dsCol-9-sm {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  .dsCol-8-sm {
+    flex: 0 0 66.66666667%;
+    max-width: 66.66666667%;
+  }
+  .dsCol-7-sm {
+    flex: 0 0 58.33333333%;
+    max-width: 58.33333333%;
+  }
+  .dsCol-6-sm {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .dsCol-5-sm {
+    flex: 0 0 41.66666667%;
+    max-width: 41.66666667%;
+  }
+  .dsCol-4-sm {
+    flex: 0 0 33.33333333%;
+    max-width: 33.33333333%;
+  }
+  .dsCol-3-sm {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .dsCol-2-sm {
+    flex: 0 0 16.66666667%;
+    max-width: 16.66666667%;
+  }
+  .dsCol-1-sm {
+    flex: 0 0 8.33333333%;
+    max-width: 8.33333333%;
+  }
+  .dsOffset-12-sm {
+    margin-left: 100% !important;
+  }
+  .dsOffset-11-sm {
+    margin-left: 91.66666667% !important;
+  }
+  .dsOffset-10-sm {
+    margin-left: 83.33333333% !important;
+  }
+  .dsOffset-9-sm {
+    margin-left: 75% !important;
+  }
+  .dsOffset-8-sm {
+    margin-left: 66.66666667% !important;
+  }
+  .dsOffset-7-sm {
+    margin-left: 58.33333333% !important;
+  }
+  .dsOffset-6-sm {
+    margin-left: 50% !important;
+  }
+  .dsOffset-5-sm {
+    margin-left: 41.66666667% !important;
+  }
+  .dsOffset-4-sm {
+    margin-left: 33.33333333% !important;
+  }
+  .dsOffset-3-sm {
+    margin-left: 25% !important;
+  }
+  .dsOffset-2-sm {
+    margin-left: 16.66666667% !important;
+  }
+  .dsOffset-1-sm {
+    margin-left: 8.33333333% !important;
+  }
+  .dsOffset-0-sm {
+    margin-left: 0% !important;
+  }
+  .dsOrder-12-sm {
+    order: 12;
+  }
+  .dsOrder-11-sm {
+    order: 11;
+  }
+  .dsOrder-10-sm {
+    order: 10;
+  }
+  .dsOrder-9-sm {
+    order: 9;
+  }
+  .dsOrder-8-sm {
+    order: 8;
+  }
+  .dsOrder-7-sm {
+    order: 7;
+  }
+  .dsOrder-6-sm {
+    order: 6;
+  }
+  .dsOrder-5-sm {
+    order: 5;
+  }
+  .dsOrder-4-sm {
+    order: 4;
+  }
+  .dsOrder-3-sm {
+    order: 3;
+  }
+  .dsOrder-2-sm {
+    order: 2;
+  }
+  .dsOrder-1-sm {
+    order: 1;
+  }
+  .dsHide-sm {
+    display: none;
+  }
+}
+@media (min-width: 64em) {
+  .dsHide-sm {
+    display: unset;
+  }
+  .dsCol-12-md {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .dsCol-11-md {
+    flex: 0 0 91.66666667%;
+    max-width: 91.66666667%;
+  }
+  .dsCol-10-md {
+    flex: 0 0 83.33333333%;
+    max-width: 83.33333333%;
+  }
+  .dsCol-9-md {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  .dsCol-8-md {
+    flex: 0 0 66.66666667%;
+    max-width: 66.66666667%;
+  }
+  .dsCol-7-md {
+    flex: 0 0 58.33333333%;
+    max-width: 58.33333333%;
+  }
+  .dsCol-6-md {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .dsCol-5-md {
+    flex: 0 0 41.66666667%;
+    max-width: 41.66666667%;
+  }
+  .dsCol-4-md {
+    flex: 0 0 33.33333333%;
+    max-width: 33.33333333%;
+  }
+  .dsCol-3-md {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .dsCol-2-md {
+    flex: 0 0 16.66666667%;
+    max-width: 16.66666667%;
+  }
+  .dsCol-1-md {
+    flex: 0 0 8.33333333%;
+    max-width: 8.33333333%;
+  }
+  .dsOffset-12-md {
+    margin-left: 100% !important;
+  }
+  .dsOffset-11-md {
+    margin-left: 91.66666667% !important;
+  }
+  .dsOffset-10-md {
+    margin-left: 83.33333333% !important;
+  }
+  .dsOffset-9-md {
+    margin-left: 75% !important;
+  }
+  .dsOffset-8-md {
+    margin-left: 66.66666667% !important;
+  }
+  .dsOffset-7-md {
+    margin-left: 58.33333333% !important;
+  }
+  .dsOffset-6-md {
+    margin-left: 50% !important;
+  }
+  .dsOffset-5-md {
+    margin-left: 41.66666667% !important;
+  }
+  .dsOffset-4-md {
+    margin-left: 33.33333333% !important;
+  }
+  .dsOffset-3-md {
+    margin-left: 25% !important;
+  }
+  .dsOffset-2-md {
+    margin-left: 16.66666667% !important;
+  }
+  .dsOffset-1-md {
+    margin-left: 8.33333333% !important;
+  }
+  .dsOffset-0-md {
+    margin-left: 0% !important;
+  }
+  .dsOrder-12-md {
+    order: 12;
+  }
+  .dsOrder-11-md {
+    order: 11;
+  }
+  .dsOrder-10-md {
+    order: 10;
+  }
+  .dsOrder-9-md {
+    order: 9;
+  }
+  .dsOrder-8-md {
+    order: 8;
+  }
+  .dsOrder-7-md {
+    order: 7;
+  }
+  .dsOrder-6-md {
+    order: 6;
+  }
+  .dsOrder-5-md {
+    order: 5;
+  }
+  .dsOrder-4-md {
+    order: 4;
+  }
+  .dsOrder-3-md {
+    order: 3;
+  }
+  .dsOrder-2-md {
+    order: 2;
+  }
+  .dsOrder-1-md {
+    order: 1;
+  }
+  .dsHide-md {
+    display: none;
+  }
+}
+@media (min-width: 75em) {
+  .dsHide-md {
+    display: unset;
+  }
+  .dsCol-12-lg {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .dsCol-11-lg {
+    flex: 0 0 91.66666667%;
+    max-width: 91.66666667%;
+  }
+  .dsCol-10-lg {
+    flex: 0 0 83.33333333%;
+    max-width: 83.33333333%;
+  }
+  .dsCol-9-lg {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  .dsCol-8-lg {
+    flex: 0 0 66.66666667%;
+    max-width: 66.66666667%;
+  }
+  .dsCol-7-lg {
+    flex: 0 0 58.33333333%;
+    max-width: 58.33333333%;
+  }
+  .dsCol-6-lg {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .dsCol-5-lg {
+    flex: 0 0 41.66666667%;
+    max-width: 41.66666667%;
+  }
+  .dsCol-4-lg {
+    flex: 0 0 33.33333333%;
+    max-width: 33.33333333%;
+  }
+  .dsCol-3-lg {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .dsCol-2-lg {
+    flex: 0 0 16.66666667%;
+    max-width: 16.66666667%;
+  }
+  .dsCol-1-lg {
+    flex: 0 0 8.33333333%;
+    max-width: 8.33333333%;
+  }
+  .dsOffset-12-lg {
+    margin-left: 100% !important;
+  }
+  .dsOffset-11-lg {
+    margin-left: 91.66666667% !important;
+  }
+  .dsOffset-10-lg {
+    margin-left: 83.33333333% !important;
+  }
+  .dsOffset-9-lg {
+    margin-left: 75% !important;
+  }
+  .dsOffset-8-lg {
+    margin-left: 66.66666667% !important;
+  }
+  .dsOffset-7-lg {
+    margin-left: 58.33333333% !important;
+  }
+  .dsOffset-6-lg {
+    margin-left: 50% !important;
+  }
+  .dsOffset-5-lg {
+    margin-left: 41.66666667% !important;
+  }
+  .dsOffset-4-lg {
+    margin-left: 33.33333333% !important;
+  }
+  .dsOffset-3-lg {
+    margin-left: 25% !important;
+  }
+  .dsOffset-2-lg {
+    margin-left: 16.66666667% !important;
+  }
+  .dsOffset-1-lg {
+    margin-left: 8.33333333% !important;
+  }
+  .dsOffset-0-lg {
+    margin-left: 0% !important;
+  }
+  .dsOrder-12-lg {
+    order: 12;
+  }
+  .dsOrder-11-lg {
+    order: 11;
+  }
+  .dsOrder-10-lg {
+    order: 10;
+  }
+  .dsOrder-9-lg {
+    order: 9;
+  }
+  .dsOrder-8-lg {
+    order: 8;
+  }
+  .dsOrder-7-lg {
+    order: 7;
+  }
+  .dsOrder-6-lg {
+    order: 6;
+  }
+  .dsOrder-5-lg {
+    order: 5;
+  }
+  .dsOrder-4-lg {
+    order: 4;
+  }
+  .dsOrder-3-lg {
+    order: 3;
+  }
+  .dsOrder-2-lg {
+    order: 2;
+  }
+  .dsOrder-1-lg {
+    order: 1;
+  }
+  .dsHide-lg {
+    display: none;
+  }
+}
+@media (min-width: 90em) {
+  .dsHide-lg {
+    display: unset;
+  }
+  .dsCol-12-xl {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .dsCol-11-xl {
+    flex: 0 0 91.66666667%;
+    max-width: 91.66666667%;
+  }
+  .dsCol-10-xl {
+    flex: 0 0 83.33333333%;
+    max-width: 83.33333333%;
+  }
+  .dsCol-9-xl {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  .dsCol-8-xl {
+    flex: 0 0 66.66666667%;
+    max-width: 66.66666667%;
+  }
+  .dsCol-7-xl {
+    flex: 0 0 58.33333333%;
+    max-width: 58.33333333%;
+  }
+  .dsCol-6-xl {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .dsCol-5-xl {
+    flex: 0 0 41.66666667%;
+    max-width: 41.66666667%;
+  }
+  .dsCol-4-xl {
+    flex: 0 0 33.33333333%;
+    max-width: 33.33333333%;
+  }
+  .dsCol-3-xl {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .dsCol-2-xl {
+    flex: 0 0 16.66666667%;
+    max-width: 16.66666667%;
+  }
+  .dsCol-1-xl {
+    flex: 0 0 8.33333333%;
+    max-width: 8.33333333%;
+  }
+  .dsOffset-12-xl {
+    margin-left: 100% !important;
+  }
+  .dsOffset-11-xl {
+    margin-left: 91.66666667% !important;
+  }
+  .dsOffset-10-xl {
+    margin-left: 83.33333333% !important;
+  }
+  .dsOffset-9-xl {
+    margin-left: 75% !important;
+  }
+  .dsOffset-8-xl {
+    margin-left: 66.66666667% !important;
+  }
+  .dsOffset-7-xl {
+    margin-left: 58.33333333% !important;
+  }
+  .dsOffset-6-xl {
+    margin-left: 50% !important;
+  }
+  .dsOffset-5-xl {
+    margin-left: 41.66666667% !important;
+  }
+  .dsOffset-4-xl {
+    margin-left: 33.33333333% !important;
+  }
+  .dsOffset-3-xl {
+    margin-left: 25% !important;
+  }
+  .dsOffset-2-xl {
+    margin-left: 16.66666667% !important;
+  }
+  .dsOffset-1-xl {
+    margin-left: 8.33333333% !important;
+  }
+  .dsOffset-0-xl {
+    margin-left: 0% !important;
+  }
+  .dsOrder-12-xl {
+    order: 12;
+  }
+  .dsOrder-11-xl {
+    order: 11;
+  }
+  .dsOrder-10-xl {
+    order: 10;
+  }
+  .dsOrder-9-xl {
+    order: 9;
+  }
+  .dsOrder-8-xl {
+    order: 8;
+  }
+  .dsOrder-7-xl {
+    order: 7;
+  }
+  .dsOrder-6-xl {
+    order: 6;
+  }
+  .dsOrder-5-xl {
+    order: 5;
+  }
+  .dsOrder-4-xl {
+    order: 4;
+  }
+  .dsOrder-3-xl {
+    order: 3;
+  }
+  .dsOrder-2-xl {
+    order: 2;
+  }
+  .dsOrder-1-xl {
+    order: 1;
+  }
+  .dsHide-xl {
+    display: none;
+  }
+}
+/*
+  CONTAINER: 20px padding
+  CONTENT:
+    <p>: 1.5 * line-height = 1.5 * 1.25 = 1.875 = 2em (rounded up)
+    <section>: follow <p>
+    list items:
+      <li>: 4px / 0.25rem;
+      <dt>:
+        vertical list:
+          Y: 0.25em
+        horizontal list:
+          Y:8px
+      <dd>:
+        vertical list:
+          Y: 0.5em
+          X-left: 1em
+        horizontal list:
+          Y: 0.5em
+          X: 0.5em
+*/
+.dsContainer:only-child {
+  height: 100%;
+  width: 100%;
+}
+.dsContainer-xs {
+  padding: 0.25rem;
+}
+.dsContainer-sm {
+  padding: 0.5rem;
+}
+.dsContainer,
+.dsContainer-md {
+  padding: 1rem;
+}
+.dsContainer-lg {
+  padding: 1.5rem;
+}
+.dsContainer-xl {
+  padding: 2rem;
+}

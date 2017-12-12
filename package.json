@@ -5,11 +5,7 @@
   "main": "dist/segno-ui.js",
   "module": "dist/segno-ui.es.js",
   "files": [
-    "dist/segno-ui.browser.js",
-    "dist/segno-ui.browser.min.js",
-    "dist/segno-ui.browser.min.js.map",
-    "dist/segno-ui.es.js",
-    "dist/segno-ui.js"
+    "dist/"
   ],
   "keywords": [
     "web components",
@@ -39,7 +35,6 @@
     "lodash": "^4.17.4",
     "moment": "^2.19.1",
     "nunjucks": "^3.0.1",
-    "pkgcloud": "^1.5.0",
     "raw-loader": "^0.5.1",
     "rollup": "^0.52.0",
     "rollup-plugin-babel": "^3.0.2",
