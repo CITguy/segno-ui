@@ -1,7 +1,7 @@
 {
   "name": "segno-ui",
   "description": "Web Component library for modern browsers",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "dist/segno-ui.js",
   "module": "dist/segno-ui.es.js",
   "files": [
