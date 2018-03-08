@@ -21,12 +21,16 @@ let babelPlugin = babel({
     exclude: 'node_modules/**/*'
 });
 
+let intro = `window.addEventListener('WebComponentsReady', function () {`;
+let outro = `});`;
+
 export default [
     // src/browser-entry.js --> dist/segno.browser.js (UMD)
     {
         input: 'src/browser-entry.js',
+        intro,
+        outro,
         name: 'Segno',
-        sourcemap: false,
         output: [
             { 
                 file: 'dist/segno-ui.browser.js',
@@ -46,8 +50,9 @@ export default [
     // src/browser-entry.js --> dist/segno.browser.min.js (UMD)
     {
         input: 'src/browser-entry.js',
+        intro,
+        outro,
         name: 'Segno',
-        sourcemap: true,
         output: [
             { 
                 file: 'dist/segno-ui.browser.min.js',
@@ -70,7 +75,6 @@ export default [
     {
         input: 'src/node-entry.js',
         name: 'Segno',
-        sourcemap: false,
         output: [
             { 
                 file: pkg.main,

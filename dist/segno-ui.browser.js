@@ -4,6 +4,8 @@
 	(factory());
 }(this, (function () { 'use strict';
 
+window.addEventListener('WebComponentsReady', function () {
+
 var KEYS = {
     Alt: 18,
     Backspace: 8,
@@ -1134,9 +1136,28 @@ var elements = Object.freeze({
 	DSTabsetElement: DSTabsetElement
 });
 
-function initialize() {
+function _defineElements() {
     for (var attr in elements) {
         elements[attr].$define();
+    }
+}
+
+function initialize() {
+    if (window.WebComponents) {
+        // polyfill detected
+        if (window.WebComponents.ready) {
+            // polyfill already finished loading, initialize immediately
+            _defineElements();
+        } else {
+            // initialize when polyfill has finished loading
+            window.addEventListener('WebComponentsReady', function () {
+                _defineElements();
+            });
+        }
+    } else {
+        // no polyfill detected
+        // initialize immediately
+        _defineElements();
     }
 }
 
@@ -1155,14 +1176,8 @@ if (!window.Segno) {
     window.Segno = Segno;
 }
 
-// If polyfills are used, initialize when polyfills are ready
-// otherwise, initialize immediately
-if (window.WebComponents) {
-    window.addEventListener('WebComponentsReady', function () {
-        Segno.initialize();
-    });
-} else {
-    Segno.initialize();
-}
+Segno.initialize();
+
+});
 
 })));

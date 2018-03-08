@@ -8,13 +8,4 @@ if (!window.Segno) {
     window.Segno = Segno;
 }
 
-// If polyfills are used, initialize when polyfills are ready
-// otherwise, initialize immediately
-if (window.WebComponents) {
-    window.addEventListener('WebComponentsReady', function () {
-        Segno.initialize();
-    });
-} else {
-    Segno.initialize();
-}
-
+Segno.initialize();
