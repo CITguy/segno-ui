@@ -1,0 +1,4 @@
+!.vuepress
+node_modules/*
+docs/_nunjucks/*
+**/vendor/*.js

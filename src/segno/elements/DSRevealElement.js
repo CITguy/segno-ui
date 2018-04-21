@@ -6,7 +6,7 @@ export class DSRevealElement extends DSElement {
     }
 
     static get observedAttributes () {
-        return ['open'];
+        return [ 'open' ];
     }
 
     connectedCallback () {
@@ -14,12 +14,12 @@ export class DSRevealElement extends DSElement {
         this.setAttribute('aria-expanded', this.open);
     }
 
-    attributeChangedCallback (attr, oldVal, newVal) {
-        this.setAttribute('aria-expanded', newVal === '')
+    $attributeChanged (attr, oldVal, newVal) {
+        this.setAttribute('aria-expanded', newVal === '');
     }
 
     set open (value) {
-        if (!!value) {
+        if (value) {
             this.setAttribute('open', '');
         } else {
             this.removeAttribute('open');

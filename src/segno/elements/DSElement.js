@@ -8,9 +8,11 @@ export class DSElement extends HTMLElement {
     constructor (tagName, template) {
         super();
 
+        this.$attributeChanged = this.$attributeChanged.bind(this);
+
         // Don't attach shadow DOM unless specified
         if (tagName && template) {
-            this.attachShadow({mode: 'open'});
+            this.attachShadow({ mode: 'open' });
 
             if (window.ShadyCSS) {
                 ShadyCSS.prepareTemplate(template, tagName);
@@ -52,7 +54,33 @@ export class DSElement extends HTMLElement {
             case KEYS.Space:
             case KEYS.Up:
                 evt.preventDefault();
-            break;
+                break;
         }
     }
+
+    attributeChangedCallback (attr, oldVal, newVal) {
+        if (newVal !== oldVal) {
+            this.$attributeChanged(attr, oldVal, newVal);
+        }
+    }
+
+    /**
+     * @param {String} attr
+     * @param {String|null} oldVal
+     * @param {String|null} newVal
+     */
+    $attributeChanged () {
+        // override in subclass
+    }
+
+    $emit (evtName, opts) {
+        let options = Object.assign({}, {
+            cancelable: true,
+            bubbles: false,
+        }, opts);
+
+        let evt = new CustomEvent(evtName, options);
+
+        return this.dispatchEvent(evt);
+    }//$emit
 }

@@ -140,4 +140,4 @@ export default {
     undo,
     upload,
     user,
-}
+};

@@ -7,10 +7,7 @@ export class DSTabsetElement extends DSElement {
     }
 
     static get observedAttributes () {
-        return [
-            'current-tab',
-            'tab-side',
-        ];
+        return [ 'current-tab', 'tab-side' ];
     }
 
     constructor () {
@@ -29,7 +26,7 @@ export class DSTabsetElement extends DSElement {
         this.currentTab = Number(this.getAttribute('current-tab')) || 0;
         this.$tablist.addEventListener('keyup', this._onKeyUp);
         this.$tablist.addEventListener('keydown', this.$preventScroll);
-        this.tabs.forEach( (tab) => {
+        this.tabs.forEach(tab => {
             tab.addEventListener('click', this._onTabClick);
         });
     }//connectedCallback()
@@ -37,7 +34,7 @@ export class DSTabsetElement extends DSElement {
     disconnectedCallback () {
         this.$tablist.removeEventListener('keyup', this._onKeyUp);
         this.$tablist.removeEventListener('keydown', this.$preventScroll);
-        this.tabs.forEach( (tab) => {
+        this.tabs.forEach(tab => {
             tab.removeEventListener('click', this._onTabClick);
         });
     }//disconnectedCallback()
@@ -48,25 +45,29 @@ export class DSTabsetElement extends DSElement {
                 if (!isNaN(newVal)) {
                     this.currentTab = Number(newVal);
                 }
-            break;
+                break;
 
             case 'tab-side':
                 switch (newVal) {
                     case 'top':
                     case 'bottom':
                         this.$tablist.setAttribute('aria-orientation', 'horizontal');
-                    break;
+                        break;
 
                     case 'left':
                     case 'right':
                         this.$tablist.setAttribute('aria-orientation', 'vertical');
-                    break;
+                        break;
 
-                    default: /* do nothing */ break;
+                    default: 
+                        /* do nothing */ 
+                        break;
                 }
-            break;//tab-side
+                break; //tab-side
 
-            default: /* do nothing */ break;
+            default: 
+                /* do nothing */ 
+                break;
         }//switch
     }//attributeChangedCallback()
 
@@ -85,7 +86,7 @@ export class DSTabsetElement extends DSElement {
 
         this._currentTab = idx;
 
-        this.tabs.forEach( (tab, tabIdx) => {
+        this.tabs.forEach((tab, tabIdx) => {
             if (idx === tabIdx) {
                 tab.current = true;
                 tab.setAttribute('tabindex', 0);
@@ -96,7 +97,7 @@ export class DSTabsetElement extends DSElement {
             }
         });
 
-        this.tabpanels.forEach( (tabpanel, panelIdx) => {
+        this.tabpanels.forEach((tabpanel, panelIdx) => {
             tabpanel.open = (idx === panelIdx);
         });
     }//SET:currentTab
@@ -153,7 +154,7 @@ export class DSTabsetElement extends DSElement {
                 if (evt.keyCode === KEYS.Left) {
                     this._selectPrevious();
                 }
-            break;
+                break;
 
             case 'left':
             case 'right':
@@ -164,9 +165,11 @@ export class DSTabsetElement extends DSElement {
                 if (evt.keyCode === KEYS.Up) {
                     this._selectPrevious();
                 }
-            break;
+                break;
 
-            default: /* do nothing */ break;
+            default: 
+                /* do nothing */ 
+                break;
         }//tabSide
     }//_onKeyUp()
 
@@ -175,7 +178,7 @@ export class DSTabsetElement extends DSElement {
     }
 
     _setupIds () {
-        this.tabs.forEach( (tab, idx) => {
+        this.tabs.forEach((tab, idx) => {
             let tabpanel = this.tabpanels[idx];
             // Default tab and panel ID
             let tabId = `dsTab-${this.$generateId()}`;

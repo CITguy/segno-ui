@@ -1,7 +1,7 @@
 import { DSElement } from './DSElement';
 
 const _tagName = 'ds-progress';
-const _template = document.createElement('template')
+const _template = document.createElement('template');
 
 _template.innerHTML = `
     <style>
@@ -24,7 +24,7 @@ export class DSProgressElement extends DSElement {
     }
 
     static get observedAttributes () {
-        return ['value'];
+        return [ 'value' ];
     }
 
     constructor () {
@@ -71,7 +71,7 @@ export class DSProgressElement extends DSElement {
     }
 
     set indeterminate (newVal) {
-        if (Boolean(newVal)) {
+        if (newVal) {
             this.setAttribute('indeterminate', true);
         } else {
             this.removeAttribute('indeterminate');

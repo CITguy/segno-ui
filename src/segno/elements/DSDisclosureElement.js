@@ -7,10 +7,7 @@ export class DSDisclosureElement extends DSElement {
     }
 
     static get observedAttributes () {
-        return [ 
-            'aria-expanded',
-            'disabled',
-        ];
+        return [ 'aria-expanded', 'disabled' ];
     }
 
     connectedCallback () {
@@ -35,12 +32,12 @@ export class DSDisclosureElement extends DSElement {
     }
 
     attributeChangedCallback (attr, oldVal, newVal) {
-        switch(attr) {
+        switch (attr) {
             case 'aria-expanded':
                 if (this.target) {
                     this.target.open = (newVal === 'true');
                 }
-            break;
+                break;
 
             case 'disabled':
                 if (newVal !== null) {
@@ -48,7 +45,7 @@ export class DSDisclosureElement extends DSElement {
                 } else {
                     this.setAttribute('tabindex', 0);
                 }
-            break;
+                break;
         }
     }
 
@@ -74,7 +71,7 @@ export class DSDisclosureElement extends DSElement {
     }
 
     set disabled (newVal) {
-        if (!!newVal) {
+        if (newVal) {
             this.setAttribute('disabled', true);
         } else {
             this.removeAttribute('disabled');
@@ -86,9 +83,11 @@ export class DSDisclosureElement extends DSElement {
             case KEYS.Space:
             case KEYS.Enter:
                 this._toggle();
-            break;
+                break;
 
-            default: /* do nothing */ break;
+            default: 
+                /* do nothing */ 
+                break;
         }
     }//_keyUp()
 

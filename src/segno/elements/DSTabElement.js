@@ -12,10 +12,10 @@ export class DSTabElement extends DSElement {
     }
 
     static get observedAttributes () {
-        return ['current'];
+        return [ 'current' ];
     }
 
-    attributeChangedCallback (attr, oldVal, newVal) {
+    $attributeChanged (attr, oldVal, newVal) {
         this.setAttribute('aria-selected', newVal !== null);
     }
 

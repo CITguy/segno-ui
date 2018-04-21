@@ -13,21 +13,28 @@ export class DSBusyElement extends DSElement {
         this.setAttribute('aria-hidden', true);
     }
 
+    static get observedAttributes () {
+        return [ 'paused' ];
+    }
+
+    $attributeChanged (attr, oldVal, newVal) {
+        let hasValue = (newVal !== null);
+        if (hasValue) {
+            this.$emit('pause');
+        } else {
+            this.$emit('start');
+        }
+    }
+
     get paused () {
         return this.hasAttribute('paused');
     }
 
     set paused (val) {
-        if (Boolean(val)) {
+        if (val) {
             this.setAttribute('paused', '');
-            this.dispatchEvent(new CustomEvent('pause', {
-                bubbles: true
-            }));
         } else {
             this.removeAttribute('paused');
-            this.dispatchEvent(new CustomEvent('start', {
-                bubbles: true
-            }));
         }
     }
 }

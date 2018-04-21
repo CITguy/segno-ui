@@ -3,7 +3,7 @@
  *
  * Built to be compatible with polyfills developed at https://github.com/webcomponents/webcomponentsjs
  */
-(function() {
+(function () {
     'use strict';
     // Needed to be compatible with webcomponentsjs polyfills
     window.WebComponents = window.WebComponents || {};
@@ -25,12 +25,12 @@
 
     if (polyName !== '') {
         var name = 'polyfill-loader.js';
-        var loaderScript = document.querySelector('script[src*="' + name +'"]');
+        var loaderScript = document.querySelector('script[src*="' + name + '"]');
         var polyScript = document.createElement('script');
         polyScript.src = loaderScript.src.replace('polyfill-loader.js', 'vendor/' + polyName);
         loaderScript.parentElement.appendChild(polyScript);
     } else {
-        var ready = function() {
+        var ready = function () {
             requestAnimationFrame(function () {
                 window.WebComponents.ready = true;
                 var evtReady = new CustomEvent('WebComponentsReady', { bubbles: true });

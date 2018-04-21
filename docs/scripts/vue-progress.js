@@ -3,7 +3,7 @@ if (document.getElementById('vue-progressDemo')) {
         el: '#vue-progressDemo',
         data: {
             pctComplete: 42,
-            indeterminate: false
-        }
+            indeterminate: false,
+        },
     });
 }
