@@ -1,0 +1,5 @@
+---
+title: foo
+---
+
+# foo.md

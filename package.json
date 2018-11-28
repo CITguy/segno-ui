@@ -45,6 +45,7 @@
     "run-sequence": "^1.2.2",
     "uglify-es": "^3.2.1",
     "uglifyjs-webpack-plugin": "^1.1.1",
+    "vuepress": "^0.7.1",
     "webpack": "^3.8.1"
   },
   "scripts": {
@@ -61,7 +62,9 @@
     "start:min": "NODE_ENV=production bin/start.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "version": "yarn rollup && git add dist/",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "vp:dev": "vuepress dev vp",
+    "vp:build": "vuepress build vp"
   },
   "repository": {
     "type": "git",
